@@ -1,0 +1,39 @@
+C:\Users\BK004313322\AppData\Local\Temporary Projects\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+C:\Users\BK004313322\AppData\Local\Temporary Projects\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+C:\Users\BK004313322\AppData\Local\Temporary Projects\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+C:\Users\BK004313322\AppData\Local\Temporary Projects\WindowsApplication1\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\BK004313322\AppData\Local\Temporary Projects\WindowsApplication1\obj\x86\Debug\EmployeeDirectory.vbproj.GenerateResource.Cache
+C:\Users\BK004313322\AppData\Local\Temporary Projects\WindowsApplication1\obj\x86\Debug\WindowsApplication1.exe
+C:\Users\BK004313322\AppData\Local\Temporary Projects\WindowsApplication1\obj\x86\Debug\WindowsApplication1.xml
+C:\Users\BK004313322\AppData\Local\Temporary Projects\WindowsApplication1\obj\x86\Debug\WindowsApplication1.pdb
+C:\Users\BK004313322\AppData\Local\Temporary Projects\WindowsApplication1\obj\x86\Debug\WindowsApplication1.Main.resources
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\bin\Debug\EmployeeDirectory.exe
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\bin\Debug\EmployeeDirectory.pdb
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\bin\Debug\EmployeeDirectory.xml
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.EmployeeInfo.resources
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.Main.resources
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.vbproj.GenerateResource.Cache
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.exe
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.xml
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.pdb
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.LogIn.resources
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.RecorNotFound.resources
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.admin.resources
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.incomplete.resources
+C:\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.EmployeeInfoIncomplete.resources
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.EmployeeInfo.resources
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.admin.resources
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.EmployeeInfoIncomplete.resources
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.incomplete.resources
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.LogIn.resources
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.Main.resources
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.Resources.resources
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.RecorNotFound.resources
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.vbproj.GenerateResource.Cache
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.exe
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.xml
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.pdb
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\bin\Debug\EmployeeDirectory.exe
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\bin\Debug\EmployeeDirectory.pdb
+\\MNL02S55587D1\Users\BK004313322\Documents\MyApp\EmployeeDirectory\EmployeeDirectory\bin\Debug\EmployeeDirectory.xml
