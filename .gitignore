@@ -1,1 +1,6 @@
 EmployeeDirectory/bin/Debug/EmployeeDirectory.vshost.exe
+/.vs/EmployeeDirectory/v15/Server/sqlite3
+/EmployeeDirectory/bin/Debug
+/EmployeeDirectory/obj/x86/Debug/EmployeeDirectory.exe
+/EmployeeDirectory/obj/x86/Debug
+/BASD.Helper/obj/Debug
