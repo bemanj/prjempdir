@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -74,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Class1.vb" />
     <Compile Include="Data\Entity\Employee.vb" />
+    <Compile Include="Data\ManagerRepository.vb" />
     <Compile Include="EmployeeInfo.Designer.vb">
       <DependentUpon>EmployeeInfo.vb</DependentUpon>
     </Compile>

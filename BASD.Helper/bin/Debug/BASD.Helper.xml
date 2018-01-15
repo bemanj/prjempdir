@@ -1,0 +1,91 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BASD.Helper
+</name>
+</assembly>
+<members>
+<member name="P:BASD.Helper.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:BASD.Helper.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:BASD.Helper.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:BASD.Helper.BaseCrypto.getCipherSalt(System.String)">
+	<summary>
+ Process the given keys and initialize the cipher salt
+ </summary>
+	<param name="inString"></param>
+	<remarks></remarks>
+</member><member name="M:BASD.Helper.BaseCrypto.getCipher">
+	<summary>
+ Setup of cipher provider selected.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:BASD.Helper.BaseCrypto.cipherTransformation">
+	<summary>
+ Creates cryptography based on transformation selected.
+ </summary>
+	<returns>ICryptoTransform</returns>
+	<remarks></remarks>
+</member><member name="M:BASD.Helper.BaseCrypto.startEncryptionString(System.String)">
+	<summary>
+ Start the processing of input string to be encrypted
+ </summary>
+	<param name="inString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BASD.Helper.BaseCrypto.startDecryptionString(System.String)">
+	<summary>
+ Start the processing of input string to be decrypted
+ </summary>
+	<param name="inString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BASD.Helper.BaseCrypto.DecryptString(System.String)">
+	<summary>
+ Decrypt given inpunt string
+ </summary>
+	<param name="inString">input string to be decrypted</param>
+	<returns>Encrypted string</returns>
+	<remarks></remarks>
+</member><member name="M:BASD.Helper.BaseCrypto.DecryptString(System.String,System.String)">
+	<summary>
+ Decrypt given inpunt string
+ </summary>
+	<param name="inString">input string to be decrypted</param>
+	<param name="keyString">key you want to use as salt</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BASD.Helper.BaseCrypto.EncryptString(System.String)">
+	<summary>
+ Encrypt given inpunt string
+ </summary>
+	<param name="inString">input string to be encrypted</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BASD.Helper.BaseCrypto.EncryptString(System.String,System.String)">
+	<summary>
+ Encrypt given inpunt string
+ </summary>
+	<param name="inString">input string to be encrypted</param>
+	<param name="keyString">key you want to use as salt</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:BASD.Helper.BaseCrypto.ChangeProvider(BASD.Helper.BASDCryptoProvider)">
+	<summary>
+ Set a new provider you want to use
+ </summary>
+	<param name="provider"></param>
+	<remarks></remarks>
+</member>
+</members>
+</doc>
