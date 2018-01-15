@@ -6,3 +6,11 @@ C:\Users\RB004259604\Documents\Visual Studio 2010\Projects\BASDTrainingWinForms\
 C:\Users\RB004259604\Documents\Visual Studio 2010\Projects\BASDTrainingWinForms\BASD.Helper\obj\Debug\BASD.Helper.dll
 C:\Users\RB004259604\Documents\Visual Studio 2010\Projects\BASDTrainingWinForms\BASD.Helper\obj\Debug\BASD.Helper.xml
 C:\Users\RB004259604\Documents\Visual Studio 2010\Projects\BASDTrainingWinForms\BASD.Helper\obj\Debug\BASD.Helper.pdb
+C:\Users\RU004269304\Desktop\EmpDir\BASD.Helper\bin\Debug\BASD.Helper.dll
+C:\Users\RU004269304\Desktop\EmpDir\BASD.Helper\bin\Debug\BASD.Helper.pdb
+C:\Users\RU004269304\Desktop\EmpDir\BASD.Helper\bin\Debug\BASD.Helper.xml
+C:\Users\RU004269304\Desktop\EmpDir\BASD.Helper\obj\Debug\BASD.Helper.Resources.resources
+C:\Users\RU004269304\Desktop\EmpDir\BASD.Helper\obj\Debug\BASD.Helper.vbproj.GenerateResource.Cache
+C:\Users\RU004269304\Desktop\EmpDir\BASD.Helper\obj\Debug\BASD.Helper.dll
+C:\Users\RU004269304\Desktop\EmpDir\BASD.Helper\obj\Debug\BASD.Helper.xml
+C:\Users\RU004269304\Desktop\EmpDir\BASD.Helper\obj\Debug\BASD.Helper.pdb
