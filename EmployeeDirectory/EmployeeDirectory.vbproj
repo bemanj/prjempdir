@@ -197,6 +197,12 @@
     <Content Include="Resources\a_W7b_icon.ico" />
     <None Include="Resources\a_W7b_icon1.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BASD.Helper\BASD.Helper.vbproj">
+      <Project>{CEC9EE9D-7976-4599-8765-F2B3A4553596}</Project>
+      <Name>BASD.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
