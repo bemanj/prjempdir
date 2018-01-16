@@ -53,3 +53,4 @@ C:\Users\RU004269304\Desktop\EmpDir\EmployeeDirectory\obj\x86\Debug\WindowsAppli
 C:\Users\RU004269304\Desktop\EmpDir\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.vbproj.GenerateResource.Cache
 C:\Users\SP004320654\Documents\prjempdir\EmployeeDirectory\bin\Debug\EmployeeDirectory.exe.config
 C:\Users\SP004320654\Documents\prjempdir\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.xml
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\bin\Debug\EmployeeDirectory.exe.config
