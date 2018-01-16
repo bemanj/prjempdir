@@ -1,5 +1,37 @@
 ﻿Public Class EmployeeInfo
 
+    Private _isEdit As Boolean
+    Public Property IsEdit() As Boolean
+        Get
+            Return _isEdit
+        End Get
+        Set(ByVal value As Boolean)
+            _isEdit = value
+        End Set
+    End Property
+
+
+    Private _empinfo As EmployeeRepository
+    Public Property EmpInfo() As EmployeeRepository
+        Get
+            Return _empinfo
+        End Get
+        Set(ByVal value As EmployeeRepository)
+            _empinfo = value
+        End Set
+    End Property
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        _empinfo = New EmployeeRepository()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
     Private Sub TextBox26_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
@@ -34,6 +66,12 @@
     End Sub
 
     Private Sub Label9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label9.Click
+
+    End Sub
+
+    Private Sub Btn_Save_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Save.Click
+        'call function that gets inputs from users - By ben'
+
 
     End Sub
 End Class
