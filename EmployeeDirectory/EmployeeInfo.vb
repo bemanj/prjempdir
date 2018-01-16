@@ -1,5 +1,17 @@
 ﻿Public Class EmployeeInfo
 
+
+    Private _isEdit As Boolean
+    Public Property IsEdit() As Boolean
+        Get
+            Return _isEdit
+        End Get
+        Set(ByVal value As Boolean)
+            _isEdit = value
+        End Set
+    End Property
+
+
     Private Sub TextBox26_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
@@ -36,4 +48,5 @@
     Private Sub Label9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label9.Click
 
     End Sub
+
 End Class
