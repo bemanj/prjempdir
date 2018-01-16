@@ -3,6 +3,7 @@
 Public Interface IRepository
 
     Function GetListData() As IEnumerable(Of IEntity)
+    Function GetListData(ByVal entity As IEntity) As IEnumerable(Of IEntity) ' New Overload Function, with Parameter
     Function GetData(ByVal entity As IEntity) As IEntity
     Function InsertData(ByVal entity As IEntity) As Integer
     Sub UpdateData(ByVal updateEntity As SqlClient.SqlParameter, ByVal entity As IEntity)
