@@ -33,6 +33,13 @@ Public MustInherit Class BaseRepository
 
     End Function
 
+    ' New Overload Function, with Parameter
+    Public Overridable Function GetListData(ByVal entity As IEntity) As System.Collections.Generic.IEnumerable(Of IEntity) Implements IRepository.GetListData
+
+        Throw New NotImplementedException()
+
+    End Function
+
     Public Overridable Sub UpdateData(ByVal updateEntity As System.Data.SqlClient.SqlParameter, ByVal entity As IEntity) Implements IRepository.UpdateData
 
         Throw New NotImplementedException()
