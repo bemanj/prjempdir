@@ -2,13 +2,24 @@
     Inherits BASD.Helper.EntityBase
 
     'Employee Information
-    Private _EmpTitle As String
-    Public Property EmpTitle() As String
+
+    Private _OracleID As Decimal
+    Public Property OracleID() As Decimal
         Get
-            Return _EmpTitle
+            Return _OracleID
+        End Get
+        Set(ByVal value As Decimal)
+            _OracleID = value
+        End Set
+    End Property
+
+    Private _Title As String
+    Public Property Title() As String
+        Get
+            Return _Title
         End Get
         Set(ByVal value As String)
-            _EmpTitle = value
+            _Title = value
         End Set
     End Property
 
@@ -72,13 +83,13 @@
         End Set
     End Property
 
-    Private _EmailAdd As String
-    Public Property EmailAdd() As String
+    Private _EmailAddress As String
+    Public Property EmailAddress() As String
         Get
-            Return _EmailAdd
+            Return _EmailAddress
         End Get
         Set(ByVal value As String)
-            _EmailAdd = value
+            _EmailAddress = value
         End Set
     End Property
 
@@ -92,34 +103,34 @@
         End Set
     End Property
 
-    Private _PhoneExt As Decimal
-    Public Property PhoneExt() As Decimal
+    Private _PhoneExtension As Decimal
+    Public Property PhoneExtension() As Decimal
         Get
-            Return _PhoneExt
+            Return _PhoneExtension
         End Get
         Set(ByVal value As Decimal)
-            _PhoneExt = value
+            _PhoneExtension = value
         End Set
     End Property
 
     'Office Information
-    Private _Team As Integer
-    Public Property Team() As Integer
+    Private _TeamID As Integer
+    Public Property TeamID() As Integer
         Get
-            Return _Team
+            Return _TeamID
         End Get
         Set(ByVal value As Integer)
-            _Team = value
+            _TeamID = value
         End Set
     End Property
 
-    Private _LocalManager As Integer
-    Public Property LocalManager() As Integer
+    Private _LocalManagerID As Integer
+    Public Property LocalManagerID() As Integer
         Get
-            Return _LocalManager
+            Return _LocalManagerID
         End Get
         Set(ByVal value As Integer)
-            _LocalManager = value
+            _LocalManagerID = value
         End Set
     End Property
 
@@ -133,13 +144,13 @@
         End Set
     End Property
 
-    Private _Site As Integer
-    Public Property Site() As Integer
+    Private _SiteID As Integer
+    Public Property SiteID() As Integer
         Get
-            Return _Site
+            Return _SiteID
         End Get
         Set(ByVal value As Integer)
-            _Site = value
+            _SiteID = value
         End Set
     End Property
 
@@ -305,13 +316,13 @@
         End Set
     End Property
 
-    Private _NCOGroupID As String
-    Public Property NCOGroupID() As String
+    Private _NCOGroup As String
+    Public Property NCOGroup() As String
         Get
-            Return _NCOGroupID
+            Return _NCOGroup
         End Get
         Set(ByVal value As String)
-            _NCOGroupID = value
+            _NCOGroup = value
         End Set
     End Property
 
@@ -372,6 +383,18 @@
         End Get
         Set(ByVal value As String)
             _GITHubID = value
+        End Set
+    End Property
+
+    'User Type
+
+    Private _UserType As Integer
+    Public Property UserType() As Integer
+        Get
+            Return _UserType
+        End Get
+        Set(ByVal value As Integer)
+            _UserType = value
         End Set
     End Property
 
