@@ -110,6 +110,8 @@ Partial Class EmployeeInfo
         Me.TB_HomeAddLine1 = New System.Windows.Forms.TextBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
+        Me.TB_PCName = New System.Windows.Forms.TextBox()
+        Me.Label40 = New System.Windows.Forms.Label()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -730,6 +732,8 @@ Partial Class EmployeeInfo
         '
         'AccessInfo
         '
+        Me.AccessInfo.Controls.Add(Me.TB_PCName)
+        Me.AccessInfo.Controls.Add(Me.Label40)
         Me.AccessInfo.Controls.Add(Me.TB_GithubID)
         Me.AccessInfo.Controls.Add(Me.TB_ElsevierID)
         Me.AccessInfo.Controls.Add(Me.TB_EGSPREMID)
@@ -941,6 +945,23 @@ Partial Class EmployeeInfo
         Me.Label39.TabIndex = 92
         Me.Label39.Text = "Address Line 1"
         '
+        'TB_PCName
+        '
+        Me.TB_PCName.Location = New System.Drawing.Point(130, 133)
+        Me.TB_PCName.Name = "TB_PCName"
+        Me.TB_PCName.Size = New System.Drawing.Size(121, 23)
+        Me.TB_PCName.TabIndex = 64
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(20, 142)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(55, 15)
+        Me.Label40.TabIndex = 63
+        Me.Label40.Text = "PC name"
+        '
         'EmployeeInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1082,4 +1103,6 @@ Partial Class EmployeeInfo
     Friend WithEvents TB_HomeAddLine1 As System.Windows.Forms.TextBox
     Friend WithEvents Label38 As System.Windows.Forms.Label
     Friend WithEvents Label39 As System.Windows.Forms.Label
+    Friend WithEvents TB_PCName As System.Windows.Forms.TextBox
+    Friend WithEvents Label40 As System.Windows.Forms.Label
 End Class
