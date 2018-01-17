@@ -39,7 +39,7 @@ Partial Class Main
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.BtnLogOut = New System.Windows.Forms.Button()
         Me.Btn_EmpInc = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DataGridViewEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -204,16 +204,16 @@ Partial Class Main
         Me.Button6.Text = "PREVIOUS"
         Me.Button6.UseVisualStyleBackColor = False
         '
-        'Button7
+        'BtnLogOut
         '
-        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button7.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(1032, 12)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(120, 38)
-        Me.Button7.TabIndex = 89
-        Me.Button7.Text = "LOGOUT"
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.BtnLogOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnLogOut.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnLogOut.Location = New System.Drawing.Point(1032, 12)
+        Me.BtnLogOut.Name = "BtnLogOut"
+        Me.BtnLogOut.Size = New System.Drawing.Size(120, 38)
+        Me.BtnLogOut.TabIndex = 89
+        Me.BtnLogOut.Text = "LOGOUT"
+        Me.BtnLogOut.UseVisualStyleBackColor = False
         '
         'Btn_EmpInc
         '
@@ -242,7 +242,7 @@ Partial Class Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1164, 862)
         Me.Controls.Add(Me.Btn_EmpInc)
-        Me.Controls.Add(Me.Button7)
+        Me.Controls.Add(Me.BtnLogOut)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button4)
@@ -287,7 +287,7 @@ Partial Class Main
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents BtnLogOut As System.Windows.Forms.Button
     Friend WithEvents Btn_EmpInc As System.Windows.Forms.Button
 
 End Class

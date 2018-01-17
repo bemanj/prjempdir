@@ -4,31 +4,19 @@ Imports System.Configuration
 Public Class Main
     Dim eR As New EmployeeRepository
     Dim emp As New Employee
+    Dim dt As New DataTable
 
-    Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Public Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        dt.Clear()
+        TB_MgrV_OracleID.Focus()
         If LogIn.Username.Text = "manager" Then
             Me.Text = "Hello Manager!"
-            emp.LocalManagerID = 1 'this will serve as the local manager ID
+            emp.LocalManagerID = 1 'this will serve as the local manager ID - for demo only
+            DataGridViewEmployee.DataSource = eR.GetListData(emp)
+        Else
+            emp.LocalManagerID = 2 'this will serve as the admin ID - for demo only (sp used same for manager's)
             DataGridViewEmployee.DataSource = eR.GetListData(emp)
         End If
-
-        'Dim _listEmployee As List(Of Class1)
-
-        '_listEmployee = New List(Of Class1)
-        '_listEmployee = New List(Of Class1)
-        '_listEmployee.Add(New Class1() With { _
-        '                  .oracleid = "4313131", _
-        '                  .lastname = "Soltes"
-        '                  })
-
-        'DataGridViewEmployee.AutoGenerateColumns = False
-        'DataGridViewEmployee.DataSource = _listEmployee
-
-
-        'DataGridViewEmployee.Columns(0).DataPropertyName = "oracleid"
-        'DataGridViewEmployee.Columns(1).DataPropertyName = "lastname"
-
-
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Add.Click
@@ -36,41 +24,17 @@ Public Class Main
         Me.Hide()
     End Sub
 
-    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Label4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label2.Click
-
-    End Sub
-
-
-    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellContentClick
-
-    End Sub
-
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Edit.Click
         EmployeeInfo.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-
-    End Sub
-
-    Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
+    Public Sub BtnLogOut_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogOut.Click
         Me.Hide()
         LogIn.Show()
-        LogIn.Username.Text = " "
-        LogIn.UsernamePassword.Text = ""
+        LogIn.LogIn_Load(e, e)
+        LogIn.Username.Clear()
+        LogIn.UsernamePassword.Clear()
     End Sub
 
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_EmpInc.Click

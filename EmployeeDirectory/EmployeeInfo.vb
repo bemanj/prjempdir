@@ -29,8 +29,9 @@
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
         Me.Hide()
         LogIn.Show()
-        LogIn.Username.Text = " "
-        LogIn.UsernamePassword.Text = ""
+        LogIn.LogIn_Load(e, e)
+        LogIn.Username.Clear()
+        LogIn.UsernamePassword.Clear()
     End Sub
 
     Private Sub Label9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label9.Click
