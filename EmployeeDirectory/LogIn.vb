@@ -7,7 +7,6 @@
         ElseIf (Username.Text = "manager" And UsernamePassword.Text = "manager") Then
             Me.Hide()
             Main.Show()
-            Main.Main_Load(e, e)
         ElseIf (Username.Text = "admin" And UsernamePassword.Text = "admin") Then
             Me.Hide()
             admin.Show()
@@ -18,16 +17,10 @@
             RecorNotFound.Show()
             RecorNotFound.Label2.Text = "PLEASE CONTACT ADMIN"
         End If
+
     End Sub
 
-    Public Sub LogIn_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Username.Text = ""
-        UsernamePassword.Text = ""
-        Username.Focus()
-    End Sub
+    Private Sub LogIn_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-    Private Sub LogIn_Load()
-        Throw New NotImplementedException
     End Sub
-
 End Class
