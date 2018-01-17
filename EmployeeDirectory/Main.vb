@@ -1,24 +1,32 @@
-﻿Public Class Main
+﻿Imports System.Data.SqlClient
+Imports System.Configuration
 
+Public Class Main
+    Dim eR As New EmployeeRepository
+    Dim emp As New Employee
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If LogIn.Username.Text = "manager" Then
+            Me.Text = "Hello Manager!"
+            emp.LocalManagerID = 1 'this will serve as the local manager ID
+            DataGridViewEmployee.DataSource = eR.GetListData(emp)
+        End If
+
+        'Dim _listEmployee As List(Of Class1)
+
+        '_listEmployee = New List(Of Class1)
+        '_listEmployee = New List(Of Class1)
+        '_listEmployee.Add(New Class1() With { _
+        '                  .oracleid = "4313131", _
+        '                  .lastname = "Soltes"
+        '                  })
+
+        'DataGridViewEmployee.AutoGenerateColumns = False
+        'DataGridViewEmployee.DataSource = _listEmployee
 
 
-        Dim _listEmployee As List(Of Class1)
-
-        _listEmployee = New List(Of Class1)
-        _listEmployee = New List(Of Class1)
-        _listEmployee.Add(New Class1() With { _
-                          .oracleid = "4313131", _
-                          .lastname = "Soltes"
-                          })
-
-        DataGridViewEmployee.AutoGenerateColumns = False
-        DataGridViewEmployee.DataSource = _listEmployee
-
-
-        DataGridViewEmployee.Columns(0).DataPropertyName = "oracleid"
-        DataGridViewEmployee.Columns(1).DataPropertyName = "lastname"
+        'DataGridViewEmployee.Columns(0).DataPropertyName = "oracleid"
+        'DataGridViewEmployee.Columns(1).DataPropertyName = "lastname"
 
 
     End Sub
