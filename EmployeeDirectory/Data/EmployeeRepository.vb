@@ -23,15 +23,7 @@ Public Class EmployeeRepository
     Public Overloads Function GetListData(ByVal entity As Employee) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
         Dim _tempParamList = New List(Of SqlParameter)()
         _tempParamList.Add(New SqlParameter("@ManagerID", entity.LocalManagerID))
-        Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
+        Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", _tempParamList.ToArray())
         Return _tempEmployeeList.SingleMapToEntity(Of Employee)().ToList
     End Function
-
-    'Public Overrides Function GetListData(ByVal entity As IEntity) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
-    '    Dim _tempParamList = New List(Of SqlParameter)()
-    '    _tempParamList.Add(New SqlParameter("@ManagerID", entity.Id))
-
-    '    Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
-    '    Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
-    'End Function
 End Class
