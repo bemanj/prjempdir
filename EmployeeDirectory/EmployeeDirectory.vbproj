@@ -50,7 +50,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -74,9 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.vb" />
-    <Compile Include="Data\EmployeeRepository.vb" />
-    <Compile Include="Data\Entity\Employee.vb" />
-    <Compile Include="Data\ManagerRepository.vb" />
     <Compile Include="EmployeeInfo.Designer.vb">
       <DependentUpon>EmployeeInfo.vb</DependentUpon>
     </Compile>
@@ -166,7 +162,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -202,13 +197,6 @@
     <Content Include="Resources\a_W7b_icon.ico" />
     <None Include="Resources\a_W7b_icon1.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BASD.Helper\BASD.Helper.vbproj">
-      <Project>{CEC9EE9D-7976-4599-8765-F2B3A4553596}</Project>
-      <Name>BASD.Helper</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
