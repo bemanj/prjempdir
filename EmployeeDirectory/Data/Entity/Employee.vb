@@ -124,12 +124,12 @@
         End Set
     End Property
 
-    Private _TeamName As Integer
-    Public Property TeamName() As Integer
+    Private _TeamName As String
+    Public Property TeamName() As String
         Get
             Return _TeamName
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             _TeamName = value
         End Set
     End Property
@@ -144,22 +144,22 @@
         End Set
     End Property
 
-    Private _Mgr_Last_Name As Integer
-    Public Property Mgr_Last_Name() As Integer
+    Private _Mgr_Last_Name As String
+    Public Property Mgr_Last_Name() As String
         Get
             Return _Mgr_Last_Name
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             _Mgr_Last_Name = value
         End Set
     End Property
 
-    Private _Mgr_First_Name As Integer
-    Public Property Mgr_First_Name() As Integer
+    Private _Mgr_First_Name As String
+    Public Property Mgr_First_Name() As String
         Get
             Return _Mgr_First_Name
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             _Mgr_First_Name = value
         End Set
     End Property
@@ -184,12 +184,12 @@
         End Set
     End Property
 
-    Private _SiteName As Integer
-    Public Property SiteName() As Integer
+    Private _SiteName As String
+    Public Property SiteName() As String
         Get
             Return _SiteName
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             _SiteName = value
         End Set
     End Property

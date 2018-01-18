@@ -39,13 +39,13 @@ Partial Class EmployeeInfo
         Me.TB_PhoneExt = New System.Windows.Forms.TextBox()
         Me.TB_EmailAddress = New System.Windows.Forms.TextBox()
         Me.Btn_Save = New System.Windows.Forms.Button()
-        Me.Btn_Cancel = New System.Windows.Forms.Button()
+        Me.Btn_RevertClear = New System.Windows.Forms.Button()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Btn_Cancel = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.OfficeInfo = New System.Windows.Forms.TabPage()
@@ -265,16 +265,16 @@ Partial Class EmployeeInfo
         Me.Btn_Save.Text = "Save"
         Me.Btn_Save.UseVisualStyleBackColor = False
         '
-        'Btn_Cancel
+        'Btn_RevertClear
         '
-        Me.Btn_Cancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Btn_Cancel.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Cancel.Location = New System.Drawing.Point(897, 792)
-        Me.Btn_Cancel.Name = "Btn_Cancel"
-        Me.Btn_Cancel.Size = New System.Drawing.Size(120, 38)
-        Me.Btn_Cancel.TabIndex = 22
-        Me.Btn_Cancel.Text = "Cancel"
-        Me.Btn_Cancel.UseVisualStyleBackColor = False
+        Me.Btn_RevertClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Btn_RevertClear.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_RevertClear.Location = New System.Drawing.Point(897, 792)
+        Me.Btn_RevertClear.Name = "Btn_RevertClear"
+        Me.Btn_RevertClear.Size = New System.Drawing.Size(120, 38)
+        Me.Btn_RevertClear.TabIndex = 22
+        Me.Btn_RevertClear.Text = "Revert"
+        Me.Btn_RevertClear.UseVisualStyleBackColor = False
         '
         'Label19
         '
@@ -326,16 +326,16 @@ Partial Class EmployeeInfo
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'Button3
+        'Btn_Cancel
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button3.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(1023, 792)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(120, 38)
-        Me.Button3.TabIndex = 89
-        Me.Button3.Text = "Back"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.Btn_Cancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Btn_Cancel.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Cancel.Location = New System.Drawing.Point(1023, 792)
+        Me.Btn_Cancel.Name = "Btn_Cancel"
+        Me.Btn_Cancel.Size = New System.Drawing.Size(120, 38)
+        Me.Btn_Cancel.TabIndex = 89
+        Me.Btn_Cancel.Text = "Cancel"
+        Me.Btn_Cancel.UseVisualStyleBackColor = False
         '
         'Button7
         '
@@ -980,11 +980,11 @@ Partial Class EmployeeInfo
         Me.Controls.Add(Me.Label39)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Btn_Cancel)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Btn_Cancel)
+        Me.Controls.Add(Me.Btn_RevertClear)
         Me.Controls.Add(Me.Btn_Save)
         Me.Controls.Add(Me.TB_EmailAddress)
         Me.Controls.Add(Me.TB_PhoneExt)
@@ -1039,11 +1039,11 @@ Partial Class EmployeeInfo
     Friend WithEvents TB_PhoneExt As System.Windows.Forms.TextBox
     Friend WithEvents TB_EmailAddress As System.Windows.Forms.TextBox
     Friend WithEvents Btn_Save As System.Windows.Forms.Button
-    Friend WithEvents Btn_Cancel As System.Windows.Forms.Button
+    Friend WithEvents Btn_RevertClear As System.Windows.Forms.Button
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents OfficeInfo As System.Windows.Forms.TabPage
