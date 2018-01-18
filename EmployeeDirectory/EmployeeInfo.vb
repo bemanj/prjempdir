@@ -11,7 +11,7 @@
     End Property
 
 
-    Private _empinfo As EmployeeRepository
+    Private _empinfo As New EmployeeRepository
     Public Property EmpInfo() As EmployeeRepository
         Get
             Return _empinfo
@@ -21,16 +21,16 @@
         End Set
     End Property
 
-    Public Sub New()
+    'Public Sub New()
 
-        ' This call is required by the designer.
-        InitializeComponent()
+    '    ' This call is required by the designer.
+    '    InitializeComponent()
 
-        _empinfo = New EmployeeRepository()
+    '    _empinfo = New EmployeeRepository()
 
-        ' Add any initialization after the InitializeComponent() call.
+    '    ' Add any initialization after the InitializeComponent() call.
 
-    End Sub
+    'End Sub
 
     Private Sub TextBox26_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
@@ -59,15 +59,15 @@
 
     End Sub
 
-    Private _isEdit As Boolean
-    Public Property IsEdit() As Boolean
-        Get
-            Return _isEdit
-        End Get
-        Set(ByVal value As Boolean)
-            _isEdit = value
-        End Set
-    End Property
+    'Private _isEdit As Boolean
+    'Public Property IsEdit() As Boolean
+    '    Get
+    '        Return _isEdit
+    '    End Get
+    '    Set(ByVal value As Boolean)
+    '        _isEdit = value
+    '    End Set
+    'End Property
 
     Private _EmpEditService As EmpEditService
     Public Property EmpEditService() As EmpEditService
@@ -89,7 +89,9 @@
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         Me.Close()
+        Main.Main_Load(e, e)
         Main.Show()
+
     End Sub
 
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
@@ -140,8 +142,10 @@
             .Department = TB_Department.Text
             .Entity = TB_Entity.Text
             .Shift = TB_Shift.Text
-            .OfficeAddLine1 = TB_AddressLine1.Text
-            .OfficeAddLine2 = TB_AddressLine2.Text
+            '.OfficeAddLine1 = TB_AddressLine1.Text
+            '.OfficeAddLine2 = TB_AddressLine2.Text
+            .HomeAddress1 = TB_AddressLine1.Text
+            .HomeAddress2 = TB_AddressLine2.Text
             .OraclePRDID = TB_OraclePRD.Text
             .MercuryID = TB_MercuryID.Text
             .NCOGroup = TB_NCOGrpID.Text
@@ -180,4 +184,7 @@
 
     End Function
 
+    Public Sub Clearfields()
+
+    End Sub
 End Class

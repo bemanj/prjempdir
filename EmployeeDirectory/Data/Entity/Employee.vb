@@ -3,12 +3,12 @@
 
     'Employee Information
 
-    Private _OracleID As Decimal
-    Public Property OracleID() As Decimal
+    Private _OracleID As Integer
+    Public Property OracleID() As Integer
         Get
             Return _OracleID
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As Integer)
             _OracleID = value
         End Set
     End Property
