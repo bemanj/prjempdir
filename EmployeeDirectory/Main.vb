@@ -5,6 +5,7 @@ Public Class Main
     Dim eR As New EmployeeRepository
     Dim emp As New Employee
     Dim dt As New DataTable
+    Dim _EmpEditService As New EmpEditService
 
     Public Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         dt.Clear()
@@ -20,6 +21,7 @@ Public Class Main
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Add.Click
+        EmployeeInfo.IsEdit = False
         EmployeeInfo.Show()
         Me.Hide()
     End Sub
@@ -40,5 +42,19 @@ Public Class Main
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_EmpInc.Click
         Me.Hide()
         incomplete.Show()
+    End Sub
+
+    Private Sub Btn_Edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Edit.Click
+        Me.Hide()
+
+        Try
+            Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(Me.DataGridViewEmployee.SelectedRows(0).Cells("OracleID").Value))
+            EmployeeInfo.EmpEditService.Employee = _tempSelectedRow
+            EmployeeInfo.IsEdit = True
+            EmployeeInfo.ShowDialog()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class

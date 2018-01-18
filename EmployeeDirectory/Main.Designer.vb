@@ -135,6 +135,7 @@ Partial Class Main
         Me.DataGridViewEmployee.Location = New System.Drawing.Point(80, 339)
         Me.DataGridViewEmployee.Name = "DataGridViewEmployee"
         Me.DataGridViewEmployee.ReadOnly = True
+        Me.DataGridViewEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewEmployee.Size = New System.Drawing.Size(995, 442)
         Me.DataGridViewEmployee.TabIndex = 10
         '

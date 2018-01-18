@@ -3,12 +3,12 @@
 
     'Employee Information
 
-    Private _OracleID As Decimal
-    Public Property OracleID() As Decimal
+    Private _OracleID As Integer
+    Public Property OracleID() As Integer
         Get
             Return _OracleID
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As Integer)
             _OracleID = value
         End Set
     End Property
@@ -124,6 +124,16 @@
         End Set
     End Property
 
+    Private _TeamName As Integer
+    Public Property TeamName() As Integer
+        Get
+            Return _TeamName
+        End Get
+        Set(ByVal value As Integer)
+            _TeamName = value
+        End Set
+    End Property
+
     Private _LocalManagerID As Integer
     Public Property LocalManagerID() As Integer
         Get
@@ -131,6 +141,26 @@
         End Get
         Set(ByVal value As Integer)
             _LocalManagerID = value
+        End Set
+    End Property
+
+    Private _Mgr_Last_Name As Integer
+    Public Property Mgr_Last_Name() As Integer
+        Get
+            Return _Mgr_Last_Name
+        End Get
+        Set(ByVal value As Integer)
+            _Mgr_Last_Name = value
+        End Set
+    End Property
+
+    Private _Mgr_First_Name As Integer
+    Public Property Mgr_First_Name() As Integer
+        Get
+            Return _Mgr_First_Name
+        End Get
+        Set(ByVal value As Integer)
+            _Mgr_First_Name = value
         End Set
     End Property
 
@@ -151,6 +181,16 @@
         End Get
         Set(ByVal value As Integer)
             _SiteID = value
+        End Set
+    End Property
+
+    Private _SiteName As Integer
+    Public Property SiteName() As Integer
+        Get
+            Return _SiteName
+        End Get
+        Set(ByVal value As Integer)
+            _SiteName = value
         End Set
     End Property
 
@@ -184,12 +224,12 @@
         End Set
     End Property
 
-    Private _StartDate As DateTime
-    Public Property StartDate() As DateTime
+    Private _StartDate As DateTime?
+    Public Property StartDate() As DateTime?
         Get
             Return _StartDate
         End Get
-        Set(ByVal value As DateTime)
+        Set(ByVal value As DateTime?)
             _StartDate = value
         End Set
     End Property
@@ -204,12 +244,12 @@
         End Set
     End Property
 
-    Private _SFCDate As DateTime
-    Public Property SFCDate() As DateTime
+    Private _SFCDate As DateTime?
+    Public Property SFCDate() As DateTime?
         Get
             Return _SFCDate
         End Get
-        Set(ByVal value As DateTime)
+        Set(ByVal value As DateTime?)
             _SFCDate = value
         End Set
     End Property
@@ -274,23 +314,23 @@
         End Set
     End Property
 
-    Private _OfficeAddLine1 As String
-    Public Property OfficeAddLine1() As String
+    Private _SiteAddress1 As String
+    Public Property SiteAddress1() As String
         Get
-            Return _OfficeAddLine1
+            Return _SiteAddress1
         End Get
         Set(ByVal value As String)
-            _OfficeAddLine1 = value
+            _SiteAddress1 = value
         End Set
     End Property
 
-    Private _OfficeAddLine2 As String
-    Public Property OfficeAddLine2() As String
+    Private _SiteAddress2 As String
+    Public Property SiteAddress2() As String
         Get
-            Return _OfficeAddLine2
+            Return _SiteAddress2
         End Get
         Set(ByVal value As String)
-            _OfficeAddLine2 = value
+            _SiteAddress2 = value
         End Set
     End Property
 

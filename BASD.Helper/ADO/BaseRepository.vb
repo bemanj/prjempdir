@@ -46,6 +46,11 @@ Public MustInherit Class BaseRepository
 
     End Sub
 
+    Public Overridable Function UpdateData(ByVal entity As IEntity)
+
+        Throw New NotImplementedException()
+
+    End Function
 
 
 End Class
