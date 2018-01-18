@@ -4,6 +4,7 @@ Imports System.Configuration
 Public Class Main
     Dim eR As New EmployeeRepository
     Dim emp As New Employee
+    Dim _EmpEditService As New EmpEditService
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If LogIn.Username.Text = "manager" Then
@@ -36,31 +37,8 @@ Public Class Main
         Me.Hide()
     End Sub
 
-    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Label4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label2.Click
-
-    End Sub
 
 
-    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellContentClick
-
-    End Sub
-
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Edit.Click
-        EmployeeInfo.Show()
-        Me.Hide()
-    End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
 
@@ -76,5 +54,19 @@ Public Class Main
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_EmpInc.Click
         Me.Hide()
         incomplete.Show()
+    End Sub
+
+    Private Sub Btn_Edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Edit.Click
+        Me.Hide()
+
+        Try
+            Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(Me.DataGridViewEmployee.SelectedRows(0).Cells("OracleID").Value))
+            EmployeeInfo.EmpEditService.Employee = _tempSelectedRow
+            EmployeeInfo.IsEdit = True
+            EmployeeInfo.ShowDialog()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class
