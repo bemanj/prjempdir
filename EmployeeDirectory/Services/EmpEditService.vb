@@ -31,7 +31,7 @@
             .TB_FirstName.Text = Employee.FirstName
             .TB_Title.Text = Employee.Title
             .TB_MiddleIn.Text = Employee.MiddleName
-            .TB_Gender.Text = Employee.Gender
+            .CB_Gender.Text = Employee.Gender
             .TB_EmailAddress.Text = Employee.EmailAddress
             .TB_MobileNo.Text = Employee.MobileNo
             .TB_HomeAddLine1.Text = Employee.HomeAddress1

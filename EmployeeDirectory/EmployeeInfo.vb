@@ -59,15 +59,15 @@
 
     End Sub
 
-    Private _isEdit As Boolean
-    Public Property IsEdit() As Boolean
-        Get
-            Return _isEdit
-        End Get
-        Set(ByVal value As Boolean)
-            _isEdit = value
-        End Set
-    End Property
+    'Private _isEdit As Boolean
+    'Public Property IsEdit() As Boolean
+    '    Get
+    '        Return _isEdit
+    '    End Get
+    '    Set(ByVal value As Boolean)
+    '        _isEdit = value
+    '    End Set
+    'End Property
 
     Private _EmpEditService As EmpEditService
     Public Property EmpEditService() As EmpEditService
@@ -87,10 +87,10 @@
 
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Me.Close()
-        Main.Show()
-    End Sub
+    'Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Cancel.Click
+    '    Me.Close()
+    '    Main.Show()
+    'End Sub
 
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
         Me.Hide()
@@ -140,8 +140,8 @@
             .Department = TB_Department.Text
             .Entity = TB_Entity.Text
             .Shift = TB_Shift.Text
-            .OfficeAddLine1 = TB_AddressLine1.Text
-            .OfficeAddLine2 = TB_AddressLine2.Text
+            .SiteAddress1 = TB_AddressLine1.Text
+            .SiteAddress2 = TB_AddressLine2.Text
             .OraclePRDID = TB_OraclePRD.Text
             .MercuryID = TB_MercuryID.Text
             .NCOGroup = TB_NCOGrpID.Text
@@ -180,4 +180,44 @@
 
     End Function
 
+
+    Private Sub Btn_RevertClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_RevertClear.Click
+        ClearFields()
+    End Sub
+
+    Private Sub Btn_Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Cancel.Click
+        Me.Hide()
+        ClearFields()
+        Main.Show()
+    End Sub
+
+    Private Sub ClearFields()
+
+        For Each _control In Me.Controls
+
+            If _control.GetType() = GetType(TextBox) Then
+                CType(_control, TextBox).Clear()
+            ElseIf _control.GetType() = GetType(MaskedTextBox) Then
+                CType(_control, MaskedTextBox).Clear()
+            ElseIf _control.GetType() = GetType(ComboBox) Then
+                CType(_control, ComboBox).SelectedIndex = -1
+            End If
+
+            If _control.GetType() = GetType(TabControl) Then
+                For Each _TabPage As TabPage In CType(_control, TabControl).TabPages
+                    For Each _item In _TabPage.Controls
+                        If _item.GetType() = GetType(TextBox) Then
+                            CType(_item, TextBox).Clear()
+                        ElseIf _item.GetType() = GetType(MaskedTextBox) Then
+                            CType(_item, MaskedTextBox).Clear()
+                        ElseIf _item.GetType() = GetType(ComboBox) Then
+                            CType(_item, ComboBox).SelectedIndex = -1
+                        End If
+                    Next
+                Next
+            End If
+
+        Next
+
+    End Sub
 End Class

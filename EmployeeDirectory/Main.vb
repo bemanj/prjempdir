@@ -22,6 +22,7 @@ Public Class Main
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Add.Click
         EmployeeInfo.IsEdit = False
+        EmployeeInfo.Btn_RevertClear.Text = "Clear"
         EmployeeInfo.Show()
         Me.Hide()
     End Sub
