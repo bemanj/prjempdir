@@ -11,8 +11,10 @@ Public Class EmployeeRepository
     End Sub
 
     Public Overrides Function GetData(ByVal entity As IEntity) As BASD.Helper.IEntity
+        Dim _employee = CType(entity, Employee)
+
         Dim _tempParamList = New List(Of SqlParameter)()
-        _tempParamList.Add(New SqlParameter("@OracleID", entity.Id))
+        _tempParamList.Add(New SqlParameter("@OracleID", _employee.OracleID))
 
         Dim _tempEmployeeList = MyBase.List("[uspGetEmployee]", _tempParamList.ToArray())
 

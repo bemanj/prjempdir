@@ -88,6 +88,8 @@ Partial Class EmployeeInfo
         Me.TB_Team = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.AccessInfo = New System.Windows.Forms.TabPage()
+        Me.TB_PCName = New System.Windows.Forms.TextBox()
+        Me.Label40 = New System.Windows.Forms.Label()
         Me.TB_GithubID = New System.Windows.Forms.TextBox()
         Me.TB_ElsevierID = New System.Windows.Forms.TextBox()
         Me.TB_EGSPREMID = New System.Windows.Forms.TextBox()
@@ -110,8 +112,6 @@ Partial Class EmployeeInfo
         Me.TB_HomeAddLine1 = New System.Windows.Forms.TextBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
-        Me.TB_PCName = New System.Windows.Forms.TextBox()
-        Me.Label40 = New System.Windows.Forms.Label()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -758,6 +758,23 @@ Partial Class EmployeeInfo
         Me.AccessInfo.Text = "Access Information"
         Me.AccessInfo.UseVisualStyleBackColor = True
         '
+        'TB_PCName
+        '
+        Me.TB_PCName.Location = New System.Drawing.Point(130, 133)
+        Me.TB_PCName.Name = "TB_PCName"
+        Me.TB_PCName.Size = New System.Drawing.Size(121, 23)
+        Me.TB_PCName.TabIndex = 64
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.Location = New System.Drawing.Point(20, 142)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(55, 15)
+        Me.Label40.TabIndex = 63
+        Me.Label40.Text = "PC name"
+        '
         'TB_GithubID
         '
         Me.TB_GithubID.Location = New System.Drawing.Point(515, 103)
@@ -944,23 +961,6 @@ Partial Class EmployeeInfo
         Me.Label39.Size = New System.Drawing.Size(84, 15)
         Me.Label39.TabIndex = 92
         Me.Label39.Text = "Address Line 1"
-        '
-        'TB_PCName
-        '
-        Me.TB_PCName.Location = New System.Drawing.Point(130, 133)
-        Me.TB_PCName.Name = "TB_PCName"
-        Me.TB_PCName.Size = New System.Drawing.Size(121, 23)
-        Me.TB_PCName.TabIndex = 64
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(20, 142)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(55, 15)
-        Me.Label40.TabIndex = 63
-        Me.Label40.Text = "PC name"
         '
         'EmployeeInfo
         '
