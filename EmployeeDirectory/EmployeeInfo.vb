@@ -11,7 +11,7 @@
     End Property
 
 
-    Private _empinfo As EmployeeRepository
+    Private _empinfo As New EmployeeRepository
     Public Property EmpInfo() As EmployeeRepository
         Get
             Return _empinfo
@@ -26,11 +26,13 @@
         ' This call is required by the designer.
         InitializeComponent()
 
-        _empinfo = New EmployeeRepository()
+
+        _EmpEditService = New EmpEditService()
 
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+
 
     Private Sub TextBox26_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
@@ -38,20 +40,20 @@
 
     Private Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'disabled fields
-        'If LogIn.Username.Text = "user" And LogIn.UsernamePassword.Text = "user" Then
-        '    TB_StartDate.Enabled = False
-        '    TB_OnboardingTkt.Enabled = False
-        '    TB_SeatNo.Enabled = False
-        '    TB_Floor.Enabled = False
-        '    ' ComboBox3.Enabled = False
-        '    TB_USMgr.Enabled = False
-        '    CB_LocalMgr.Enabled = False
-        '    TB_Team.Enabled = False
-        '    TB_Recruiter.Enabled = False
-        '    TB_SFCDate.Enabled = False
-        '    CB_SFC.Enabled = False
-        '    Button3.Hide()
-        'End If
+        If LogIn.Username.Text = "user" And LogIn.UsernamePassword.Text = "user" Then
+            TB_StartDate.Enabled = False
+            TB_OnboardingTkt.Enabled = False
+            TB_SeatNo.Enabled = False
+            TB_Floor.Enabled = False
+            ' ComboBox3.Enabled = False
+            TB_USMgr.Enabled = False
+            CB_LocalMgr.Enabled = False
+            TB_Team.Enabled = False
+            TB_Recruiter.Enabled = False
+            TB_SFCDate.Enabled = False
+            CB_SFC.Enabled = False
+            Btn_Cancel.Hide()
+        End If
 
         If _isEdit Then
             _EmpEditService.PopulateFields(Me)
@@ -79,13 +81,7 @@
         End Set
     End Property
 
-    Public Sub New()
 
-        InitializeComponent()
-
-        _EmpEditService = New EmpEditService()
-
-    End Sub
 
     'Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Cancel.Click
     '    Me.Close()
@@ -157,13 +153,17 @@
             '.LocalManagerID = CB_Site.Text
             '.SiteID = CB_Site.Text
 
+
+
             .SFC = GetComboValue(CB_SFC)
             .IDCreated = GetComboValue(CB_IDCreated)
 
         End With
 
+
         If Me.IsEdit = True Then
             _empinfo.UpdateData(_emp)
+            _EmpEditService.PopulateFields(Me)
         Else
             _empinfo.InsertData(_emp)
             Clearfields()
@@ -182,7 +182,12 @@
 
 
     Private Sub Btn_RevertClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_RevertClear.Click
-        ClearFields()
+        If _isEdit Then
+            _EmpEditService.PopulateFields(Me)
+        Else
+            ClearFields()
+        End If
+
     End Sub
 
     Private Sub Btn_Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Cancel.Click

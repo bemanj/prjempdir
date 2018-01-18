@@ -27,7 +27,7 @@ Public Class Main
         Me.Hide()
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Edit.Click
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         EmployeeInfo.Show()
         Me.Hide()
     End Sub
@@ -45,7 +45,7 @@ Public Class Main
         incomplete.Show()
     End Sub
 
-    Private Sub Btn_Edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Edit.Click
+    Private Sub DataGridViewEmployee_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellContentClick
         Me.Hide()
 
         Try

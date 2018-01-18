@@ -31,16 +31,15 @@
             .TB_FirstName.Text = Employee.FirstName
             .TB_Title.Text = Employee.Title
             .TB_MiddleIn.Text = Employee.MiddleName
-            .CB_Gender.Text = Employee.Gender
             .TB_EmailAddress.Text = Employee.EmailAddress
             .TB_MobileNo.Text = Employee.MobileNo
             .TB_HomeAddLine1.Text = Employee.HomeAddress1
             .TB_PhoneExt.Text = Employee.PhoneExtension
             .TB_HomeAddLine2.Text = Employee.HomeAddress2
-            '.TB_Team.Text = Employee.TeamID
-            '.CB_LocalMgr.Text = Employee.LocalManagerID
+            .TB_Team.Text = Employee.TeamName
+            .CB_LocalMgr.Text = Employee.Mgr_Last_Name.Trim & ", " & Employee.Mgr_First_Name.Trim
             .TB_USMgr.Text = Employee.USManager
-            '.CB_Site.Text = Employee.SiteID
+            .CB_Site.Text = Employee.SiteName
             .CB_Site.SelectedItem = Employee.SiteID
             .TB_Floor.Text = Employee.Floor
             .TB_SeatNo.Text = Employee.SeatNumber
@@ -49,7 +48,6 @@
             .CB_SFC.Text = Employee.SFC
             .TB_SFCDate.Text = Employee.SFCDate
             .TB_Recruiter.Text = Employee.Recruiter
-            '.CB_IDCreated.Text = Employee.IDCreated
             .TB_Division.Text = Employee.Division
             .TB_Department.Text = Employee.Department
             .TB_Entity.Text = Employee.Entity
@@ -65,6 +63,24 @@
             .TB_EGSPREMID.Text = Employee.EGSPremID
             .TB_ElsevierID.Text = Employee.ElsevierID
             .TB_GithubID.Text = Employee.GITHubID
+            If Employee.IDCreated = False Then
+                .CB_IDCreated.SelectedItem = "No"
+            Else
+                .CB_IDCreated.SelectedItem = "Yes"
+            End If
+
+            If Employee.SFC = False Then
+                .CB_SFC.SelectedItem = "No"
+            Else
+                .CB_SFC.SelectedItem = "Yes"
+            End If
+
+            If Employee.Gender = "M" Then
+                .CB_Gender.SelectedItem = "Male"
+            Else
+                .CB_Gender.SelectedItem = "Female"
+            End If
+
 
         End With
     End Sub
