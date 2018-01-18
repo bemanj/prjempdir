@@ -184,12 +184,12 @@
         End Set
     End Property
 
-    Private _StartDate As DateTime
-    Public Property StartDate() As DateTime
+    Private _StartDate As DateTime?
+    Public Property StartDate() As DateTime?
         Get
             Return _StartDate
         End Get
-        Set(ByVal value As DateTime)
+        Set(ByVal value As DateTime?)
             _StartDate = value
         End Set
     End Property
@@ -204,12 +204,12 @@
         End Set
     End Property
 
-    Private _SFCDate As DateTime
-    Public Property SFCDate() As DateTime
+    Private _SFCDate As DateTime?
+    Public Property SFCDate() As DateTime?
         Get
             Return _SFCDate
         End Get
-        Set(ByVal value As DateTime)
+        Set(ByVal value As DateTime?)
             _SFCDate = value
         End Set
     End Property
