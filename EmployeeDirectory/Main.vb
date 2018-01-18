@@ -12,10 +12,10 @@ Public Class Main
         TB_MgrV_OracleID.Focus()
         If LogIn.Username.Text = "manager" Then
             Me.Text = "Hello Manager!"
-            emp.LocalManagerID = 1 'this will serve as the local manager ID - for demo only
+            emp.LocalManagerID = 2 'this will serve as the local manager ID - for demo only
             DataGridViewEmployee.DataSource = eR.GetListData(emp)
         Else
-            emp.LocalManagerID = 2 'this will serve as the admin ID - for demo only (sp used same for manager's)
+            emp.LocalManagerID = 0 'this will serve as the admin ID - for demo only (sp used same for manager's)
             DataGridViewEmployee.DataSource = eR.GetListData(emp)
         End If
     End Sub
