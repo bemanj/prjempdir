@@ -34,7 +34,6 @@ Partial Class Main
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridViewEmployee = New System.Windows.Forms.DataGridView()
         Me.Btn_Search = New System.Windows.Forms.Button()
-        Me.Btn_Edit = New System.Windows.Forms.Button()
         Me.Btn_Add = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -143,23 +142,12 @@ Partial Class Main
         '
         Me.Btn_Search.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Btn_Search.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Search.Location = New System.Drawing.Point(726, 304)
+        Me.Btn_Search.Location = New System.Drawing.Point(811, 304)
         Me.Btn_Search.Name = "Btn_Search"
         Me.Btn_Search.Size = New System.Drawing.Size(80, 29)
         Me.Btn_Search.TabIndex = 11
         Me.Btn_Search.Text = "Search"
         Me.Btn_Search.UseVisualStyleBackColor = False
-        '
-        'Btn_Edit
-        '
-        Me.Btn_Edit.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Btn_Edit.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Edit.Location = New System.Drawing.Point(812, 304)
-        Me.Btn_Edit.Name = "Btn_Edit"
-        Me.Btn_Edit.Size = New System.Drawing.Size(80, 29)
-        Me.Btn_Edit.TabIndex = 12
-        Me.Btn_Edit.Text = "Edit"
-        Me.Btn_Edit.UseVisualStyleBackColor = False
         '
         'Btn_Add
         '
@@ -248,7 +236,6 @@ Partial Class Main
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Btn_Add)
-        Me.Controls.Add(Me.Btn_Edit)
         Me.Controls.Add(Me.Btn_Search)
         Me.Controls.Add(Me.DataGridViewEmployee)
         Me.Controls.Add(Me.Label5)
@@ -283,7 +270,6 @@ Partial Class Main
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents DataGridViewEmployee As System.Windows.Forms.DataGridView
     Friend WithEvents Btn_Search As System.Windows.Forms.Button
-    Friend WithEvents Btn_Edit As System.Windows.Forms.Button
     Friend WithEvents Btn_Add As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button

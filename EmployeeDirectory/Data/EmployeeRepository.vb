@@ -15,6 +15,7 @@ Public Class EmployeeRepository
 
         Dim _tempParamList = New List(Of SqlParameter)()
         _tempParamList.Add(New SqlParameter("@OracleID", _employee.OracleID))
+        '_tempParamList.Add(New SqlParameter("@OracleID", Employee.OracleID))
 
         Dim _tempEmployeeList = MyBase.List("[uspGetEmployee]", _tempParamList.ToArray())
 

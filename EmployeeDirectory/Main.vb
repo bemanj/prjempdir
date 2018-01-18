@@ -15,7 +15,7 @@ Public Class Main
             emp.LocalManagerID = 1 'this will serve as the local manager ID - for demo only
             DataGridViewEmployee.DataSource = eR.GetListData(emp)
         Else
-            emp.LocalManagerID = 2 'this will serve as the admin ID - for demo only (sp used same for manager's)
+            emp.LocalManagerID = 0 'this will serve as the admin ID - for demo only (sp used same for manager's)
             DataGridViewEmployee.DataSource = eR.GetListData(emp)
         End If
     End Sub
@@ -25,10 +25,10 @@ Public Class Main
         Me.Hide()
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Edit.Click
-        EmployeeInfo.Show()
-        Me.Hide()
-    End Sub
+    'Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Edit.Click
+    '    EmployeeInfo.Show()
+    '    Me.Hide()
+    'End Sub
 
     Public Sub BtnLogOut_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogOut.Click
         Me.Hide()
@@ -43,7 +43,21 @@ Public Class Main
         incomplete.Show()
     End Sub
 
-    Private Sub Btn_Edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Edit.Click
+    'Private Sub Btn_Edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Edit.Click
+    '    Me.Hide()
+
+    '    Try
+    '        Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(Me.DataGridViewEmployee.SelectedRows(0).Cells("OracleID").Value))
+    '        EmployeeInfo.EmpEditService.Employee = _tempSelectedRow
+    '        EmployeeInfo.IsEdit = True
+    '        EmployeeInfo.ShowDialog()
+
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.Message)
+    '    End Try
+    'End Sub
+
+    Private Sub DataGridViewEmployee_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellContentClick
         Me.Hide()
 
         Try
