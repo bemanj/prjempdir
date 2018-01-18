@@ -111,7 +111,7 @@ Partial Class EmployeeInfo
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.CB_Gender = New System.Windows.Forms.ComboBox()
-        Me.MB_MobileNo = New System.Windows.Forms.MaskedTextBox()
+        Me.TB_MobileNo = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -960,20 +960,19 @@ Partial Class EmployeeInfo
         Me.CB_Gender.Size = New System.Drawing.Size(121, 21)
         Me.CB_Gender.TabIndex = 96
         '
-        'MB_MobileNo
+        'TB_MobileNo
         '
-        Me.MB_MobileNo.Location = New System.Drawing.Point(115, 339)
-        Me.MB_MobileNo.Mask = "00000000000"
-        Me.MB_MobileNo.Name = "MB_MobileNo"
-        Me.MB_MobileNo.Size = New System.Drawing.Size(149, 20)
-        Me.MB_MobileNo.TabIndex = 97
+        Me.TB_MobileNo.Location = New System.Drawing.Point(115, 340)
+        Me.TB_MobileNo.Name = "TB_MobileNo"
+        Me.TB_MobileNo.Size = New System.Drawing.Size(150, 20)
+        Me.TB_MobileNo.TabIndex = 97
         '
         'EmployeeInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1164, 862)
-        Me.Controls.Add(Me.MB_MobileNo)
+        Me.Controls.Add(Me.TB_MobileNo)
         Me.Controls.Add(Me.CB_Gender)
         Me.Controls.Add(Me.TB_HomeAddLine2)
         Me.Controls.Add(Me.TB_HomeAddLine1)
@@ -1110,5 +1109,5 @@ Partial Class EmployeeInfo
     Friend WithEvents TB_PCName As System.Windows.Forms.TextBox
     Friend WithEvents Label40 As System.Windows.Forms.Label
     Friend WithEvents CB_Gender As System.Windows.Forms.ComboBox
-    Friend WithEvents MB_MobileNo As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents TB_MobileNo As System.Windows.Forms.TextBox
 End Class

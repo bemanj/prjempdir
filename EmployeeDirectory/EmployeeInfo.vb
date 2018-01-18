@@ -123,7 +123,7 @@
 
             .SFC = GetComboValue(CB_SFC)
             .IDCreated = GetComboValue(CB_IDCreated)
-            
+
         End With
 
         If Me.IsEdit = True Then
@@ -133,7 +133,7 @@
         End If
     End Sub
 
- 
+
     Public Function GetComboValue(ByRef cbox As ComboBox) As Boolean
 
         If CType(cbox, ComboBox).Text = "Yes" Then
