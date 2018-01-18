@@ -51,10 +51,11 @@
             CB_SFC.Enabled = False
             Button3.Hide()
         End If
+
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Me.Hide()
+        Me.Close()
         Main.Show()
     End Sub
 
@@ -70,9 +71,8 @@
     End Sub
 
     Private Sub Btn_Save_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Save.Click
-        'call function that gets inputs from users - By ben'
-        Dim _emp As New Employee
 
+        Dim _emp As New Employee
 
         With _emp
             'Hardcoded
@@ -80,9 +80,10 @@
             .SiteID = 1
             .LocalManagerID = 2 'Reb
             'MASKED
-            If IsNumeric(MB_MobileNo.Text) Then
-                .MobileNo = MB_MobileNo.Text
+            If Not TB_MobileNo.Text = String.Empty Then
+                .MobileNo = TB_MobileNo.Text
             End If
+
             'TEXTBOX
             .OracleID = TB_OracleID.Text
             .LastName = TB_LastName.Text
@@ -94,8 +95,9 @@
             .Floor = TB_SeatNo.Text
             .SeatNumber = TB_SeatNo.Text
             .OnboardingTicket = TB_OnboardingTkt.Text
-            .StartDate = Date.Now
-            '.StartDate = TB_StartDate.Text
+            If Not TB_StartDate.Text = String.Empty Then
+                .StartDate = TB_StartDate.Text
+            End If
             If Not TB_SFCDate.Text = String.Empty Then
                 .SFCDate = TB_SFCDate.Text
             End If
@@ -130,9 +132,9 @@
             _empinfo.UpdateData(_emp)
         Else
             _empinfo.InsertData(_emp)
+            Clearfields()
         End If
     End Sub
-
 
     Public Function GetComboValue(ByRef cbox As ComboBox) As Boolean
 
@@ -143,4 +145,5 @@
         End If
 
     End Function
+
 End Class

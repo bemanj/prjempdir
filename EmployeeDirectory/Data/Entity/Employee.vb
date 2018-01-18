@@ -93,12 +93,12 @@
         End Set
     End Property
 
-    Private _MobileNo As Long
-    Public Property MobileNo() As Long
+    Private _MobileNo As Decimal
+    Public Property MobileNo() As Decimal
         Get
             Return _MobileNo
         End Get
-        Set(ByVal value As Long)
+        Set(ByVal value As Decimal)
             _MobileNo = value
         End Set
     End Property
