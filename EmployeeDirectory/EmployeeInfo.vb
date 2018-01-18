@@ -71,7 +71,76 @@
 
     Private Sub Btn_Save_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Save.Click
         'call function that gets inputs from users - By ben'
+        Dim _emp As New Employee
 
 
+        With _emp
+            'Hardcoded
+            .TeamID = 4 'BASD
+            .SiteID = 1
+            .LocalManagerID = 2 'Reb
+            'MASKED
+            If IsNumeric(MB_MobileNo.Text) Then
+                .MobileNo = MB_MobileNo.Text
+            End If
+            'TEXTBOX
+            .OracleID = TB_OracleID.Text
+            .LastName = TB_LastName.Text
+            .FirstName = TB_FirstName.Text
+            .MiddleName = TB_MiddleIn.Text
+            .HomeAddress1 = TB_HomeAddLine1.Text
+            .HomeAddress2 = TB_HomeAddLine2.Text
+            .EmailAddress = TB_EmailAddress.Text
+            .Floor = TB_SeatNo.Text
+            .SeatNumber = TB_SeatNo.Text
+            .OnboardingTicket = TB_OnboardingTkt.Text
+            .StartDate = Date.Now
+            '.StartDate = TB_StartDate.Text
+            If Not TB_SFCDate.Text = String.Empty Then
+                .SFCDate = TB_SFCDate.Text
+            End If
+            .Recruiter = TB_Recruiter.Text
+            .Division = TB_Division.Text
+            .Department = TB_Department.Text
+            .Entity = TB_Entity.Text
+            .Shift = TB_Shift.Text
+            .OfficeAddLine1 = TB_AddressLine1.Text
+            .OfficeAddLine2 = TB_AddressLine2.Text
+            .OraclePRDID = TB_OraclePRD.Text
+            .MercuryID = TB_MercuryID.Text
+            .NCOGroup = TB_NCOGrpID.Text
+            .EISID = TB_EISID.Text
+            .PCName = TB_PCName.Text
+            .InsightID = TB_InsightID.Text
+            .EGSPremID = TB_EGSPREMID.Text
+            .ElsevierID = TB_ElsevierID.Text
+            .GITHubID = TB_GithubID.Text
+
+            'COMBOBOX
+            .Gender = CB_Gender.Text
+            '.LocalManagerID = CB_Site.Text
+            '.SiteID = CB_Site.Text
+
+            .SFC = GetComboValue(CB_SFC)
+            .IDCreated = GetComboValue(CB_IDCreated)
+            
+        End With
+
+        If Me.IsEdit = True Then
+            _empinfo.UpdateData(_emp)
+        Else
+            _empinfo.InsertData(_emp)
+        End If
     End Sub
+
+ 
+    Public Function GetComboValue(ByRef cbox As ComboBox) As Boolean
+
+        If CType(cbox, ComboBox).Text = "Yes" Then
+            Return 1
+        Else
+            Return 0
+        End If
+
+    End Function
 End Class

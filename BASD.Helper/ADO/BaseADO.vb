@@ -88,6 +88,8 @@ Public MustInherit Class BaseADO
         End If
     End Function
 
+    
+
     'Protected ReadOnly Property ADOCommand As SqlCommand
     '    Get
     '        Return _sqlCommand

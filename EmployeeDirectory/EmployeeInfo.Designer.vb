@@ -36,9 +36,7 @@ Partial Class EmployeeInfo
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TB_Title = New System.Windows.Forms.TextBox()
-        Me.TB_MobileNo = New System.Windows.Forms.TextBox()
         Me.TB_PhoneExt = New System.Windows.Forms.TextBox()
-        Me.TB_Gender = New System.Windows.Forms.TextBox()
         Me.TB_EmailAddress = New System.Windows.Forms.TextBox()
         Me.Btn_Save = New System.Windows.Forms.Button()
         Me.Btn_Cancel = New System.Windows.Forms.Button()
@@ -112,6 +110,8 @@ Partial Class EmployeeInfo
         Me.TB_HomeAddLine1 = New System.Windows.Forms.TextBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
+        Me.CB_Gender = New System.Windows.Forms.ComboBox()
+        Me.MB_MobileNo = New System.Windows.Forms.MaskedTextBox()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -240,26 +240,12 @@ Partial Class EmployeeInfo
         Me.TB_Title.Size = New System.Drawing.Size(150, 20)
         Me.TB_Title.TabIndex = 16
         '
-        'TB_MobileNo
-        '
-        Me.TB_MobileNo.Location = New System.Drawing.Point(115, 340)
-        Me.TB_MobileNo.Name = "TB_MobileNo"
-        Me.TB_MobileNo.Size = New System.Drawing.Size(150, 20)
-        Me.TB_MobileNo.TabIndex = 17
-        '
         'TB_PhoneExt
         '
         Me.TB_PhoneExt.Location = New System.Drawing.Point(115, 370)
         Me.TB_PhoneExt.Name = "TB_PhoneExt"
         Me.TB_PhoneExt.Size = New System.Drawing.Size(149, 20)
         Me.TB_PhoneExt.TabIndex = 18
-        '
-        'TB_Gender
-        '
-        Me.TB_Gender.Location = New System.Drawing.Point(115, 310)
-        Me.TB_Gender.Name = "TB_Gender"
-        Me.TB_Gender.Size = New System.Drawing.Size(100, 20)
-        Me.TB_Gender.TabIndex = 19
         '
         'TB_EmailAddress
         '
@@ -438,6 +424,7 @@ Partial Class EmployeeInfo
         'CB_IDCreated
         '
         Me.CB_IDCreated.FormattingEnabled = True
+        Me.CB_IDCreated.Items.AddRange(New Object() {"Yes", "No"})
         Me.CB_IDCreated.Location = New System.Drawing.Point(516, 78)
         Me.CB_IDCreated.Name = "CB_IDCreated"
         Me.CB_IDCreated.Size = New System.Drawing.Size(121, 23)
@@ -591,6 +578,7 @@ Partial Class EmployeeInfo
         '
         'CB_SFC
         '
+        Me.CB_SFC.AccessibleName = "CB_SFC"
         Me.CB_SFC.FormattingEnabled = True
         Me.CB_SFC.Items.AddRange(New Object() {"Yes", "No"})
         Me.CB_SFC.Location = New System.Drawing.Point(130, 241)
@@ -962,11 +950,31 @@ Partial Class EmployeeInfo
         Me.Label39.TabIndex = 92
         Me.Label39.Text = "Address Line 1"
         '
+        'CB_Gender
+        '
+        Me.CB_Gender.AutoCompleteCustomSource.AddRange(New String() {"Male", "Female"})
+        Me.CB_Gender.FormattingEnabled = True
+        Me.CB_Gender.Items.AddRange(New Object() {"Male", "Female"})
+        Me.CB_Gender.Location = New System.Drawing.Point(115, 308)
+        Me.CB_Gender.Name = "CB_Gender"
+        Me.CB_Gender.Size = New System.Drawing.Size(121, 21)
+        Me.CB_Gender.TabIndex = 96
+        '
+        'MB_MobileNo
+        '
+        Me.MB_MobileNo.Location = New System.Drawing.Point(115, 339)
+        Me.MB_MobileNo.Mask = "00000000000"
+        Me.MB_MobileNo.Name = "MB_MobileNo"
+        Me.MB_MobileNo.Size = New System.Drawing.Size(149, 20)
+        Me.MB_MobileNo.TabIndex = 97
+        '
         'EmployeeInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1164, 862)
+        Me.Controls.Add(Me.MB_MobileNo)
+        Me.Controls.Add(Me.CB_Gender)
         Me.Controls.Add(Me.TB_HomeAddLine2)
         Me.Controls.Add(Me.TB_HomeAddLine1)
         Me.Controls.Add(Me.Label38)
@@ -980,9 +988,7 @@ Partial Class EmployeeInfo
         Me.Controls.Add(Me.Btn_Cancel)
         Me.Controls.Add(Me.Btn_Save)
         Me.Controls.Add(Me.TB_EmailAddress)
-        Me.Controls.Add(Me.TB_Gender)
         Me.Controls.Add(Me.TB_PhoneExt)
-        Me.Controls.Add(Me.TB_MobileNo)
         Me.Controls.Add(Me.TB_Title)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.PictureBox3)
@@ -1031,9 +1037,7 @@ Partial Class EmployeeInfo
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents TB_Title As System.Windows.Forms.TextBox
-    Friend WithEvents TB_MobileNo As System.Windows.Forms.TextBox
     Friend WithEvents TB_PhoneExt As System.Windows.Forms.TextBox
-    Friend WithEvents TB_Gender As System.Windows.Forms.TextBox
     Friend WithEvents TB_EmailAddress As System.Windows.Forms.TextBox
     Friend WithEvents Btn_Save As System.Windows.Forms.Button
     Friend WithEvents Btn_Cancel As System.Windows.Forms.Button
@@ -1105,4 +1109,6 @@ Partial Class EmployeeInfo
     Friend WithEvents Label39 As System.Windows.Forms.Label
     Friend WithEvents TB_PCName As System.Windows.Forms.TextBox
     Friend WithEvents Label40 As System.Windows.Forms.Label
+    Friend WithEvents CB_Gender As System.Windows.Forms.ComboBox
+    Friend WithEvents MB_MobileNo As System.Windows.Forms.MaskedTextBox
 End Class
