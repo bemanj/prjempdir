@@ -114,3 +114,41 @@ C:\Users\lb004382477\Documents\EmployeeDirectory\EmployeeDirectory\bin\Debug\Emp
 C:\Users\lb004382477\Documents\EmployeeDirectory\EmployeeDirectory\bin\Debug\BASD.Helper.dll
 C:\Users\lb004382477\Documents\EmployeeDirectory\EmployeeDirectory\bin\Debug\BASD.Helper.pdb
 C:\Users\lb004382477\Documents\EmployeeDirectory\EmployeeDirectory\bin\Debug\BASD.Helper.xml
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.exe
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.pdb
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\bin\Debug\EmployeeDirectory.exe
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\bin\Debug\EmployeeDirectory.pdb
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\bin\Debug\EmployeeDirectory.xml
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\bin\Debug\BASD.Helper.dll
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\bin\Debug\BASD.Helper.pdb
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\bin\Debug\BASD.Helper.xml
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.vbprojResolveAssemblyReference.cache
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.EmployeeInfo.resources
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.admin.resources
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.EmployeeInfoIncomplete.resources
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.incomplete.resources
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.LogIn.resources
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.Main.resources
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.RecorNotFound.resources
+C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.vbproj.GenerateResource.Cache
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\bin\Debug\EmployeeDirectory.exe.config
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\bin\Debug\EmployeeDirectory.exe
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\bin\Debug\EmployeeDirectory.pdb
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\bin\Debug\EmployeeDirectory.xml
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\bin\Debug\BASD.Helper.dll
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\bin\Debug\BASD.Helper.pdb
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\bin\Debug\BASD.Helper.xml
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.vbprojResolveAssemblyReference.cache
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.EmployeeInfo.resources
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.admin.resources
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.EmployeeInfoIncomplete.resources
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.incomplete.resources
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.LogIn.resources
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.Main.resources
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\WindowsApplication1.RecorNotFound.resources
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.vbproj.GenerateResource.Cache
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.vbproj.CoreCompileInputs.cache
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.exe
+C:\Users\RB004259604\Desktop\projects\empdir\EmployeeDirectory\obj\x86\Debug\EmployeeDirectory.pdb
