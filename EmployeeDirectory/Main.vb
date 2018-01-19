@@ -7,6 +7,10 @@ Public Class Main
     Dim dt As New DataTable
     Dim _EmpEditService As New EmpEditService
 
+    Private Sub Main_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
+    End Sub
+
     Public Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         dt.Clear()
         TB_MgrV_OracleID.Focus()
@@ -45,7 +49,8 @@ Public Class Main
         incomplete.Show()
     End Sub
 
-    Private Sub DataGridViewEmployee_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellContentClick
+    'Private Sub DataGridViewEmployee_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellContentClick
+    Private Sub DataGridViewEmployee_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellDoubleClick
         Me.Hide()
 
         Try

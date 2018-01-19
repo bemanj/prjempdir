@@ -49,12 +49,15 @@
             ' ComboBox3.Enabled = False
             TB_USMgr.Enabled = False
             CB_LocalMgr.Enabled = False
-            TB_Team.Enabled = False
+            CB_Team.Enabled = False
             TB_Recruiter.Enabled = False
             TB_SFCDate.Enabled = False
             CB_SFC.Enabled = False
             Btn_Cancel.Hide()
         End If
+
+        TB_AddressLine1.Enabled = False
+        TB_AddressLine2.Enabled = False
 
         If _isEdit Then
             _EmpEditService.PopulateFields(Me)
@@ -115,64 +118,79 @@
         Dim _emp As New Employee
 
         With _emp
-            'Hardcoded
-            .TeamID = 4 'BASD
-            .SiteID = 1
-            .LocalManagerID = 2 'Reb
-            'MASKED
-            If Not TB_MobileNo.Text = String.Empty Then
-                .MobileNo = TB_MobileNo.Text
+            'Temporary
+            If CB_Team.Text = "BASD" Then
+                .TeamID = 4
             End If
-
+            If CB_Site.Text = "Alorica Center" Then
+                .SiteID = 1
+            End If
+            If CB_LocalMgr.Text = "Rebazar Borromeo" Then
+                .LocalManagerID = 2
+            End If
+            '.UserType 
+            If LogIn.Username.Text = "user" Then
+                .UserType = 0
+            ElseIf LogIn.Username.Text = "manager" Then
+                .UserType = 1
+            ElseIf LogIn.Username.Text = "admin" Then
+                .UserType = 2
+            Else
+                .UserType = 3
+            End If
             'TEXTBOX
             .OracleID = TB_OracleID.Text
+            .Title = TB_Title.Text
             .LastName = TB_LastName.Text
             .FirstName = TB_FirstName.Text
             .MiddleName = TB_MiddleIn.Text
             .HomeAddress1 = TB_HomeAddLine1.Text
             .HomeAddress2 = TB_HomeAddLine2.Text
             .EmailAddress = TB_EmailAddress.Text
-            .Floor = TB_SeatNo.Text
+            If Not TB_MobileNo.Text = String.Empty Then
+                .MobileNo = TB_MobileNo.Text
+            End If
+            If Not TB_PhoneExt.Text = String.Empty Then
+                .PhoneExtension = TB_PhoneExt.Text
+            End If
+            .NCOGroup = TB_NCOGrpID.Text
+            .Division = TB_Division.Text
+            .Department = TB_Department.Text
+            .Entity = TB_Entity.Text
+            '.Mgr_Last_Name = CB_LocalMgr.Text
+            .USManager = TB_USMgr.Text
+            .Floor = TB_Floor.Text
             .SeatNumber = TB_SeatNo.Text
             .OnboardingTicket = TB_OnboardingTkt.Text
             If Not TB_StartDate.Text = String.Empty Then
                 .StartDate = TB_StartDate.Text
             End If
-            If Not TB_SFCDate.Text = String.Empty Then
-                .SFCDate = TB_SFCDate.Text
-            End If
-            .Recruiter = TB_Recruiter.Text
-            .Division = TB_Division.Text
-            .Department = TB_Department.Text
-            .Entity = TB_Entity.Text
             .Shift = TB_Shift.Text
-            .SiteAddress1 = TB_AddressLine1.Text
-            .SiteAddress2 = TB_AddressLine2.Text
-            .OraclePRDID = TB_OraclePRD.Text
-            .MercuryID = TB_MercuryID.Text
-            .NCOGroup = TB_NCOGrpID.Text
-            .EISID = TB_EISID.Text
             .PCName = TB_PCName.Text
+            .MercuryID = TB_MercuryID.Text
+            .OraclePRDID = TB_OraclePRD.Text
+            .EISID = TB_EISID.Text
             .InsightID = TB_InsightID.Text
             .EGSPremID = TB_EGSPREMID.Text
             .ElsevierID = TB_ElsevierID.Text
             .GITHubID = TB_GithubID.Text
+            If Not TB_SFCDate.Text = String.Empty Then
+                .SFCDate = TB_SFCDate.Text
+            End If
+            .Recruiter = TB_Recruiter.Text
 
             'COMBOBOX
             .Gender = CB_Gender.Text
+            .IDCreated = GetComboValue(CB_IDCreated)
             '.LocalManagerID = CB_Site.Text
             '.SiteID = CB_Site.Text
-
-
-
             .SFC = GetComboValue(CB_SFC)
             .IDCreated = GetComboValue(CB_IDCreated)
             .Mgr_First_Name = "Rebazar"
             .Mgr_Last_Name = "Borromeo"
             .SiteName = CB_Site.Text
-            .TeamName = TB_Team.Text
+            .TeamName = CB_Team.Text
         End With
-
 
         If Me.IsEdit = True Then
             _empinfo.UpdateData(_emp)
@@ -204,9 +222,18 @@
 
     End Sub
 
+    Private Sub EmployeeInfo_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        Me.Hide()
+        ClearFields()
+        Main.Main_Load(e, e)
+        Main.Show()
+    End Sub
+
+
     Private Sub Btn_Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Cancel.Click
         Me.Hide()
         ClearFields()
+        Main.Main_Load(e, e)
         Main.Show()
     End Sub
 
