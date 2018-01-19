@@ -23,15 +23,22 @@ Public Class EmployeeRepository
     End Function
 
     Public Overrides Function GetListData(ByVal entity As IEntity) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
+        Dim _employee = CType(entity, Employee)
         Dim _tempParamList = New List(Of SqlParameter)()
-        _tempParamList.Add(New SqlParameter("@ManagerID", entity.Id))
-
-        '    Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
-        '    Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
-        'End Function
-        Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
-        Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
+        _tempParamList.Add(New SqlParameter("@ManagerID", _employee.LocalManagerID))
+        Dim _tempEmployeeList = MyBase.List("[uspGetEmployee]", _tempParamList.ToArray())
+        Return _tempEmployeeList.SingleMapToEntity(Of Employee)().ToList
     End Function
+    'Public Overrides Function GetListData(ByVal entity As IEntity) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
+    '    Dim _tempParamList = New List(Of SqlParameter)()
+    '    _tempParamList.Add(New SqlParameter("@ManagerID", entity.Id))
+
+    '    '    Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
+    '    '    Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
+    '    'End Function
+    '    Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
+    '    Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
+    'End Function
     'sofie
     Public Overrides Function InsertData(ByVal entity As BASD.Helper.IEntity) As Integer
         Dim _tempParamList = New List(Of SqlParameter)()

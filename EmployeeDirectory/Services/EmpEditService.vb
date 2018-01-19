@@ -24,6 +24,10 @@
 
     Public Sub PopulateFields(ByVal owner As EmployeeInfo)
 
+        owner.CB_SFC.Items.Clear()
+        owner.CB_SFC.Items.Add("Yes")
+        owner.CB_SFC.Items.Add("No")
+
         With owner
             .TB_OracleID.Text = Employee.OracleID
             .TB_LastName.Text = Employee.LastName
@@ -80,6 +84,7 @@
             Else
                 .CB_Gender.SelectedItem = "Female"
             End If
+
 
 
         End With

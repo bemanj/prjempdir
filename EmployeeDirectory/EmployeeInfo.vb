@@ -167,16 +167,20 @@
 
             .SFC = GetComboValue(CB_SFC)
             .IDCreated = GetComboValue(CB_IDCreated)
-
+            .Mgr_First_Name = "Rebazar"
+            .Mgr_Last_Name = "Borromeo"
+            .SiteName = CB_Site.Text
+            .TeamName = TB_Team.Text
         End With
 
 
         If Me.IsEdit = True Then
             _empinfo.UpdateData(_emp)
+            _EmpEditService.Employee = _emp
             _EmpEditService.PopulateFields(Me)
         Else
             _empinfo.InsertData(_emp)
-            Clearfields()
+            ClearFields()
         End If
     End Sub
 
