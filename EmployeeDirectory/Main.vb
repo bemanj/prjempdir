@@ -57,6 +57,7 @@ Public Class Main
             Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(Me.DataGridViewEmployee.SelectedRows(0).Cells("OracleID").Value))
             EmployeeInfo.EmpEditService.Employee = _tempSelectedRow
             EmployeeInfo.IsEdit = True
+            EmployeeInfo.Btn_RevertClear.Text = "Revert"
             EmployeeInfo.ShowDialog()
 
         Catch ex As Exception

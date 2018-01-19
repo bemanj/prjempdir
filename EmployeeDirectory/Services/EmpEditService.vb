@@ -72,6 +72,8 @@
             End If
             If Employee.SiteID = 1 Then
                 .CB_Site.Text = "Alorica Center"
+                .TB_AddressLine1.Text = "MJ Corporate Plaza, 2310 Pasong Tamo Extension, "
+                .TB_AddressLine2.Text = "Brgy Magallanes, Makati City 1231"
             End If
             If Employee.TeamID = 4 Then
                 .CB_Team.Text = "BASD"
