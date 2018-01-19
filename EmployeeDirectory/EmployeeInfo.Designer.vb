@@ -83,7 +83,6 @@ Partial Class EmployeeInfo
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.TB_Team = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.AccessInfo = New System.Windows.Forms.TabPage()
         Me.TB_PCName = New System.Windows.Forms.TextBox()
@@ -112,6 +111,7 @@ Partial Class EmployeeInfo
         Me.Label39 = New System.Windows.Forms.Label()
         Me.CB_Gender = New System.Windows.Forms.ComboBox()
         Me.TB_MobileNo = New System.Windows.Forms.TextBox()
+        Me.CB_Team = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -361,6 +361,7 @@ Partial Class EmployeeInfo
         '
         'OfficeInfo
         '
+        Me.OfficeInfo.Controls.Add(Me.CB_Team)
         Me.OfficeInfo.Controls.Add(Me.CB_LocalMgr)
         Me.OfficeInfo.Controls.Add(Me.CB_Site)
         Me.OfficeInfo.Controls.Add(Me.CB_IDCreated)
@@ -395,7 +396,6 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.Controls.Add(Me.Label26)
         Me.OfficeInfo.Controls.Add(Me.Label27)
         Me.OfficeInfo.Controls.Add(Me.Label28)
-        Me.OfficeInfo.Controls.Add(Me.TB_Team)
         Me.OfficeInfo.Controls.Add(Me.Label29)
         Me.OfficeInfo.Location = New System.Drawing.Point(4, 24)
         Me.OfficeInfo.Name = "OfficeInfo"
@@ -407,7 +407,9 @@ Partial Class EmployeeInfo
         '
         'CB_LocalMgr
         '
+        Me.CB_LocalMgr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_LocalMgr.FormattingEnabled = True
+        Me.CB_LocalMgr.Items.AddRange(New Object() {"Rebazar Borromeo"})
         Me.CB_LocalMgr.Location = New System.Drawing.Point(130, 48)
         Me.CB_LocalMgr.Name = "CB_LocalMgr"
         Me.CB_LocalMgr.Size = New System.Drawing.Size(121, 23)
@@ -415,7 +417,9 @@ Partial Class EmployeeInfo
         '
         'CB_Site
         '
+        Me.CB_Site.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_Site.FormattingEnabled = True
+        Me.CB_Site.Items.AddRange(New Object() {"Alorica Center"})
         Me.CB_Site.Location = New System.Drawing.Point(130, 103)
         Me.CB_Site.Name = "CB_Site"
         Me.CB_Site.Size = New System.Drawing.Size(121, 23)
@@ -423,6 +427,7 @@ Partial Class EmployeeInfo
         '
         'CB_IDCreated
         '
+        Me.CB_IDCreated.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_IDCreated.FormattingEnabled = True
         Me.CB_IDCreated.Items.AddRange(New Object() {"Yes", "No"})
         Me.CB_IDCreated.Location = New System.Drawing.Point(516, 78)
@@ -579,6 +584,7 @@ Partial Class EmployeeInfo
         'CB_SFC
         '
         Me.CB_SFC.AccessibleName = "CB_SFC"
+        Me.CB_SFC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_SFC.FormattingEnabled = True
         Me.CB_SFC.Items.AddRange(New Object() {"Yes", "No"})
         Me.CB_SFC.Location = New System.Drawing.Point(130, 241)
@@ -700,13 +706,6 @@ Partial Class EmployeeInfo
         Me.Label28.Size = New System.Drawing.Size(73, 15)
         Me.Label28.TabIndex = 86
         Me.Label28.Text = "US Manager"
-        '
-        'TB_Team
-        '
-        Me.TB_Team.Location = New System.Drawing.Point(130, 18)
-        Me.TB_Team.Name = "TB_Team"
-        Me.TB_Team.Size = New System.Drawing.Size(121, 23)
-        Me.TB_Team.TabIndex = 85
         '
         'Label29
         '
@@ -953,6 +952,7 @@ Partial Class EmployeeInfo
         'CB_Gender
         '
         Me.CB_Gender.AutoCompleteCustomSource.AddRange(New String() {"Male", "Female"})
+        Me.CB_Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_Gender.FormattingEnabled = True
         Me.CB_Gender.Items.AddRange(New Object() {"Male", "Female"})
         Me.CB_Gender.Location = New System.Drawing.Point(115, 308)
@@ -966,6 +966,16 @@ Partial Class EmployeeInfo
         Me.TB_MobileNo.Name = "TB_MobileNo"
         Me.TB_MobileNo.Size = New System.Drawing.Size(150, 20)
         Me.TB_MobileNo.TabIndex = 97
+        '
+        'CB_Team
+        '
+        Me.CB_Team.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_Team.FormattingEnabled = True
+        Me.CB_Team.Items.AddRange(New Object() {"BASD"})
+        Me.CB_Team.Location = New System.Drawing.Point(130, 19)
+        Me.CB_Team.Name = "CB_Team"
+        Me.CB_Team.Size = New System.Drawing.Size(121, 23)
+        Me.CB_Team.TabIndex = 122
         '
         'EmployeeInfo
         '
@@ -1081,7 +1091,6 @@ Partial Class EmployeeInfo
     Friend WithEvents Label26 As System.Windows.Forms.Label
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents TB_Team As System.Windows.Forms.TextBox
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents AccessInfo As System.Windows.Forms.TabPage
     Friend WithEvents TB_GithubID As System.Windows.Forms.TextBox
@@ -1110,4 +1119,5 @@ Partial Class EmployeeInfo
     Friend WithEvents Label40 As System.Windows.Forms.Label
     Friend WithEvents CB_Gender As System.Windows.Forms.ComboBox
     Friend WithEvents TB_MobileNo As System.Windows.Forms.TextBox
+    Friend WithEvents CB_Team As System.Windows.Forms.ComboBox
 End Class

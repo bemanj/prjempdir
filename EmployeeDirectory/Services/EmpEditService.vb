@@ -36,8 +36,8 @@
             .TB_HomeAddLine1.Text = Employee.HomeAddress1
             .TB_PhoneExt.Text = Employee.PhoneExtension
             .TB_HomeAddLine2.Text = Employee.HomeAddress2
-            .TB_Team.Text = Employee.TeamName
-            .CB_LocalMgr.Text = Employee.Mgr_Last_Name.Trim & ", " & Employee.Mgr_First_Name.Trim
+            .CB_Team.Text = Employee.TeamName
+            .CB_LocalMgr.Text = Employee.Mgr_Last_Name.Trim & ", " & Employee.Mgr_First_Name
             .TB_USMgr.Text = Employee.USManager
             .CB_Site.Text = Employee.SiteName
             .CB_Site.SelectedItem = Employee.SiteID
@@ -63,6 +63,15 @@
             .TB_EGSPREMID.Text = Employee.EGSPremID
             .TB_ElsevierID.Text = Employee.ElsevierID
             .TB_GithubID.Text = Employee.GITHubID
+            If Employee.LocalManagerID = 2 Then
+                .CB_LocalMgr.SelectedItem = "Rebazar Borromeo"
+            End If
+            If Employee.SiteID = 1 Then
+                .CB_Site.Text = "Alorica Center"
+            End If
+            If Employee.TeamID = 4 Then
+                .CB_Team.Text = "BASD"
+            End If
             If Employee.IDCreated = False Then
                 .CB_IDCreated.SelectedItem = "No"
             Else
@@ -74,6 +83,7 @@
             Else
                 .CB_SFC.SelectedItem = "Yes"
             End If
+
 
             If Employee.Gender = "M" Then
                 .CB_Gender.SelectedItem = "Male"

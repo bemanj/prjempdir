@@ -147,6 +147,10 @@
     Private _Mgr_Last_Name As String
     Public Property Mgr_Last_Name() As String
         Get
+            If (_Mgr_Last_Name Is Nothing) Then
+                Return String.Empty
+
+            End If
             Return _Mgr_Last_Name
         End Get
         Set(ByVal value As String)
@@ -157,6 +161,10 @@
     Private _Mgr_First_Name As String
     Public Property Mgr_First_Name() As String
         Get
+            If (_Mgr_First_Name Is Nothing) Then
+                Return String.Empty
+
+            End If
             Return _Mgr_First_Name
         End Get
         Set(ByVal value As String)
