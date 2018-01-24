@@ -102,7 +102,11 @@
     'End Sub
 
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
-        Me.Hide()
+        'Me.Hide() 
+        '*********Change Me.Hide() to Me.Close() to fix the logout from manager to user vice versa since
+        '*********It was loading the form of the initial login since it was only hidden.
+        Me.Close()
+
         LogIn.Show()
         LogIn.LogIn_Load(e, e)
         LogIn.Username.Clear()
@@ -216,8 +220,10 @@
     Private Sub Btn_RevertClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_RevertClear.Click
         If _isEdit Then
             _EmpEditService.PopulateFields(Me)
+            TB_OracleID.Focus()
         Else
             ClearFields()
+            TB_OracleID.Focus()
         End If
 
     End Sub
@@ -266,4 +272,5 @@
         Next
 
     End Sub
+
 End Class

@@ -28,6 +28,7 @@ Public Class Main
         EmployeeInfo.IsEdit = False
         EmployeeInfo.Btn_RevertClear.Text = "Clear"
         EmployeeInfo.Show()
+        EmployeeInfo.TB_OracleID.Focus()
         Me.Hide()
     End Sub
 
@@ -59,6 +60,7 @@ Public Class Main
             EmployeeInfo.IsEdit = True
             EmployeeInfo.Btn_RevertClear.Text = "Revert"
             EmployeeInfo.ShowDialog()
+            EmployeeInfo.TB_OracleID.Focus()
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
