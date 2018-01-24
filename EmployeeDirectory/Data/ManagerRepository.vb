@@ -11,15 +11,18 @@ Public Class ManagerRepository
         MyBase.New(ConfigurationManager.ConnectionStrings("EmployeeDirectoryConnectionString").ConnectionString.Decrypt)
     End Sub
 
-    Public Overrides Function GetData(ByVal entity As IEntity) As BASD.Helper.IEntity
-        Dim _tempParamList = New List(Of SqlParameter)()
-        _tempParamList.Add(New SqlParameter("@ManagerID", entity.Id))
 
-        Dim _tempManagerList = MyBase.List("[uspGetManager]", _tempParamList.ToArray())
+    'DELETED BY RAINIER FOR TESTING
+    'RAINIER 01/24/2017
+    'Public Overrides Function GetData(ByVal entity As IEntity) As BASD.Helper.IEntity
+    '    Dim _tempParamList = New List(Of SqlParameter)()
+    '    _tempParamList.Add(New SqlParameter("@ManagerID", entity.Id))
 
-        Return _tempManagerList.SingleMapToEntity(Of Employee)().SingleOrDefault()
+    '    Dim _tempManagerList = MyBase.List("[uspGetManager]", _tempParamList.ToArray())
 
-    End Function
+    '    Return _tempManagerList.SingleMapToEntity(Of Employee)().SingleOrDefault()
+
+    'End Function
 
     Public Overrides Function GetListData() As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
         Dim _tempManagerList = MyBase.List("uspGetManagerList", Nothing)

@@ -1,6 +1,8 @@
 ﻿Public Interface IEntity
     'ReadOnly Property Id As Integer
 
-    Property Id As Int64
+    'INCOMPATIBLE TO STRUCTURE
+    'RAINIER 01/24/2017
+    'Property Id As Integer
 
 End Interface
