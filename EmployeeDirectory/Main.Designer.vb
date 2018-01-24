@@ -33,41 +33,12 @@ Partial Class Main
         Me.TB_MgrV_OracleID = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridViewEmployee = New System.Windows.Forms.DataGridView()
-        Me.OracleID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LastName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MiddleName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmailAddress = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MobileNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MercuryID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NcogroupID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PhoneExtension = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PCName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OraclePRDID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EISID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.InsightID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EGSPREMID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ElsevierID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GithubID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Team = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LocalManager = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.USManager = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Site_ = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Floor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SeatNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OnboardingTicket = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StartDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Recruiter = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDCreated = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Division = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Gender = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Btn_Search = New System.Windows.Forms.Button()
-        Me.Btn_Edit = New System.Windows.Forms.Button()
         Me.Btn_Add = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.BtnLogOut = New System.Windows.Forms.Button()
         Me.Btn_EmpInc = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DataGridViewEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,175 +126,28 @@ Partial Class Main
         '
         'DataGridViewEmployee
         '
+        Me.DataGridViewEmployee.AllowUserToAddRows = False
+        Me.DataGridViewEmployee.AllowUserToDeleteRows = False
+        Me.DataGridViewEmployee.AllowUserToOrderColumns = True
         Me.DataGridViewEmployee.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.DataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewEmployee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.OracleID, Me.LastName, Me.FirstName, Me.MiddleName, Me.EmailAddress, Me.MobileNumber, Me.MercuryID, Me.NcogroupID, Me.PhoneExtension, Me.PCName, Me.OraclePRDID, Me.EISID, Me.InsightID, Me.EGSPREMID, Me.ElsevierID, Me.GithubID, Me.Team, Me.LocalManager, Me.USManager, Me.Site_, Me.Floor, Me.SeatNumber, Me.OnboardingTicket, Me.StartDate, Me.Recruiter, Me.IDCreated, Me.Division, Me.Gender})
         Me.DataGridViewEmployee.Location = New System.Drawing.Point(80, 339)
         Me.DataGridViewEmployee.Name = "DataGridViewEmployee"
+        Me.DataGridViewEmployee.ReadOnly = True
+        Me.DataGridViewEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewEmployee.Size = New System.Drawing.Size(995, 442)
         Me.DataGridViewEmployee.TabIndex = 10
-        '
-        'OracleID
-        '
-        Me.OracleID.HeaderText = "Oracle ID"
-        Me.OracleID.Name = "OracleID"
-        '
-        'LastName
-        '
-        Me.LastName.HeaderText = "Last Name"
-        Me.LastName.Name = "LastName"
-        '
-        'FirstName
-        '
-        Me.FirstName.HeaderText = "First Name"
-        Me.FirstName.Name = "FirstName"
-        '
-        'MiddleName
-        '
-        Me.MiddleName.HeaderText = "M.I."
-        Me.MiddleName.Name = "MiddleName"
-        '
-        'EmailAddress
-        '
-        Me.EmailAddress.HeaderText = "Email Address"
-        Me.EmailAddress.Name = "EmailAddress"
-        '
-        'MobileNumber
-        '
-        Me.MobileNumber.HeaderText = "Mobile Number"
-        Me.MobileNumber.Name = "MobileNumber"
-        '
-        'MercuryID
-        '
-        Me.MercuryID.HeaderText = "Mercury ID"
-        Me.MercuryID.Name = "MercuryID"
-        '
-        'NcogroupID
-        '
-        Me.NcogroupID.HeaderText = "Ncogroup ID"
-        Me.NcogroupID.Name = "NcogroupID"
-        '
-        'PhoneExtension
-        '
-        Me.PhoneExtension.HeaderText = "Phone Extension"
-        Me.PhoneExtension.Name = "PhoneExtension"
-        '
-        'PCName
-        '
-        Me.PCName.HeaderText = "PC Name"
-        Me.PCName.Name = "PCName"
-        '
-        'OraclePRDID
-        '
-        Me.OraclePRDID.HeaderText = "Oracle PRD ID"
-        Me.OraclePRDID.Name = "OraclePRDID"
-        '
-        'EISID
-        '
-        Me.EISID.HeaderText = "EIS ID"
-        Me.EISID.Name = "EISID"
-        '
-        'InsightID
-        '
-        Me.InsightID.HeaderText = "Insight ID"
-        Me.InsightID.Name = "InsightID"
-        '
-        'EGSPREMID
-        '
-        Me.EGSPREMID.HeaderText = "EGSPREM ID"
-        Me.EGSPREMID.Name = "EGSPREMID"
-        '
-        'ElsevierID
-        '
-        Me.ElsevierID.HeaderText = "Elsevier ID"
-        Me.ElsevierID.Name = "ElsevierID"
-        '
-        'GithubID
-        '
-        Me.GithubID.HeaderText = "Github ID"
-        Me.GithubID.Name = "GithubID"
-        '
-        'Team
-        '
-        Me.Team.HeaderText = "Team"
-        Me.Team.Name = "Team"
-        '
-        'LocalManager
-        '
-        Me.LocalManager.HeaderText = "Local Manager "
-        Me.LocalManager.Name = "LocalManager"
-        '
-        'USManager
-        '
-        Me.USManager.HeaderText = "US Manager "
-        Me.USManager.Name = "USManager"
-        '
-        'Site_
-        '
-        Me.Site_.HeaderText = "Site"
-        Me.Site_.Name = "Site_"
-        '
-        'Floor
-        '
-        Me.Floor.HeaderText = "Floor"
-        Me.Floor.Name = "Floor"
-        '
-        'SeatNumber
-        '
-        Me.SeatNumber.HeaderText = "Seat Number "
-        Me.SeatNumber.Name = "SeatNumber"
-        '
-        'OnboardingTicket
-        '
-        Me.OnboardingTicket.HeaderText = "Onboarding Ticket"
-        Me.OnboardingTicket.Name = "OnboardingTicket"
-        '
-        'StartDate
-        '
-        Me.StartDate.HeaderText = "Start Date"
-        Me.StartDate.Name = "StartDate"
-        '
-        'Recruiter
-        '
-        Me.Recruiter.HeaderText = "Recruiter"
-        Me.Recruiter.Name = "Recruiter"
-        '
-        'IDCreated
-        '
-        Me.IDCreated.HeaderText = "ID Created"
-        Me.IDCreated.Name = "IDCreated"
-        '
-        'Division
-        '
-        Me.Division.HeaderText = "Division"
-        Me.Division.Name = "Division"
-        '
-        'Gender
-        '
-        Me.Gender.HeaderText = "Gender"
-        Me.Gender.Name = "Gender"
         '
         'Btn_Search
         '
         Me.Btn_Search.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Btn_Search.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Search.Location = New System.Drawing.Point(726, 304)
+        Me.Btn_Search.Location = New System.Drawing.Point(812, 304)
         Me.Btn_Search.Name = "Btn_Search"
         Me.Btn_Search.Size = New System.Drawing.Size(80, 29)
         Me.Btn_Search.TabIndex = 11
         Me.Btn_Search.Text = "Search"
         Me.Btn_Search.UseVisualStyleBackColor = False
-        '
-        'Btn_Edit
-        '
-        Me.Btn_Edit.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Btn_Edit.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Edit.Location = New System.Drawing.Point(812, 304)
-        Me.Btn_Edit.Name = "Btn_Edit"
-        Me.Btn_Edit.Size = New System.Drawing.Size(80, 29)
-        Me.Btn_Edit.TabIndex = 12
-        Me.Btn_Edit.Text = "Edit"
-        Me.Btn_Edit.UseVisualStyleBackColor = False
         '
         'Btn_Add
         '
@@ -369,16 +193,16 @@ Partial Class Main
         Me.Button6.Text = "PREVIOUS"
         Me.Button6.UseVisualStyleBackColor = False
         '
-        'Button7
+        'BtnLogOut
         '
-        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button7.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(1032, 12)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(120, 38)
-        Me.Button7.TabIndex = 89
-        Me.Button7.Text = "LOGOUT"
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.BtnLogOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnLogOut.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnLogOut.Location = New System.Drawing.Point(1032, 12)
+        Me.BtnLogOut.Name = "BtnLogOut"
+        Me.BtnLogOut.Size = New System.Drawing.Size(120, 38)
+        Me.BtnLogOut.TabIndex = 89
+        Me.BtnLogOut.Text = "LOGOUT"
+        Me.BtnLogOut.UseVisualStyleBackColor = False
         '
         'Btn_EmpInc
         '
@@ -405,14 +229,14 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1164, 862)
         Me.Controls.Add(Me.Btn_EmpInc)
-        Me.Controls.Add(Me.Button7)
+        Me.Controls.Add(Me.BtnLogOut)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Btn_Add)
-        Me.Controls.Add(Me.Btn_Edit)
         Me.Controls.Add(Me.Btn_Search)
         Me.Controls.Add(Me.DataGridViewEmployee)
         Me.Controls.Add(Me.Label5)
@@ -447,40 +271,11 @@ Partial Class Main
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents DataGridViewEmployee As System.Windows.Forms.DataGridView
     Friend WithEvents Btn_Search As System.Windows.Forms.Button
-    Friend WithEvents Btn_Edit As System.Windows.Forms.Button
     Friend WithEvents Btn_Add As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents BtnLogOut As System.Windows.Forms.Button
     Friend WithEvents Btn_EmpInc As System.Windows.Forms.Button
-    Friend WithEvents OracleID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents LastName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents FirstName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents MiddleName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents EmailAddress As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents MobileNumber As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents MercuryID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NcogroupID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PhoneExtension As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PCName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents OraclePRDID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents EISID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents InsightID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents EGSPREMID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ElsevierID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents GithubID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Team As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents LocalManager As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents USManager As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Site_ As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Floor As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SeatNumber As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents OnboardingTicket As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents StartDate As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Recruiter As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents IDCreated As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Division As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Gender As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
