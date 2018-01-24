@@ -6,80 +6,66 @@ EmployeeDirectory
 </name>
 </assembly>
 <members>
-<member name="T:WindowsApplication1.My.Resources.Resources">
-<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member>
 <member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
-<summary>
+	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.Culture">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
+	<summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.a_W7b_icon">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.a_W7b_icon">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.ACCOUNTINFO">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.ACCOUNTINFO">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.alorica">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.alorica">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.alorica_banner">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.alorica_banner">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.alorica_banner1">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.alorica_banner1">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.alorica_login">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.alorica_login">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.alorica1">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.alorica1">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.EMPLOYEE_PHOTO">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.EMPLOYEE_PHOTO">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.logo">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.logo">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.megamenu_company">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.megamenu_company">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.NOTFOUND">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.NOTFOUND">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="P:WindowsApplication1.My.Resources.Resources.PERSONALINFO">
-<summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.PERSONALINFO">
+	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:WindowsApplication1.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member>
 </members>

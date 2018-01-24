@@ -49,6 +49,7 @@ Partial Class EmployeeInfo
         Me.Button7 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.OfficeInfo = New System.Windows.Forms.TabPage()
+        Me.CB_Team = New System.Windows.Forms.ComboBox()
         Me.CB_LocalMgr = New System.Windows.Forms.ComboBox()
         Me.CB_Site = New System.Windows.Forms.ComboBox()
         Me.CB_IDCreated = New System.Windows.Forms.ComboBox()
@@ -111,7 +112,6 @@ Partial Class EmployeeInfo
         Me.Label39 = New System.Windows.Forms.Label()
         Me.CB_Gender = New System.Windows.Forms.ComboBox()
         Me.TB_MobileNo = New System.Windows.Forms.TextBox()
-        Me.CB_Team = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -170,7 +170,7 @@ Partial Class EmployeeInfo
         Me.TB_MiddleIn.Location = New System.Drawing.Point(615, 280)
         Me.TB_MiddleIn.Name = "TB_MiddleIn"
         Me.TB_MiddleIn.Size = New System.Drawing.Size(20, 20)
-        Me.TB_MiddleIn.TabIndex = 6
+        Me.TB_MiddleIn.TabIndex = 5
         '
         'Label4
         '
@@ -238,21 +238,21 @@ Partial Class EmployeeInfo
         Me.TB_Title.Location = New System.Drawing.Point(405, 250)
         Me.TB_Title.Name = "TB_Title"
         Me.TB_Title.Size = New System.Drawing.Size(150, 20)
-        Me.TB_Title.TabIndex = 16
+        Me.TB_Title.TabIndex = 2
         '
         'TB_PhoneExt
         '
         Me.TB_PhoneExt.Location = New System.Drawing.Point(115, 370)
         Me.TB_PhoneExt.Name = "TB_PhoneExt"
         Me.TB_PhoneExt.Size = New System.Drawing.Size(149, 20)
-        Me.TB_PhoneExt.TabIndex = 18
+        Me.TB_PhoneExt.TabIndex = 10
         '
         'TB_EmailAddress
         '
         Me.TB_EmailAddress.Location = New System.Drawing.Point(405, 310)
         Me.TB_EmailAddress.Name = "TB_EmailAddress"
         Me.TB_EmailAddress.Size = New System.Drawing.Size(150, 20)
-        Me.TB_EmailAddress.TabIndex = 20
+        Me.TB_EmailAddress.TabIndex = 7
         '
         'Btn_Save
         '
@@ -261,7 +261,7 @@ Partial Class EmployeeInfo
         Me.Btn_Save.Location = New System.Drawing.Point(771, 792)
         Me.Btn_Save.Name = "Btn_Save"
         Me.Btn_Save.Size = New System.Drawing.Size(120, 38)
-        Me.Btn_Save.TabIndex = 21
+        Me.Btn_Save.TabIndex = 41
         Me.Btn_Save.Text = "Save"
         Me.Btn_Save.UseVisualStyleBackColor = False
         '
@@ -272,7 +272,7 @@ Partial Class EmployeeInfo
         Me.Btn_RevertClear.Location = New System.Drawing.Point(897, 792)
         Me.Btn_RevertClear.Name = "Btn_RevertClear"
         Me.Btn_RevertClear.Size = New System.Drawing.Size(120, 38)
-        Me.Btn_RevertClear.TabIndex = 22
+        Me.Btn_RevertClear.TabIndex = 42
         Me.Btn_RevertClear.Text = "Revert"
         Me.Btn_RevertClear.UseVisualStyleBackColor = False
         '
@@ -333,7 +333,7 @@ Partial Class EmployeeInfo
         Me.Btn_Cancel.Location = New System.Drawing.Point(1023, 792)
         Me.Btn_Cancel.Name = "Btn_Cancel"
         Me.Btn_Cancel.Size = New System.Drawing.Size(120, 38)
-        Me.Btn_Cancel.TabIndex = 89
+        Me.Btn_Cancel.TabIndex = 43
         Me.Btn_Cancel.Text = "Cancel"
         Me.Btn_Cancel.UseVisualStyleBackColor = False
         '
@@ -344,7 +344,7 @@ Partial Class EmployeeInfo
         Me.Button7.Location = New System.Drawing.Point(1032, 12)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(120, 38)
-        Me.Button7.TabIndex = 90
+        Me.Button7.TabIndex = 44
         Me.Button7.Text = "LOGOUT"
         Me.Button7.UseVisualStyleBackColor = False
         '
@@ -357,7 +357,7 @@ Partial Class EmployeeInfo
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(923, 313)
-        Me.TabControl1.TabIndex = 91
+        Me.TabControl1.TabIndex = 31
         '
         'OfficeInfo
         '
@@ -405,6 +405,16 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.Text = "Office Information"
         Me.OfficeInfo.UseVisualStyleBackColor = True
         '
+        'CB_Team
+        '
+        Me.CB_Team.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_Team.FormattingEnabled = True
+        Me.CB_Team.Items.AddRange(New Object() {"BASD"})
+        Me.CB_Team.Location = New System.Drawing.Point(130, 19)
+        Me.CB_Team.Name = "CB_Team"
+        Me.CB_Team.Size = New System.Drawing.Size(121, 23)
+        Me.CB_Team.TabIndex = 13
+        '
         'CB_LocalMgr
         '
         Me.CB_LocalMgr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -413,7 +423,7 @@ Partial Class EmployeeInfo
         Me.CB_LocalMgr.Location = New System.Drawing.Point(130, 48)
         Me.CB_LocalMgr.Name = "CB_LocalMgr"
         Me.CB_LocalMgr.Size = New System.Drawing.Size(121, 23)
-        Me.CB_LocalMgr.TabIndex = 121
+        Me.CB_LocalMgr.TabIndex = 15
         '
         'CB_Site
         '
@@ -423,7 +433,7 @@ Partial Class EmployeeInfo
         Me.CB_Site.Location = New System.Drawing.Point(130, 103)
         Me.CB_Site.Name = "CB_Site"
         Me.CB_Site.Size = New System.Drawing.Size(121, 23)
-        Me.CB_Site.TabIndex = 120
+        Me.CB_Site.TabIndex = 19
         '
         'CB_IDCreated
         '
@@ -433,56 +443,56 @@ Partial Class EmployeeInfo
         Me.CB_IDCreated.Location = New System.Drawing.Point(516, 78)
         Me.CB_IDCreated.Name = "CB_IDCreated"
         Me.CB_IDCreated.Size = New System.Drawing.Size(121, 23)
-        Me.CB_IDCreated.TabIndex = 119
+        Me.CB_IDCreated.TabIndex = 18
         '
         'TB_AddressLine2
         '
         Me.TB_AddressLine2.Location = New System.Drawing.Point(516, 244)
         Me.TB_AddressLine2.Name = "TB_AddressLine2"
         Me.TB_AddressLine2.Size = New System.Drawing.Size(215, 23)
-        Me.TB_AddressLine2.TabIndex = 118
+        Me.TB_AddressLine2.TabIndex = 30
         '
         'TB_AddressLine1
         '
         Me.TB_AddressLine1.Location = New System.Drawing.Point(516, 218)
         Me.TB_AddressLine1.Name = "TB_AddressLine1"
         Me.TB_AddressLine1.Size = New System.Drawing.Size(215, 23)
-        Me.TB_AddressLine1.TabIndex = 117
+        Me.TB_AddressLine1.TabIndex = 28
         '
         'TB_Shift
         '
         Me.TB_Shift.Location = New System.Drawing.Point(516, 189)
         Me.TB_Shift.Name = "TB_Shift"
         Me.TB_Shift.Size = New System.Drawing.Size(121, 23)
-        Me.TB_Shift.TabIndex = 116
+        Me.TB_Shift.TabIndex = 26
         '
         'TB_Entity
         '
         Me.TB_Entity.Location = New System.Drawing.Point(516, 161)
         Me.TB_Entity.Name = "TB_Entity"
         Me.TB_Entity.Size = New System.Drawing.Size(121, 23)
-        Me.TB_Entity.TabIndex = 115
+        Me.TB_Entity.TabIndex = 24
         '
         'TB_Department
         '
         Me.TB_Department.Location = New System.Drawing.Point(516, 132)
         Me.TB_Department.Name = "TB_Department"
         Me.TB_Department.Size = New System.Drawing.Size(121, 23)
-        Me.TB_Department.TabIndex = 114
+        Me.TB_Department.TabIndex = 22
         '
         'TB_Division
         '
         Me.TB_Division.Location = New System.Drawing.Point(516, 105)
         Me.TB_Division.Name = "TB_Division"
         Me.TB_Division.Size = New System.Drawing.Size(121, 23)
-        Me.TB_Division.TabIndex = 113
+        Me.TB_Division.TabIndex = 20
         '
         'TB_Recruiter
         '
         Me.TB_Recruiter.Location = New System.Drawing.Point(516, 48)
         Me.TB_Recruiter.Name = "TB_Recruiter"
         Me.TB_Recruiter.Size = New System.Drawing.Size(121, 23)
-        Me.TB_Recruiter.TabIndex = 112
+        Me.TB_Recruiter.TabIndex = 16
         '
         'Label20
         '
@@ -569,7 +579,7 @@ Partial Class EmployeeInfo
         Me.TB_SFCDate.Location = New System.Drawing.Point(516, 19)
         Me.TB_SFCDate.Name = "TB_SFCDate"
         Me.TB_SFCDate.Size = New System.Drawing.Size(121, 23)
-        Me.TB_SFCDate.TabIndex = 103
+        Me.TB_SFCDate.TabIndex = 14
         '
         'Label37
         '
@@ -590,42 +600,42 @@ Partial Class EmployeeInfo
         Me.CB_SFC.Location = New System.Drawing.Point(130, 241)
         Me.CB_SFC.Name = "CB_SFC"
         Me.CB_SFC.Size = New System.Drawing.Size(121, 23)
-        Me.CB_SFC.TabIndex = 101
+        Me.CB_SFC.TabIndex = 29
         '
         'TB_StartDate
         '
         Me.TB_StartDate.Location = New System.Drawing.Point(130, 217)
         Me.TB_StartDate.Name = "TB_StartDate"
         Me.TB_StartDate.Size = New System.Drawing.Size(121, 23)
-        Me.TB_StartDate.TabIndex = 100
+        Me.TB_StartDate.TabIndex = 27
         '
         'TB_OnboardingTkt
         '
         Me.TB_OnboardingTkt.Location = New System.Drawing.Point(130, 188)
         Me.TB_OnboardingTkt.Name = "TB_OnboardingTkt"
         Me.TB_OnboardingTkt.Size = New System.Drawing.Size(121, 23)
-        Me.TB_OnboardingTkt.TabIndex = 99
+        Me.TB_OnboardingTkt.TabIndex = 25
         '
         'TB_SeatNo
         '
         Me.TB_SeatNo.Location = New System.Drawing.Point(130, 160)
         Me.TB_SeatNo.Name = "TB_SeatNo"
         Me.TB_SeatNo.Size = New System.Drawing.Size(121, 23)
-        Me.TB_SeatNo.TabIndex = 98
+        Me.TB_SeatNo.TabIndex = 23
         '
         'TB_Floor
         '
         Me.TB_Floor.Location = New System.Drawing.Point(130, 131)
         Me.TB_Floor.Name = "TB_Floor"
         Me.TB_Floor.Size = New System.Drawing.Size(121, 23)
-        Me.TB_Floor.TabIndex = 97
+        Me.TB_Floor.TabIndex = 21
         '
         'TB_USMgr
         '
         Me.TB_USMgr.Location = New System.Drawing.Point(130, 76)
         Me.TB_USMgr.Name = "TB_USMgr"
         Me.TB_USMgr.Size = New System.Drawing.Size(121, 23)
-        Me.TB_USMgr.TabIndex = 95
+        Me.TB_USMgr.TabIndex = 17
         '
         'Label21
         '
@@ -750,7 +760,7 @@ Partial Class EmployeeInfo
         Me.TB_PCName.Location = New System.Drawing.Point(130, 133)
         Me.TB_PCName.Name = "TB_PCName"
         Me.TB_PCName.Size = New System.Drawing.Size(121, 23)
-        Me.TB_PCName.TabIndex = 64
+        Me.TB_PCName.TabIndex = 41
         '
         'Label40
         '
@@ -767,56 +777,56 @@ Partial Class EmployeeInfo
         Me.TB_GithubID.Location = New System.Drawing.Point(515, 103)
         Me.TB_GithubID.Name = "TB_GithubID"
         Me.TB_GithubID.Size = New System.Drawing.Size(121, 23)
-        Me.TB_GithubID.TabIndex = 62
+        Me.TB_GithubID.TabIndex = 39
         '
         'TB_ElsevierID
         '
         Me.TB_ElsevierID.Location = New System.Drawing.Point(516, 76)
         Me.TB_ElsevierID.Name = "TB_ElsevierID"
         Me.TB_ElsevierID.Size = New System.Drawing.Size(121, 23)
-        Me.TB_ElsevierID.TabIndex = 61
+        Me.TB_ElsevierID.TabIndex = 37
         '
         'TB_EGSPREMID
         '
         Me.TB_EGSPREMID.Location = New System.Drawing.Point(515, 48)
         Me.TB_EGSPREMID.Name = "TB_EGSPREMID"
         Me.TB_EGSPREMID.Size = New System.Drawing.Size(121, 23)
-        Me.TB_EGSPREMID.TabIndex = 60
+        Me.TB_EGSPREMID.TabIndex = 35
         '
         'TB_InsightID
         '
         Me.TB_InsightID.Location = New System.Drawing.Point(515, 18)
         Me.TB_InsightID.Name = "TB_InsightID"
         Me.TB_InsightID.Size = New System.Drawing.Size(121, 23)
-        Me.TB_InsightID.TabIndex = 59
+        Me.TB_InsightID.TabIndex = 33
         '
         'TB_EISID
         '
         Me.TB_EISID.Location = New System.Drawing.Point(130, 106)
         Me.TB_EISID.Name = "TB_EISID"
         Me.TB_EISID.Size = New System.Drawing.Size(121, 23)
-        Me.TB_EISID.TabIndex = 58
+        Me.TB_EISID.TabIndex = 38
         '
         'TB_NCOGrpID
         '
         Me.TB_NCOGrpID.Location = New System.Drawing.Point(130, 78)
         Me.TB_NCOGrpID.Name = "TB_NCOGrpID"
         Me.TB_NCOGrpID.Size = New System.Drawing.Size(121, 23)
-        Me.TB_NCOGrpID.TabIndex = 57
+        Me.TB_NCOGrpID.TabIndex = 36
         '
         'TB_MercuryID
         '
         Me.TB_MercuryID.Location = New System.Drawing.Point(130, 51)
         Me.TB_MercuryID.Name = "TB_MercuryID"
         Me.TB_MercuryID.Size = New System.Drawing.Size(121, 23)
-        Me.TB_MercuryID.TabIndex = 56
+        Me.TB_MercuryID.TabIndex = 34
         '
         'TB_OraclePRD
         '
         Me.TB_OraclePRD.Location = New System.Drawing.Point(130, 23)
         Me.TB_OraclePRD.Name = "TB_OraclePRD"
         Me.TB_OraclePRD.Size = New System.Drawing.Size(121, 23)
-        Me.TB_OraclePRD.TabIndex = 55
+        Me.TB_OraclePRD.TabIndex = 32
         '
         'Label18
         '
@@ -903,7 +913,7 @@ Partial Class EmployeeInfo
         Me.TB_OracleID.Location = New System.Drawing.Point(115, 250)
         Me.TB_OracleID.Name = "TB_OracleID"
         Me.TB_OracleID.Size = New System.Drawing.Size(121, 20)
-        Me.TB_OracleID.TabIndex = 46
+        Me.TB_OracleID.TabIndex = 1
         '
         'Label9
         '
@@ -920,14 +930,14 @@ Partial Class EmployeeInfo
         Me.TB_HomeAddLine2.Location = New System.Drawing.Point(405, 370)
         Me.TB_HomeAddLine2.Name = "TB_HomeAddLine2"
         Me.TB_HomeAddLine2.Size = New System.Drawing.Size(149, 20)
-        Me.TB_HomeAddLine2.TabIndex = 95
+        Me.TB_HomeAddLine2.TabIndex = 11
         '
         'TB_HomeAddLine1
         '
         Me.TB_HomeAddLine1.Location = New System.Drawing.Point(405, 340)
         Me.TB_HomeAddLine1.Name = "TB_HomeAddLine1"
         Me.TB_HomeAddLine1.Size = New System.Drawing.Size(150, 20)
-        Me.TB_HomeAddLine1.TabIndex = 94
+        Me.TB_HomeAddLine1.TabIndex = 9
         '
         'Label38
         '
@@ -958,30 +968,21 @@ Partial Class EmployeeInfo
         Me.CB_Gender.Location = New System.Drawing.Point(115, 308)
         Me.CB_Gender.Name = "CB_Gender"
         Me.CB_Gender.Size = New System.Drawing.Size(121, 21)
-        Me.CB_Gender.TabIndex = 96
+        Me.CB_Gender.TabIndex = 6
         '
         'TB_MobileNo
         '
         Me.TB_MobileNo.Location = New System.Drawing.Point(115, 340)
         Me.TB_MobileNo.Name = "TB_MobileNo"
         Me.TB_MobileNo.Size = New System.Drawing.Size(150, 20)
-        Me.TB_MobileNo.TabIndex = 97
-        '
-        'CB_Team
-        '
-        Me.CB_Team.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CB_Team.FormattingEnabled = True
-        Me.CB_Team.Items.AddRange(New Object() {"BASD"})
-        Me.CB_Team.Location = New System.Drawing.Point(130, 19)
-        Me.CB_Team.Name = "CB_Team"
-        Me.CB_Team.Size = New System.Drawing.Size(121, 23)
-        Me.CB_Team.TabIndex = 122
+        Me.TB_MobileNo.TabIndex = 8
         '
         'EmployeeInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1164, 862)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1173, 854)
         Me.Controls.Add(Me.TB_MobileNo)
         Me.Controls.Add(Me.CB_Gender)
         Me.Controls.Add(Me.TB_HomeAddLine2)
