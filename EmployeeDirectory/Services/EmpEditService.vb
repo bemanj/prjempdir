@@ -34,11 +34,11 @@
             .TB_FirstName.Text = Employee.FirstName
             .TB_FirstName.Text = Employee.FirstName
             .TB_Title.Text = Employee.Title
-            .TB_MiddleIn.Text = Employee.MiddleName
+            .TB_MiddleName.Text = Employee.MiddleName
             .TB_EmailAddress.Text = Employee.EmailAddress
             .TB_MobileNo.Text = Employee.MobileNo
             .TB_HomeAddLine1.Text = Employee.HomeAddress1
-            .TB_PhoneExt.Text = Employee.PhoneExtension
+            .TB_Landline.Text = Employee.PhoneExtension
             .TB_HomeAddLine2.Text = Employee.HomeAddress2
             .CB_Team.Text = Employee.TeamName
             .CB_LocalMgr.Text = Employee.Mgr_Last_Name.Trim & ", " & Employee.Mgr_First_Name
@@ -55,7 +55,7 @@
             .TB_Division.Text = Employee.Division
             .TB_Department.Text = Employee.Department
             .TB_Entity.Text = Employee.Entity
-            .TB_Shift.Text = Employee.Shift
+            .CB_WorkSched.Text = Employee.Shift
             .TB_AddressLine1.Text = Employee.SiteAddress1
             .TB_AddressLine2.Text = Employee.SiteAddress2
             .TB_OraclePRD.Text = Employee.OraclePRDID

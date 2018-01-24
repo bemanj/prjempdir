@@ -3,12 +3,12 @@
 
     'Employee Information
 
-    Private _OracleID As Integer
-    Public Property OracleID() As Integer
+    Private _OracleID As Int64
+    Public Property OracleID() As Int64
         Get
             Return _OracleID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Int64)
             _OracleID = value
         End Set
     End Property
@@ -134,12 +134,12 @@
         End Set
     End Property
 
-    Private _LocalManagerID As Integer
-    Public Property LocalManagerID() As Integer
+    Private _LocalManagerID As Int64
+    Public Property LocalManagerID() As Int64
         Get
             Return _LocalManagerID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Int64)
             _LocalManagerID = value
         End Set
     End Property
