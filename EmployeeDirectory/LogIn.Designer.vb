@@ -26,7 +26,7 @@ Partial Class LogIn
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Username = New System.Windows.Forms.TextBox()
         Me.UsernamePassword = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.SignIn_Btn = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -66,16 +66,16 @@ Partial Class LogIn
         Me.UsernamePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.UsernamePassword.UseSystemPasswordChar = True
         '
-        'Button1
+        'SignIn_Btn
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(203, 282)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(227, 37)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "SIGN IN"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.SignIn_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.SignIn_Btn.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SignIn_Btn.Location = New System.Drawing.Point(203, 282)
+        Me.SignIn_Btn.Name = "SignIn_Btn"
+        Me.SignIn_Btn.Size = New System.Drawing.Size(227, 37)
+        Me.SignIn_Btn.TabIndex = 5
+        Me.SignIn_Btn.Text = "SIGN IN"
+        Me.SignIn_Btn.UseVisualStyleBackColor = False
         '
         'PictureBox2
         '
@@ -124,7 +124,7 @@ Partial Class LogIn
         Me.ClientSize = New System.Drawing.Size(654, 626)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.SignIn_Btn)
         Me.Controls.Add(Me.UsernamePassword)
         Me.Controls.Add(Me.Username)
         Me.Controls.Add(Me.Label1)
@@ -144,7 +144,7 @@ Partial Class LogIn
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Username As System.Windows.Forms.TextBox
     Friend WithEvents UsernamePassword As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents SignIn_Btn As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
 

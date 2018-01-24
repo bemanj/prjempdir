@@ -28,7 +28,7 @@ Public Module EntityExtensions
         For Each dr As DataRow In table.Rows
             Dim _data As T = New T()
             For Each col As DataColumn In _columns
-                Dim _info As PropertyInfo = _targetType.GetProperty(If(_columns.First().Equals(col), "Id", col.ColumnName))
+                Dim _info As PropertyInfo = _targetType.GetProperty(col.ColumnName) '_targetType.GetProperty(If(_columns.First().Equals(col), "Id", col.ColumnName))
                 If _info IsNot Nothing Then
                     Dim _value As Object = Nothing
                     If dr(col.ColumnName).[GetType]() = GetType(DateTime) AndAlso _info.PropertyType = GetType(String) Then

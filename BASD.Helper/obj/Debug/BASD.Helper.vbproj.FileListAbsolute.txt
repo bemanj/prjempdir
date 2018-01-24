@@ -30,3 +30,11 @@ C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\BAS
 C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\BASD.Helper\obj\Debug\BASD.Helper.dll
 C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\BASD.Helper\obj\Debug\BASD.Helper.xml
 C:\Users\LS004313131\Documents\Visual Studio 2010\Projects\EmployeeDirectory\BASD.Helper\obj\Debug\BASD.Helper.pdb
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\bin\Debug\BASD.Helper.dll
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\bin\Debug\BASD.Helper.pdb
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\bin\Debug\BASD.Helper.xml
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\obj\Debug\BASD.Helper.Resources.resources
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\obj\Debug\BASD.Helper.vbproj.GenerateResource.Cache
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\obj\Debug\BASD.Helper.dll
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\obj\Debug\BASD.Helper.xml
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\obj\Debug\BASD.Helper.pdb
