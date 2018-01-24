@@ -16,7 +16,7 @@
         End Set
     End Property
 
-    Public Function SelectEmpFromList(ByVal OracleID As Integer) As Employee
+    Public Function SelectEmpFromList(ByVal OracleID As Long) As Employee
 
         Return _EmployeeRepository.GetData(New Employee() With {.OracleID = OracleID})
 
@@ -35,7 +35,7 @@
             .TB_FirstName.Text = Employee.FirstName
             .TB_Title.Text = Employee.Title
             .TB_MiddleIn.Text = Employee.MiddleName
-            .TB_EmailAddress.Text = Employee.EmailAddress
+            .TB_EmailAddress.Text = Employee.PersonalEmail
             .TB_MobileNo.Text = Employee.MobileNo
             .TB_HomeAddLine1.Text = Employee.HomeAddress1
             .TB_PhoneExt.Text = Employee.PhoneExtension

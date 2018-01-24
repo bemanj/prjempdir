@@ -149,6 +149,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="incomplete.resx">
       <DependentUpon>incomplete.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.vb</DependentUpon>

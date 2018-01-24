@@ -3,12 +3,13 @@
 
     'Employee Information
 
-    Private _OracleID As Integer
-    Public Property OracleID() As Integer
+    'Sprint 2: Change to LONG
+    Private _OracleID As Long
+    Public Property OracleID() As Long
         Get
             Return _OracleID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Long)
             _OracleID = value
         End Set
     End Property
@@ -20,6 +21,17 @@
         End Get
         Set(ByVal value As String)
             _Title = value
+        End Set
+    End Property
+
+    'Sprint 2: New Field
+    Private _Position As String
+    Public Property Position() As String
+        Get
+            Return _Position
+        End Get
+        Set(ByVal value As String)
+            _Position = value
         End Set
     End Property
 
@@ -73,6 +85,72 @@
         End Set
     End Property
 
+    'Sprint 2: New Field
+    Private _CityId As Integer
+    Public Property CityId() As Integer
+        Get
+            Return _CityId
+        End Get
+        Set(ByVal value As Integer)
+            _CityId = value
+        End Set
+    End Property
+
+    'Sprint 2: New Field
+    Private _CityName As Integer
+    Public Property CityName() As Integer
+        Get
+            Return _CityName
+        End Get
+        Set(ByVal value As Integer)
+            _CityName = value
+        End Set
+    End Property
+
+    'Sprint 2: New Field
+    Private _ZipCode As Integer
+    Public Property ZipCode() As Integer
+        Get
+            Return _ZipCode
+        End Get
+        Set(ByVal value As Integer)
+            _ZipCode = value
+        End Set
+    End Property
+
+    'Sprint 2: New Field
+    Private _RegionId As Integer
+    Public Property RegionId() As Integer
+        Get
+            Return _RegionId
+        End Get
+        Set(ByVal value As Integer)
+            _RegionId = value
+        End Set
+    End Property
+
+    'Sprint 2: New Field
+    Private _RegionName As String
+    Public Property RegionName() As String
+        Get
+            Return _RegionName
+        End Get
+        Set(ByVal value As String)
+            _RegionName = value
+        End Set
+    End Property
+
+    'Sprint 2: New Field
+    Private _Country As String
+    Public Property Country() As String
+        Get
+            Return _Country
+        End Get
+        Set(ByVal value As String)
+            _Country = value
+        End Set
+    End Property
+
     Private _Gender As String
     Public Property Gender() As String
         Get
@@ -83,13 +161,25 @@
         End Set
     End Property
 
-    Private _EmailAddress As String
-    Public Property EmailAddress() As String
+    'Sprint 2: New Field
+    Private _Birthday As DateTime?
+    Public Property Birthday() As DateTime?
         Get
-            Return _EmailAddress
+            Return _Birthday
+        End Get
+        Set(ByVal value As DateTime?)
+            _Birthday = value
+        End Set
+    End Property
+
+    'Sprint 2: Change Field Name
+    Private _PersonalEmail As String
+    Public Property PersonalEmail() As String
+        Get
+            Return _PersonalEmail
         End Get
         Set(ByVal value As String)
-            _EmailAddress = value
+            _PersonalEmail = value
         End Set
     End Property
 
@@ -103,6 +193,17 @@
         End Set
     End Property
 
+    'Sprint 2: New Field
+    Private _LandlineNo As Decimal
+    Public Property LandlineNo() As Decimal
+        Get
+            Return _LandlineNo
+        End Get
+        Set(ByVal value As Decimal)
+            _LandlineNo = value
+        End Set
+    End Property
+
     Private _PhoneExtension As Decimal
     Public Property PhoneExtension() As Decimal
         Get
@@ -110,6 +211,57 @@
         End Get
         Set(ByVal value As Decimal)
             _PhoneExtension = value
+        End Set
+    End Property
+
+    'Sprint 2: New Field
+    Private _OfficeEmail As String
+    Public Property OfficeEmail() As String
+        Get
+            Return _OfficeEmail
+        End Get
+        Set(ByVal value As String)
+            _OfficeEmail = value
+        End Set
+    End Property
+
+    Private _NCOGroup As String
+    Public Property NCOGroup() As String
+        Get
+            Return _NCOGroup
+        End Get
+        Set(ByVal value As String)
+            _NCOGroup = value
+        End Set
+    End Property
+
+    Private _Division As String
+    Public Property Division() As String
+        Get
+            Return _Division
+        End Get
+        Set(ByVal value As String)
+            _Division = value
+        End Set
+    End Property
+
+    Private _Department As String
+    Public Property Department() As String
+        Get
+            Return _Department
+        End Get
+        Set(ByVal value As String)
+            _Department = value
+        End Set
+    End Property
+
+    Private _Entity As String
+    Public Property Entity() As String
+        Get
+            Return _Entity
+        End Get
+        Set(ByVal value As String)
+            _Entity = value
         End Set
     End Property
 
@@ -124,6 +276,7 @@
         End Set
     End Property
 
+    'Sprint 2: New Field
     Private _TeamName As String
     Public Property TeamName() As String
         Get
@@ -134,12 +287,12 @@
         End Set
     End Property
 
-    Private _LocalManagerID As Integer
-    Public Property LocalManagerID() As Integer
+    Private _LocalManagerID As Long
+    Public Property LocalManagerID() As Long
         Get
             Return _LocalManagerID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Long)
             _LocalManagerID = value
         End Set
     End Property
@@ -202,6 +355,96 @@
         End Set
     End Property
 
+    Private _SiteFloor As String
+    Public Property SiteFloor() As String
+        Get
+            Return _SiteFloor
+        End Get
+        Set(ByVal value As String)
+            _SiteFloor = value
+        End Set
+    End Property
+
+    Private _SiteAddress1 As String
+    Public Property SiteAddress1() As String
+        Get
+            Return _SiteAddress1
+        End Get
+        Set(ByVal value As String)
+            _SiteAddress1 = value
+        End Set
+    End Property
+
+    Private _SiteAddress2 As String
+    Public Property SiteAddress2() As String
+        Get
+            Return _SiteAddress2
+        End Get
+        Set(ByVal value As String)
+            _SiteAddress2 = value
+        End Set
+    End Property
+
+    Private _SiteCityID As Integer
+    Public Property SiteCityID() As Integer
+        Get
+            Return _SiteCityID
+        End Get
+        Set(ByVal value As Integer)
+            _SiteCityID = value
+        End Set
+    End Property
+
+    Private _SiteCityName As String
+    Public Property SiteCityName() As String
+        Get
+            Return _SiteCityName
+        End Get
+        Set(ByVal value As String)
+            _SiteCityName = value
+        End Set
+    End Property
+
+    Private _SiteZipCode As Integer
+    Public Property SiteZipCode() As Integer
+        Get
+            Return _SiteZipCode
+        End Get
+        Set(ByVal value As Integer)
+            _SiteZipCode = value
+        End Set
+    End Property
+
+    Private _SiteRegionID As Integer
+    Public Property SiteRegionID() As Integer
+        Get
+            Return _SiteRegionID
+        End Get
+        Set(ByVal value As Integer)
+            _SiteRegionID = value
+        End Set
+    End Property
+
+    Private _SiteRegionName As String
+    Public Property SiteRegionName() As String
+        Get
+            Return _SiteRegionName
+        End Get
+        Set(ByVal value As String)
+            _SiteRegionName = value
+        End Set
+    End Property
+
+    Private _SiteCountry As String
+    Public Property SiteCountry() As String
+        Get
+            Return _SiteCountry
+        End Get
+        Set(ByVal value As String)
+            _SiteCountry = value
+        End Set
+    End Property
+
     Private _Floor As String
     Public Property Floor() As String
         Get
@@ -242,76 +485,6 @@
         End Set
     End Property
 
-    Private _SFC As Boolean
-    Public Property SFC() As Boolean
-        Get
-            Return _SFC
-        End Get
-        Set(ByVal value As Boolean)
-            _SFC = value
-        End Set
-    End Property
-
-    Private _SFCDate As DateTime?
-    Public Property SFCDate() As DateTime?
-        Get
-            Return _SFCDate
-        End Get
-        Set(ByVal value As DateTime?)
-            _SFCDate = value
-        End Set
-    End Property
-
-    Private _Recruiter As String
-    Public Property Recruiter() As String
-        Get
-            Return _Recruiter
-        End Get
-        Set(ByVal value As String)
-            _Recruiter = value
-        End Set
-    End Property
-
-    Private _IDCreated As Boolean
-    Public Property IDCreated() As Boolean
-        Get
-            Return _IDCreated
-        End Get
-        Set(ByVal value As Boolean)
-            _IDCreated = value
-        End Set
-    End Property
-
-    Private _Division As String
-    Public Property Division() As String
-        Get
-            Return _Division
-        End Get
-        Set(ByVal value As String)
-            _Division = value
-        End Set
-    End Property
-
-    Private _Department As String
-    Public Property Department() As String
-        Get
-            Return _Department
-        End Get
-        Set(ByVal value As String)
-            _Department = value
-        End Set
-    End Property
-
-    Private _Entity As String
-    Public Property Entity() As String
-        Get
-            Return _Entity
-        End Get
-        Set(ByVal value As String)
-            _Entity = value
-        End Set
-    End Property
-
     Private _Shift As String
     Public Property Shift() As String
         Get
@@ -322,35 +495,13 @@
         End Set
     End Property
 
-    Private _SiteAddress1 As String
-    Public Property SiteAddress1() As String
+    Private _PCName As String
+    Public Property PCName() As String
         Get
-            Return _SiteAddress1
+            Return _PCName
         End Get
         Set(ByVal value As String)
-            _SiteAddress1 = value
-        End Set
-    End Property
-
-    Private _SiteAddress2 As String
-    Public Property SiteAddress2() As String
-        Get
-            Return _SiteAddress2
-        End Get
-        Set(ByVal value As String)
-            _SiteAddress2 = value
-        End Set
-    End Property
-
-    'Access Information
-
-    Private _OraclePRDID As String
-    Public Property OraclePRDID() As String
-        Get
-            Return _OraclePRDID
-        End Get
-        Set(ByVal value As String)
-            _OraclePRDID = value
+            _PCName = value
         End Set
     End Property
 
@@ -364,13 +515,23 @@
         End Set
     End Property
 
-    Private _NCOGroup As String
-    Public Property NCOGroup() As String
+    Private _IDCreated As Boolean
+    Public Property IDCreated() As Boolean
         Get
-            Return _NCOGroup
+            Return _IDCreated
+        End Get
+        Set(ByVal value As Boolean)
+            _IDCreated = value
+        End Set
+    End Property
+
+    Private _OraclePRDID As String
+    Public Property OraclePRDID() As String
+        Get
+            Return _OraclePRDID
         End Get
         Set(ByVal value As String)
-            _NCOGroup = value
+            _OraclePRDID = value
         End Set
     End Property
 
@@ -381,16 +542,6 @@
         End Get
         Set(ByVal value As String)
             _EISID = value
-        End Set
-    End Property
-
-    Private _PCName As String
-    Public Property PCName() As String
-        Get
-            Return _PCName
-        End Get
-        Set(ByVal value As String)
-            _PCName = value
         End Set
     End Property
 
@@ -434,6 +585,58 @@
         End Set
     End Property
 
+    Private _SFC As Boolean
+    Public Property SFC() As Boolean
+        Get
+            Return _SFC
+        End Get
+        Set(ByVal value As Boolean)
+            _SFC = value
+        End Set
+    End Property
+
+    Private _SFCDate As DateTime?
+    Public Property SFCDate() As DateTime?
+        Get
+            Return _SFCDate
+        End Get
+        Set(ByVal value As DateTime?)
+            _SFCDate = value
+        End Set
+    End Property
+
+    Private _Recruiter As String
+    Public Property Recruiter() As String
+        Get
+            Return _Recruiter
+        End Get
+        Set(ByVal value As String)
+            _Recruiter = value
+        End Set
+    End Property
+
+    
+    Private _CreateTS As DateTime?
+    Public Property CreateTS() As DateTime?
+        Get
+            Return _CreateTS
+        End Get
+        Set(ByVal value As DateTime?)
+            _CreateTS = value
+        End Set
+    End Property
+
+    Private _UpdateTS As DateTime?
+    Public Property UpdateTS() As DateTime?
+        Get
+            Return _UpdateTS
+        End Get
+        Set(ByVal value As DateTime?)
+            _UpdateTS = value
+        End Set
+    End Property
+
+
     'User Type
 
     Private _UserType As Integer
@@ -443,6 +646,46 @@
         End Get
         Set(ByVal value As Integer)
             _UserType = value
+        End Set
+    End Property
+
+    Private _Status As Integer
+    Public Property Status() As Integer
+        Get
+            Return _Status
+        End Get
+        Set(ByVal value As Integer)
+            _Status = value
+        End Set
+    End Property
+
+    Private _LastLogin As Integer
+    Public Property LastLogin() As Integer
+        Get
+            Return _LastLogin
+        End Get
+        Set(ByVal value As Integer)
+            _LastLogin = value
+        End Set
+    End Property
+
+    Private _ExpirationDate As Integer
+    Public Property ExpirationDate() As Integer
+        Get
+            Return _ExpirationDate
+        End Get
+        Set(ByVal value As Integer)
+            _ExpirationDate = value
+        End Set
+    End Property
+
+    Private _LastAccessedBy As Integer
+    Public Property LastAccessedBy() As Integer
+        Get
+            Return _LastAccessedBy
+        End Get
+        Set(ByVal value As Integer)
+            _LastAccessedBy = value
         End Set
     End Property
 

@@ -146,7 +146,7 @@
             .MiddleName = TB_MiddleIn.Text
             .HomeAddress1 = TB_HomeAddLine1.Text
             .HomeAddress2 = TB_HomeAddLine2.Text
-            .EmailAddress = TB_EmailAddress.Text
+            .PersonalEmail = TB_EmailAddress.Text
             If Not TB_MobileNo.Text = String.Empty Then
                 .MobileNo = TB_MobileNo.Text
             End If
