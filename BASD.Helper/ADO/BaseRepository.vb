@@ -15,6 +15,21 @@ Public MustInherit Class BaseRepository
         Throw New NotImplementedException()
     End Sub
 
+    ' START: ----- LOGIN ------- '
+    Public Overridable Function GetUserLogin(ByVal entity As IEntity) As IEntity Implements IRepository.GetUserLogin
+
+        Throw New NotImplementedException()
+
+    End Function
+
+    Public Overridable Function GetLogin(ByVal entity As IEntity) As IEntity Implements IRepository.GetLogin
+
+        Throw New NotImplementedException()
+
+    End Function
+
+    ' FINISH: ----- LOGIN ------- '
+
     Public Overridable Function GetData(ByVal entity As IEntity) As IEntity Implements IRepository.GetData
 
         Throw New NotImplementedException()
