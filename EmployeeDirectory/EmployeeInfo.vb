@@ -143,15 +143,15 @@
             .Title = TB_Title.Text
             .LastName = TB_LastName.Text
             .FirstName = TB_FirstName.Text
-            .MiddleName = TB_MiddleIn.Text
+            .MiddleName = TB_MiddleName.Text
             .HomeAddress1 = TB_HomeAddLine1.Text
             .HomeAddress2 = TB_HomeAddLine2.Text
             .EmailAddress = TB_EmailAddress.Text
             If Not TB_MobileNo.Text = String.Empty Then
                 .MobileNo = TB_MobileNo.Text
             End If
-            If Not TB_PhoneExt.Text = String.Empty Then
-                .PhoneExtension = TB_PhoneExt.Text
+            If Not TB_Landline.Text = String.Empty Then
+                .PhoneExtension = TB_Landline.Text
             End If
             .NCOGroup = TB_NCOGrpID.Text
             .Division = TB_Division.Text
@@ -165,7 +165,7 @@
             If Not TB_StartDate.Text = String.Empty Then
                 .StartDate = TB_StartDate.Text
             End If
-            .Shift = TB_Shift.Text
+            .Shift = CB_WorkSched.Text
             .PCName = TB_PCName.Text
             .MercuryID = TB_MercuryID.Text
             .OraclePRDID = TB_OraclePRD.Text
