@@ -16,7 +16,7 @@ Public Class EmployeeRepository
         Dim _tempParamList = New List(Of SqlParameter)()
         _tempParamList.Add(New SqlParameter("@OracleID", _employee.OracleID))
 
-        Dim _tempEmployeeList = MyBase.List("[uspGetEmployee]", _tempParamList.ToArray())
+        Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeRec]", _tempParamList.ToArray())
 
         Return _tempEmployeeList.SingleMapToEntity(Of Employee)().SingleOrDefault()
 
@@ -25,8 +25,8 @@ Public Class EmployeeRepository
     Public Overrides Function GetListData(ByVal entity As IEntity) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
         Dim _employee = CType(entity, Employee)
         Dim _tempParamList = New List(Of SqlParameter)()
-        _tempParamList.Add(New SqlParameter("@ManagerID", _employee.LocalManagerID))
-        Dim _tempEmployeeList = MyBase.List("[uspGetEmployee]", _tempParamList.ToArray())
+        _tempParamList.Add(New SqlParameter("@LocalManagerID", _employee.LocalManagerID))
+        Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", _tempParamList.ToArray())
         Return _tempEmployeeList.SingleMapToEntity(Of Employee)().ToList
     End Function
     'Public Overrides Function GetListData(ByVal entity As IEntity) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
@@ -45,7 +45,7 @@ Public Class EmployeeRepository
 
         _tempParamList = MoveParamaters(entity)
 
-        Dim x = MyBase.Update("[uspCreateEmployee]", _tempParamList.ToArray())
+        Dim x = MyBase.Update("[uspInsertEmployee]", _tempParamList.ToArray())
 
         If CInt(x) > 0 Then
             MessageBox.Show("Employee Added.")
@@ -59,7 +59,7 @@ Public Class EmployeeRepository
 
         _tempParamList = MoveParamaters(entity)
 
-        Dim x = MyBase.Update("[uspUpdateEmployee]", _tempParamList.ToArray())
+        Dim x = MyBase.Update("[uspUpdateEmployeeRec]", _tempParamList.ToArray())
 
         If CInt(x) > 0 Then
             MessageBox.Show("Employee Updated.")
@@ -73,15 +73,23 @@ Public Class EmployeeRepository
         With _tempParamList
             .Add(New SqlParameter("@OracleID", _emp.OracleID))
             .Add(New SqlParameter("@Title", _emp.Title))
+            .Add(New SqlParameter("@Position", _emp.Position))
             .Add(New SqlParameter("@LastName", _emp.LastName))
             .Add(New SqlParameter("@FirstName", _emp.FirstName))
             .Add(New SqlParameter("@MiddleName", _emp.MiddleName))
             .Add(New SqlParameter("@HomeAddress1", _emp.HomeAddress1))
             .Add(New SqlParameter("@HomeAddress2", _emp.HomeAddress2))
+            .Add(New SqlParameter("@CityID", _emp.CityId))
+            .Add(New SqlParameter("@ZipCode", _emp.ZipCode))
+            .Add(New SqlParameter("@RegionID", _emp.RegionId))
+            .Add(New SqlParameter("@Country", _emp.Country))
             .Add(New SqlParameter("@Gender", _emp.Gender))
-            .Add(New SqlParameter("@EmailAddress", _emp.EmailAddress))
+            .Add(New SqlParameter("@Birthday", _emp.Birthday))
+            .Add(New SqlParameter("@PersonalEmail", _emp.PersonalEmail))
             .Add(New SqlParameter("@MobileNo", _emp.MobileNo))
+            .Add(New SqlParameter("@LandlineNo", _emp.LandlineNo))
             .Add(New SqlParameter("@PhoneExtension", _emp.PhoneExtension))
+            .Add(New SqlParameter("@OfficeEmail", _emp.OfficeEmail))
             .Add(New SqlParameter("@NCOGroup", _emp.NCOGroup))
             .Add(New SqlParameter("@Division", _emp.Division))
             .Add(New SqlParameter("@Department", _emp.Department))
@@ -108,6 +116,10 @@ Public Class EmployeeRepository
             .Add(New SqlParameter("@SFCDate", _emp.SFCDate))
             .Add(New SqlParameter("@Recruiter", _emp.Recruiter))
             .Add(New SqlParameter("@UserType", _emp.UserType))
+            .Add(New SqlParameter("@Status", _emp.Status))
+            .Add(New SqlParameter("@LastLogin", _emp.LastLogin))
+            .Add(New SqlParameter("@ExpirationDate", _emp.ExpirationDate))
+            .Add(New SqlParameter("@LastAccessedBy", _emp.LastAccessedBy))
         End With
 
         Return _tempParamList

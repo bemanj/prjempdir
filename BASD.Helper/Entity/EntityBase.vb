@@ -1,8 +1,9 @@
 ﻿Public Class EntityBase
     Implements IEntity
 
-    Private _id As Int64
-    Public Property Id() As Int64 Implements IEntity.Id
+    Private _id As Integer
+    Public Property Id() As Integer Implements IEntity.Id
+
         Get
             Return _id
         End Get
