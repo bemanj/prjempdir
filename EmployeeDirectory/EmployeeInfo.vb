@@ -264,6 +264,22 @@
             End If
 
         Next
+        TB_OracleID.Focus()
+    End Sub
+
+    Private Sub CB_SFC_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_SFC.SelectedIndexChanged
+        If CB_SFC.Text = "No" Then
+            TB_SFCDate.Format = DateTimePickerFormat.Custom
+            TB_SFCDate.CustomFormat = " "
+            TB_SFCDate.Enabled = False
+        Else
+            TB_SFCDate.Format = DateTimePickerFormat.Short
+            TB_SFCDate.Enabled = True
+        End If
+
+    End Sub
+
+    Private Sub TB_SFCDate_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TB_SFCDate.ValueChanged
 
     End Sub
 End Class

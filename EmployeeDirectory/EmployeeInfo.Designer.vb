@@ -47,6 +47,21 @@ Partial Class EmployeeInfo
         Me.Button7 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.OfficeInfo = New System.Windows.Forms.TabPage()
+        Me.TB_SFCDate = New System.Windows.Forms.DateTimePicker()
+        Me.TB_Floor = New System.Windows.Forms.ComboBox()
+        Me.CB_WorkSched = New System.Windows.Forms.ComboBox()
+        Me.TB_PhoneExt = New System.Windows.Forms.MaskedTextBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.TB_SiteCountry = New System.Windows.Forms.TextBox()
+        Me.TB_SiteRegion = New System.Windows.Forms.TextBox()
+        Me.TB_SiteCity = New System.Windows.Forms.TextBox()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.TB_EmailAdd = New System.Windows.Forms.TextBox()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Label47 = New System.Windows.Forms.Label()
         Me.CB_Team = New System.Windows.Forms.ComboBox()
         Me.CB_LocalMgr = New System.Windows.Forms.ComboBox()
         Me.CB_Site = New System.Windows.Forms.ComboBox()
@@ -116,24 +131,9 @@ Partial Class EmployeeInfo
         Me.CB_Country = New System.Windows.Forms.ComboBox()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.Label46 = New System.Windows.Forms.Label()
-        Me.Label47 = New System.Windows.Forms.Label()
-        Me.TB_EmailAdd = New System.Windows.Forms.TextBox()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.Label49 = New System.Windows.Forms.Label()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.Label51 = New System.Windows.Forms.Label()
-        Me.TB_SiteCity = New System.Windows.Forms.TextBox()
-        Me.TB_SiteRegion = New System.Windows.Forms.TextBox()
-        Me.TB_SiteCountry = New System.Windows.Forms.TextBox()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
         Me.TB_OracleID = New System.Windows.Forms.MaskedTextBox()
         Me.TB_MobileNo = New System.Windows.Forms.MaskedTextBox()
         Me.MB_Zipcode = New System.Windows.Forms.MaskedTextBox()
-        Me.TB_PhoneExt = New System.Windows.Forms.MaskedTextBox()
-        Me.CB_WorkSched = New System.Windows.Forms.ComboBox()
-        Me.TB_Floor = New System.Windows.Forms.ComboBox()
-        Me.TB_SFCDate = New System.Windows.Forms.DateTimePicker()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -419,6 +419,139 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.TabIndex = 1
         Me.OfficeInfo.Text = "Office Information"
         Me.OfficeInfo.UseVisualStyleBackColor = True
+        '
+        'TB_SFCDate
+        '
+        Me.TB_SFCDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.TB_SFCDate.Location = New System.Drawing.Point(505, 253)
+        Me.TB_SFCDate.Name = "TB_SFCDate"
+        Me.TB_SFCDate.Size = New System.Drawing.Size(121, 23)
+        Me.TB_SFCDate.TabIndex = 140
+        Me.TB_SFCDate.Value = New Date(2018, 1, 24, 18, 45, 56, 0)
+        '
+        'TB_Floor
+        '
+        Me.TB_Floor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TB_Floor.FormattingEnabled = True
+        Me.TB_Floor.Location = New System.Drawing.Point(830, 223)
+        Me.TB_Floor.Name = "TB_Floor"
+        Me.TB_Floor.Size = New System.Drawing.Size(121, 23)
+        Me.TB_Floor.TabIndex = 139
+        '
+        'CB_WorkSched
+        '
+        Me.CB_WorkSched.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_WorkSched.FormattingEnabled = True
+        Me.CB_WorkSched.Location = New System.Drawing.Point(138, 253)
+        Me.CB_WorkSched.Name = "CB_WorkSched"
+        Me.CB_WorkSched.Size = New System.Drawing.Size(171, 23)
+        Me.CB_WorkSched.TabIndex = 138
+        '
+        'TB_PhoneExt
+        '
+        Me.TB_PhoneExt.Location = New System.Drawing.Point(138, 13)
+        Me.TB_PhoneExt.Mask = "000000000000000"
+        Me.TB_PhoneExt.Name = "TB_PhoneExt"
+        Me.TB_PhoneExt.Size = New System.Drawing.Size(171, 23)
+        Me.TB_PhoneExt.TabIndex = 137
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.Location = New System.Drawing.Point(395, 43)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(56, 15)
+        Me.Label34.TabIndex = 136
+        Me.Label34.Text = "Recruiter"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(395, 193)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(63, 15)
+        Me.Label22.TabIndex = 135
+        Me.Label22.Text = "Start Date"
+        '
+        'TB_SiteCountry
+        '
+        Me.TB_SiteCountry.Location = New System.Drawing.Point(830, 163)
+        Me.TB_SiteCountry.Name = "TB_SiteCountry"
+        Me.TB_SiteCountry.Size = New System.Drawing.Size(185, 23)
+        Me.TB_SiteCountry.TabIndex = 134
+        '
+        'TB_SiteRegion
+        '
+        Me.TB_SiteRegion.Location = New System.Drawing.Point(830, 133)
+        Me.TB_SiteRegion.Name = "TB_SiteRegion"
+        Me.TB_SiteRegion.Size = New System.Drawing.Size(185, 23)
+        Me.TB_SiteRegion.TabIndex = 133
+        '
+        'TB_SiteCity
+        '
+        Me.TB_SiteCity.Location = New System.Drawing.Point(830, 103)
+        Me.TB_SiteCity.Name = "TB_SiteCity"
+        Me.TB_SiteCity.Size = New System.Drawing.Size(185, 23)
+        Me.TB_SiteCity.TabIndex = 132
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label51.Location = New System.Drawing.Point(720, 163)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(74, 15)
+        Me.Label51.TabIndex = 131
+        Me.Label51.Text = "Site Country"
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label50.Location = New System.Drawing.Point(720, 133)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(69, 15)
+        Me.Label50.TabIndex = 129
+        Me.Label50.Text = "Site Region"
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label49.Location = New System.Drawing.Point(720, 103)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(52, 15)
+        Me.Label49.TabIndex = 127
+        Me.Label49.Text = "Site City"
+        '
+        'TB_EmailAdd
+        '
+        Me.TB_EmailAdd.Location = New System.Drawing.Point(138, 43)
+        Me.TB_EmailAdd.Name = "TB_EmailAdd"
+        Me.TB_EmailAdd.Size = New System.Drawing.Size(171, 23)
+        Me.TB_EmailAdd.TabIndex = 126
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label48.Location = New System.Drawing.Point(41, 43)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(81, 15)
+        Me.Label48.TabIndex = 125
+        Me.Label48.Text = "Email Address"
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.Location = New System.Drawing.Point(41, 13)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(95, 15)
+        Me.Label47.TabIndex = 123
+        Me.Label47.Text = "Avaya Extension"
         '
         'CB_Team
         '
@@ -1058,104 +1191,6 @@ Partial Class EmployeeInfo
         Me.Label46.TabIndex = 110
         Me.Label46.Text = "Zip Code"
         '
-        'Label47
-        '
-        Me.Label47.AutoSize = True
-        Me.Label47.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.Location = New System.Drawing.Point(41, 13)
-        Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(95, 15)
-        Me.Label47.TabIndex = 123
-        Me.Label47.Text = "Avaya Extension"
-        '
-        'TB_EmailAdd
-        '
-        Me.TB_EmailAdd.Location = New System.Drawing.Point(138, 43)
-        Me.TB_EmailAdd.Name = "TB_EmailAdd"
-        Me.TB_EmailAdd.Size = New System.Drawing.Size(171, 23)
-        Me.TB_EmailAdd.TabIndex = 126
-        '
-        'Label48
-        '
-        Me.Label48.AutoSize = True
-        Me.Label48.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.Location = New System.Drawing.Point(41, 43)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(81, 15)
-        Me.Label48.TabIndex = 125
-        Me.Label48.Text = "Email Address"
-        '
-        'Label49
-        '
-        Me.Label49.AutoSize = True
-        Me.Label49.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(720, 103)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(52, 15)
-        Me.Label49.TabIndex = 127
-        Me.Label49.Text = "Site City"
-        '
-        'Label50
-        '
-        Me.Label50.AutoSize = True
-        Me.Label50.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(720, 133)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(69, 15)
-        Me.Label50.TabIndex = 129
-        Me.Label50.Text = "Site Region"
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.Location = New System.Drawing.Point(720, 163)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(74, 15)
-        Me.Label51.TabIndex = 131
-        Me.Label51.Text = "Site Country"
-        '
-        'TB_SiteCity
-        '
-        Me.TB_SiteCity.Location = New System.Drawing.Point(830, 103)
-        Me.TB_SiteCity.Name = "TB_SiteCity"
-        Me.TB_SiteCity.Size = New System.Drawing.Size(185, 23)
-        Me.TB_SiteCity.TabIndex = 132
-        '
-        'TB_SiteRegion
-        '
-        Me.TB_SiteRegion.Location = New System.Drawing.Point(830, 133)
-        Me.TB_SiteRegion.Name = "TB_SiteRegion"
-        Me.TB_SiteRegion.Size = New System.Drawing.Size(185, 23)
-        Me.TB_SiteRegion.TabIndex = 133
-        '
-        'TB_SiteCountry
-        '
-        Me.TB_SiteCountry.Location = New System.Drawing.Point(830, 163)
-        Me.TB_SiteCountry.Name = "TB_SiteCountry"
-        Me.TB_SiteCountry.Size = New System.Drawing.Size(185, 23)
-        Me.TB_SiteCountry.TabIndex = 134
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(395, 193)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(63, 15)
-        Me.Label22.TabIndex = 135
-        Me.Label22.Text = "Start Date"
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(395, 43)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(56, 15)
-        Me.Label34.TabIndex = 136
-        Me.Label34.Text = "Recruiter"
-        '
         'TB_OracleID
         '
         Me.TB_OracleID.Location = New System.Drawing.Point(132, 242)
@@ -1180,41 +1215,6 @@ Partial Class EmployeeInfo
         Me.MB_Zipcode.Size = New System.Drawing.Size(101, 20)
         Me.MB_Zipcode.TabIndex = 113
         Me.MB_Zipcode.ValidatingType = GetType(Integer)
-        '
-        'TB_PhoneExt
-        '
-        Me.TB_PhoneExt.Location = New System.Drawing.Point(138, 13)
-        Me.TB_PhoneExt.Mask = "000000000000000"
-        Me.TB_PhoneExt.Name = "TB_PhoneExt"
-        Me.TB_PhoneExt.Size = New System.Drawing.Size(171, 23)
-        Me.TB_PhoneExt.TabIndex = 137
-        '
-        'CB_WorkSched
-        '
-        Me.CB_WorkSched.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CB_WorkSched.FormattingEnabled = True
-        Me.CB_WorkSched.Location = New System.Drawing.Point(138, 253)
-        Me.CB_WorkSched.Name = "CB_WorkSched"
-        Me.CB_WorkSched.Size = New System.Drawing.Size(171, 23)
-        Me.CB_WorkSched.TabIndex = 138
-        '
-        'TB_Floor
-        '
-        Me.TB_Floor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.TB_Floor.FormattingEnabled = True
-        Me.TB_Floor.Location = New System.Drawing.Point(830, 223)
-        Me.TB_Floor.Name = "TB_Floor"
-        Me.TB_Floor.Size = New System.Drawing.Size(121, 23)
-        Me.TB_Floor.TabIndex = 139
-        '
-        'TB_SFCDate
-        '
-        Me.TB_SFCDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.TB_SFCDate.Location = New System.Drawing.Point(505, 253)
-        Me.TB_SFCDate.Name = "TB_SFCDate"
-        Me.TB_SFCDate.Size = New System.Drawing.Size(121, 23)
-        Me.TB_SFCDate.TabIndex = 140
-        Me.TB_SFCDate.Value = New Date(2018, 1, 24, 18, 45, 56, 0)
         '
         'EmployeeInfo
         '
