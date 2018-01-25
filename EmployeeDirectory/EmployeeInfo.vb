@@ -26,6 +26,17 @@
         ' This call is required by the designer.
         InitializeComponent()
 
+        '*** START OF CHANGE - BK
+        '*** B KABAHAR - SPRINT 2
+        If _isEdit = False Then
+
+            ClearDatePicker(DT_Birth)
+            ClearDatePicker(TB_SFCDate)
+            ClearDatePicker(TB_StartDate)
+            TB_SFCDate.Enabled = False
+        End If
+        '*** END - B KABAHAR SPRINT 2
+
         _empinfo = New EmployeeRepository()
 
         _EmpEditService = New EmpEditService()
@@ -243,7 +254,8 @@
     End Sub
 
     Private Sub ClearFields()
-
+        '*** B KABAHAR SPRINT 2 CHANGE
+        ' ADDED DATEPICKER IN THE LOOP
         For Each _control In Me.Controls
 
             If _control.GetType() = GetType(TextBox) Then
@@ -252,6 +264,9 @@
                 CType(_control, MaskedTextBox).Clear()
             ElseIf _control.GetType() = GetType(ComboBox) Then
                 CType(_control, ComboBox).SelectedIndex = -1
+            ElseIf _control.GetType() = GetType(DateTimePicker) Then
+                CType(_control, DateTimePicker).Format = DateTimePickerFormat.Custom
+                CType(_control, DateTimePicker).CustomFormat = " "
             End If
 
             If _control.GetType() = GetType(TabControl) Then
@@ -263,6 +278,9 @@
                             CType(_item, MaskedTextBox).Clear()
                         ElseIf _item.GetType() = GetType(ComboBox) Then
                             CType(_item, ComboBox).SelectedIndex = -1
+                        ElseIf _item.GetType() = GetType(DateTimePicker) Then
+                            CType(_item, DateTimePicker).Format = DateTimePickerFormat.Custom
+                            CType(_item, DateTimePicker).CustomFormat = " "
                         End If
                     Next
                 Next
@@ -270,6 +288,48 @@
 
         Next
 
+        '*** START OF CHANGE - BK
+        '*** B KABAHAR - SPRINT 2
+        TB_OracleID.Focus()
+        '*** END - B KABAHAR SPRINT 2
+
+    End Sub
+    '*** START OF CHANGE - BK
+    '*** B KABAHAR - SPRINT 2
+    Private Sub CB_SFC_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_SFC.SelectedIndexChanged
+        If CB_SFC.Text = "No" Then
+            ClearDatePicker(TB_SFCDate)
+            TB_SFCDate.Enabled = False
+        ElseIf CB_SFC.Text = "Yes" Then
+            ResetDatePicker(TB_SFCDate)
+        End If
+
     End Sub
 
+    Private Sub DT_Birth_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DT_Birth.ValueChanged
+
+        ResetDatePicker(DT_Birth)
+
+    End Sub
+
+    Private Sub TB_StartDate_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TB_StartDate.ValueChanged
+
+        ResetDatePicker(TB_StartDate)
+
+    End Sub
+
+    Private Sub ResetDatePicker(ByVal dtPicker As Object)
+        With dtPicker
+            .Format = DateTimePickerFormat.Short
+            .Enabled = True
+        End With
+    End Sub
+
+    Private Sub ClearDatePicker(ByVal dtPicker As Object)
+        With dtPicker
+            .Format = DateTimePickerFormat.Custom
+            .CustomFormat = " "
+        End With
+    End Sub
+    '*** END - B KABAHAR SPRINT 2
 End Class

@@ -81,7 +81,6 @@ Partial Class EmployeeInfo
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.CB_SFC = New System.Windows.Forms.ComboBox()
-        Me.TB_StartDate = New System.Windows.Forms.TextBox()
         Me.TB_OnboardingTkt = New System.Windows.Forms.TextBox()
         Me.TB_SeatNo = New System.Windows.Forms.TextBox()
         Me.TB_USMgr = New System.Windows.Forms.TextBox()
@@ -134,6 +133,7 @@ Partial Class EmployeeInfo
         Me.TB_OracleID = New System.Windows.Forms.MaskedTextBox()
         Me.TB_MobileNo = New System.Windows.Forms.MaskedTextBox()
         Me.MB_Zipcode = New System.Windows.Forms.MaskedTextBox()
+        Me.TB_StartDate = New System.Windows.Forms.DateTimePicker()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -366,6 +366,7 @@ Partial Class EmployeeInfo
         '
         'OfficeInfo
         '
+        Me.OfficeInfo.Controls.Add(Me.TB_StartDate)
         Me.OfficeInfo.Controls.Add(Me.TB_SFCDate)
         Me.OfficeInfo.Controls.Add(Me.TB_Floor)
         Me.OfficeInfo.Controls.Add(Me.CB_WorkSched)
@@ -400,7 +401,6 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.Controls.Add(Me.Label36)
         Me.OfficeInfo.Controls.Add(Me.Label37)
         Me.OfficeInfo.Controls.Add(Me.CB_SFC)
-        Me.OfficeInfo.Controls.Add(Me.TB_StartDate)
         Me.OfficeInfo.Controls.Add(Me.TB_OnboardingTkt)
         Me.OfficeInfo.Controls.Add(Me.TB_SeatNo)
         Me.OfficeInfo.Controls.Add(Me.TB_USMgr)
@@ -725,13 +725,6 @@ Partial Class EmployeeInfo
         Me.CB_SFC.Name = "CB_SFC"
         Me.CB_SFC.Size = New System.Drawing.Size(121, 23)
         Me.CB_SFC.TabIndex = 13
-        '
-        'TB_StartDate
-        '
-        Me.TB_StartDate.Location = New System.Drawing.Point(505, 193)
-        Me.TB_StartDate.Name = "TB_StartDate"
-        Me.TB_StartDate.Size = New System.Drawing.Size(121, 23)
-        Me.TB_StartDate.TabIndex = 12
         '
         'TB_OnboardingTkt
         '
@@ -1216,6 +1209,14 @@ Partial Class EmployeeInfo
         Me.MB_Zipcode.TabIndex = 16
         Me.MB_Zipcode.ValidatingType = GetType(Integer)
         '
+        'TB_StartDate
+        '
+        Me.TB_StartDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.TB_StartDate.Location = New System.Drawing.Point(505, 193)
+        Me.TB_StartDate.Name = "TB_StartDate"
+        Me.TB_StartDate.Size = New System.Drawing.Size(121, 23)
+        Me.TB_StartDate.TabIndex = 141
+        '
         'EmployeeInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1324,7 +1325,6 @@ Partial Class EmployeeInfo
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents Label37 As System.Windows.Forms.Label
     Friend WithEvents CB_SFC As System.Windows.Forms.ComboBox
-    Friend WithEvents TB_StartDate As System.Windows.Forms.TextBox
     Friend WithEvents TB_OnboardingTkt As System.Windows.Forms.TextBox
     Friend WithEvents TB_SeatNo As System.Windows.Forms.TextBox
     Friend WithEvents TB_USMgr As System.Windows.Forms.TextBox
@@ -1393,4 +1393,5 @@ Partial Class EmployeeInfo
     Friend WithEvents CB_WorkSched As System.Windows.Forms.ComboBox
     Friend WithEvents TB_SFCDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents TB_Floor As System.Windows.Forms.ComboBox
+    Friend WithEvents TB_StartDate As System.Windows.Forms.DateTimePicker
 End Class
