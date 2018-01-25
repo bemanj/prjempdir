@@ -74,12 +74,12 @@
         End Set
     End Property
 
-    Private _LastLogin As DateTime
-    Public Property LastLogin() As DateTime
+    Private _LastLogin As DateTime?
+    Public Property LastLogin() As DateTime?
         Get
             Return _LastLogin
         End Get
-        Set(ByVal value As DateTime)
+        Set(ByVal value As DateTime?)
             _LastLogin = value
         End Set
     End Property
@@ -101,6 +101,36 @@
         End Get
         Set(ByVal value As Long)
             _LastAccessedBy = value
+        End Set
+    End Property
+
+    Private _LastName As String
+    Public Property LastName() As String
+        Get
+            Return _LastName
+        End Get
+        Set(ByVal value As String)
+            _LastName = value
+        End Set
+    End Property
+
+    Private _FirstName As String
+    Public Property FirstName() As String
+        Get
+            Return _FirstName
+        End Get
+        Set(ByVal value As String)
+            _FirstName = value
+        End Set
+    End Property
+
+    Private _MiddleName As String
+    Public Property MiddleName() As String
+        Get
+            Return _MiddleName
+        End Get
+        Set(ByVal value As String)
+            _MiddleName = value
         End Set
     End Property
 
