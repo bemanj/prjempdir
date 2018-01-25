@@ -25,6 +25,9 @@
                 admin.Show()
             ElseIf _LoginView.UserType = 2 Then 'MANAGER'
                 Me.Hide()
+                ''''' ***** LMRS START: Code to display Manager's Name ***** '''''
+                Main.Label_ManagerName.Text = (_LoginView.LastName & ", " & _LoginView.FirstName & " " & _LoginView.MiddleName)
+                ''''' ***** LMRS END: Code to display Manager's Name ***** '''''
                 Main.Show()
                 Main.Main_Load(e, e)
             ElseIf _LoginView.UserType = 3 Then 'USER'

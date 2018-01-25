@@ -104,4 +104,35 @@
         End Set
     End Property
 
+    ''''' ***** LMRS START: ADD LASTNAME, FIRSTNAME, MIDDLE NAME FOR MANAGER'S VIEW NAME ***** '''''
+    Private _LastName As String
+    Public Property LastName() As String
+        Get
+            Return _LastName
+        End Get
+        Set(ByVal value As String)
+            _LastName = value
+        End Set
+    End Property
+
+    Private _FirstName As String
+    Public Property FirstName() As String
+        Get
+            Return _FirstName
+        End Get
+        Set(ByVal value As String)
+            _FirstName = value
+        End Set
+    End Property
+
+    Private _MiddleName As String
+    Public Property MiddleName() As String
+        Get
+            Return _MiddleName
+        End Get
+        Set(ByVal value As String)
+            _MiddleName = value
+        End Set
+    End Property
+    ''''' ***** LMRS END: ADD LASTNAME, FIRSTNAME, MIDDLE NAME FOR MANAGER'S VIEW NAME ***** '''''
 End Class

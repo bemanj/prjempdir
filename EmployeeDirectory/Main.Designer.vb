@@ -41,6 +41,7 @@ Partial Class Main
         Me.BtnLogOut = New System.Windows.Forms.Button()
         Me.Btn_EmpInc = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label_ManagerName = New System.Windows.Forms.Label()
         CType(Me.DataGridViewEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -225,12 +226,25 @@ Partial Class Main
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
+        'Label_ManagerName
+        '
+        Me.Label_ManagerName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_ManagerName.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label_ManagerName.Location = New System.Drawing.Point(0, 215)
+        Me.Label_ManagerName.Name = "Label_ManagerName"
+        Me.Label_ManagerName.Size = New System.Drawing.Size(1164, 19)
+        Me.Label_ManagerName.TabIndex = 0
+        Me.Label_ManagerName.Text = "Label_ManagerName"
+        Me.Label_ManagerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1164, 862)
+        Me.Controls.Add(Me.Label_ManagerName)
         Me.Controls.Add(Me.Btn_EmpInc)
         Me.Controls.Add(Me.BtnLogOut)
         Me.Controls.Add(Me.Button5)
@@ -277,5 +291,6 @@ Partial Class Main
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents BtnLogOut As System.Windows.Forms.Button
     Friend WithEvents Btn_EmpInc As System.Windows.Forms.Button
+    Friend WithEvents Label_ManagerName As System.Windows.Forms.Label
 
 End Class

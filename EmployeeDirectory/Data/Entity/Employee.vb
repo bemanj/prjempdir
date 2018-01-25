@@ -194,12 +194,12 @@
     End Property
 
     'Sprint 2: New Field
-    Private _LandlineNo As Decimal
-    Public Property LandlineNo() As Decimal
+    Private _LandlineNo As String
+    Public Property LandlineNo() As String
         Get
             Return _LandlineNo
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As String)
             _LandlineNo = value
         End Set
     End Property
