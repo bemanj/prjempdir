@@ -3,13 +3,13 @@
 
     'Employee Information
 
-    'Sprint 2: Change to LONG
-    Private _OracleID As Long
-    Public Property OracleID() As Long
+    'Sprint 2: Change to Int64
+    Private _OracleID As Int64
+    Public Property OracleID() As Int64
         Get
             Return _OracleID
         End Get
-        Set(ByVal value As Long)
+        Set(ByVal value As Int64)
             _OracleID = value
         End Set
     End Property
@@ -86,23 +86,23 @@
     End Property
 
     'Sprint 2: New Field
-    Private _CityId As Integer
-    Public Property CityId() As Integer
+    Private _CityID As Integer
+    Public Property CityID() As Integer
         Get
-            Return _CityId
+            Return _CityID
         End Get
         Set(ByVal value As Integer)
-            _CityId = value
+            _CityID = value
         End Set
     End Property
 
     'Sprint 2: New Field
-    Private _CityName As Integer
-    Public Property CityName() As Integer
+    Private _CityName As String
+    Public Property CityName() As String
         Get
             Return _CityName
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             _CityName = value
         End Set
     End Property
@@ -119,13 +119,13 @@
     End Property
 
     'Sprint 2: New Field
-    Private _RegionId As Integer
-    Public Property RegionId() As Integer
+    Private _RegionID As Integer
+    Public Property RegionID() As Integer
         Get
-            Return _RegionId
+            Return _RegionID
         End Get
         Set(ByVal value As Integer)
-            _RegionId = value
+            _RegionID = value
         End Set
     End Property
 
@@ -183,33 +183,33 @@
         End Set
     End Property
 
-    Private _MobileNo As Decimal
-    Public Property MobileNo() As Decimal
+    Private _MobileNo As Int64
+    Public Property MobileNo() As Int64
         Get
             Return _MobileNo
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As Int64)
             _MobileNo = value
         End Set
     End Property
 
     'Sprint 2: New Field
-    Private _LandlineNo As Decimal
-    Public Property LandlineNo() As Decimal
+    Private _LandlineNo As String
+    Public Property LandlineNo() As String
         Get
             Return _LandlineNo
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As String)
             _LandlineNo = value
         End Set
     End Property
 
-    Private _PhoneExtension As Decimal
-    Public Property PhoneExtension() As Decimal
+    Private _PhoneExtension As Integer
+    Public Property PhoneExtension() As Integer
         Get
             Return _PhoneExtension
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As Integer)
             _PhoneExtension = value
         End Set
     End Property
@@ -287,43 +287,43 @@
         End Set
     End Property
 
-    Private _LocalManagerID As Long
-    Public Property LocalManagerID() As Long
+    Private _LocalManagerID As Int64
+    Public Property LocalManagerID() As Int64
         Get
             Return _LocalManagerID
         End Get
-        Set(ByVal value As Long)
+        Set(ByVal value As Int64)
             _LocalManagerID = value
         End Set
     End Property
 
-    Private _Mgr_Last_Name As String
-    Public Property Mgr_Last_Name() As String
-        Get
-            If (_Mgr_Last_Name Is Nothing) Then
-                Return String.Empty
+    'Private _Mgr_Last_Name As String
+    'Public Property Mgr_Last_Name() As String
+    '    Get
+    '        If (_Mgr_Last_Name Is Nothing) Then
+    '            Return String.Empty
 
-            End If
-            Return _Mgr_Last_Name
-        End Get
-        Set(ByVal value As String)
-            _Mgr_Last_Name = value
-        End Set
-    End Property
+    '        End If
+    '        Return _Mgr_Last_Name
+    '    End Get
+    '    Set(ByVal value As String)
+    '        _Mgr_Last_Name = value
+    '    End Set
+    'End Property
 
-    Private _Mgr_First_Name As String
-    Public Property Mgr_First_Name() As String
-        Get
-            If (_Mgr_First_Name Is Nothing) Then
-                Return String.Empty
+    'Private _Mgr_First_Name As String
+    'Public Property Mgr_First_Name() As String
+    '    Get
+    '        If (_Mgr_First_Name Is Nothing) Then
+    '            Return String.Empty
 
-            End If
-            Return _Mgr_First_Name
-        End Get
-        Set(ByVal value As String)
-            _Mgr_First_Name = value
-        End Set
-    End Property
+    '        End If
+    '        Return _Mgr_First_Name
+    '    End Get
+    '    Set(ByVal value As String)
+    '        _Mgr_First_Name = value
+    '    End Set
+    'End Property
 
     Private _USManager As String
     Public Property USManager() As String
@@ -616,27 +616,6 @@
     End Property
 
 
-    Private _CreateTS As DateTime?
-    Public Property CreateTS() As DateTime?
-        Get
-            Return _CreateTS
-        End Get
-        Set(ByVal value As DateTime?)
-            _CreateTS = value
-        End Set
-    End Property
-
-    Private _UpdateTS As DateTime?
-    Public Property UpdateTS() As DateTime?
-        Get
-            Return _UpdateTS
-        End Get
-        Set(ByVal value As DateTime?)
-            _UpdateTS = value
-        End Set
-    End Property
-
-
     'User Type
 
     Private _UserType As Integer
@@ -659,32 +638,52 @@
         End Set
     End Property
 
-    Private _LastLogin As Integer
-    Public Property LastLogin() As Integer
+    Private _CreateTS As DateTime?
+    Public Property CreateTS() As DateTime?
+        Get
+            Return _CreateTS
+        End Get
+        Set(ByVal value As DateTime?)
+            _CreateTS = value
+        End Set
+    End Property
+
+    Private _UpdateTS As DateTime?
+    Public Property UpdateTS() As DateTime?
+        Get
+            Return _UpdateTS
+        End Get
+        Set(ByVal value As DateTime?)
+            _UpdateTS = value
+        End Set
+    End Property
+
+    Private _LastLogin As DateTime?
+    Public Property LastLogin() As DateTime?
         Get
             Return _LastLogin
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As DateTime?)
             _LastLogin = value
         End Set
     End Property
 
-    Private _ExpirationDate As Integer
-    Public Property ExpirationDate() As Integer
+    Private _ExpirationDate As DateTime?
+    Public Property ExpirationDate() As DateTime?
         Get
             Return _ExpirationDate
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As DateTime?)
             _ExpirationDate = value
         End Set
     End Property
 
-    Private _LastAccessedBy As Integer
-    Public Property LastAccessedBy() As Integer
+    Private _LastAccessedBy As Int64
+    Public Property LastAccessedBy() As Int64
         Get
             Return _LastAccessedBy
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Int64)
             _LastAccessedBy = value
         End Set
     End Property

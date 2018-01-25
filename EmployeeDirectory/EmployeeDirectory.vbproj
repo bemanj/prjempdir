@@ -146,6 +146,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="admin.resx">
       <DependentUpon>admin.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeInfoIncomplete.resx">
       <DependentUpon>EmployeeInfoIncomplete.vb</DependentUpon>

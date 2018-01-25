@@ -115,11 +115,11 @@ Public Class EmployeeRepository
             .Add(New SqlParameter("@SFC", _emp.SFC))
             .Add(New SqlParameter("@SFCDate", _emp.SFCDate))
             .Add(New SqlParameter("@Recruiter", _emp.Recruiter))
-            .Add(New SqlParameter("@UserType", _emp.UserType))
-            .Add(New SqlParameter("@Status", _emp.Status))
-            .Add(New SqlParameter("@LastLogin", _emp.LastLogin))
-            .Add(New SqlParameter("@ExpirationDate", _emp.ExpirationDate))
-            .Add(New SqlParameter("@LastAccessedBy", _emp.LastAccessedBy))
+            '.Add(New SqlParameter("@UserType", _emp.UserType))
+            '.Add(New SqlParameter("@Status", _emp.Status))
+            '.Add(New SqlParameter("@LastLogin", _emp.LastLogin))
+            '.Add(New SqlParameter("@ExpirationDate", _emp.ExpirationDate))
+            '.Add(New SqlParameter("@LastAccessedBy", _emp.LastAccessedBy))
         End With
 
         Return _tempParamList

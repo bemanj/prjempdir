@@ -35,7 +35,7 @@ Partial Class EmployeeInfo
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TB_Title = New System.Windows.Forms.TextBox()
-        Me.TB_EmailAddress = New System.Windows.Forms.TextBox()
+        Me.TB_PersonalEmail = New System.Windows.Forms.TextBox()
         Me.Btn_Save = New System.Windows.Forms.Button()
         Me.Btn_RevertClear = New System.Windows.Forms.Button()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -50,7 +50,7 @@ Partial Class EmployeeInfo
         Me.TB_SFCDate = New System.Windows.Forms.DateTimePicker()
         Me.TB_Floor = New System.Windows.Forms.ComboBox()
         Me.CB_WorkSched = New System.Windows.Forms.ComboBox()
-        Me.TB_PhoneExt = New System.Windows.Forms.MaskedTextBox()
+        Me.MB_PhoneExtension = New System.Windows.Forms.MaskedTextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.TB_SiteCountry = New System.Windows.Forms.TextBox()
@@ -59,7 +59,7 @@ Partial Class EmployeeInfo
         Me.Label51 = New System.Windows.Forms.Label()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Label49 = New System.Windows.Forms.Label()
-        Me.TB_EmailAdd = New System.Windows.Forms.TextBox()
+        Me.TB_OfficeEmail = New System.Windows.Forms.TextBox()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.CB_Team = New System.Windows.Forms.ComboBox()
@@ -252,12 +252,12 @@ Partial Class EmployeeInfo
         Me.TB_Title.Size = New System.Drawing.Size(162, 20)
         Me.TB_Title.TabIndex = 1
         '
-        'TB_EmailAddress
+        'TB_PersonalEmail
         '
-        Me.TB_EmailAddress.Location = New System.Drawing.Point(473, 302)
-        Me.TB_EmailAddress.Name = "TB_EmailAddress"
-        Me.TB_EmailAddress.Size = New System.Drawing.Size(342, 20)
-        Me.TB_EmailAddress.TabIndex = 7
+        Me.TB_PersonalEmail.Location = New System.Drawing.Point(473, 302)
+        Me.TB_PersonalEmail.Name = "TB_PersonalEmail"
+        Me.TB_PersonalEmail.Size = New System.Drawing.Size(342, 20)
+        Me.TB_PersonalEmail.TabIndex = 7
         '
         'Btn_Save
         '
@@ -369,7 +369,7 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.Controls.Add(Me.TB_SFCDate)
         Me.OfficeInfo.Controls.Add(Me.TB_Floor)
         Me.OfficeInfo.Controls.Add(Me.CB_WorkSched)
-        Me.OfficeInfo.Controls.Add(Me.TB_PhoneExt)
+        Me.OfficeInfo.Controls.Add(Me.MB_PhoneExtension)
         Me.OfficeInfo.Controls.Add(Me.Label34)
         Me.OfficeInfo.Controls.Add(Me.Label22)
         Me.OfficeInfo.Controls.Add(Me.TB_SiteCountry)
@@ -378,7 +378,7 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.Controls.Add(Me.Label51)
         Me.OfficeInfo.Controls.Add(Me.Label50)
         Me.OfficeInfo.Controls.Add(Me.Label49)
-        Me.OfficeInfo.Controls.Add(Me.TB_EmailAdd)
+        Me.OfficeInfo.Controls.Add(Me.TB_OfficeEmail)
         Me.OfficeInfo.Controls.Add(Me.Label48)
         Me.OfficeInfo.Controls.Add(Me.Label47)
         Me.OfficeInfo.Controls.Add(Me.CB_Team)
@@ -447,13 +447,13 @@ Partial Class EmployeeInfo
         Me.CB_WorkSched.Size = New System.Drawing.Size(171, 23)
         Me.CB_WorkSched.TabIndex = 8
         '
-        'TB_PhoneExt
+        'MB_PhoneExtension
         '
-        Me.TB_PhoneExt.Location = New System.Drawing.Point(138, 13)
-        Me.TB_PhoneExt.Mask = "000000000000000"
-        Me.TB_PhoneExt.Name = "TB_PhoneExt"
-        Me.TB_PhoneExt.Size = New System.Drawing.Size(171, 23)
-        Me.TB_PhoneExt.TabIndex = 0
+        Me.MB_PhoneExtension.Location = New System.Drawing.Point(138, 12)
+        Me.MB_PhoneExtension.Mask = "000000000000000"
+        Me.MB_PhoneExtension.Name = "MB_PhoneExtension"
+        Me.MB_PhoneExtension.Size = New System.Drawing.Size(171, 23)
+        Me.MB_PhoneExtension.TabIndex = 0
         '
         'Label34
         '
@@ -526,12 +526,12 @@ Partial Class EmployeeInfo
         Me.Label49.TabIndex = 127
         Me.Label49.Text = "Site City"
         '
-        'TB_EmailAdd
+        'TB_OfficeEmail
         '
-        Me.TB_EmailAdd.Location = New System.Drawing.Point(138, 43)
-        Me.TB_EmailAdd.Name = "TB_EmailAdd"
-        Me.TB_EmailAdd.Size = New System.Drawing.Size(171, 23)
-        Me.TB_EmailAdd.TabIndex = 1
+        Me.TB_OfficeEmail.Location = New System.Drawing.Point(138, 43)
+        Me.TB_OfficeEmail.Name = "TB_OfficeEmail"
+        Me.TB_OfficeEmail.Size = New System.Drawing.Size(171, 23)
+        Me.TB_OfficeEmail.TabIndex = 1
         '
         'Label48
         '
@@ -1250,7 +1250,7 @@ Partial Class EmployeeInfo
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Btn_RevertClear)
         Me.Controls.Add(Me.Btn_Save)
-        Me.Controls.Add(Me.TB_EmailAddress)
+        Me.Controls.Add(Me.TB_PersonalEmail)
         Me.Controls.Add(Me.TB_Title)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label8)
@@ -1295,7 +1295,7 @@ Partial Class EmployeeInfo
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents TB_Title As System.Windows.Forms.TextBox
-    Friend WithEvents TB_EmailAddress As System.Windows.Forms.TextBox
+    Friend WithEvents TB_PersonalEmail As System.Windows.Forms.TextBox
     Friend WithEvents Btn_Save As System.Windows.Forms.Button
     Friend WithEvents Btn_RevertClear As System.Windows.Forms.Button
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
@@ -1377,7 +1377,7 @@ Partial Class EmployeeInfo
     Friend WithEvents Label51 As System.Windows.Forms.Label
     Friend WithEvents Label50 As System.Windows.Forms.Label
     Friend WithEvents Label49 As System.Windows.Forms.Label
-    Friend WithEvents TB_EmailAdd As System.Windows.Forms.TextBox
+    Friend WithEvents TB_OfficeEmail As System.Windows.Forms.TextBox
     Friend WithEvents Label48 As System.Windows.Forms.Label
     Friend WithEvents Label47 As System.Windows.Forms.Label
     Friend WithEvents Label46 As System.Windows.Forms.Label
@@ -1388,7 +1388,7 @@ Partial Class EmployeeInfo
     Friend WithEvents TB_OracleID As System.Windows.Forms.MaskedTextBox
     Friend WithEvents TB_MobileNo As System.Windows.Forms.MaskedTextBox
     Friend WithEvents MB_Zipcode As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents TB_PhoneExt As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents MB_PhoneExtension As System.Windows.Forms.MaskedTextBox
     Friend WithEvents CB_WorkSched As System.Windows.Forms.ComboBox
     Friend WithEvents TB_SFCDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents TB_Floor As System.Windows.Forms.ComboBox

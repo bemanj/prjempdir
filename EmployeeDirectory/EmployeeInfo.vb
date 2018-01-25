@@ -123,77 +123,91 @@
 
         With _emp
             'Temporary
-            If CB_Team.Text = "BASD" Then
-                .TeamID = 4
-            End If
-            If CB_Site.Text = "Alorica Center" Then
-                .SiteID = 1
-            End If
-            If CB_LocalMgr.Text = "Rebazar Borromeo" Then
-                .LocalManagerID = 2
-            End If
+            'If CB_Team.Text = "BASD" Then
+            '    .TeamID = 4
+            'End If
+            'If CB_Site.Text = "Alorica Center" Then
+            '    .SiteID = 1
+            'End If
+            'If CB_LocalMgr.Text = "Rebazar Borromeo" Then
+            '    .LocalManagerID = 2
+            'End If
             '.UserType 
-            If LogIn.Username.Text = "user" Then
-                .UserType = 0
-            ElseIf LogIn.Username.Text = "manager" Then
-                .UserType = 1
-            ElseIf LogIn.Username.Text = "admin" Then
-                .UserType = 2
-            Else
-                .UserType = 3
-            End If
+            'If LogIn.Username.Text = "user" Then
+            '    .UserType = 0
+            'ElseIf LogIn.Username.Text = "manager" Then
+            '    .UserType = 1
+            'ElseIf LogIn.Username.Text = "admin" Then
+            '    .UserType = 2
+            'Else
+            '    .UserType = 3
+            'End If
+
             'TEXTBOX
             .OracleID = TB_OracleID.Text
             .Title = TB_Title.Text
+            .Position = TB_Position.Text
             .LastName = TB_LastName.Text
             .FirstName = TB_FirstName.Text
             .MiddleName = TB_MiddleName.Text
-            .HomeAddress1 = TB_HomeAddLine1.Text
-            .HomeAddress2 = TB_HomeAddLine2.Text
-            .PersonalEmail = TB_EmailAddress.Text
+            If Not DT_Birth.Text = String.Empty Then
+                .Birthday = DT_Birth.Text
+            End If
+            .PersonalEmail = TB_PersonalEmail.Text
             If Not TB_MobileNo.Text = String.Empty Then
-                .MobileNo = TB_MobileNo.Text
+                .MobileNo = CType(TB_MobileNo.Text, Long)
             End If
             If Not TB_Landline.Text = String.Empty Then
-                .PhoneExtension = TB_Landline.Text
+                .LandlineNo = TB_Landline.Text
             End If
-            .NCOGroup = TB_NCOGrpID.Text
+            .HomeAddress1 = TB_HomeAddLine1.Text
+            .HomeAddress2 = TB_HomeAddLine2.Text
+            If Not MB_Zipcode.Text = String.Empty Then
+                .ZipCode = MB_Zipcode.Text
+            End If
+            If Not MB_PhoneExtension.Text = String.Empty Then
+                .PhoneExtension = MB_PhoneExtension.Text
+            End If
+
+            .OfficeEmail = TB_OfficeEmail.Text
+            .Entity = TB_Entity.Text
             .Division = TB_Division.Text
             .Department = TB_Department.Text
-            .Entity = TB_Entity.Text
-            '.Mgr_Last_Name = CB_LocalMgr.Text
             .USManager = TB_USMgr.Text
-            .Floor = TB_Floor.Text
-            .SeatNumber = TB_SeatNo.Text
             .OnboardingTicket = TB_OnboardingTkt.Text
+            .Recruiter = TB_Recruiter.Text
             If Not TB_StartDate.Text = String.Empty Then
-                .StartDate = TB_StartDate.Text
+                .StartDate = CType(TB_StartDate.Text, Date)
             End If
-            .Shift = CB_WorkSched.Text
+            .SFC = GetComboValue(CB_SFC)
+            If Not TB_SFCDate.Text = String.Empty Then
+                .SFCDate = CType(TB_SFCDate.Text, Date)
+            End If
+            .SiteName = CB_Site.Text
+            .SeatNumber = TB_SeatNo.Text
+
             .PCName = TB_PCName.Text
             .MercuryID = TB_MercuryID.Text
-            .OraclePRDID = TB_OraclePRD.Text
             .EISID = TB_EISID.Text
+            .OraclePRDID = TB_OraclePRD.Text
             .InsightID = TB_InsightID.Text
+            .NCOGroup = TB_NCOGrpID.Text
             .EGSPremID = TB_EGSPREMID.Text
             .ElsevierID = TB_ElsevierID.Text
             .GITHubID = TB_GithubID.Text
-            If Not TB_SFCDate.Text = String.Empty Then
-                .SFCDate = TB_SFCDate.Text
-            End If
-            .Recruiter = TB_Recruiter.Text
+            '.Mgr_Last_Name = CB_LocalMgr.Text
 
             'COMBOBOX
+            '.Shift = CB_WorkSched.Text
             .Gender = CB_Gender.Text
             .IDCreated = GetComboValue(CB_IDCreated)
             '.LocalManagerID = CB_Site.Text
             '.SiteID = CB_Site.Text
-            .SFC = GetComboValue(CB_SFC)
             .IDCreated = GetComboValue(CB_IDCreated)
-            .Mgr_First_Name = "Rebazar"
-            .Mgr_Last_Name = "Borromeo"
-            .SiteName = CB_Site.Text
+            '.Mgr_First_Name = "Rebazar"
+            '.Mgr_Last_Name = "Borromeo"
             .TeamName = CB_Team.Text
+            .Floor = TB_Floor.Text
         End With
 
         If Me.IsEdit = True Then
