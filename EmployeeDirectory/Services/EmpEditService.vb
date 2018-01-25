@@ -55,7 +55,7 @@
             .TB_Division.Text = Employee.Division
             .TB_Department.Text = Employee.Department
             .TB_Entity.Text = Employee.Entity
-            .CB_WorkSched.Text = Employee.Shift
+            .CB_Shift.Text = Employee.Shift
             .TB_AddressLine1.Text = Employee.SiteAddress1
             .TB_AddressLine2.Text = Employee.SiteAddress2
             .TB_OraclePRD.Text = Employee.OraclePRDID
