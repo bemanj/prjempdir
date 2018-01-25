@@ -78,6 +78,7 @@
     <Compile Include="Data\Entity\DropDownList.vb" />
     <Compile Include="Data\Entity\LoginView.vb" />
     <Compile Include="Data\Entity\Employee.vb" />
+    <Compile Include="Data\Entity\ManagerGrid.vb" />
     <Compile Include="Data\LibraryRespository.vb" />
     <Compile Include="Data\LoginRepository.vb" />
     <Compile Include="Data\ManagerRepository.vb" />
@@ -174,9 +175,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

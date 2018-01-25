@@ -29,4 +29,13 @@ Public Class ManagerRepository
         Return _tempManagerList.SingleMapToEntity(Of Employee)()
     End Function
 
+    Public Function GetGridListData(ByVal entity As IEntity) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
+        Dim _employee = CType(entity, ManagerGrid)
+        Dim _tempParamList = New List(Of SqlParameter)()
+        _tempParamList.Add(New SqlParameter("@LocalManagerID", _employee.OracleID))
+        _tempParamList.Add(New SqlParameter("@SFC", _employee.SFC))
+        Dim _tempManagerList = MyBase.List("[uspGetMgrGridView]", _tempParamList.ToArray())
+        Return _tempManagerList.SingleMapToEntity(Of ManagerGrid)().ToList
+    End Function
+
 End Class

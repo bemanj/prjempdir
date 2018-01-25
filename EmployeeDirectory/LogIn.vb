@@ -1,5 +1,11 @@
 ﻿Public Class LogIn
 
+    Private _LoginRepository As New LoginRepository
+    Private _LoginView As New LoginView
+    Private mg As New ManagerGrid
+    Private mR As New ManagerRepository
+    Private dt As New DataTable
+    Private ls As New List(Of ManagerGrid)
     Private _LogInService As New LogInService
 
     Private Sub SignIn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SignIn_Btn.Click
@@ -20,8 +26,20 @@
                 Main.Label_ManagerName.Text = (_LoginViewTemp.LastName & ", " & _LoginViewTemp.FirstName & " " & _LoginViewTemp.MiddleName)
                 ''''' ***** LMRS END: Code to display Manager's Name ***** '''''
                 Main.Show()
-                Main.Main_Load(e, e)
-            ElseIf CurrentUserType = 3 Then 'USER'
+                dt.Clear()
+
+                Main.TB_MgrV_OracleID.Focus()
+                mg.OracleID = CurrentUser
+                mg.SFC = False
+
+                'ls = mR.GetGridListData(mg)                                     '   - get list from db
+                'dt = Main.ConvertToDataTable(ls)                                     '   - converts list to datatable to enable sorting
+                'Main.DataGridViewEmployee.AutoGenerateColumns = True
+                Main.DataGridViewEmployee.DataSource = mR.GetGridListData(mg) 'dt
+                Main.DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
+                Main.ToolStripStatusLabelUser.Text = "Current User: " & _LoginView.FirstName & " " & _LoginView.LastName
+
+            ElseIf _LoginView.UserType = 3 Then 'USER'
                 Me.Hide()
                 EmployeeInfo.Show()
                 EmployeeInfo.Btn_Cancel.Hide()
