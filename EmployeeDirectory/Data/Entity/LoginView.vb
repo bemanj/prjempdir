@@ -74,12 +74,12 @@
         End Set
     End Property
 
-    Private _LastLogin As DateTime
-    Public Property LastLogin() As DateTime
+    Private _LastLogin As DateTime?
+    Public Property LastLogin() As DateTime?
         Get
             Return _LastLogin
         End Get
-        Set(ByVal value As DateTime)
+        Set(ByVal value As DateTime?)
             _LastLogin = value
         End Set
     End Property

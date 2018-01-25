@@ -659,12 +659,12 @@
         End Set
     End Property
 
-    Private _LastLogin As Integer
-    Public Property LastLogin() As Integer
+    Private _LastLogin As DateTime
+    Public Property LastLogin() As DateTime
         Get
             Return _LastLogin
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As DateTime)
             _LastLogin = value
         End Set
     End Property
@@ -679,12 +679,12 @@
         End Set
     End Property
 
-    Private _LastAccessedBy As Integer
-    Public Property LastAccessedBy() As Integer
+    Private _LastAccessedBy As Long
+    Public Property LastAccessedBy() As Long
         Get
             Return _LastAccessedBy
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Long)
             _LastAccessedBy = value
         End Set
     End Property

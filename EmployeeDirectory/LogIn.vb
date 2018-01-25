@@ -1,36 +1,27 @@
 ﻿Public Class LogIn
 
-    Private _LoginRepository As New LoginRepository
-    Private _LoginView As New LoginView
-
-    Public Property LoginView() As LoginView
-        Get
-            Return _LoginView
-        End Get
-        Set(ByVal value As LoginView)
-            _LoginView = value
-        End Set
-    End Property
+    Private _LogInService As New LogInService
 
     Private Sub SignIn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SignIn_Btn.Click
-        _LoginView = SelectUser(Username.Text, UsernamePassword.Text)
-        If IsNothing(_LoginView) Then
+        Dim _LoginViewTemp = _LogInService.SelectUser(Username.Text, UsernamePassword.Text)
+        If IsNothing(_LoginViewTemp) Or
+            IsDBNull(_LoginViewTemp) Then
             RecorNotFound.Show()
             RecorNotFound.Label2.Text = "PLEASE CONTACT YOUR MANAGER"
         Else
-            CurrentUser = _LoginView.OracleID
-            CurrentUserType = _LoginView.UserType
-            If _LoginView.UserType = 1 Then     'ADMIN'
+            CurrentUser = _LoginViewTemp.OracleID
+            CurrentUserType = _LoginViewTemp.UserType
+            If CurrentUserType = 1 Then     'ADMIN'
                 Me.Hide()
                 admin.Show()
-            ElseIf _LoginView.UserType = 2 Then 'MANAGER'
+            ElseIf CurrentUserType = 2 Then 'MANAGER'
                 Me.Hide()
                 ''''' ***** LMRS START: Code to display Manager's Name ***** '''''
-                Main.Label_ManagerName.Text = (_LoginView.LastName & ", " & _LoginView.FirstName & " " & _LoginView.MiddleName)
+                Main.Label_ManagerName.Text = (_LoginViewTemp.LastName & ", " & _LoginViewTemp.FirstName & " " & _LoginViewTemp.MiddleName)
                 ''''' ***** LMRS END: Code to display Manager's Name ***** '''''
                 Main.Show()
                 Main.Main_Load(e, e)
-            ElseIf _LoginView.UserType = 3 Then 'USER'
+            ElseIf CurrentUserType = 3 Then 'USER'
                 Me.Hide()
                 EmployeeInfo.Show()
                 EmployeeInfo.Btn_Cancel.Hide()
@@ -64,14 +55,9 @@
         Username.Focus()
     End Sub
 
-    Private Sub LogIn_Load()
-        Throw New NotImplementedException
-    End Sub
-
-    Public Function SelectUser(ByVal OracleID As String, ByVal Password As String) As LoginView
-        _LoginView.OracleID = CInt(OracleID)
-        Return _LoginRepository.GetUserLogin(New LoginView() With {.OracleID = OracleID, .Password = Password})
-    End Function
+    'Private Sub LogIn_Load()
+    '    Throw New NotImplementedException
+    'End Sub
 
     '***** Will perform Submit Button when Enter is pressed *******
     Private Sub LoginTextBoxes_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Username.KeyPress, UsernamePassword.KeyPress
