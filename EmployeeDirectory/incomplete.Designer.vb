@@ -47,7 +47,6 @@ Partial Class incomplete
         Me.OnboardingTicket = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MercuryID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.MobileNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -204,17 +203,6 @@ Partial Class incomplete
         Me.Button5.TabIndex = 107
         Me.Button5.Text = "NEXT"
         Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button6.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(883, 800)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(80, 29)
-        Me.Button6.TabIndex = 106
-        Me.Button6.Text = "PREVIOUS"
-        Me.Button6.UseVisualStyleBackColor = False
         '
         'Button4
         '
@@ -398,7 +386,6 @@ Partial Class incomplete
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -446,7 +433,6 @@ Partial Class incomplete
     Friend WithEvents OnboardingTicket As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MercuryID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents MobileNumber As System.Windows.Forms.DataGridViewTextBoxColumn

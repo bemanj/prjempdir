@@ -38,6 +38,7 @@ Public Class Main
     End Sub
 
     Public Sub BtnLogOut_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogOut.Click
+        BtnClose.Hide()
         Me.Hide()
         LogIn.Show()
         LogIn.LogIn_Load(e, e)
@@ -65,5 +66,10 @@ Public Class Main
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub BtnClose_Click(sender As System.Object, e As System.EventArgs) Handles BtnClose.Click       
+        Me.Hide()
+        admin.Show()
     End Sub
 End Class

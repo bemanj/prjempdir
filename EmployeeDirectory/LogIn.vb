@@ -30,6 +30,7 @@
             ElseIf _LoginView.UserType = 3 Then 'USER'
                 Me.Hide()
                 EmployeeInfo.Show()
+                EmployeeInfo.Btn_Cancel.Hide()
             Else
                 RecorNotFound.Show()
                 RecorNotFound.Label2.Text = "PLEASE CONTACT ADMIN"

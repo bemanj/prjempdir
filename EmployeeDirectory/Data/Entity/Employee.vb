@@ -97,12 +97,12 @@
     End Property
 
     'Sprint 2: New Field
-    Private _CityName As Integer
-    Public Property CityName() As Integer
+    Private _CityName As String
+    Public Property CityName() As String
         Get
             Return _CityName
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             _CityName = value
         End Set
     End Property
@@ -183,33 +183,33 @@
         End Set
     End Property
 
-    Private _MobileNo As Decimal
-    Public Property MobileNo() As Decimal
+    Private _MobileNo As Int64
+    Public Property MobileNo() As Int64
         Get
             Return _MobileNo
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As Int64)
             _MobileNo = value
         End Set
     End Property
 
     'Sprint 2: New Field
-    Private _LandlineNo As Decimal
-    Public Property LandlineNo() As Decimal
+    Private _LandlineNo As String
+    Public Property LandlineNo() As String
         Get
             Return _LandlineNo
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As String)
             _LandlineNo = value
         End Set
     End Property
 
-    Private _PhoneExtension As Decimal
-    Public Property PhoneExtension() As Decimal
+    Private _PhoneExtension As Long
+    Public Property PhoneExtension() As Long
         Get
             Return _PhoneExtension
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As Long)
             _PhoneExtension = value
         End Set
     End Property

@@ -105,17 +105,15 @@
         'Me.Hide() 
         '*********Change Me.Hide() to Me.Close() to fix the logout from manager to user vice versa since
         '*********It was loading the form of the initial login since it was only hidden.
-        Me.Close()
 
+        Me.Close()
         LogIn.Show()
         LogIn.LogIn_Load(e, e)
         LogIn.Username.Clear()
         LogIn.UsernamePassword.Clear()
-    End Sub
-
-    Private Sub Label9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label9.Click
 
     End Sub
+
 
     Private Sub Btn_Save_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Save.Click
 
@@ -228,12 +226,13 @@
 
     End Sub
 
-    Private Sub EmployeeInfo_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        Me.Hide()
-        ClearFields()
-        Main.Main_Load(e, e)
-        Main.Show()
-    End Sub
+    'Rojohn- Commented out this codes since it is redundant to the Logout button
+    '  Private Sub EmployeeInfo_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+    '    Me.Hide()
+    '   ClearFields()
+    'Main.Main_Load(e, e)
+    'Main.Show()
+    ' End Sub
 
 
     Private Sub Btn_Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Cancel.Click
