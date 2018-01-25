@@ -1,8 +1,5 @@
-﻿Public Class LoginView
-
+﻿Public Class ManagerGrid
     Inherits BASD.Helper.EntityBase
-
-    ' Login Information '
 
     Private _OracleID As Long
     Public Property OracleID() As Long
@@ -11,16 +8,6 @@
         End Get
         Set(ByVal value As Long)
             _OracleID = value
-        End Set
-    End Property
-
-    Private _Password As String
-    Public Property Password() As String
-        Get
-            Return _Password
-        End Get
-        Set(ByVal value As String)
-            _Password = value
         End Set
     End Property
 
@@ -44,73 +31,73 @@
         End Set
     End Property
 
-    Private _Title As String
-    Public Property Title() As String
+    Private _MiddleName As String
+    Public Property MiddleName() As String
         Get
-            Return _Title
+            Return _MiddleName
         End Get
         Set(ByVal value As String)
-            _Title = value
+            _MiddleName = value
         End Set
     End Property
 
-    Private _UserType As Integer
-    Public Property UserType() As Integer
+    Private _TeamName As String
+    Public Property TeamName() As String
         Get
-            Return _UserType
-        End Get
-        Set(ByVal value As Integer)
-            _UserType = value
-        End Set
-    End Property
-
-    Private _OfficeEmail As String
-    Public Property OfficeEmail() As String
-        Get
-            Return _OfficeEmail
+            Return _TeamName
         End Get
         Set(ByVal value As String)
-            _OfficeEmail = value
+            _TeamName = value
         End Set
     End Property
 
-    Private _CreateTS As String
-    Public Property CreateTS() As String
+    Private _SiteName As String
+    Public Property SiteName() As String
+        Get
+            Return _SiteName
+        End Get
+        Set(ByVal value As String)
+            _SiteName = value
+        End Set
+    End Property
+
+    Private _Floor As String
+    Public Property Floor() As String
+        Get
+            Return _Floor
+        End Get
+        Set(ByVal value As String)
+            _Floor = value
+        End Set
+    End Property
+
+    Private _SeatNumber As String
+    Public Property SeatNumber() As String
+        Get
+            Return _SeatNumber
+        End Get
+        Set(ByVal value As String)
+            _SeatNumber = value
+        End Set
+    End Property
+
+    Private _CreateTS As DateTime?
+    Public Property CreateTS() As DateTime?
         Get
             Return _CreateTS
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As DateTime?)
             _CreateTS = value
         End Set
     End Property
 
-    Private _Status As Integer
-    Public Property Status() As Integer
+    Private _UpdateTS As DateTime?
+    Public Property UpdateTS() As DateTime?
         Get
-            Return _Status
+            Return _UpdateTS
         End Get
-        Set(ByVal value As Integer)
-            _Status = value
-        End Set
-    End Property
-
-    Private _LastLogin As DateTime
-    Public Property LastLogin() As DateTime
-        Get
-            Return _LastLogin
-        End Get
-        Set(ByVal value As DateTime)
-            _LastLogin = value
-        End Set
-    End Property
-
-    Private _ExpirationDate As DateTime
-    Public Property ExpirationDate() As DateTime
-        Get
-            Return _ExpirationDate
-        End Get
-        Set(ByVal value As DateTime)
-            _ExpirationDate = value
+        Set(ByVal value As DateTime?)
+            _UpdateTS = value
         End Set
     End Property
 
@@ -121,6 +108,16 @@
         End Get
         Set(ByVal value As Long)
             _LastAccessedBy = value
+        End Set
+    End Property
+
+    Private _SFC As Boolean
+    Public Property SFC() As Boolean
+        Get
+            Return _SFC
+        End Get
+        Set(ByVal value As Boolean)
+            _SFC = value
         End Set
     End Property
 
