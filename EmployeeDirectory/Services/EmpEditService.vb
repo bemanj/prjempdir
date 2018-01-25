@@ -29,28 +29,26 @@
         owner.CB_SFC.Items.Add("No")
 
         With owner
-            .TB_OracleID.Text = Employee.OracleID
+            .TB_OracleID.Text = CType(Employee.OracleID, String)
+            .TB_Title.Text = Employee.Title
+            .TB_Position.Text = Employee.Position               ' Add New Field
             .TB_LastName.Text = Employee.LastName
             .TB_FirstName.Text = Employee.FirstName
-            .TB_FirstName.Text = Employee.FirstName
-            .TB_Title.Text = Employee.Title
             .TB_MiddleName.Text = Employee.MiddleName
-            .TB_EmailAddress.Text = Employee.PersonalEmail
-            .TB_MobileNo.Text = Employee.MobileNo
-            .TB_HomeAddLine1.Text = Employee.HomeAddress1
+            .DT_Birth.Value = CType(Employee.Birthday, String)  ' Add New Field
+            .TB_PersonalEmail.Text = Employee.PersonalEmail     ' Change Field Name
+            .TB_MobileNo.Text = CType(Employee.MobileNo, String)
             .TB_Landline.Text = Employee.PhoneExtension
+            .TB_HomeAddLine1.Text = Employee.HomeAddress1
             .TB_HomeAddLine2.Text = Employee.HomeAddress2
-            .CB_Team.Text = Employee.TeamName
-            .CB_LocalMgr.Text = Employee.Mgr_Last_Name.Trim & ", " & Employee.Mgr_First_Name
+            .MB_Zipcode.Text = CType(Employee.ZipCode, String)  ' Add New Field
+            .MB_PhoneExtension.Text = CType(Employee.PhoneExtension, String)   ' Add New Field
+            .TB_OfficeEmail.Text = Employee.OfficeEmail         ' Add New Field
+            .TB_Entity.Text = Employee.Entity                   ' Add New Field
+            .TB_Division.Text = Employee.Division
+            .TB_Department.Text = Employee.Department
             .TB_USMgr.Text = Employee.USManager
-            .CB_Site.Text = Employee.SiteName
-            .CB_Site.SelectedItem = Employee.SiteID
-            .TB_Floor.Text = Employee.Floor
-            .TB_SeatNo.Text = Employee.SeatNumber
             .TB_OnboardingTkt.Text = Employee.OnboardingTicket
-            .TB_StartDate.Text = Employee.StartDate
-            .CB_SFC.Text = Employee.SFC
-            .TB_SFCDate.Text = Employee.SFCDate
             .TB_Recruiter.Text = Employee.Recruiter
             .TB_Division.Text = Employee.Division
             .TB_Department.Text = Employee.Department
@@ -58,15 +56,33 @@
             .CB_Shift.Text = Employee.Shift
             .TB_AddressLine1.Text = Employee.SiteAddress1
             .TB_AddressLine2.Text = Employee.SiteAddress2
-            .TB_OraclePRD.Text = Employee.OraclePRDID
-            .TB_MercuryID.Text = Employee.MercuryID
-            .TB_NCOGrpID.Text = Employee.NCOGroup
-            .TB_EISID.Text = Employee.EISID
+            .TB_SiteCity.Text = Employee.SiteCityName           ' Add New Field
+            .TB_SiteRegion.Text = Employee.SiteRegionName       ' Add New Field
+            .TB_SiteCountry.Text = Employee.SiteCountry         ' Add New Field
+            .TB_Floor.Text = Employee.Floor
+            .TB_SeatNo.Text = Employee.SeatNumber
             .TB_PCName.Text = Employee.PCName
+            .TB_MercuryID.Text = Employee.MercuryID
+            .TB_EISID.Text = Employee.EISID
+            .TB_OraclePRD.Text = Employee.OraclePRDID
             .TB_InsightID.Text = Employee.InsightID
+            .TB_NCOGrpID.Text = Employee.NCOGroup
             .TB_EGSPREMID.Text = Employee.EGSPremID
             .TB_ElsevierID.Text = Employee.ElsevierID
             .TB_GithubID.Text = Employee.GITHubID
+
+            ' ****** NEEDS COMBO BOX LOGIC/HANDLING ******
+            '.CB_City.Text = Employee.CityName
+            '.CB_Region.Text = Employee.RegionName
+            '.CB_Country.Text = Employee.Country
+            '.CB_Team.Text = Employee.TeamName
+            '.CB_LocalMgr.Text = Employee.Mgr_Last_Name.Trim & ", " & Employee.Mgr_First_Name
+            '.CB_WorkSched.Text = Employee.Shift         ' Add New Field
+            '.CB_SFC.Text = Employee.SFC
+            '.CB_Site.Text = Employee.SiteName
+            '.CB_Site.SelectedItem = Employee.SiteID
+
+
             If Employee.LocalManagerID = 2 Then
                 .CB_LocalMgr.SelectedItem = "Rebazar Borromeo"
             End If
