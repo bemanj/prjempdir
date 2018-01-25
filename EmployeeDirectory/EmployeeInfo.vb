@@ -61,6 +61,13 @@
 
         If _isEdit Then
             _EmpEditService.PopulateFields(Me)
+        Else
+            PopulateList(CB_City, "[uspGetAllCity]")
+            PopulateList(CB_Region, "[uspGetAllRegion]")
+            PopulateList(CB_Team, "[uspGetTeamList]")
+            PopulateList(CB_LocalMgr, "[uspGetAllManager]")
+            PopulateList(CB_Site, "[uspGetSiteList]")
+            PopulateShiftList()
         End If
 
     End Sub
@@ -146,7 +153,8 @@
             .MiddleName = TB_MiddleName.Text
             .HomeAddress1 = TB_HomeAddLine1.Text
             .HomeAddress2 = TB_HomeAddLine2.Text
-            .EmailAddress = TB_EmailAddress.Text
+            'CHANGE TO PERSONAL EMAIL .EmailAddress = TB_EmailAddress.Text
+            .PersonalEmail = TB_EmailAddress.Text
             If Not TB_MobileNo.Text = String.Empty Then
                 .MobileNo = TB_MobileNo.Text
             End If
@@ -165,7 +173,7 @@
             If Not TB_StartDate.Text = String.Empty Then
                 .StartDate = TB_StartDate.Text
             End If
-            .Shift = CB_WorkSched.Text
+            .Shift = CB_Shift.Text
             .PCName = TB_PCName.Text
             .MercuryID = TB_MercuryID.Text
             .OraclePRDID = TB_OraclePRD.Text
@@ -186,8 +194,8 @@
             '.SiteID = CB_Site.Text
             .SFC = GetComboValue(CB_SFC)
             .IDCreated = GetComboValue(CB_IDCreated)
-            .Mgr_First_Name = "Rebazar"
-            .Mgr_Last_Name = "Borromeo"
+            '*** SOF NOT NEEDED. .Mgr_First_Name = "Rebazar"
+            '*** SOF NOT NEEDED .Mgr_Last_Name = "Borromeo"
             .SiteName = CB_Site.Text
             .TeamName = CB_Team.Text
         End With
@@ -266,4 +274,31 @@
         Next
 
     End Sub
+
+    Public Sub PopulateList(ByRef cbox As ComboBox, ByVal spname As String)
+        Dim _library As New LibraryRespository
+        Dim _dropdown As New DropDownList()
+
+        cbox.DataSource = New BindingSource(_library.GetListData(spname), Nothing)
+        cbox.DisplayMember = "ListName"
+        cbox.ValueMember = "ListID"
+    End Sub
+
+    Public Sub PopulateShiftList()
+        CB_Shift.Items.Add("8am - 5pm")
+        CB_Shift.Items.Add("1pm - 10pm")
+        CB_Shift.Items.Add("4pm - 1am")
+    End Sub
+
+    'Private Sub CB_Site_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_Site.SelectedValueChanged
+    '    TB_Floor.Items.Clear()
+    '    If CB_Site.Text = "Alorica Center" Then
+    '        TB_Floor.Items.Add("17th")
+    '    Else
+    '        Dim _tb As DataTable = CB_Site.Items
+
+    '        TB_Floor.Items.Add(_tb.Rows.ToString)
+    '        TB_Floor.Items.Add("tba")
+    '    End If
+    'End Sub
 End Class
