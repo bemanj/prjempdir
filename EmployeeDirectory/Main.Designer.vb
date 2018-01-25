@@ -36,11 +36,10 @@ Partial Class Main
         Me.Btn_Search = New System.Windows.Forms.Button()
         Me.Btn_Add = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.BtnLogOut = New System.Windows.Forms.Button()
         Me.Btn_EmpInc = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BtnClose = New System.Windows.Forms.Button()
         CType(Me.DataGridViewEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -171,28 +170,6 @@ Partial Class Main
         Me.Button4.Text = "Delete"
         Me.Button4.UseVisualStyleBackColor = False
         '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button5.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(994, 787)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(80, 29)
-        Me.Button5.TabIndex = 16
-        Me.Button5.Text = "NEXT"
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button6.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(908, 787)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(80, 29)
-        Me.Button6.TabIndex = 15
-        Me.Button6.Text = "PREVIOUS"
-        Me.Button6.UseVisualStyleBackColor = False
-        '
         'BtnLogOut
         '
         Me.BtnLogOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -225,16 +202,27 @@ Partial Class Main
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
+        'BtnClose
+        '
+        Me.BtnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnClose.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClose.Location = New System.Drawing.Point(1032, 56)
+        Me.BtnClose.Name = "BtnClose"
+        Me.BtnClose.Size = New System.Drawing.Size(120, 38)
+        Me.BtnClose.TabIndex = 91
+        Me.BtnClose.Text = " CLOSE"
+        Me.BtnClose.UseVisualStyleBackColor = False
+        Me.BtnClose.Visible = False
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1164, 862)
+        Me.Controls.Add(Me.BtnClose)
         Me.Controls.Add(Me.Btn_EmpInc)
         Me.Controls.Add(Me.BtnLogOut)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Btn_Add)
         Me.Controls.Add(Me.Btn_Search)
@@ -273,9 +261,8 @@ Partial Class Main
     Friend WithEvents Btn_Search As System.Windows.Forms.Button
     Friend WithEvents Btn_Add As System.Windows.Forms.Button
     Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents BtnLogOut As System.Windows.Forms.Button
     Friend WithEvents Btn_EmpInc As System.Windows.Forms.Button
+    Friend WithEvents BtnClose As System.Windows.Forms.Button
 
 End Class

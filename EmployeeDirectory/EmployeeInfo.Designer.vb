@@ -1220,7 +1220,8 @@ Partial Class EmployeeInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1164, 862)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1172, 863)
         Me.Controls.Add(Me.MB_Zipcode)
         Me.Controls.Add(Me.TB_MobileNo)
         Me.Controls.Add(Me.TB_OracleID)
