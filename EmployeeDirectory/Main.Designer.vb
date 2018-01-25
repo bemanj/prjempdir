@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Main
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.TB_MgrV_LastName = New System.Windows.Forms.TextBox()
@@ -40,6 +40,7 @@ Partial Class Main
         Me.Btn_EmpInc = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BtnClose = New System.Windows.Forms.Button()
+        Me.Label_ManagerName = New System.Windows.Forms.Label()
         CType(Me.DataGridViewEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -202,6 +203,17 @@ Partial Class Main
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
+        'Label_ManagerName
+        '
+        Me.Label_ManagerName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_ManagerName.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label_ManagerName.Location = New System.Drawing.Point(0, 215)
+        Me.Label_ManagerName.Name = "Label_ManagerName"
+        Me.Label_ManagerName.Size = New System.Drawing.Size(1164, 19)
+        Me.Label_ManagerName.TabIndex = 0
+        Me.Label_ManagerName.Text = "Label_ManagerName"
+        Me.Label_ManagerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'BtnClose
         '
         Me.BtnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -219,8 +231,10 @@ Partial Class Main
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1164, 862)
         Me.Controls.Add(Me.BtnClose)
+        Me.Controls.Add(Me.Label_ManagerName)
         Me.Controls.Add(Me.Btn_EmpInc)
         Me.Controls.Add(Me.BtnLogOut)
         Me.Controls.Add(Me.Button4)
@@ -264,5 +278,6 @@ Partial Class Main
     Friend WithEvents BtnLogOut As System.Windows.Forms.Button
     Friend WithEvents Btn_EmpInc As System.Windows.Forms.Button
     Friend WithEvents BtnClose As System.Windows.Forms.Button
+    Friend WithEvents Label_ManagerName As System.Windows.Forms.Label
 
 End Class
