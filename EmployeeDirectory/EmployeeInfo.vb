@@ -74,19 +74,36 @@
         '    Btn_Cancel.Hide()
         'End If
 
+        'TB_AddressLine1.Enabled = False
+        'TB_AddressLine2.Enabled = False
+
+        'If _isEdit Then
+        '    _EmpEditService.PopulateFields(Me)
+        '    TB_OracleID.Enabled = False
+        'Else
+        '    PopulateList(CB_City, "[uspGetAllCity]")
+        '    PopulateList(CB_Region, "[uspGetAllRegion]")
+        '    PopulateList(CB_Team, "[uspGetTeamList]")
+        '    PopulateList(CB_LocalMgr, "[uspGetAllManager]")
+        '    PopulateList(CB_Site, "[uspGetSiteList]")
+        '    PopulateShiftList()
+        'End If
+
         TB_AddressLine1.Enabled = False
         TB_AddressLine2.Enabled = False
 
+        PopulateList(CB_LocalMgr, "[uspGetAllManager]")
+        'PopulateList(CB_Site, "[uspGetSiteList]")
+        PopulateList(CB_City, "[uspGetAllCity]")
+        PopulateList(CB_Region, "[uspGetAllRegion]")
+        PopulateList(CB_Team, "[uspGetTeamList]")
+        PopulateSiteList()
+        PopulateShiftList()
+
+        ClearFields()
+
         If _isEdit Then
             _EmpEditService.PopulateFields(Me)
-            TB_OracleID.Enabled = False
-        Else
-            PopulateList(CB_City, "[uspGetAllCity]")
-            PopulateList(CB_Region, "[uspGetAllRegion]")
-            PopulateList(CB_Team, "[uspGetTeamList]")
-            PopulateList(CB_LocalMgr, "[uspGetAllManager]")
-            PopulateList(CB_Site, "[uspGetSiteList]")
-            PopulateShiftList()
         End If
 
 
