@@ -44,7 +44,7 @@ Partial Class EmployeeInfo
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Btn_Cancel = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Btn_Logout = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.OfficeInfo = New System.Windows.Forms.TabPage()
         Me.DT_StartDate = New System.Windows.Forms.DateTimePicker()
@@ -342,16 +342,16 @@ Partial Class EmployeeInfo
         Me.Btn_Cancel.Text = "Cancel"
         Me.Btn_Cancel.UseVisualStyleBackColor = False
         '
-        'Button7
+        'Btn_Logout
         '
-        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button7.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(1023, 12)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(120, 38)
-        Me.Button7.TabIndex = 44
-        Me.Button7.Text = "LOGOUT"
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.Btn_Logout.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Btn_Logout.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Logout.Location = New System.Drawing.Point(1023, 12)
+        Me.Btn_Logout.Name = "Btn_Logout"
+        Me.Btn_Logout.Size = New System.Drawing.Size(120, 38)
+        Me.Btn_Logout.TabIndex = 44
+        Me.Btn_Logout.Text = "LOGOUT"
+        Me.Btn_Logout.UseVisualStyleBackColor = False
         '
         'TabControl1
         '
@@ -1275,7 +1275,7 @@ Partial Class EmployeeInfo
         Me.Controls.Add(Me.Label38)
         Me.Controls.Add(Me.Label39)
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.Button7)
+        Me.Controls.Add(Me.Btn_Logout)
         Me.Controls.Add(Me.Btn_Cancel)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.Label19)
@@ -1334,7 +1334,7 @@ Partial Class EmployeeInfo
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Friend WithEvents Btn_Cancel As System.Windows.Forms.Button
-    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents Btn_Logout As System.Windows.Forms.Button
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents OfficeInfo As System.Windows.Forms.TabPage
     Friend WithEvents CB_LocalMgr As System.Windows.Forms.ComboBox
