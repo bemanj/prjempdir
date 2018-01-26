@@ -1,12 +1,12 @@
 ﻿Public Class DropDownList
     Inherits BASD.Helper.EntityBase
 
-    Private _listID As Integer
-    Public Property ListID() As Integer
+    Private _listID As Int64
+    Public Property ListID() As Int64
         Get
             Return _listID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Int64)
             _listID = value
         End Set
     End Property
