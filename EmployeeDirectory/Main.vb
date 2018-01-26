@@ -5,11 +5,14 @@ Imports System.ComponentModel
 Public Class Main
     Dim eR As New EmployeeRepository
     Dim mR As New ManagerRepository
-    Dim emp As New Employee
-    Dim dt As New DataTable
     Dim _EmpEditService As New EmpEditService
-    Dim ls As New List(Of ManagerGrid)
+
+    Dim emp As New Employee
+    Dim _LoginView As New LoginView
     Dim mg As New ManagerGrid
+
+    Dim dt As New DataTable
+    Dim ls As New List(Of ManagerGrid)
 
     Private Sub Main_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
@@ -17,15 +20,20 @@ Public Class Main
 
     Public Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'dt.Clear()
-        'TB_MgrV_OracleID.Focus()
-        'mg.OracleID = CurrentUser
-        'mg.SFC = False
 
-        'ls = mR.GetGridListData(mg)                                     '   - get list from db
-        'dt = ConvertToDataTable(ls)                                     '   - converts list to datatable to enable sorting
-        'DataGridViewEmployee.AutoGenerateColumns = True
-        'DataGridViewEmployee.DataSource = dt
-        'DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
+        TB_MgrV_OracleID.Focus()
+        mg.OracleID = CurrentUser
+        mg.SFC = False
+
+        ls = mR.GetGridListData(mg)                                               '   - get list from db
+        dt = ConvertToDataTable(ls)                                               '   - converts list to datatable to enable sorting
+        DataGridViewEmployee.DataSource = dt
+
+        If DataGridViewEmployee.Rows.Count <> 0 Then
+            DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
+        End If
+
+        ToolStripStatusLabelUser.Text = "Current User: " & _LoginView.FirstName & " " & _LoginView.LastName
 
         ' alaala ng sprint 1
         '************************************************

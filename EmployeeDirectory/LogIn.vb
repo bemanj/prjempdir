@@ -28,16 +28,16 @@
                 Main.Show()
                 dt.Clear()
 
-                Main.TB_MgrV_OracleID.Focus()
-                mg.OracleID = CurrentUser
-                mg.SFC = False
+                'Main.TB_MgrV_OracleID.Focus()
+                'mg.OracleID = CurrentUser
+                'mg.SFC = False
 
-                'ls = mR.GetGridListData(mg)                                     '   - get list from db
-                'dt = Main.ConvertToDataTable(ls)                                     '   - converts list to datatable to enable sorting
-                'Main.DataGridViewEmployee.AutoGenerateColumns = True
-                Main.DataGridViewEmployee.DataSource = mR.GetGridListData(mg) 'dt
-                Main.DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
-                Main.ToolStripStatusLabelUser.Text = "Current User: " & _LoginView.FirstName & " " & _LoginView.LastName
+                ''ls = mR.GetGridListData(mg)                                     '   - get list from db
+                ''dt = Main.ConvertToDataTable(ls)                                     '   - converts list to datatable to enable sorting
+                ''Main.DataGridViewEmployee.AutoGenerateColumns = True
+                'Main.DataGridViewEmployee.DataSource = mR.GetGridListData(mg) 'dt
+                ''Main.DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
+                'Main.ToolStripStatusLabelUser.Text = "Current User: " & _LoginView.FirstName & " " & _LoginView.LastName
 
             ElseIf _LoginView.UserType = 3 Then 'USER'
                 Me.Hide()
