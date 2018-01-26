@@ -39,7 +39,7 @@
 
             .TB_PersonalEmail.Text = Employee.PersonalEmail     ' Change Field Name
             .TB_MobileNo.Text = CType(Employee.MobileNo, String)
-            .TB_Landline.Text = Employee.PhoneExtension
+            .TB_Landline.Text = Employee.LandlineNo
             .TB_HomeAddLine1.Text = Employee.HomeAddress1
             .TB_HomeAddLine2.Text = Employee.HomeAddress2
             .MB_Zipcode.Text = CType(Employee.ZipCode, String)  ' Add New Field
@@ -55,11 +55,11 @@
             .TB_Department.Text = Employee.Department
             .TB_Entity.Text = Employee.Entity
             .CB_Shift.Text = Employee.Shift
-            .TB_AddressLine1.Text = Employee.SiteAddress1
-            .TB_AddressLine2.Text = Employee.SiteAddress2
-            .TB_SiteCity.Text = Employee.SiteCityName           ' Add New Field
-            .TB_SiteRegion.Text = Employee.SiteRegionName       ' Add New Field
-            .TB_SiteCountry.Text = Employee.SiteCountry         ' Add New Field
+            '.TB_AddressLine1.Text = Employee.SiteAddress1
+            '.TB_AddressLine2.Text = Employee.SiteAddress2
+            '.TB_SiteCity.Text = Employee.SiteCityName           ' Add New Field
+            '.TB_SiteRegion.Text = Employee.SiteRegionName       ' Add New Field
+            '.TB_SiteCountry.Text = Employee.SiteCountry         ' Add New Field
             .TB_Floor.Text = Employee.Floor
             .TB_SeatNo.Text = Employee.SeatNumber
             .TB_PCName.Text = Employee.PCName
@@ -71,7 +71,8 @@
             .TB_EGSPREMID.Text = Employee.EGSPremID
             .TB_ElsevierID.Text = Employee.ElsevierID
             .TB_GithubID.Text = Employee.GITHubID
-
+            .CB_Gender.Text = Employee.Gender
+            .CB_Country.Text = Employee.Country
             ' ****** NEEDS COMBO BOX LOGIC/HANDLING ******
             '.CB_City.Text = Employee.CityName
             '.CB_Region.Text = Employee.RegionName
@@ -84,17 +85,42 @@
             '.CB_Site.SelectedItem = Employee.SiteID
 
 
-            If Employee.LocalManagerID = 2 Then
-                .CB_LocalMgr.SelectedItem = "Rebazar Borromeo"
+            'If Employee.LocalManagerID = 2 Then
+            '    .CB_LocalMgr.SelectedItem = "Rebazar Borromeo"
+            'End If
+            'If Employee.Gender = "M" Then
+            '    .CB_Gender.SelectedItem = "Male"
+            'Else
+            '    .CB_Gender.SelectedItem = "Female"
+            'End If
+            'If Employee.SiteID = 1 Then
+            '    .CB_Site.Text = "Alorica Center"
+            '    .TB_AddressLine1.Text = "MJ Corporate Plaza, 2310 Pasong Tamo Extension, "
+            '    .TB_AddressLine2.Text = "Brgy Magallanes, Makati City 1231"
+            'End If
+            'If Employee.TeamID = 4 Then
+            '    .CB_Team.Text = "BASD"
+            'End If
+
+            '*** SOF LOOKUP OF IDS
+
+            .CB_LocalMgr.Text = SetListName(EmployeeInfo.CB_LocalMgr, Employee.LocalManagerID)
+
+            Dim _site As Site = SetSiteDetails(EmployeeInfo.CB_Site, Employee.SiteID)
+            If _site IsNot Nothing Then
+                .CB_Site.Text = _site.SiteName
+                .TB_SiteCity.Text = _site.SiteCityName
+                .TB_SiteCountry.Text = _site.SiteCountry
+                .TB_SiteRegion.Text = _site.SiteRegionName
+                .TB_AddressLine1.Text = _site.SiteAddress1
+                .TB_AddressLine2.Text = _site.SiteAddress2
+                .TB_SiteZipcode.Text = _site.SiteZipCode
             End If
-            If Employee.SiteID = 1 Then
-                .CB_Site.Text = "Alorica Center"
-                .TB_AddressLine1.Text = "MJ Corporate Plaza, 2310 Pasong Tamo Extension, "
-                .TB_AddressLine2.Text = "Brgy Magallanes, Makati City 1231"
-            End If
-            If Employee.TeamID = 4 Then
-                .CB_Team.Text = "BASD"
-            End If
+
+            .CB_Team.Text = SetListName(EmployeeInfo.CB_Team, Employee.TeamID)
+            .CB_Region.Text = SetListName(EmployeeInfo.CB_Region, Employee.RegionID)
+            .CB_City.Text = SetListName(EmployeeInfo.CB_City, Employee.CityID)
+
             If Employee.IDCreated = False Then
                 .CB_IDCreated.SelectedItem = "No"
             Else
@@ -107,15 +133,16 @@
                 .CB_SFC.SelectedItem = "Yes"
             End If
 
-
-            If Employee.Gender = "M" Then
-                .CB_Gender.SelectedItem = "Male"
-            Else
-                .CB_Gender.SelectedItem = "Female"
-            End If
-
-
-
         End With
     End Sub
+
+    'Public Sub SetSelectedValue(ByVal comboBox As ComboBox, ByVal value As Integer)
+
+    '    Dim _list As List(Of DropDownList)
+    '    _list = comboBox.DataSource
+
+    '    comboBox.SelectedItem = _list.Where(Function(x) x.ListID = value).FirstOrDefault()
+
+
+    'End Sub
 End Class

@@ -134,6 +134,8 @@ Partial Class EmployeeInfo
         Me.TB_OracleID = New System.Windows.Forms.MaskedTextBox()
         Me.TB_MobileNo = New System.Windows.Forms.MaskedTextBox()
         Me.MB_Zipcode = New System.Windows.Forms.MaskedTextBox()
+        Me.TB_SiteZipcode = New System.Windows.Forms.MaskedTextBox()
+        Me.Label52 = New System.Windows.Forms.Label()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -366,6 +368,8 @@ Partial Class EmployeeInfo
         '
         'OfficeInfo
         '
+        Me.OfficeInfo.Controls.Add(Me.Label52)
+        Me.OfficeInfo.Controls.Add(Me.TB_SiteZipcode)
         Me.OfficeInfo.Controls.Add(Me.DT_StartDate)
         Me.OfficeInfo.Controls.Add(Me.DT_SFCDate)
         Me.OfficeInfo.Controls.Add(Me.TB_Floor)
@@ -441,6 +445,7 @@ Partial Class EmployeeInfo
         '
         'TB_Floor
         '
+        Me.TB_Floor.DisplayMember = """ListName"""
         Me.TB_Floor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.TB_Floor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_Floor.FormattingEnabled = True
@@ -448,9 +453,11 @@ Partial Class EmployeeInfo
         Me.TB_Floor.Name = "TB_Floor"
         Me.TB_Floor.Size = New System.Drawing.Size(121, 21)
         Me.TB_Floor.TabIndex = 139
+        Me.TB_Floor.ValueMember = """ListID"""
         '
         'CB_Shift
         '
+        Me.CB_Shift.DisplayMember = """ListName"""
         Me.CB_Shift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_Shift.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.CB_Shift.FormattingEnabled = True
@@ -458,6 +465,7 @@ Partial Class EmployeeInfo
         Me.CB_Shift.Name = "CB_Shift"
         Me.CB_Shift.Size = New System.Drawing.Size(171, 21)
         Me.CB_Shift.TabIndex = 138
+        Me.CB_Shift.ValueMember = """ListID"""
         '
         'MB_PhoneExtension
         '
@@ -583,6 +591,7 @@ Partial Class EmployeeInfo
         '
         'CB_LocalMgr
         '
+        Me.CB_LocalMgr.DisplayMember = """ListName"""
         Me.CB_LocalMgr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_LocalMgr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.CB_LocalMgr.FormattingEnabled = True
@@ -590,9 +599,11 @@ Partial Class EmployeeInfo
         Me.CB_LocalMgr.Name = "CB_LocalMgr"
         Me.CB_LocalMgr.Size = New System.Drawing.Size(171, 21)
         Me.CB_LocalMgr.TabIndex = 121
+        Me.CB_LocalMgr.ValueMember = """ListID"""
         '
         'CB_Site
         '
+        Me.CB_Site.DisplayMember = """SiteName"""
         Me.CB_Site.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_Site.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.CB_Site.FormattingEnabled = True
@@ -600,6 +611,7 @@ Partial Class EmployeeInfo
         Me.CB_Site.Name = "CB_Site"
         Me.CB_Site.Size = New System.Drawing.Size(185, 21)
         Me.CB_Site.TabIndex = 120
+        Me.CB_Site.ValueMember = """SiteID"""
         '
         'CB_IDCreated
         '
@@ -1156,12 +1168,14 @@ Partial Class EmployeeInfo
         '
         'CB_City
         '
+        Me.CB_City.DisplayMember = """ListName"""
         Me.CB_City.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_City.FormattingEnabled = True
         Me.CB_City.Location = New System.Drawing.Point(132, 392)
         Me.CB_City.Name = "CB_City"
         Me.CB_City.Size = New System.Drawing.Size(132, 21)
         Me.CB_City.TabIndex = 14
+        Me.CB_City.ValueMember = """ListID"""
         '
         'Label12
         '
@@ -1175,12 +1189,14 @@ Partial Class EmployeeInfo
         '
         'CB_Region
         '
+        Me.CB_Region.DisplayMember = """ListName"""
         Me.CB_Region.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CB_Region.FormattingEnabled = True
         Me.CB_Region.Location = New System.Drawing.Point(326, 392)
         Me.CB_Region.Name = "CB_Region"
         Me.CB_Region.Size = New System.Drawing.Size(132, 21)
         Me.CB_Region.TabIndex = 15
+        Me.CB_Region.ValueMember = """ListID"""
         '
         'Label44
         '
@@ -1246,6 +1262,26 @@ Partial Class EmployeeInfo
         Me.MB_Zipcode.Size = New System.Drawing.Size(101, 20)
         Me.MB_Zipcode.TabIndex = 17
         Me.MB_Zipcode.ValidatingType = GetType(Integer)
+        '
+        'TB_SiteZipcode
+        '
+        Me.TB_SiteZipcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.TB_SiteZipcode.Location = New System.Drawing.Point(830, 193)
+        Me.TB_SiteZipcode.Mask = "00000"
+        Me.TB_SiteZipcode.Name = "TB_SiteZipcode"
+        Me.TB_SiteZipcode.Size = New System.Drawing.Size(101, 20)
+        Me.TB_SiteZipcode.TabIndex = 111
+        Me.TB_SiteZipcode.ValidatingType = GetType(Integer)
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label52.Location = New System.Drawing.Point(720, 193)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(75, 15)
+        Me.Label52.TabIndex = 142
+        Me.Label52.Text = "Site Zipcode"
         '
         'EmployeeInfo
         '
@@ -1424,4 +1460,6 @@ Partial Class EmployeeInfo
     Friend WithEvents DT_SFCDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents TB_Floor As System.Windows.Forms.ComboBox
     Friend WithEvents DT_StartDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label52 As System.Windows.Forms.Label
+    Friend WithEvents TB_SiteZipcode As System.Windows.Forms.MaskedTextBox
 End Class

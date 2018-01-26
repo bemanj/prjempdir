@@ -15,6 +15,12 @@ Public Class LibraryRespository
         Dim _tempTeamList = MyBase.List(spname, Nothing)
         Return _tempTeamList.SingleMapToEntity(Of DropDownList)().ToList
 
+    End Function
+
+    Public Overloads Function GetListData() As System.Collections.Generic.IEnumerable(Of IEntity)
+
+        Dim _tempTeamList = MyBase.List("[uspGetSiteList]", Nothing)
+        Return _tempTeamList.SingleMapToEntity(Of Site)().ToList
 
     End Function
 

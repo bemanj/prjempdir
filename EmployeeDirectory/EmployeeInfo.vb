@@ -70,15 +70,18 @@
         TB_AddressLine1.Enabled = False
         TB_AddressLine2.Enabled = False
 
+        PopulateList(CB_LocalMgr, "[uspGetAllManager]")
+        'PopulateList(CB_Site, "[uspGetSiteList]")
+        PopulateList(CB_City, "[uspGetAllCity]")
+        PopulateList(CB_Region, "[uspGetAllRegion]")
+        PopulateList(CB_Team, "[uspGetTeamList]")
+        PopulateSiteList()
+        PopulateShiftList()
+
+        ClearFields()
+
         If _isEdit Then
             _EmpEditService.PopulateFields(Me)
-        Else
-            PopulateList(CB_City, "[uspGetAllCity]")
-            PopulateList(CB_Region, "[uspGetAllRegion]")
-            PopulateList(CB_Team, "[uspGetTeamList]")
-            PopulateList(CB_LocalMgr, "[uspGetAllManager]")
-            PopulateList(CB_Site, "[uspGetSiteList]")
-            PopulateShiftList()
         End If
 
     End Sub
@@ -200,7 +203,7 @@
             If Not DT_SFCDate.Text = String.Empty Then
                 .SFCDate = CType(DT_SFCDate.Value, Date)
             End If
-            .SiteName = CB_Site.Text
+            
             .SeatNumber = TB_SeatNo.Text
 
             .Shift = CB_Shift.Text
@@ -216,16 +219,34 @@
             '.Mgr_Last_Name = CB_LocalMgr.Text
 
             'COMBOBOX
-            '.Shift = CB_WorkSched.Text
+            .Shift = CB_Shift.Text
             .Gender = CB_Gender.Text
             .IDCreated = GetComboValue(CB_IDCreated)
             '.LocalManagerID = CB_Site.Text
             '.SiteID = CB_Site.Text
-            .IDCreated = GetComboValue(CB_IDCreated)
-            '*** SOF NOT NEEDED. .Mgr_First_Name = "Rebazar"
-            '*** SOF NOT NEEDED .Mgr_Last_Name = "Borromeo"
-            .SiteName = CB_Site.Text
+            '.IDCreated = GetComboValue(CB_IDCreated)
+            .Country = CB_Country.Text
+            '*** SOF ADD DROPDPWN VALUES TO SAVE
+            .CityName = CB_City.Text
+            If CB_City.SelectedItem IsNot Nothing Then
+                .CityID = CType(CB_City.SelectedItem, DropDownList).ListID
+            End If
+            .RegionName = CB_Region.Text
+            If CB_Region.SelectedItem IsNot Nothing Then
+                .RegionID = CType(CB_City.SelectedItem, DropDownList).ListID
+            End If
             .TeamName = CB_Team.Text
+            If CB_Team.SelectedItem IsNot Nothing Then
+                .TeamID = CType(CB_Team.SelectedItem, DropDownList).ListID
+            End If
+            If CB_LocalMgr.SelectedItem IsNot Nothing Then
+                .LocalManagerID = CType(CB_LocalMgr.SelectedItem, DropDownList).ListID
+            End If
+            .SiteName = CB_Site.Text
+            If CB_Site.SelectedItem IsNot Nothing Then
+                .SiteID = CType(CB_Site.SelectedItem, Site).SiteID
+            End If
+
             .Floor = TB_Floor.Text
         End With
 
@@ -371,6 +392,15 @@
         cbox.ValueMember = "ListID"
     End Sub
 
+    Public Sub PopulateSiteList()
+        Dim _library As New LibraryRespository
+        Dim _dropdown As New DropDownList()
+
+        CB_Site.DataSource = New BindingSource(_library.GetListData(), Nothing)
+        CB_Site.DisplayMember = "SiteName"
+        CB_Site.ValueMember = "SiteID"
+    End Sub
+
     Public Sub PopulateShiftList()
         CB_Shift.Items.Add("8am - 5pm")
         CB_Shift.Items.Add("1pm - 10pm")
@@ -379,13 +409,13 @@
 
     'Private Sub CB_Site_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_Site.SelectedValueChanged
     '    TB_Floor.Items.Clear()
-    '    If CB_Site.Text = "Alorica Center" Then
-    '        TB_Floor.Items.Add("17th")
-    '    Else
-    '        Dim _tb As DataTable = CB_Site.Items
+    '    Dim _site As New Site()
+    '    'Dim _siteidentity As Integer
+    '    '_siteidentity = CType(CB_Site.SelectedItem, Site).SiteID
 
-    '        TB_Floor.Items.Add(_tb.Rows.ToString)
-    '        TB_Floor.Items.Add("tba")
-    '    End If
+    '    _site = SetSiteDetails(CB_Site, CType(CB_Site.SelectedItem, Site).SiteID)
+
+    '    TB_Floor.Items.Add(_site.SiteFloor)
+
     'End Sub
 End Class
