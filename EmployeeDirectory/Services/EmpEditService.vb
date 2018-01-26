@@ -118,4 +118,36 @@
 
         End With
     End Sub
+    '*** B KABAHAR - 1/26
+    '*** BK START OF CHANGE
+    Public Sub ProtectFields(ByVal owner As EmployeeInfo)
+        With owner
+            .TB_OracleID.Enabled = False
+            .TB_Title.Enabled = False
+            .TB_Position.Enabled = False
+            .MB_PhoneExtension.Enabled = False
+            .TB_OfficeEmail.Enabled = False
+            .CB_Team.Enabled = False
+            .CB_LocalMgr.Enabled = False
+            .TB_SiteCity.Enabled = False
+            .TB_SiteRegion.Enabled = False
+            .TB_SiteCountry.Enabled = False
+            .CB_Site.Enabled = False
+            .TB_AddressLine1.Enabled = False
+            .TB_AddressLine2.Enabled = False
+            .TB_Floor.Enabled = False
+            .TB_SeatNo.Enabled = False
+            .TB_OnboardingTkt.Enabled = False
+            .TB_Recruiter.Enabled = False
+            .CB_SFC.Enabled = False
+            .DT_SFCDate.Enabled = False
+            .CB_IDCreated.Enabled = False
+            .CB_Shift.Enabled = False
+            .TB_MercuryID.Enabled = False
+            .TB_EISID.Enabled = False
+            .TB_OraclePRD.Enabled = False
+        End With
+
+    End Sub
+    '*** BK END OF CHANGE
 End Class
