@@ -52,20 +52,20 @@
 
     Private Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'disabled fields
-        If LogIn.Username.Text = "user" And LogIn.UsernamePassword.Text = "user" Then
-            DT_StartDate.Enabled = False
-            TB_OnboardingTkt.Enabled = False
-            TB_SeatNo.Enabled = False
-            TB_Floor.Enabled = False
-            ' ComboBox3.Enabled = False
-            TB_USMgr.Enabled = False
-            CB_LocalMgr.Enabled = False
-            CB_Team.Enabled = False
-            TB_Recruiter.Enabled = False
-            DT_SFCDate.Enabled = False
-            CB_SFC.Enabled = False
-            Btn_Cancel.Hide()
-        End If
+        'If LogIn.Username.Text = "user" And LogIn.UsernamePassword.Text = "user" Then
+        '    DT_StartDate.Enabled = False
+        '    TB_OnboardingTkt.Enabled = False
+        '    TB_SeatNo.Enabled = False
+        '    TB_Floor.Enabled = False
+        '    ' ComboBox3.Enabled = False
+        '    TB_USMgr.Enabled = False
+        '    CB_LocalMgr.Enabled = False
+        '    CB_Team.Enabled = False
+        '    TB_Recruiter.Enabled = False
+        '    DT_SFCDate.Enabled = False
+        '    CB_SFC.Enabled = False
+        '    Btn_Cancel.Hide()
+        'End If
 
         TB_AddressLine1.Enabled = False
         TB_AddressLine2.Enabled = False
@@ -119,7 +119,7 @@
 
     'End Sub
 
-    Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
+    Private Sub Btn_Logout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Logout.Click
         'Me.Hide() 
         '*********Change Me.Hide() to Me.Close() to fix the logout from manager to user vice versa since
         '*********It was loading the form of the initial login since it was only hidden.
@@ -167,7 +167,8 @@
             .FirstName = TB_FirstName.Text
             .MiddleName = TB_MiddleName.Text
             If Not DT_Birth.Text = String.Empty Then
-                .Birthday = DT_Birth.Text
+                .Birthday = CType(DT_Birth.Value, Date)
+
             End If
             .PersonalEmail = TB_PersonalEmail.Text
             If Not TB_MobileNo.Text = String.Empty Then
@@ -233,6 +234,12 @@
             _EmpEditService.Employee = _emp
             _EmpEditService.PopulateFields(Me)
         Else
+            '*** SET DEFAULT VALUES DURING ADD ***'
+            _emp.UserType = 3
+            '_emp.Status =
+            '_emp.LastLogin =
+            '_emp.ExpirationDate =
+            '_emp.LastAccessedBy =
             _empinfo.InsertData(_emp)
             ClearFields()
         End If
