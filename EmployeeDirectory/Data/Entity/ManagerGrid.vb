@@ -81,22 +81,22 @@
         End Set
     End Property
 
-    Private _CreateTS As DateTime?
-    Public Property CreateTS() As DateTime?
+    Private _CreateTS As DateTime
+    Public Property CreateTS() As DateTime
         Get
             Return _CreateTS
         End Get
-        Set(ByVal value As DateTime?)
+        Set(ByVal value As DateTime)
             _CreateTS = value
         End Set
     End Property
 
-    Private _UpdateTS As DateTime?
-    Public Property UpdateTS() As DateTime?
+    Private _UpdateTS As DateTime
+    Public Property UpdateTS() As DateTime
         Get
             Return _UpdateTS
         End Get
-        Set(ByVal value As DateTime?)
+        Set(ByVal value As DateTime)
             _UpdateTS = value
         End Set
     End Property
