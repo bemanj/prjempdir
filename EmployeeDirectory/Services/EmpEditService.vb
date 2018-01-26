@@ -36,6 +36,7 @@
             .TB_FirstName.Text = Employee.FirstName
             .TB_MiddleName.Text = Employee.MiddleName
             .DT_Birth.Value = CType(Employee.Birthday, String)  ' Add New Field
+
             .TB_PersonalEmail.Text = Employee.PersonalEmail     ' Change Field Name
             .TB_MobileNo.Text = CType(Employee.MobileNo, String)
             .TB_Landline.Text = Employee.PhoneExtension
