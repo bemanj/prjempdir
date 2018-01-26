@@ -25,9 +25,10 @@ Public Class Main
         mg.OracleID = CurrentUser
         mg.SFC = False
 
-        ls = mR.GetGridListData(mg)                                               '   - get list from db
-        dt = ConvertToDataTable(ls)                                               '   - converts list to datatable to enable sorting
-        DataGridViewEmployee.DataSource = dt
+        ReloadDataGridWithSort()
+        'ls = mR.GetGridListData(mg)                                               '   - get list from db
+        'dt = ConvertToDataTable(ls)                                               '   - converts list to datatable to enable sorting
+        'DataGridViewEmployee.DataSource = dt
 
         If DataGridViewEmployee.Rows.Count <> 0 Then
             DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
@@ -135,13 +136,20 @@ Public Class Main
         LabelSFC.Text = "SFC Employees"
         mg.OracleID = CurrentUser
         mg.SFC = True
-        DataGridViewEmployee.DataSource = mR.GetGridListData(mg)
+        ReloadDataGridWithSort()
     End Sub
 
     Private Sub ButtonActive_Click(sender As System.Object, e As System.EventArgs) Handles ButtonActive.Click
         LabelSFC.Text = "Current Employees"
         mg.OracleID = CurrentUser
         mg.SFC = False
-        DataGridViewEmployee.DataSource = mR.GetGridListData(mg)
+        'DataGridViewEmployee.DataSource = mR.GetGridListData(mg)
+        ReloadDataGridWithSort()
+    End Sub
+
+    Public Sub ReloadDataGridWithSort()
+        ls = mR.GetGridListData(mg)                                               '   - get list from db
+        dt = ConvertToDataTable(ls)                                               '   - converts list to datatable to enable sorting
+        DataGridViewEmployee.DataSource = dt
     End Sub
 End Class
