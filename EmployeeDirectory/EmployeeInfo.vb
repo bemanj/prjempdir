@@ -41,6 +41,13 @@
 
         _EmpEditService = New EmpEditService()
 
+        '*** B KABAHAR - 1/26
+        '*** BK START OF CHANGE
+        If CurrentUserType = 3 Then
+            _EmpEditService.ProtectFields(Me)
+        End If
+        '*** BK END OF CHANGE
+
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -72,6 +79,7 @@
 
         If _isEdit Then
             _EmpEditService.PopulateFields(Me)
+            TB_OracleID.Enabled = False
         Else
             PopulateList(CB_City, "[uspGetAllCity]")
             PopulateList(CB_Region, "[uspGetAllRegion]")
@@ -80,6 +88,8 @@
             PopulateList(CB_Site, "[uspGetSiteList]")
             PopulateShiftList()
         End If
+
+       
 
     End Sub
 
