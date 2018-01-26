@@ -51,15 +51,15 @@
             .TB_USMgr.Text = Employee.USManager
             .TB_OnboardingTkt.Text = Employee.OnboardingTicket
             .TB_Recruiter.Text = Employee.Recruiter
-            .TB_Division.Text = Employee.Division
-            .TB_Department.Text = Employee.Department
-            .TB_Entity.Text = Employee.Entity
-            .CB_Shift.Text = Employee.Shift
-            '.TB_AddressLine1.Text = Employee.SiteAddress1
-            '.TB_AddressLine2.Text = Employee.SiteAddress2
-            '.TB_SiteCity.Text = Employee.SiteCityName           ' Add New Field
-            '.TB_SiteRegion.Text = Employee.SiteRegionName       ' Add New Field
-            '.TB_SiteCountry.Text = Employee.SiteCountry         ' Add New Field
+
+            .DT_StartDate.Value = CType(Employee.StartDate, String)     ' 2018-01-26 11PM PUSH
+            .DT_SFCDate.Value = CType(Employee.SFCDate, String)         ' 2018-01-26 11PM PUSH
+
+            .TB_AddressLine1.Text = Employee.SiteAddress1
+            .TB_AddressLine2.Text = Employee.SiteAddress2
+            .TB_SiteCity.Text = Employee.SiteCityName           ' Add New Field
+            .TB_SiteRegion.Text = Employee.SiteRegionName       ' Add New Field
+            .TB_SiteCountry.Text = Employee.SiteCountry         ' Add New Field
             .TB_Floor.Text = Employee.Floor
             .TB_SeatNo.Text = Employee.SeatNumber
             .TB_PCName.Text = Employee.PCName
