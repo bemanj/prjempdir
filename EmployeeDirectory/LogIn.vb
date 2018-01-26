@@ -38,8 +38,7 @@
                 'Main.DataGridViewEmployee.DataSource = mR.GetGridListData(mg) 'dt
                 ''Main.DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
                 'Main.ToolStripStatusLabelUser.Text = "Current User: " & _LoginView.FirstName & " " & _LoginView.LastName
-
-            ElseIf _LoginView.UserType = 3 Then 'USER'
+            ElseIf CurrentUserType = 3 Then 'USER'
                 Me.Hide()
                 EmployeeInfo.Show()
                 EmployeeInfo.Btn_Cancel.Hide()
