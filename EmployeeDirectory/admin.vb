@@ -9,10 +9,11 @@
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub ButtonGridView_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonGridView.Click
         Me.Hide()
         Main.Show()
-        Main.Main_Load(e, e)
         Main.BtnClose.Show()
+        Main.ToolStripStatusLabelUser.Text = "Current User: Admin"
+        Main.Label_ManagerName.Text = "Hello Admin!"
     End Sub
 End Class
