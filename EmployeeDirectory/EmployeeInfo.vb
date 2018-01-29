@@ -227,21 +227,35 @@
             .SiteName = CB_Site.Text
             .TeamName = CB_Team.Text
             .Floor = TB_Floor.Text
+
         End With
 
-        If Me.IsEdit = True Then
-            _empinfo.UpdateData(_emp)
-            _EmpEditService.Employee = _emp
-            _EmpEditService.PopulateFields(Me)
+        EmpInfo.Validate()
+
+        If EmpInfo.EmpValidate = 0 Then
+            If Me.IsEdit = True Then
+                _empinfo.UpdateData(_emp)
+                _EmpEditService.Employee = _emp
+                _EmpEditService.PopulateFields(Me)
+                EmpInfo.ValidateClear()
+            Else
+                '*** SET DEFAULT VALUES DURING ADD ***'
+                _emp.UserType = 3
+                '_emp.Status =
+                '_emp.LastLogin =
+                '_emp.ExpirationDate =
+                '_emp.LastAccessedBy =
+                _empinfo.InsertData(_emp)
+                ClearFields()
+                EmpInfo.ValidateClear()
+            End If
+        ElseIf EmpInfo.EmpValidate = 2 Then
+            Lbl_EAdd.ForeColor = Color.Red
+            MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'EmpInfo.EmpValidate = 0
         Else
-            '*** SET DEFAULT VALUES DURING ADD ***'
-            _emp.UserType = 3
-            '_emp.Status =
-            '_emp.LastLogin =
-            '_emp.ExpirationDate =
-            '_emp.LastAccessedBy =
-            _empinfo.InsertData(_emp)
-            ClearFields()
+            MessageBox.Show("Please fill up required fields", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'EmpInfo.EmpValidate = 0
         End If
     End Sub
 
@@ -258,11 +272,13 @@
 
     Private Sub Btn_RevertClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_RevertClear.Click
         If _isEdit Then
+            EmpInfo.ValidateClear()
             _EmpEditService.PopulateFields(Me)
             TB_OracleID.Focus()
         Else
             ClearFields()
             TB_OracleID.Focus()
+            EmpInfo.ValidateClear()
         End If
 
     End Sub
@@ -277,10 +293,11 @@
 
 
     Private Sub Btn_Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Cancel.Click
-        Me.Hide()
+        Me.Close()
         ClearFields()
-        Main.Main_Load(e, e)
+        'Main.Main_Load(e, e)
         Main.Show()
+
     End Sub
 
     Private Sub ClearFields()
@@ -388,4 +405,5 @@
     '        TB_Floor.Items.Add("tba")
     '    End If
     'End Sub
+
 End Class

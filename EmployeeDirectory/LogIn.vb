@@ -42,6 +42,31 @@
                 Me.Hide()
                 EmployeeInfo.Show()
                 EmployeeInfo.Btn_Cancel.Hide()
+                EmployeeInfo.TB_OracleID.Enabled = False
+                EmployeeInfo.TB_Title.Enabled = False
+                EmployeeInfo.TB_Position.Enabled = False
+                EmployeeInfo.MB_PhoneExtension.Enabled = False
+                EmployeeInfo.TB_OfficeEmail.Enabled = False
+                EmployeeInfo.CB_Team.Enabled = False
+                EmployeeInfo.CB_LocalMgr.Enabled = False
+                EmployeeInfo.CB_Site.Enabled = False
+                EmployeeInfo.TB_AddressLine1.Enabled = False
+                EmployeeInfo.TB_AddressLine2.Enabled = False
+                EmployeeInfo.TB_SiteCity.Enabled = False
+                EmployeeInfo.TB_SiteZip.Enabled = False
+                EmployeeInfo.TB_SiteRegion.Enabled = False
+                EmployeeInfo.TB_SiteCountry.Enabled = False
+                EmployeeInfo.TB_Floor.Enabled = False
+                EmployeeInfo.TB_SeatNo.Enabled = False
+                EmployeeInfo.TB_OnboardingTkt.Enabled = False
+                EmployeeInfo.TB_Recruiter.Enabled = False
+                EmployeeInfo.CB_SFC.Enabled = False
+                EmployeeInfo.DT_SFCDate.Enabled = False
+                EmployeeInfo.CB_IDCreated.Enabled = False
+                EmployeeInfo.CB_Shift.Enabled = False
+                EmployeeInfo.TB_MercuryID.Enabled = False
+                EmployeeInfo.TB_EISID.Enabled = False
+                EmployeeInfo.TB_OraclePRD.Enabled = False
             Else
                 RecorNotFound.Show()
                 RecorNotFound.Label2.Text = "PLEASE CONTACT ADMIN"

@@ -41,8 +41,8 @@ Partial Class Main
         Me.LabelSFC = New System.Windows.Forms.Label()
         Me.ButtonActive = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Label_ManagerName = New System.Windows.Forms.Label()
         Me.ToolStripStatusLabelUser = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Label_ManagerName = New System.Windows.Forms.Label()
         CType(Me.DataGridViewEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
@@ -186,17 +186,6 @@ Partial Class Main
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
-        'Label_ManagerName
-        '
-        Me.Label_ManagerName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label_ManagerName.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_ManagerName.Location = New System.Drawing.Point(0, 215)
-        Me.Label_ManagerName.Name = "Label_ManagerName"
-        Me.Label_ManagerName.Size = New System.Drawing.Size(1164, 19)
-        Me.Label_ManagerName.TabIndex = 0
-        Me.Label_ManagerName.Text = "Label_ManagerName"
-        Me.Label_ManagerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'BtnClose
         '
         Me.BtnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -233,17 +222,6 @@ Partial Class Main
         Me.LabelSFC.TabIndex = 92
         Me.LabelSFC.Text = "Current Employees"
         '
-        'Label_ManagerName
-        '
-        Me.Label_ManagerName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label_ManagerName.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_ManagerName.Location = New System.Drawing.Point(0, 215)
-        Me.Label_ManagerName.Name = "Label_ManagerName"
-        Me.Label_ManagerName.Size = New System.Drawing.Size(1164, 19)
-        Me.Label_ManagerName.TabIndex = 0
-        Me.Label_ManagerName.Text = "Label_ManagerName"
-        Me.Label_ManagerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'ButtonActive
         '
         Me.ButtonActive.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -270,6 +248,17 @@ Partial Class Main
         Me.ToolStripStatusLabelUser.Name = "ToolStripStatusLabelUser"
         Me.ToolStripStatusLabelUser.Size = New System.Drawing.Size(79, 17)
         Me.ToolStripStatusLabelUser.Text = "Current User: "
+        '
+        'Label_ManagerName
+        '
+        Me.Label_ManagerName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_ManagerName.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label_ManagerName.Location = New System.Drawing.Point(186, 217)
+        Me.Label_ManagerName.Name = "Label_ManagerName"
+        Me.Label_ManagerName.Size = New System.Drawing.Size(764, 19)
+        Me.Label_ManagerName.TabIndex = 0
+        Me.Label_ManagerName.Text = "Label_ManagerName"
+        Me.Label_ManagerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Main
         '
