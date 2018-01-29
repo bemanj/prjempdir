@@ -26,10 +26,6 @@ Public Class Main
         mg.SFC = False
 
         ReloadDataGridWithSort()
-        'ls = mR.GetGridListData(mg)                                               '   - get list from db
-        'dt = ConvertToDataTable(ls)                                               '   - converts list to datatable to enable sorting
-        'DataGridViewEmployee.DataSource = dt
-
         If DataGridViewEmployee.Rows.Count <> 0 Then
             DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
         End If
@@ -40,18 +36,6 @@ Public Class Main
             ToolStripStatusLabelUser.Text = "Current User: Admin"
             Label_ManagerName.Text = "Hello Admin!"
         End If
-
-        ' alaala ng sprint 1
-        '************************************************
-        'If LogIn.Username.Text = "manager" Then
-        '    Me.Text = "Hello Manager!"
-        '    emp.LocalManagerID = 2 'this will serve as the local manager ID - for demo only
-        '    DataGridViewEmployee.DataSource = eR.GetListData(emp)
-        'Else
-        '    emp.LocalManagerID = 0 'this will serve as the admin ID - for demo only (sp used same for manager's)
-        '    DataGridViewEmployee.DataSource = eR.GetListData(emp)
-        'End If
-        '************************************************   
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Add.Click
@@ -81,31 +65,12 @@ Public Class Main
         incomplete.Show()
     End Sub
 
-    'sabi ni joane! nicomment lng -jlavares
-    ''Private Sub DataGridViewEmployee_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellContentClick
-    'Private Sub DataGridViewEmployee_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellDoubleClick
-    '    Me.Hide()
-
-    '    Try
-    '        Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(Me.DataGridViewEmployee.SelectedRows(0).Cells("OracleID").Value))
-    '        EmployeeInfo.EmpEditService.Employee = _tempSelectedRow
-    '        EmployeeInfo.IsEdit = True
-    '        EmployeeInfo.Btn_RevertClear.Text = "Revert"
-    '        EmployeeInfo.ShowDialog()
-    '        EmployeeInfo.TB_OracleID.Focus()
-
-    '    Catch ex As Exception
-    '        MessageBox.Show(ex.Message)
-    '    End Try
-    'End Sub
-
     Private Sub BtnClose_Click(sender As System.Object, e As System.EventArgs) Handles BtnClose.Click
         Me.Hide()
         admin.Show()
     End Sub
 
     Private Sub DataGridViewEmployee_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellDoubleClick
-
         If Not e.RowIndex = -1 Then                                                                                                                 '   - to handle index out of range error
             Try
                 Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(Me.DataGridViewEmployee.SelectedRows(0).Cells("OracleID").Value)) '- set SelectionSet property to FullRowSelect
