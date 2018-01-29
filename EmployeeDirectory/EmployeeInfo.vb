@@ -10,6 +10,27 @@
         End Set
     End Property
 
+    ' ***** START : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+    Private _IsMgrError As Boolean
+    Public Property IsMgrError() As Boolean
+        Get
+            Return _IsMgrError
+        End Get
+        Set(ByVal value As Boolean)
+            _IsMgrError = value
+        End Set
+    End Property
+
+    Private _IsOffEmailError As Boolean
+    Public Property IsOffEmailError() As Boolean
+        Get
+            Return _IsOffEmailError
+        End Get
+        Set(ByVal value As Boolean)
+            _IsOffEmailError = value
+        End Set
+    End Property
+    ' ***** END : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
 
     Private _empinfo As New EmployeeRepository
     Public Property EmpInfo() As EmployeeRepository
@@ -166,6 +187,11 @@
 
     Private Sub Btn_Save_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Save.Click
 
+        '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+        IsMgrError = False
+        IsOffEmailError = False
+        ' ***** END : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+
         Dim _emp As New Employee
 
         With _emp
@@ -191,7 +217,14 @@
             'End If
 
             'TEXTBOX
-            .OracleID = TB_OracleID.Text
+
+            '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+            If Not TB_OracleID.Text = String.Empty Then
+                .OracleID = TB_OracleID.Text
+            End If
+            '.OracleID = TB_OracleID.Text
+            ' **** END  : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+
             .Title = TB_Title.Text
             .Position = TB_Position.Text
             .LastName = TB_LastName.Text
@@ -278,19 +311,52 @@
             .Floor = TB_Floor.Text
         End With
 
-        If Me.IsEdit = True Then
-            _empinfo.UpdateData(_emp)
-            _EmpEditService.Employee = _emp
-            _EmpEditService.PopulateFields(Me)
+        '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+        BlackLabel()
+        If (CurrentUserType = 1 Or
+            CurrentUserType = 2) Then
+            If _emp.OracleID = Nothing Then
+                IsMgrError = True
+                OracleID_Label.ForeColor = Color.Red
+            End If
+            If _emp.TeamName = String.Empty Then
+                IsMgrError = True
+                Team_Label.ForeColor = Color.Red
+            End If
+            If _emp.LocalManagerID = Nothing Then
+                IsMgrError = True
+                LocMgr_Label.ForeColor = Color.Red
+            End If
+            If _emp.OnboardingTicket = String.Empty Then
+                IsMgrError = True
+                OnbTkt_Label.ForeColor = Color.Red
+            End If
+            If _empinfo.ValidateEmail(_emp.OfficeEmail) = False Then
+                IsOffEmailError = True
+                OffEmail_Label.ForeColor = Color.Red
+            End If
+        End If
+
+        If IsMgrError = True Then
+            MessageBox.Show("Please fill up required fields", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf IsOffEmailError = True Then
+            MessageBox.Show("Please correct Office Email Address", "INVALID EMAIL ADDRESS", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            '*** SET DEFAULT VALUES DURING ADD ***'
-            _emp.UserType = 3
-            '_emp.Status =
-            '_emp.LastLogin =
-            '_emp.ExpirationDate =
-            '_emp.LastAccessedBy =
-            _empinfo.InsertData(_emp)
-            ClearFields()
+            ' ***** END : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+            If Me.IsEdit = True Then
+                _empinfo.UpdateData(_emp)
+                _EmpEditService.Employee = _emp
+                _EmpEditService.PopulateFields(Me)
+            Else
+                '*** SET DEFAULT VALUES DURING ADD ***'
+                _emp.UserType = 3
+                '_emp.Status =
+                '_emp.LastLogin =
+                '_emp.ExpirationDate =
+                '_emp.LastAccessedBy =
+                _empinfo.InsertData(_emp)
+                ClearFields()
+            End If
         End If
     End Sub
 
@@ -306,6 +372,9 @@
 
 
     Private Sub Btn_RevertClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_RevertClear.Click
+        ' ***** START : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+        BlackLabel()
+        ' ***** END   : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
         If _isEdit Then
             _EmpEditService.PopulateFields(Me)
             TB_OracleID.Focus()
@@ -446,4 +515,15 @@
     '    TB_Floor.Items.Add(_site.SiteFloor)
 
     'End Sub
+
+    ' **** START : VALIDATE AND REQUIRED FIELDS FOR MANAGER ***** '
+    Public Sub BlackLabel()
+        OracleID_Label.ForeColor = Color.Black
+        Team_Label.ForeColor = Color.Black
+        LocMgr_Label.ForeColor = Color.Black
+        OnbTkt_Label.ForeColor = Color.Black
+        OffEmail_Label.ForeColor = Color.Black
+    End Sub
+    ' ***** END : VALIDATE AND REQUIRED FIELDS FOR MANAGER/USER ***** '
+
 End Class
