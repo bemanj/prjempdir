@@ -2,7 +2,6 @@
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Main.BtnClose.Hide()
-        LogIn.Show()
         LogIn.Username.Text = ""
         LogIn.UsernamePassword.Text = ""
         LogIn.Username.Focus()
@@ -15,5 +14,6 @@
         Main.BtnClose.Show()
         Main.ToolStripStatusLabelUser.Text = "Current User: Admin"
         Main.Label_ManagerName.Text = "Hello Admin!"
+        Main.ButtonActive_Click(e, e)
     End Sub
 End Class

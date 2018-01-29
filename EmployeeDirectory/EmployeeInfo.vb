@@ -105,6 +105,7 @@
         If CurrentUserType = 3 Then
             Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(CurrentUser))
             EmpEditService.Employee = _tempSelectedRow
+            _isEdit = True
         End If
 
         _EmpEditService.PopulateFields(Me)
