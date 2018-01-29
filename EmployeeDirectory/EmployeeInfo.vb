@@ -312,40 +312,17 @@
             End If
 
             .Floor = TB_Floor.Text
+
         End With
 
-        '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
-        BlackLabel()
-        If (CurrentUserType = 1 Or
-            CurrentUserType = 2) Then
-            If _emp.OracleID = Nothing Then
-                IsMgrError = True
-                OracleID_Label.ForeColor = Color.Red
-            End If
-            If _emp.TeamName = String.Empty Then
-                IsMgrError = True
-                Team_Label.ForeColor = Color.Red
-            End If
-            If _emp.LocalManagerID = Nothing Then
-                IsMgrError = True
-                LocMgr_Label.ForeColor = Color.Red
-            End If
-            If _emp.OnboardingTicket = String.Empty Then
-                IsMgrError = True
-                OnbTkt_Label.ForeColor = Color.Red
-            End If
-        End If
+        EmpInfo.Validate()
 
-        If IsMgrError = True Then
-            MessageBox.Show("Please fill up required fields", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        ElseIf IsOffEmailError = True Then
-            MessageBox.Show("Please correct Office Email Address", "INVALID EMAIL ADDRESS", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Else
-            ' ***** END : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+        If EmpInfo.EmpValidate = 0 Then
             If Me.IsEdit = True Then
                 _empinfo.UpdateData(_emp)
                 _EmpEditService.Employee = _emp
                 _EmpEditService.PopulateFields(Me)
+                EmpInfo.ValidateClear()
             Else
                 '*** SET DEFAULT VALUES DURING ADD ***'
                 _emp.UserType = 3
@@ -355,7 +332,15 @@
                 '_emp.LastAccessedBy =
                 _empinfo.InsertData(_emp)
                 ClearFields()
+                EmpInfo.ValidateClear()
             End If
+        ElseIf EmpInfo.EmpValidate = 2 Then
+            Lbl_EAdd.ForeColor = Color.Red
+            MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'EmpInfo.EmpValidate = 0
+        Else
+            MessageBox.Show("Please fill up required fields", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'EmpInfo.EmpValidate = 0
         End If
     End Sub
 
@@ -375,11 +360,13 @@
         BlackLabel()
         ' ***** END   : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
         If _isEdit Then
+            EmpInfo.ValidateClear()
             _EmpEditService.PopulateFields(Me)
             TB_OracleID.Focus()
         Else
             ClearFields()
             TB_OracleID.Focus()
+            EmpInfo.ValidateClear()
         End If
 
     End Sub
@@ -394,10 +381,11 @@
 
 
     Private Sub Btn_Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Cancel.Click
-        Me.Hide()
+        Me.Close()
         ClearFields()
-        Main.Main_Load(e, e)
+        'Main.Main_Load(e, e)
         Main.Show()
+
     End Sub
 
     Private Sub ClearFields()

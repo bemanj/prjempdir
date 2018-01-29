@@ -253,9 +253,9 @@ Partial Class Main
         '
         Me.Label_ManagerName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label_ManagerName.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_ManagerName.Location = New System.Drawing.Point(0, 215)
+        Me.Label_ManagerName.Location = New System.Drawing.Point(186, 217)
         Me.Label_ManagerName.Name = "Label_ManagerName"
-        Me.Label_ManagerName.Size = New System.Drawing.Size(1164, 19)
+        Me.Label_ManagerName.Size = New System.Drawing.Size(764, 19)
         Me.Label_ManagerName.TabIndex = 0
         Me.Label_ManagerName.Text = "Label_ManagerName"
         Me.Label_ManagerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter

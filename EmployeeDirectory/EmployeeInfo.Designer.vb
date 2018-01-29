@@ -23,17 +23,17 @@ Partial Class EmployeeInfo
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EmployeeInfo))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Lbl_LastName = New System.Windows.Forms.Label()
+        Me.Lbl_FirstName = New System.Windows.Forms.Label()
         Me.TB_LastName = New System.Windows.Forms.TextBox()
         Me.TB_FirstName = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Lbl_MiddleName = New System.Windows.Forms.Label()
         Me.TB_MiddleName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Lbl_JobTitle = New System.Windows.Forms.Label()
+        Me.Lbl_Gender = New System.Windows.Forms.Label()
+        Me.Lbl_MobileNo = New System.Windows.Forms.Label()
+        Me.Lbl_EAdd = New System.Windows.Forms.Label()
         Me.TB_Title = New System.Windows.Forms.TextBox()
         Me.TB_PersonalEmail = New System.Windows.Forms.TextBox()
         Me.Btn_Save = New System.Windows.Forms.Button()
@@ -48,7 +48,7 @@ Partial Class EmployeeInfo
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.OfficeInfo = New System.Windows.Forms.TabPage()
         Me.Label52 = New System.Windows.Forms.Label()
-        Me.TB_SiteZipcode = New System.Windows.Forms.MaskedTextBox()
+        Me.TB_SiteZip = New System.Windows.Forms.TextBox()
         Me.DT_StartDate = New System.Windows.Forms.DateTimePicker()
         Me.DT_SFCDate = New System.Windows.Forms.DateTimePicker()
         Me.TB_Floor = New System.Windows.Forms.ComboBox()
@@ -114,25 +114,25 @@ Partial Class EmployeeInfo
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.OracleID_Label = New System.Windows.Forms.Label()
+        Me.Lbl_OracleID = New System.Windows.Forms.Label()
         Me.TB_HomeAddLine2 = New System.Windows.Forms.TextBox()
         Me.TB_HomeAddLine1 = New System.Windows.Forms.TextBox()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Lbl_HomeAdd2 = New System.Windows.Forms.Label()
+        Me.Lbl_HomeAdd1 = New System.Windows.Forms.Label()
         Me.CB_Gender = New System.Windows.Forms.ComboBox()
         Me.TB_Position = New System.Windows.Forms.TextBox()
-        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Lbl_Position = New System.Windows.Forms.Label()
         Me.DT_Birth = New System.Windows.Forms.DateTimePicker()
-        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Lbl_BirthDate = New System.Windows.Forms.Label()
         Me.TB_Landline = New System.Windows.Forms.TextBox()
-        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Lbl_LandLineNo = New System.Windows.Forms.Label()
         Me.CB_City = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Lbl_City = New System.Windows.Forms.Label()
         Me.CB_Region = New System.Windows.Forms.ComboBox()
-        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Lbl_Region = New System.Windows.Forms.Label()
         Me.CB_Country = New System.Windows.Forms.ComboBox()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Lbl_Country = New System.Windows.Forms.Label()
+        Me.Lbl_Zip = New System.Windows.Forms.Label()
         Me.TB_OracleID = New System.Windows.Forms.MaskedTextBox()
         Me.TB_MobileNo = New System.Windows.Forms.MaskedTextBox()
         Me.MB_Zipcode = New System.Windows.Forms.MaskedTextBox()
@@ -145,49 +145,49 @@ Partial Class EmployeeInfo
         Me.AccessInfo.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'Lbl_LastName
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(42, 272)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(69, 15)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Last Name"
+        Me.Lbl_LastName.AutoSize = True
+        Me.Lbl_LastName.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_LastName.Location = New System.Drawing.Point(42, 272)
+        Me.Lbl_LastName.Name = "Lbl_LastName"
+        Me.Lbl_LastName.Size = New System.Drawing.Size(69, 15)
+        Me.Lbl_LastName.TabIndex = 1
+        Me.Lbl_LastName.Text = "Last Name"
         '
-        'Label2
+        'Lbl_FirstName
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(303, 272)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(70, 15)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "First Name"
+        Me.Lbl_FirstName.AutoSize = True
+        Me.Lbl_FirstName.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_FirstName.Location = New System.Drawing.Point(303, 272)
+        Me.Lbl_FirstName.Name = "Lbl_FirstName"
+        Me.Lbl_FirstName.Size = New System.Drawing.Size(70, 15)
+        Me.Lbl_FirstName.TabIndex = 2
+        Me.Lbl_FirstName.Text = "First Name"
         '
         'TB_LastName
         '
         Me.TB_LastName.Location = New System.Drawing.Point(132, 272)
         Me.TB_LastName.Name = "TB_LastName"
         Me.TB_LastName.Size = New System.Drawing.Size(162, 20)
-        Me.TB_LastName.TabIndex = 4
+        Me.TB_LastName.TabIndex = 3
         '
         'TB_FirstName
         '
         Me.TB_FirstName.Location = New System.Drawing.Point(375, 272)
         Me.TB_FirstName.Name = "TB_FirstName"
         Me.TB_FirstName.Size = New System.Drawing.Size(162, 20)
-        Me.TB_FirstName.TabIndex = 5
+        Me.TB_FirstName.TabIndex = 4
         '
-        'Label3
+        'Lbl_MiddleName
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(570, 272)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(82, 15)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Middle Name"
+        Me.Lbl_MiddleName.AutoSize = True
+        Me.Lbl_MiddleName.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_MiddleName.Location = New System.Drawing.Point(570, 272)
+        Me.Lbl_MiddleName.Name = "Lbl_MiddleName"
+        Me.Lbl_MiddleName.Size = New System.Drawing.Size(82, 15)
+        Me.Lbl_MiddleName.TabIndex = 5
+        Me.Lbl_MiddleName.Text = "Middle Name"
         '
         'TB_MiddleName
         '
@@ -207,52 +207,52 @@ Partial Class EmployeeInfo
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Employee Information"
         '
-        'Label5
+        'Lbl_JobTitle
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(303, 242)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(53, 15)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Job Title"
+        Me.Lbl_JobTitle.AutoSize = True
+        Me.Lbl_JobTitle.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_JobTitle.Location = New System.Drawing.Point(303, 242)
+        Me.Lbl_JobTitle.Name = "Lbl_JobTitle"
+        Me.Lbl_JobTitle.Size = New System.Drawing.Size(53, 15)
+        Me.Lbl_JobTitle.TabIndex = 8
+        Me.Lbl_JobTitle.Text = "Job Title"
         '
-        'Label6
+        'Lbl_Gender
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(42, 332)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 15)
-        Me.Label6.TabIndex = 9
-        Me.Label6.Text = "Gender"
+        Me.Lbl_Gender.AutoSize = True
+        Me.Lbl_Gender.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Gender.Location = New System.Drawing.Point(42, 332)
+        Me.Lbl_Gender.Name = "Lbl_Gender"
+        Me.Lbl_Gender.Size = New System.Drawing.Size(49, 15)
+        Me.Lbl_Gender.TabIndex = 9
+        Me.Lbl_Gender.Text = "Gender"
         '
-        'Label7
+        'Lbl_MobileNo
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(375, 332)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(68, 15)
-        Me.Label7.TabIndex = 10
-        Me.Label7.Text = "Mobile No."
+        Me.Lbl_MobileNo.AutoSize = True
+        Me.Lbl_MobileNo.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_MobileNo.Location = New System.Drawing.Point(375, 332)
+        Me.Lbl_MobileNo.Name = "Lbl_MobileNo"
+        Me.Lbl_MobileNo.Size = New System.Drawing.Size(68, 15)
+        Me.Lbl_MobileNo.TabIndex = 10
+        Me.Lbl_MobileNo.Text = "Mobile No."
         '
-        'Label8
+        'Lbl_EAdd
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(375, 302)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(87, 15)
-        Me.Label8.TabIndex = 11
-        Me.Label8.Text = "Email Address"
+        Me.Lbl_EAdd.AutoSize = True
+        Me.Lbl_EAdd.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_EAdd.Location = New System.Drawing.Point(375, 302)
+        Me.Lbl_EAdd.Name = "Lbl_EAdd"
+        Me.Lbl_EAdd.Size = New System.Drawing.Size(87, 15)
+        Me.Lbl_EAdd.TabIndex = 11
+        Me.Lbl_EAdd.Text = "Email Address"
         '
         'TB_Title
         '
         Me.TB_Title.Location = New System.Drawing.Point(375, 242)
         Me.TB_Title.Name = "TB_Title"
         Me.TB_Title.Size = New System.Drawing.Size(162, 20)
-        Me.TB_Title.TabIndex = 2
+        Me.TB_Title.TabIndex = 1
         '
         'TB_PersonalEmail
         '
@@ -268,7 +268,7 @@ Partial Class EmployeeInfo
         Me.Btn_Save.Location = New System.Drawing.Point(771, 792)
         Me.Btn_Save.Name = "Btn_Save"
         Me.Btn_Save.Size = New System.Drawing.Size(120, 38)
-        Me.Btn_Save.TabIndex = 28
+        Me.Btn_Save.TabIndex = 50
         Me.Btn_Save.Text = "Save"
         Me.Btn_Save.UseVisualStyleBackColor = False
         '
@@ -279,7 +279,7 @@ Partial Class EmployeeInfo
         Me.Btn_RevertClear.Location = New System.Drawing.Point(897, 792)
         Me.Btn_RevertClear.Name = "Btn_RevertClear"
         Me.Btn_RevertClear.Size = New System.Drawing.Size(120, 38)
-        Me.Btn_RevertClear.TabIndex = 29
+        Me.Btn_RevertClear.TabIndex = 51
         Me.Btn_RevertClear.Text = "Revert"
         Me.Btn_RevertClear.UseVisualStyleBackColor = False
         '
@@ -340,7 +340,7 @@ Partial Class EmployeeInfo
         Me.Btn_Cancel.Location = New System.Drawing.Point(1023, 792)
         Me.Btn_Cancel.Name = "Btn_Cancel"
         Me.Btn_Cancel.Size = New System.Drawing.Size(120, 38)
-        Me.Btn_Cancel.TabIndex = 30
+        Me.Btn_Cancel.TabIndex = 52
         Me.Btn_Cancel.Text = "Cancel"
         Me.Btn_Cancel.UseVisualStyleBackColor = False
         '
@@ -351,7 +351,7 @@ Partial Class EmployeeInfo
         Me.Btn_Logout.Location = New System.Drawing.Point(1023, 12)
         Me.Btn_Logout.Name = "Btn_Logout"
         Me.Btn_Logout.Size = New System.Drawing.Size(120, 38)
-        Me.Btn_Logout.TabIndex = 44
+        Me.Btn_Logout.TabIndex = 53
         Me.Btn_Logout.Text = "LOGOUT"
         Me.Btn_Logout.UseVisualStyleBackColor = False
         '
@@ -369,7 +369,7 @@ Partial Class EmployeeInfo
         'OfficeInfo
         '
         Me.OfficeInfo.Controls.Add(Me.Label52)
-        Me.OfficeInfo.Controls.Add(Me.TB_SiteZipcode)
+        Me.OfficeInfo.Controls.Add(Me.TB_SiteZip)
         Me.OfficeInfo.Controls.Add(Me.DT_StartDate)
         Me.OfficeInfo.Controls.Add(Me.DT_SFCDate)
         Me.OfficeInfo.Controls.Add(Me.TB_Floor)
@@ -428,22 +428,19 @@ Partial Class EmployeeInfo
         '
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(720, 193)
+        Me.Label52.Location = New System.Drawing.Point(720, 135)
         Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(75, 15)
-        Me.Label52.TabIndex = 142
-        Me.Label52.Text = "Site Zipcode"
+        Me.Label52.Size = New System.Drawing.Size(79, 15)
+        Me.Label52.TabIndex = 138
+        Me.Label52.Text = "Site Zip Code"
         '
-        'TB_SiteZipcode
+        'TB_SiteZip
         '
-        Me.TB_SiteZipcode.Enabled = False
-        Me.TB_SiteZipcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.TB_SiteZipcode.Location = New System.Drawing.Point(830, 193)
-        Me.TB_SiteZipcode.Mask = "00000"
-        Me.TB_SiteZipcode.Name = "TB_SiteZipcode"
-        Me.TB_SiteZipcode.Size = New System.Drawing.Size(101, 20)
-        Me.TB_SiteZipcode.TabIndex = 111
-        Me.TB_SiteZipcode.ValidatingType = GetType(Integer)
+        Me.TB_SiteZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.TB_SiteZip.Location = New System.Drawing.Point(830, 133)
+        Me.TB_SiteZip.Name = "TB_SiteZip"
+        Me.TB_SiteZip.Size = New System.Drawing.Size(185, 20)
+        Me.TB_SiteZip.TabIndex = 36
         '
         'DT_StartDate
         '
@@ -452,7 +449,7 @@ Partial Class EmployeeInfo
         Me.DT_StartDate.Location = New System.Drawing.Point(505, 193)
         Me.DT_StartDate.Name = "DT_StartDate"
         Me.DT_StartDate.Size = New System.Drawing.Size(121, 20)
-        Me.DT_StartDate.TabIndex = 141
+        Me.DT_StartDate.TabIndex = 29
         '
         'DT_SFCDate
         '
@@ -461,7 +458,7 @@ Partial Class EmployeeInfo
         Me.DT_SFCDate.Location = New System.Drawing.Point(505, 253)
         Me.DT_SFCDate.Name = "DT_SFCDate"
         Me.DT_SFCDate.Size = New System.Drawing.Size(121, 20)
-        Me.DT_SFCDate.TabIndex = 140
+        Me.DT_SFCDate.TabIndex = 31
         Me.DT_SFCDate.Value = New Date(2018, 1, 24, 18, 45, 56, 0)
         '
         'TB_Floor
@@ -473,7 +470,7 @@ Partial Class EmployeeInfo
         Me.TB_Floor.Location = New System.Drawing.Point(830, 223)
         Me.TB_Floor.Name = "TB_Floor"
         Me.TB_Floor.Size = New System.Drawing.Size(121, 21)
-        Me.TB_Floor.TabIndex = 139
+        Me.TB_Floor.TabIndex = 39
         Me.TB_Floor.ValueMember = """ListID"""
         '
         'CB_Shift
@@ -485,7 +482,7 @@ Partial Class EmployeeInfo
         Me.CB_Shift.Location = New System.Drawing.Point(138, 253)
         Me.CB_Shift.Name = "CB_Shift"
         Me.CB_Shift.Size = New System.Drawing.Size(171, 21)
-        Me.CB_Shift.TabIndex = 138
+        Me.CB_Shift.TabIndex = 25
         Me.CB_Shift.ValueMember = """ListID"""
         '
         'MB_PhoneExtension
@@ -495,7 +492,7 @@ Partial Class EmployeeInfo
         Me.MB_PhoneExtension.Mask = "000000000000000"
         Me.MB_PhoneExtension.Name = "MB_PhoneExtension"
         Me.MB_PhoneExtension.Size = New System.Drawing.Size(171, 20)
-        Me.MB_PhoneExtension.TabIndex = 18
+        Me.MB_PhoneExtension.TabIndex = 17
         '
         'Label34
         '
@@ -521,19 +518,19 @@ Partial Class EmployeeInfo
         '
         Me.TB_SiteCountry.Enabled = False
         Me.TB_SiteCountry.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.TB_SiteCountry.Location = New System.Drawing.Point(830, 163)
+        Me.TB_SiteCountry.Location = New System.Drawing.Point(830, 194)
         Me.TB_SiteCountry.Name = "TB_SiteCountry"
         Me.TB_SiteCountry.Size = New System.Drawing.Size(185, 20)
-        Me.TB_SiteCountry.TabIndex = 134
+        Me.TB_SiteCountry.TabIndex = 38
         '
         'TB_SiteRegion
         '
         Me.TB_SiteRegion.Enabled = False
         Me.TB_SiteRegion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.TB_SiteRegion.Location = New System.Drawing.Point(830, 133)
+        Me.TB_SiteRegion.Location = New System.Drawing.Point(830, 164)
         Me.TB_SiteRegion.Name = "TB_SiteRegion"
         Me.TB_SiteRegion.Size = New System.Drawing.Size(185, 20)
-        Me.TB_SiteRegion.TabIndex = 133
+        Me.TB_SiteRegion.TabIndex = 37
         '
         'TB_SiteCity
         '
@@ -542,13 +539,13 @@ Partial Class EmployeeInfo
         Me.TB_SiteCity.Location = New System.Drawing.Point(830, 103)
         Me.TB_SiteCity.Name = "TB_SiteCity"
         Me.TB_SiteCity.Size = New System.Drawing.Size(185, 20)
-        Me.TB_SiteCity.TabIndex = 132
+        Me.TB_SiteCity.TabIndex = 35
         '
         'Label51
         '
         Me.Label51.AutoSize = True
         Me.Label51.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.Location = New System.Drawing.Point(720, 163)
+        Me.Label51.Location = New System.Drawing.Point(720, 194)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(74, 15)
         Me.Label51.TabIndex = 131
@@ -558,7 +555,7 @@ Partial Class EmployeeInfo
         '
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(720, 133)
+        Me.Label50.Location = New System.Drawing.Point(720, 164)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(69, 15)
         Me.Label50.TabIndex = 129
@@ -579,7 +576,7 @@ Partial Class EmployeeInfo
         Me.TB_OfficeEmail.Location = New System.Drawing.Point(138, 43)
         Me.TB_OfficeEmail.Name = "TB_OfficeEmail"
         Me.TB_OfficeEmail.Size = New System.Drawing.Size(171, 23)
-        Me.TB_OfficeEmail.TabIndex = 1
+        Me.TB_OfficeEmail.TabIndex = 18
         '
         'OffEmail_Label
         '
@@ -610,7 +607,7 @@ Partial Class EmployeeInfo
         Me.CB_Team.Location = New System.Drawing.Point(138, 163)
         Me.CB_Team.Name = "CB_Team"
         Me.CB_Team.Size = New System.Drawing.Size(171, 21)
-        Me.CB_Team.TabIndex = 122
+        Me.CB_Team.TabIndex = 22
         Me.CB_Team.ValueMember = """ListID"""
         '
         'CB_LocalMgr
@@ -622,8 +619,7 @@ Partial Class EmployeeInfo
         Me.CB_LocalMgr.Location = New System.Drawing.Point(138, 193)
         Me.CB_LocalMgr.Name = "CB_LocalMgr"
         Me.CB_LocalMgr.Size = New System.Drawing.Size(171, 21)
-        Me.CB_LocalMgr.TabIndex = 121
-        Me.CB_LocalMgr.ValueMember = """ListID"""
+        Me.CB_LocalMgr.TabIndex = 23
         '
         'CB_Site
         '
@@ -634,7 +630,7 @@ Partial Class EmployeeInfo
         Me.CB_Site.Location = New System.Drawing.Point(830, 13)
         Me.CB_Site.Name = "CB_Site"
         Me.CB_Site.Size = New System.Drawing.Size(185, 21)
-        Me.CB_Site.TabIndex = 120
+        Me.CB_Site.TabIndex = 32
         Me.CB_Site.ValueMember = """SiteID"""
         '
         'CB_IDCreated
@@ -646,7 +642,7 @@ Partial Class EmployeeInfo
         Me.CB_IDCreated.Location = New System.Drawing.Point(505, 73)
         Me.CB_IDCreated.Name = "CB_IDCreated"
         Me.CB_IDCreated.Size = New System.Drawing.Size(121, 21)
-        Me.CB_IDCreated.TabIndex = 119
+        Me.CB_IDCreated.TabIndex = 28
         '
         'TB_AddressLine2
         '
@@ -654,7 +650,7 @@ Partial Class EmployeeInfo
         Me.TB_AddressLine2.Location = New System.Drawing.Point(830, 73)
         Me.TB_AddressLine2.Name = "TB_AddressLine2"
         Me.TB_AddressLine2.Size = New System.Drawing.Size(185, 20)
-        Me.TB_AddressLine2.TabIndex = 118
+        Me.TB_AddressLine2.TabIndex = 34
         '
         'TB_AddressLine1
         '
@@ -662,7 +658,7 @@ Partial Class EmployeeInfo
         Me.TB_AddressLine1.Location = New System.Drawing.Point(830, 43)
         Me.TB_AddressLine1.Name = "TB_AddressLine1"
         Me.TB_AddressLine1.Size = New System.Drawing.Size(185, 20)
-        Me.TB_AddressLine1.TabIndex = 117
+        Me.TB_AddressLine1.TabIndex = 33
         '
         'TB_Entity
         '
@@ -670,7 +666,7 @@ Partial Class EmployeeInfo
         Me.TB_Entity.Location = New System.Drawing.Point(138, 73)
         Me.TB_Entity.Name = "TB_Entity"
         Me.TB_Entity.Size = New System.Drawing.Size(171, 20)
-        Me.TB_Entity.TabIndex = 20
+        Me.TB_Entity.TabIndex = 19
         '
         'TB_Department
         '
@@ -678,7 +674,7 @@ Partial Class EmployeeInfo
         Me.TB_Department.Location = New System.Drawing.Point(138, 133)
         Me.TB_Department.Name = "TB_Department"
         Me.TB_Department.Size = New System.Drawing.Size(171, 20)
-        Me.TB_Department.TabIndex = 114
+        Me.TB_Department.TabIndex = 21
         '
         'TB_Division
         '
@@ -686,7 +682,7 @@ Partial Class EmployeeInfo
         Me.TB_Division.Location = New System.Drawing.Point(138, 103)
         Me.TB_Division.Name = "TB_Division"
         Me.TB_Division.Size = New System.Drawing.Size(171, 20)
-        Me.TB_Division.TabIndex = 113
+        Me.TB_Division.TabIndex = 20
         '
         'TB_Recruiter
         '
@@ -694,7 +690,7 @@ Partial Class EmployeeInfo
         Me.TB_Recruiter.Location = New System.Drawing.Point(505, 43)
         Me.TB_Recruiter.Name = "TB_Recruiter"
         Me.TB_Recruiter.Size = New System.Drawing.Size(121, 20)
-        Me.TB_Recruiter.TabIndex = 112
+        Me.TB_Recruiter.TabIndex = 27
         '
         'Label20
         '
@@ -786,7 +782,7 @@ Partial Class EmployeeInfo
         Me.CB_SFC.Location = New System.Drawing.Point(505, 223)
         Me.CB_SFC.Name = "CB_SFC"
         Me.CB_SFC.Size = New System.Drawing.Size(121, 21)
-        Me.CB_SFC.TabIndex = 101
+        Me.CB_SFC.TabIndex = 30
         '
         'TB_OnboardingTkt
         '
@@ -794,7 +790,7 @@ Partial Class EmployeeInfo
         Me.TB_OnboardingTkt.Location = New System.Drawing.Point(505, 13)
         Me.TB_OnboardingTkt.Name = "TB_OnboardingTkt"
         Me.TB_OnboardingTkt.Size = New System.Drawing.Size(121, 20)
-        Me.TB_OnboardingTkt.TabIndex = 99
+        Me.TB_OnboardingTkt.TabIndex = 26
         '
         'TB_SeatNo
         '
@@ -802,7 +798,7 @@ Partial Class EmployeeInfo
         Me.TB_SeatNo.Location = New System.Drawing.Point(830, 253)
         Me.TB_SeatNo.Name = "TB_SeatNo"
         Me.TB_SeatNo.Size = New System.Drawing.Size(121, 20)
-        Me.TB_SeatNo.TabIndex = 98
+        Me.TB_SeatNo.TabIndex = 40
         '
         'TB_USMgr
         '
@@ -810,7 +806,7 @@ Partial Class EmployeeInfo
         Me.TB_USMgr.Location = New System.Drawing.Point(138, 223)
         Me.TB_USMgr.Name = "TB_USMgr"
         Me.TB_USMgr.Size = New System.Drawing.Size(171, 20)
-        Me.TB_USMgr.TabIndex = 95
+        Me.TB_USMgr.TabIndex = 24
         '
         'Label21
         '
@@ -926,7 +922,7 @@ Partial Class EmployeeInfo
         Me.TB_PCName.Location = New System.Drawing.Point(132, 13)
         Me.TB_PCName.Name = "TB_PCName"
         Me.TB_PCName.Size = New System.Drawing.Size(121, 20)
-        Me.TB_PCName.TabIndex = 64
+        Me.TB_PCName.TabIndex = 41
         '
         'Label40
         '
@@ -944,7 +940,7 @@ Partial Class EmployeeInfo
         Me.TB_GithubID.Location = New System.Drawing.Point(498, 103)
         Me.TB_GithubID.Name = "TB_GithubID"
         Me.TB_GithubID.Size = New System.Drawing.Size(121, 20)
-        Me.TB_GithubID.TabIndex = 62
+        Me.TB_GithubID.TabIndex = 49
         '
         'TB_ElsevierID
         '
@@ -952,7 +948,7 @@ Partial Class EmployeeInfo
         Me.TB_ElsevierID.Location = New System.Drawing.Point(498, 73)
         Me.TB_ElsevierID.Name = "TB_ElsevierID"
         Me.TB_ElsevierID.Size = New System.Drawing.Size(121, 20)
-        Me.TB_ElsevierID.TabIndex = 61
+        Me.TB_ElsevierID.TabIndex = 48
         '
         'TB_EGSPREMID
         '
@@ -960,7 +956,7 @@ Partial Class EmployeeInfo
         Me.TB_EGSPREMID.Location = New System.Drawing.Point(498, 43)
         Me.TB_EGSPREMID.Name = "TB_EGSPREMID"
         Me.TB_EGSPREMID.Size = New System.Drawing.Size(121, 20)
-        Me.TB_EGSPREMID.TabIndex = 60
+        Me.TB_EGSPREMID.TabIndex = 47
         '
         'TB_InsightID
         '
@@ -968,7 +964,7 @@ Partial Class EmployeeInfo
         Me.TB_InsightID.Location = New System.Drawing.Point(132, 133)
         Me.TB_InsightID.Name = "TB_InsightID"
         Me.TB_InsightID.Size = New System.Drawing.Size(121, 20)
-        Me.TB_InsightID.TabIndex = 59
+        Me.TB_InsightID.TabIndex = 45
         '
         'TB_EISID
         '
@@ -976,7 +972,7 @@ Partial Class EmployeeInfo
         Me.TB_EISID.Location = New System.Drawing.Point(132, 73)
         Me.TB_EISID.Name = "TB_EISID"
         Me.TB_EISID.Size = New System.Drawing.Size(121, 20)
-        Me.TB_EISID.TabIndex = 58
+        Me.TB_EISID.TabIndex = 43
         '
         'TB_NCOGrpID
         '
@@ -984,7 +980,7 @@ Partial Class EmployeeInfo
         Me.TB_NCOGrpID.Location = New System.Drawing.Point(498, 13)
         Me.TB_NCOGrpID.Name = "TB_NCOGrpID"
         Me.TB_NCOGrpID.Size = New System.Drawing.Size(121, 20)
-        Me.TB_NCOGrpID.TabIndex = 57
+        Me.TB_NCOGrpID.TabIndex = 46
         '
         'TB_MercuryID
         '
@@ -992,7 +988,7 @@ Partial Class EmployeeInfo
         Me.TB_MercuryID.Location = New System.Drawing.Point(132, 43)
         Me.TB_MercuryID.Name = "TB_MercuryID"
         Me.TB_MercuryID.Size = New System.Drawing.Size(121, 20)
-        Me.TB_MercuryID.TabIndex = 56
+        Me.TB_MercuryID.TabIndex = 42
         '
         'TB_OraclePRD
         '
@@ -1000,7 +996,7 @@ Partial Class EmployeeInfo
         Me.TB_OraclePRD.Location = New System.Drawing.Point(132, 103)
         Me.TB_OraclePRD.Name = "TB_OraclePRD"
         Me.TB_OraclePRD.Size = New System.Drawing.Size(121, 20)
-        Me.TB_OraclePRD.TabIndex = 55
+        Me.TB_OraclePRD.TabIndex = 44
         '
         'Label18
         '
@@ -1082,49 +1078,49 @@ Partial Class EmployeeInfo
         Me.Label10.TabIndex = 47
         Me.Label10.Text = "Mercury ID"
         '
-        'OracleID_Label
+        'Lbl_OracleID
         '
-        Me.OracleID_Label.AutoSize = True
-        Me.OracleID_Label.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OracleID_Label.Location = New System.Drawing.Point(42, 242)
-        Me.OracleID_Label.Name = "OracleID_Label"
-        Me.OracleID_Label.Size = New System.Drawing.Size(61, 15)
-        Me.OracleID_Label.TabIndex = 45
-        Me.OracleID_Label.Text = "Oracle ID"
+        Me.Lbl_OracleID.AutoSize = True
+        Me.Lbl_OracleID.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_OracleID.Location = New System.Drawing.Point(42, 242)
+        Me.Lbl_OracleID.Name = "Lbl_OracleID"
+        Me.Lbl_OracleID.Size = New System.Drawing.Size(61, 15)
+        Me.Lbl_OracleID.TabIndex = 45
+        Me.Lbl_OracleID.Text = "Oracle ID"
         '
         'TB_HomeAddLine2
         '
         Me.TB_HomeAddLine2.Location = New System.Drawing.Point(473, 362)
         Me.TB_HomeAddLine2.Name = "TB_HomeAddLine2"
         Me.TB_HomeAddLine2.Size = New System.Drawing.Size(342, 20)
-        Me.TB_HomeAddLine2.TabIndex = 13
+        Me.TB_HomeAddLine2.TabIndex = 12
         '
         'TB_HomeAddLine1
         '
         Me.TB_HomeAddLine1.Location = New System.Drawing.Point(132, 362)
         Me.TB_HomeAddLine1.Name = "TB_HomeAddLine1"
         Me.TB_HomeAddLine1.Size = New System.Drawing.Size(233, 20)
-        Me.TB_HomeAddLine1.TabIndex = 12
+        Me.TB_HomeAddLine1.TabIndex = 11
         '
-        'Label38
+        'Lbl_HomeAdd2
         '
-        Me.Label38.AutoSize = True
-        Me.Label38.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label38.Location = New System.Drawing.Point(375, 362)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(90, 15)
-        Me.Label38.TabIndex = 93
-        Me.Label38.Text = "Address Line 2"
+        Me.Lbl_HomeAdd2.AutoSize = True
+        Me.Lbl_HomeAdd2.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_HomeAdd2.Location = New System.Drawing.Point(375, 362)
+        Me.Lbl_HomeAdd2.Name = "Lbl_HomeAdd2"
+        Me.Lbl_HomeAdd2.Size = New System.Drawing.Size(90, 15)
+        Me.Lbl_HomeAdd2.TabIndex = 93
+        Me.Lbl_HomeAdd2.Text = "Address Line 2"
         '
-        'Label39
+        'Lbl_HomeAdd1
         '
-        Me.Label39.AutoSize = True
-        Me.Label39.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.Location = New System.Drawing.Point(42, 362)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(90, 15)
-        Me.Label39.TabIndex = 92
-        Me.Label39.Text = "Address Line 1"
+        Me.Lbl_HomeAdd1.AutoSize = True
+        Me.Lbl_HomeAdd1.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_HomeAdd1.Location = New System.Drawing.Point(42, 362)
+        Me.Lbl_HomeAdd1.Name = "Lbl_HomeAdd1"
+        Me.Lbl_HomeAdd1.Size = New System.Drawing.Size(90, 15)
+        Me.Lbl_HomeAdd1.TabIndex = 92
+        Me.Lbl_HomeAdd1.Text = "Address Line 1"
         '
         'CB_Gender
         '
@@ -1135,24 +1131,24 @@ Partial Class EmployeeInfo
         Me.CB_Gender.Location = New System.Drawing.Point(132, 332)
         Me.CB_Gender.Name = "CB_Gender"
         Me.CB_Gender.Size = New System.Drawing.Size(49, 21)
-        Me.CB_Gender.TabIndex = 9
+        Me.CB_Gender.TabIndex = 8
         '
         'TB_Position
         '
         Me.TB_Position.Location = New System.Drawing.Point(653, 242)
         Me.TB_Position.Name = "TB_Position"
         Me.TB_Position.Size = New System.Drawing.Size(162, 20)
-        Me.TB_Position.TabIndex = 3
+        Me.TB_Position.TabIndex = 2
         '
-        'Label41
+        'Lbl_Position
         '
-        Me.Label41.AutoSize = True
-        Me.Label41.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label41.Location = New System.Drawing.Point(570, 242)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(52, 15)
-        Me.Label41.TabIndex = 98
-        Me.Label41.Text = "Position"
+        Me.Lbl_Position.AutoSize = True
+        Me.Lbl_Position.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_Position.Location = New System.Drawing.Point(570, 242)
+        Me.Lbl_Position.Name = "Lbl_Position"
+        Me.Lbl_Position.Size = New System.Drawing.Size(52, 15)
+        Me.Lbl_Position.TabIndex = 98
+        Me.Lbl_Position.Text = "Position"
         '
         'DT_Birth
         '
@@ -1160,35 +1156,35 @@ Partial Class EmployeeInfo
         Me.DT_Birth.Location = New System.Drawing.Point(132, 302)
         Me.DT_Birth.Name = "DT_Birth"
         Me.DT_Birth.Size = New System.Drawing.Size(111, 20)
-        Me.DT_Birth.TabIndex = 7
+        Me.DT_Birth.TabIndex = 6
         Me.DT_Birth.Value = New Date(2018, 1, 23, 0, 0, 0, 0)
         '
-        'Label42
+        'Lbl_BirthDate
         '
-        Me.Label42.AutoSize = True
-        Me.Label42.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.Location = New System.Drawing.Point(42, 302)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(66, 15)
-        Me.Label42.TabIndex = 101
-        Me.Label42.Text = "Birth Date"
+        Me.Lbl_BirthDate.AutoSize = True
+        Me.Lbl_BirthDate.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_BirthDate.Location = New System.Drawing.Point(42, 302)
+        Me.Lbl_BirthDate.Name = "Lbl_BirthDate"
+        Me.Lbl_BirthDate.Size = New System.Drawing.Size(66, 15)
+        Me.Lbl_BirthDate.TabIndex = 101
+        Me.Lbl_BirthDate.Text = "Birth Date"
         '
         'TB_Landline
         '
         Me.TB_Landline.Location = New System.Drawing.Point(653, 332)
         Me.TB_Landline.Name = "TB_Landline"
         Me.TB_Landline.Size = New System.Drawing.Size(162, 20)
-        Me.TB_Landline.TabIndex = 11
+        Me.TB_Landline.TabIndex = 10
         '
-        'Label43
+        'Lbl_LandLineNo
         '
-        Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label43.Location = New System.Drawing.Point(570, 332)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(78, 15)
-        Me.Label43.TabIndex = 102
-        Me.Label43.Text = "Landline No."
+        Me.Lbl_LandLineNo.AutoSize = True
+        Me.Lbl_LandLineNo.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_LandLineNo.Location = New System.Drawing.Point(570, 332)
+        Me.Lbl_LandLineNo.Name = "Lbl_LandLineNo"
+        Me.Lbl_LandLineNo.Size = New System.Drawing.Size(78, 15)
+        Me.Lbl_LandLineNo.TabIndex = 102
+        Me.Lbl_LandLineNo.Text = "Landline No."
         '
         'CB_City
         '
@@ -1198,18 +1194,18 @@ Partial Class EmployeeInfo
         Me.CB_City.Location = New System.Drawing.Point(132, 392)
         Me.CB_City.Name = "CB_City"
         Me.CB_City.Size = New System.Drawing.Size(132, 21)
-        Me.CB_City.TabIndex = 14
+        Me.CB_City.TabIndex = 13
         Me.CB_City.ValueMember = """ListID"""
         '
-        'Label12
+        'Lbl_City
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label12.Location = New System.Drawing.Point(93, 392)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(30, 15)
-        Me.Label12.TabIndex = 104
-        Me.Label12.Text = "City"
+        Me.Lbl_City.AutoSize = True
+        Me.Lbl_City.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_City.Location = New System.Drawing.Point(93, 392)
+        Me.Lbl_City.Name = "Lbl_City"
+        Me.Lbl_City.Size = New System.Drawing.Size(30, 15)
+        Me.Lbl_City.TabIndex = 104
+        Me.Lbl_City.Text = "City"
         '
         'CB_Region
         '
@@ -1219,18 +1215,18 @@ Partial Class EmployeeInfo
         Me.CB_Region.Location = New System.Drawing.Point(326, 392)
         Me.CB_Region.Name = "CB_Region"
         Me.CB_Region.Size = New System.Drawing.Size(132, 21)
-        Me.CB_Region.TabIndex = 15
+        Me.CB_Region.TabIndex = 14
         Me.CB_Region.ValueMember = """ListID"""
         '
-        'Label44
+        'Lbl_Region
         '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label44.Location = New System.Drawing.Point(275, 392)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(46, 15)
-        Me.Label44.TabIndex = 106
-        Me.Label44.Text = "Region"
+        Me.Lbl_Region.AutoSize = True
+        Me.Lbl_Region.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_Region.Location = New System.Drawing.Point(275, 392)
+        Me.Lbl_Region.Name = "Lbl_Region"
+        Me.Lbl_Region.Size = New System.Drawing.Size(46, 15)
+        Me.Lbl_Region.TabIndex = 106
+        Me.Lbl_Region.Text = "Region"
         '
         'CB_Country
         '
@@ -1240,27 +1236,27 @@ Partial Class EmployeeInfo
         Me.CB_Country.Location = New System.Drawing.Point(530, 392)
         Me.CB_Country.Name = "CB_Country"
         Me.CB_Country.Size = New System.Drawing.Size(117, 21)
-        Me.CB_Country.TabIndex = 16
+        Me.CB_Country.TabIndex = 15
         '
-        'Label45
+        'Lbl_Country
         '
-        Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label45.Location = New System.Drawing.Point(473, 392)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(53, 15)
-        Me.Label45.TabIndex = 108
-        Me.Label45.Text = "Country"
+        Me.Lbl_Country.AutoSize = True
+        Me.Lbl_Country.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_Country.Location = New System.Drawing.Point(473, 392)
+        Me.Lbl_Country.Name = "Lbl_Country"
+        Me.Lbl_Country.Size = New System.Drawing.Size(53, 15)
+        Me.Lbl_Country.TabIndex = 108
+        Me.Lbl_Country.Text = "Country"
         '
-        'Label46
+        'Lbl_Zip
         '
-        Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label46.Location = New System.Drawing.Point(653, 392)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(56, 15)
-        Me.Label46.TabIndex = 110
-        Me.Label46.Text = "Zip Code"
+        Me.Lbl_Zip.AutoSize = True
+        Me.Lbl_Zip.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Lbl_Zip.Location = New System.Drawing.Point(653, 392)
+        Me.Lbl_Zip.Name = "Lbl_Zip"
+        Me.Lbl_Zip.Size = New System.Drawing.Size(56, 15)
+        Me.Lbl_Zip.TabIndex = 110
+        Me.Lbl_Zip.Text = "Zip Code"
         '
         'TB_OracleID
         '
@@ -1276,7 +1272,7 @@ Partial Class EmployeeInfo
         Me.TB_MobileNo.Mask = "00000000000"
         Me.TB_MobileNo.Name = "TB_MobileNo"
         Me.TB_MobileNo.Size = New System.Drawing.Size(75, 20)
-        Me.TB_MobileNo.TabIndex = 10
+        Me.TB_MobileNo.TabIndex = 9
         '
         'MB_Zipcode
         '
@@ -1284,7 +1280,7 @@ Partial Class EmployeeInfo
         Me.MB_Zipcode.Mask = "00000"
         Me.MB_Zipcode.Name = "MB_Zipcode"
         Me.MB_Zipcode.Size = New System.Drawing.Size(101, 20)
-        Me.MB_Zipcode.TabIndex = 17
+        Me.MB_Zipcode.TabIndex = 16
         Me.MB_Zipcode.ValidatingType = GetType(Integer)
         '
         'EmployeeInfo
@@ -1296,24 +1292,24 @@ Partial Class EmployeeInfo
         Me.Controls.Add(Me.MB_Zipcode)
         Me.Controls.Add(Me.TB_MobileNo)
         Me.Controls.Add(Me.TB_OracleID)
-        Me.Controls.Add(Me.Label46)
+        Me.Controls.Add(Me.Lbl_Zip)
         Me.Controls.Add(Me.CB_Country)
-        Me.Controls.Add(Me.Label45)
+        Me.Controls.Add(Me.Lbl_Country)
         Me.Controls.Add(Me.CB_Region)
-        Me.Controls.Add(Me.Label44)
+        Me.Controls.Add(Me.Lbl_Region)
         Me.Controls.Add(Me.CB_City)
-        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Lbl_City)
         Me.Controls.Add(Me.TB_Landline)
-        Me.Controls.Add(Me.Label43)
-        Me.Controls.Add(Me.Label42)
+        Me.Controls.Add(Me.Lbl_LandLineNo)
+        Me.Controls.Add(Me.Lbl_BirthDate)
         Me.Controls.Add(Me.DT_Birth)
         Me.Controls.Add(Me.TB_Position)
-        Me.Controls.Add(Me.Label41)
+        Me.Controls.Add(Me.Lbl_Position)
         Me.Controls.Add(Me.CB_Gender)
         Me.Controls.Add(Me.TB_HomeAddLine2)
         Me.Controls.Add(Me.TB_HomeAddLine1)
-        Me.Controls.Add(Me.Label38)
-        Me.Controls.Add(Me.Label39)
+        Me.Controls.Add(Me.Lbl_HomeAdd2)
+        Me.Controls.Add(Me.Lbl_HomeAdd1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Btn_Logout)
         Me.Controls.Add(Me.Btn_Cancel)
@@ -1325,18 +1321,18 @@ Partial Class EmployeeInfo
         Me.Controls.Add(Me.TB_PersonalEmail)
         Me.Controls.Add(Me.TB_Title)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.OracleID_Label)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Lbl_EAdd)
+        Me.Controls.Add(Me.Lbl_MobileNo)
+        Me.Controls.Add(Me.Lbl_OracleID)
+        Me.Controls.Add(Me.Lbl_Gender)
+        Me.Controls.Add(Me.Lbl_JobTitle)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TB_MiddleName)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Lbl_MiddleName)
         Me.Controls.Add(Me.TB_FirstName)
         Me.Controls.Add(Me.TB_LastName)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Lbl_FirstName)
+        Me.Controls.Add(Me.Lbl_LastName)
         Me.Controls.Add(Me.PictureBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EmployeeInfo"
@@ -1354,17 +1350,17 @@ Partial Class EmployeeInfo
 
     End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_LastName As System.Windows.Forms.Label
+    Friend WithEvents Lbl_FirstName As System.Windows.Forms.Label
     Friend WithEvents TB_LastName As System.Windows.Forms.TextBox
     Friend WithEvents TB_FirstName As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_MiddleName As System.Windows.Forms.Label
     Friend WithEvents TB_MiddleName As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_JobTitle As System.Windows.Forms.Label
+    Friend WithEvents Lbl_Gender As System.Windows.Forms.Label
+    Friend WithEvents Lbl_MobileNo As System.Windows.Forms.Label
+    Friend WithEvents Lbl_EAdd As System.Windows.Forms.Label
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents TB_Title As System.Windows.Forms.TextBox
     Friend WithEvents TB_PersonalEmail As System.Windows.Forms.TextBox
@@ -1423,27 +1419,27 @@ Partial Class EmployeeInfo
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents OracleID_Label As System.Windows.Forms.Label
+    Friend WithEvents Lbl_OracleID As System.Windows.Forms.Label
     Friend WithEvents TB_HomeAddLine2 As System.Windows.Forms.TextBox
     Friend WithEvents TB_HomeAddLine1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label38 As System.Windows.Forms.Label
-    Friend WithEvents Label39 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_HomeAdd2 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_HomeAdd1 As System.Windows.Forms.Label
     Friend WithEvents TB_PCName As System.Windows.Forms.TextBox
     Friend WithEvents Label40 As System.Windows.Forms.Label
     Friend WithEvents CB_Gender As System.Windows.Forms.ComboBox
     Friend WithEvents CB_Team As System.Windows.Forms.ComboBox
     Friend WithEvents TB_Position As System.Windows.Forms.TextBox
-    Friend WithEvents Label41 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_Position As System.Windows.Forms.Label
     Friend WithEvents DT_Birth As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label42 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_BirthDate As System.Windows.Forms.Label
     Friend WithEvents TB_Landline As System.Windows.Forms.TextBox
-    Friend WithEvents Label43 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_LandLineNo As System.Windows.Forms.Label
     Friend WithEvents CB_City As System.Windows.Forms.ComboBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_City As System.Windows.Forms.Label
     Friend WithEvents CB_Region As System.Windows.Forms.ComboBox
-    Friend WithEvents Label44 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_Region As System.Windows.Forms.Label
     Friend WithEvents CB_Country As System.Windows.Forms.ComboBox
-    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_Country As System.Windows.Forms.Label
     Friend WithEvents TB_SiteCity As System.Windows.Forms.TextBox
     Friend WithEvents Label51 As System.Windows.Forms.Label
     Friend WithEvents Label50 As System.Windows.Forms.Label
@@ -1451,7 +1447,7 @@ Partial Class EmployeeInfo
     Friend WithEvents TB_OfficeEmail As System.Windows.Forms.TextBox
     Friend WithEvents OffEmail_Label As System.Windows.Forms.Label
     Friend WithEvents Label47 As System.Windows.Forms.Label
-    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents Lbl_Zip As System.Windows.Forms.Label
     Friend WithEvents TB_SiteCountry As System.Windows.Forms.TextBox
     Friend WithEvents TB_SiteRegion As System.Windows.Forms.TextBox
     Friend WithEvents Label34 As System.Windows.Forms.Label
@@ -1463,7 +1459,7 @@ Partial Class EmployeeInfo
     Friend WithEvents CB_Shift As System.Windows.Forms.ComboBox
     Friend WithEvents DT_SFCDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents DT_StartDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents TB_SiteZip As System.Windows.Forms.TextBox
     Friend WithEvents Label52 As System.Windows.Forms.Label
-    Friend WithEvents TB_SiteZipcode As System.Windows.Forms.MaskedTextBox
     Public WithEvents TB_Floor As System.Windows.Forms.ComboBox
 End Class

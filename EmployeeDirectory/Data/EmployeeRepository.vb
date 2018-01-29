@@ -2,9 +2,12 @@
 
 Imports System.Configuration
 Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 
 Public Class EmployeeRepository
     Inherits BaseRepository
+    Public EmpValidate As Integer = 0
+
 
     Public Sub New()
         MyBase.New(ConfigurationManager.ConnectionStrings("EmployeeDirectoryConnectionString").ConnectionString.Decrypt)
@@ -79,9 +82,9 @@ Public Class EmployeeRepository
             .Add(New SqlParameter("@MiddleName", _emp.MiddleName))
             .Add(New SqlParameter("@HomeAddress1", _emp.HomeAddress1))
             .Add(New SqlParameter("@HomeAddress2", _emp.HomeAddress2))
-            .Add(New SqlParameter("@CityID", _emp.CityId))
+            .Add(New SqlParameter("@CityID", _emp.CityID))
             .Add(New SqlParameter("@ZipCode", _emp.ZipCode))
-            .Add(New SqlParameter("@RegionID", _emp.RegionId))
+            .Add(New SqlParameter("@RegionID", _emp.RegionID))
             .Add(New SqlParameter("@Country", _emp.Country))
             .Add(New SqlParameter("@Gender", _emp.Gender))
             .Add(New SqlParameter("@Birthday", _emp.Birthday))
@@ -124,6 +127,133 @@ Public Class EmployeeRepository
 
         Return _tempParamList
 
+    End Function
+
+    Public Sub Validate()
+        EmpValidate = 0
+        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_LastName.Text) Then
+            EmployeeInfo.Lbl_LastName.ForeColor = Color.Red()
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_LastName.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_FirstName.Text) Then
+            EmployeeInfo.Lbl_FirstName.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_FirstName.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_MiddleName.Text) Then
+            EmployeeInfo.Lbl_MiddleName.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_MiddleName.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.CB_Gender.Text) Then
+            EmployeeInfo.Lbl_Gender.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_Gender.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.DT_Birth.Text) Then
+            EmployeeInfo.Lbl_BirthDate.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_BirthDate.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_PersonalEmail.Text) Then
+            EmployeeInfo.Lbl_EAdd.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_MobileNo.Text) Then
+            EmployeeInfo.Lbl_MobileNo.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_MobileNo.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_HomeAddLine1.Text) Then
+            EmployeeInfo.Lbl_HomeAdd1.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_HomeAdd1.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_HomeAddLine2.Text) Then
+            EmployeeInfo.Lbl_HomeAdd2.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_HomeAdd2.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.CB_City.Text) Then
+            EmployeeInfo.Lbl_City.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_City.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.CB_Region.Text) Then
+            EmployeeInfo.Lbl_Region.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_Region.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.CB_Country.Text) Then
+            EmployeeInfo.Lbl_Country.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_Country.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(EmployeeInfo.MB_Zipcode.Text) Then
+            EmployeeInfo.Lbl_Zip.ForeColor = Color.Red
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_Zip.ForeColor = Color.Black
+        End If
+
+        If Not String.IsNullOrEmpty(EmployeeInfo.TB_PersonalEmail.Text) Then
+            If ValidateEmail(EmployeeInfo.TB_PersonalEmail.Text) = False Then
+                EmpValidate = 2
+                'MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        End If
+    End Sub
+
+    Public Sub ValidateClear()
+        EmployeeInfo.Lbl_LastName.ForeColor = Color.Black
+        EmployeeInfo.Lbl_FirstName.ForeColor = Color.Black
+        EmployeeInfo.Lbl_MiddleName.ForeColor = Color.Black
+        EmployeeInfo.Lbl_Gender.ForeColor = Color.Black
+        EmployeeInfo.Lbl_BirthDate.ForeColor = Color.Black
+        EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
+        EmployeeInfo.Lbl_MobileNo.ForeColor = Color.Black
+        EmployeeInfo.Lbl_HomeAdd1.ForeColor = Color.Black
+        EmployeeInfo.Lbl_HomeAdd2.ForeColor = Color.Black
+        EmployeeInfo.Lbl_City.ForeColor = Color.Black
+        EmployeeInfo.Lbl_Zip.ForeColor = Color.Black
+        EmployeeInfo.Lbl_Region.ForeColor = Color.Black
+        EmployeeInfo.Lbl_Country.ForeColor = Color.Black
+    End Sub
+
+    Public Function ValidateEmail(EmailAddress) As Boolean
+        ' Dim email As New Regex("^(?<user>[^@]+)@(?<host>.+)$")
+        Dim email As New Regex("([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})")
+        If email.IsMatch(emailAddress) Then
+            Return True
+        Else
+            Return False
+        End If
     End Function
 
 End Class
