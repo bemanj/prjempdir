@@ -43,6 +43,9 @@ Public Class Main
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Add.Click
         EmployeeInfo.IsEdit = False
         EmployeeInfo.Btn_RevertClear.Text = "Clear"
+        '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+        EmployeeInfo.BlackLabel()
+        '***** END  : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
         EmployeeInfo.Show()
         EmployeeInfo.TB_OracleID.Focus()
         Me.Hide()
@@ -77,6 +80,9 @@ Public Class Main
                 EmployeeInfo.EmpEditService.Employee = _tempSelectedRow
                 EmployeeInfo.IsEdit = True
                 EmployeeInfo.Btn_RevertClear.Text = "Revert"
+                '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+                EmployeeInfo.BlackLabel()
+                '***** END  : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
                 Me.Hide()
                 EmployeeInfo.ShowDialog()
             Catch ex As Exception
