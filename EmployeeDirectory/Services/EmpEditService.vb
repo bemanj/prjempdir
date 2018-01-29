@@ -60,7 +60,7 @@
             .TB_SiteCity.Text = Employee.SiteCityName           ' Add New Field
             .TB_SiteRegion.Text = Employee.SiteRegionName       ' Add New Field
             .TB_SiteCountry.Text = Employee.SiteCountry         ' Add New Field
-            .TB_Floor.Text = Employee.Floor
+            '.TB_Floor.Text = Employee.Floor
             .TB_SeatNo.Text = Employee.SeatNumber
             .TB_PCName.Text = Employee.PCName
             .TB_MercuryID.Text = Employee.MercuryID
@@ -106,7 +106,8 @@
 
             .CB_LocalMgr.Text = SetListName(EmployeeInfo.CB_LocalMgr, Employee.LocalManagerID)
 
-            Dim _site As Site = SetSiteDetails(EmployeeInfo.CB_Site, Employee.SiteID)
+            Dim _site As New Site()
+            _site = SetSiteDetails(EmployeeInfo.CB_Site, Employee.SiteID)
             If _site IsNot Nothing Then
                 .CB_Site.Text = _site.SiteName
                 .TB_SiteCity.Text = _site.SiteCityName
@@ -116,10 +117,17 @@
                 .TB_AddressLine2.Text = _site.SiteAddress2
                 .TB_SiteZipcode.Text = _site.SiteZipCode
             End If
+            If Not Employee.Floor = String.Empty Then
+                .TB_Floor.Text = Employee.Floor.Trim()
+            End If
 
             .CB_Team.Text = SetListName(EmployeeInfo.CB_Team, Employee.TeamID)
-            .CB_Region.Text = SetListName(EmployeeInfo.CB_Region, Employee.RegionID)
-            .CB_City.Text = SetListName(EmployeeInfo.CB_City, Employee.CityID)
+            If Employee.RegionID > 0 Then
+                .CB_Region.Text = SetListName(EmployeeInfo.CB_Region, Employee.RegionID)
+            End If
+            If Employee.CityID > 0 Then
+                .CB_City.Text = SetListName(EmployeeInfo.CB_City, Employee.CityID)
+            End If
 
             If Employee.IDCreated = False Then
                 .CB_IDCreated.SelectedItem = "No"
@@ -134,6 +142,7 @@
             End If
 
         End With
+
     End Sub
 
     '*** B KABAHAR - 1/26

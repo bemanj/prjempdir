@@ -257,7 +257,7 @@
             End If
             .RegionName = CB_Region.Text
             If CB_Region.SelectedItem IsNot Nothing Then
-                .RegionID = CType(CB_City.SelectedItem, DropDownList).ListID
+                .RegionID = CType(CB_Region.SelectedItem, DropDownList).ListID
             End If
             .TeamName = CB_Team.Text
             If CB_Team.SelectedItem IsNot Nothing Then
@@ -423,6 +423,7 @@
         CB_Site.DataSource = New BindingSource(_library.GetListData(), Nothing)
         CB_Site.DisplayMember = "SiteName"
         CB_Site.ValueMember = "SiteID"
+
     End Sub
 
     Public Sub PopulateShiftList()
@@ -431,15 +432,34 @@
         CB_Shift.Items.Add("4pm - 1am")
     End Sub
 
-    'Private Sub CB_Site_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_Site.SelectedValueChanged
-    '    TB_Floor.Items.Clear()
-    '    Dim _site As New Site()
-    '    'Dim _siteidentity As Integer
-    '    '_siteidentity = CType(CB_Site.SelectedItem, Site).SiteID
+    Private Sub CB_Site_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_Site.SelectedValueChanged
 
-    '    _site = SetSiteDetails(CB_Site, CType(CB_Site.SelectedItem, Site).SiteID)
+        Dim _site As New Site
+        Dim _flr As String = "n/a"
 
-    '    TB_Floor.Items.Add(_site.SiteFloor)
+        TB_Floor.Items.Clear()
+        _site = CType(CB_Site.SelectedItem, Site)
 
-    'End Sub
+        If CB_Site.SelectedIndex > -1 Then
+            With _site
+                TB_AddressLine1.Text = .SiteAddress1
+                TB_AddressLine2.Text = .SiteAddress2
+                TB_SiteCity.Text = .SiteCityName
+                TB_SiteZipcode.Text = .SiteZipCode
+                TB_SiteRegion.Text = .SiteRegionName
+                TB_SiteCountry.Text = .SiteCountry
+            End With
+            If _site.SiteFloor IsNot Nothing Then
+                _flr = CType(CB_Site.SelectedItem, Site).SiteFloor
+            End If
+        End If
+
+        Dim _flrArr As String()
+
+        _flrArr = _flr.Split(",")
+        For i = 0 To _flrArr.Length - 1
+            TB_Floor.Items.Add(_flrArr(i).Trim())
+        Next
+    End Sub
+
 End Class

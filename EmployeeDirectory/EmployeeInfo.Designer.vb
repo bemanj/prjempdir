@@ -47,6 +47,8 @@ Partial Class EmployeeInfo
         Me.Btn_Logout = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.OfficeInfo = New System.Windows.Forms.TabPage()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.TB_SiteZipcode = New System.Windows.Forms.MaskedTextBox()
         Me.DT_StartDate = New System.Windows.Forms.DateTimePicker()
         Me.DT_SFCDate = New System.Windows.Forms.DateTimePicker()
         Me.TB_Floor = New System.Windows.Forms.ComboBox()
@@ -134,8 +136,6 @@ Partial Class EmployeeInfo
         Me.TB_OracleID = New System.Windows.Forms.MaskedTextBox()
         Me.TB_MobileNo = New System.Windows.Forms.MaskedTextBox()
         Me.MB_Zipcode = New System.Windows.Forms.MaskedTextBox()
-        Me.TB_SiteZipcode = New System.Windows.Forms.MaskedTextBox()
-        Me.Label52 = New System.Windows.Forms.Label()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -424,6 +424,27 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.Text = "Office Information"
         Me.OfficeInfo.UseVisualStyleBackColor = True
         '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label52.Location = New System.Drawing.Point(720, 193)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(75, 15)
+        Me.Label52.TabIndex = 142
+        Me.Label52.Text = "Site Zipcode"
+        '
+        'TB_SiteZipcode
+        '
+        Me.TB_SiteZipcode.Enabled = False
+        Me.TB_SiteZipcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.TB_SiteZipcode.Location = New System.Drawing.Point(830, 193)
+        Me.TB_SiteZipcode.Mask = "00000"
+        Me.TB_SiteZipcode.Name = "TB_SiteZipcode"
+        Me.TB_SiteZipcode.Size = New System.Drawing.Size(101, 20)
+        Me.TB_SiteZipcode.TabIndex = 111
+        Me.TB_SiteZipcode.ValidatingType = GetType(Integer)
+        '
         'DT_StartDate
         '
         Me.DT_StartDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
@@ -498,6 +519,7 @@ Partial Class EmployeeInfo
         '
         'TB_SiteCountry
         '
+        Me.TB_SiteCountry.Enabled = False
         Me.TB_SiteCountry.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_SiteCountry.Location = New System.Drawing.Point(830, 163)
         Me.TB_SiteCountry.Name = "TB_SiteCountry"
@@ -506,6 +528,7 @@ Partial Class EmployeeInfo
         '
         'TB_SiteRegion
         '
+        Me.TB_SiteRegion.Enabled = False
         Me.TB_SiteRegion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_SiteRegion.Location = New System.Drawing.Point(830, 133)
         Me.TB_SiteRegion.Name = "TB_SiteRegion"
@@ -514,6 +537,7 @@ Partial Class EmployeeInfo
         '
         'TB_SiteCity
         '
+        Me.TB_SiteCity.Enabled = False
         Me.TB_SiteCity.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_SiteCity.Location = New System.Drawing.Point(830, 103)
         Me.TB_SiteCity.Name = "TB_SiteCity"
@@ -1263,26 +1287,6 @@ Partial Class EmployeeInfo
         Me.MB_Zipcode.TabIndex = 17
         Me.MB_Zipcode.ValidatingType = GetType(Integer)
         '
-        'TB_SiteZipcode
-        '
-        Me.TB_SiteZipcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.TB_SiteZipcode.Location = New System.Drawing.Point(830, 193)
-        Me.TB_SiteZipcode.Mask = "00000"
-        Me.TB_SiteZipcode.Name = "TB_SiteZipcode"
-        Me.TB_SiteZipcode.Size = New System.Drawing.Size(101, 20)
-        Me.TB_SiteZipcode.TabIndex = 111
-        Me.TB_SiteZipcode.ValidatingType = GetType(Integer)
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(720, 193)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(75, 15)
-        Me.Label52.TabIndex = 142
-        Me.Label52.Text = "Site Zipcode"
-        '
         'EmployeeInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1458,8 +1462,8 @@ Partial Class EmployeeInfo
     Friend WithEvents MB_PhoneExtension As System.Windows.Forms.MaskedTextBox
     Friend WithEvents CB_Shift As System.Windows.Forms.ComboBox
     Friend WithEvents DT_SFCDate As System.Windows.Forms.DateTimePicker
-    Friend WithEvents TB_Floor As System.Windows.Forms.ComboBox
     Friend WithEvents DT_StartDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label52 As System.Windows.Forms.Label
     Friend WithEvents TB_SiteZipcode As System.Windows.Forms.MaskedTextBox
+    Public WithEvents TB_Floor As System.Windows.Forms.ComboBox
 End Class
