@@ -14,22 +14,24 @@ Public Class Main
     Dim dt As New DataTable
     Dim ls As New List(Of ManagerGrid)
 
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
     Private Sub Main_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
     End Sub
 
     Public Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'dt.Clear()
+        TB_MgrV_OracleID.Focus()
+        'mg.OracleID = CurrentUser
+        'mg.SFC = False
+        'ReloadDataGridWithSort()
+        'If DataGridViewEmployee.Rows.Count <> 0 Then
+        '    DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
+        'End If
 
-        TB_MgrV_OracleID.Focus()        
-        mg.OracleID = CurrentUser
-        mg.SFC = False
-
-        ReloadDataGridWithSort()
-        If DataGridViewEmployee.Rows.Count <> 0 Then
-            DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
-        End If
-
+        ButtonActive_Click(e, e)
         If CurrentUserType = 2 Then          
             ToolStripStatusLabelUser.Text = "Current User: " & _LoginView.FirstName & " " & _LoginView.LastName
         Else
@@ -52,11 +54,9 @@ Public Class Main
     End Sub
 
     Public Sub BtnLogOut_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogOut.Click
-        BtnClose.Hide()
+        BtnClose.Hide()                
         Me.Hide()
         LogIn.Show()
-        LogIn.LogIn_Load(e, e)
-        LogIn.Username.Clear()
         LogIn.UsernamePassword.Clear()
     End Sub
 
@@ -102,14 +102,14 @@ Public Class Main
         Return dt
     End Function
 
-    Private Sub ButtonSFC_Click(sender As System.Object, e As System.EventArgs) Handles ButtonSFC.Click
+    Public Sub ButtonSFC_Click(sender As System.Object, e As System.EventArgs) Handles ButtonSFC.Click
         LabelSFC.Text = "SFC Employees"
         mg.OracleID = CurrentUser
         mg.SFC = True
         ReloadDataGridWithSort()
     End Sub
 
-    Private Sub ButtonActive_Click(sender As System.Object, e As System.EventArgs) Handles ButtonActive.Click
+    Public Sub ButtonActive_Click(sender As System.Object, e As System.EventArgs) Handles ButtonActive.Click
         LabelSFC.Text = "Current Employees"
         mg.OracleID = CurrentUser
         mg.SFC = False
@@ -121,5 +121,9 @@ Public Class Main
         ls = mR.GetGridListData(mg)                                               '   - get list from db
         dt = ConvertToDataTable(ls)                                               '   - converts list to datatable to enable sorting
         DataGridViewEmployee.DataSource = dt
+        If DataGridViewEmployee.Rows.Count <> 0 Then
+            DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
+        End If
     End Sub
+
 End Class
