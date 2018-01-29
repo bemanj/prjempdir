@@ -330,10 +330,6 @@
                 IsMgrError = True
                 OnbTkt_Label.ForeColor = Color.Red
             End If
-            If _empinfo.ValidateEmail(_emp.OfficeEmail) = False Then
-                IsOffEmailError = True
-                OffEmail_Label.ForeColor = Color.Red
-            End If
         End If
 
         If IsMgrError = True Then
