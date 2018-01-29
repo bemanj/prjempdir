@@ -104,6 +104,9 @@
 
         If _isEdit Then
             _EmpEditService.PopulateFields(Me)
+            ResetDatePicker(DT_Birth)               '2018-01-29 6PM PUSH
+            ResetDatePicker(DT_SFCDate)             '2018-01-29 6PM PUSH
+            ResetDatePicker(DT_StartDate)           '2018-01-29 6PM PUSH
         End If
 
 

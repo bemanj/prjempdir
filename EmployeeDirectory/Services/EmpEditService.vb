@@ -31,30 +31,39 @@
         With owner
             .TB_OracleID.Text = CType(Employee.OracleID, String)
             .TB_Title.Text = Employee.Title
-            .TB_Position.Text = Employee.Position               ' Add New Field
+            .TB_Position.Text = Employee.Position                               ' Add New Field
             .TB_LastName.Text = Employee.LastName
             .TB_FirstName.Text = Employee.FirstName
             .TB_MiddleName.Text = Employee.MiddleName
-            .DT_Birth.Value = CType(Employee.Birthday, String)  ' Add New Field
-
-            .TB_PersonalEmail.Text = Employee.PersonalEmail     ' Change Field Name
-            .TB_MobileNo.Text = CType(Employee.MobileNo, String)
+            If Employee.Birthday.HasValue Then                                  ' 2018-01-29 6PM PUSH
+                .DT_Birth.Value = CType(Employee.Birthday, Date)                ' Add New Field
+            End If                                                              ' 2018-01-29 6PM PUSH
+            .TB_PersonalEmail.Text = Employee.PersonalEmail                     ' Change Field Name
+            If Employee.MobileNo > 0 Then
+                .TB_MobileNo.Text = CType(Employee.MobileNo, String)
+            End If
             .TB_Landline.Text = Employee.LandlineNo
             .TB_HomeAddLine1.Text = Employee.HomeAddress1
             .TB_HomeAddLine2.Text = Employee.HomeAddress2
-            .MB_Zipcode.Text = CType(Employee.ZipCode, String)  ' Add New Field
-            .MB_PhoneExtension.Text = CType(Employee.PhoneExtension, String)   ' Add New Field
-            .TB_OfficeEmail.Text = Employee.OfficeEmail         ' Add New Field
-            .TB_Entity.Text = Employee.Entity                   ' Add New Field
+            If Employee.ZipCode > 0 Then
+                .MB_Zipcode.Text = CType(Employee.ZipCode, String)                  ' Add New Field
+            End If
+            If Employee.PhoneExtension > 0 Then
+                .MB_PhoneExtension.Text = CType(Employee.PhoneExtension, String)    ' Add New Field
+            End If
+            .TB_OfficeEmail.Text = Employee.OfficeEmail                         ' Add New Field
+            .TB_Entity.Text = Employee.Entity                                   ' Add New Field
             .TB_Division.Text = Employee.Division
             .TB_Department.Text = Employee.Department
             .TB_USMgr.Text = Employee.USManager
             .TB_OnboardingTkt.Text = Employee.OnboardingTicket
             .TB_Recruiter.Text = Employee.Recruiter
-
-            .DT_StartDate.Value = CType(Employee.StartDate, String)     ' 2018-01-26 11PM PUSH
-            .DT_SFCDate.Value = CType(Employee.SFCDate, String)         ' 2018-01-26 11PM PUSH
-
+            If Employee.StartDate.HasValue Then                                 ' 2018-01-29 6PM PUSH
+                .DT_StartDate.Value = CType(Employee.StartDate, Date)         ' 2018-01-26 11PM PUSH
+            End If
+            If Employee.SFCDate.HasValue Then                                   ' 2018-01-29 6PM PUSH
+                .DT_SFCDate.Value = CType(Employee.SFCDate, Date)             ' 2018-01-26 11PM PUSH
+            End If                                                              ' 2018-01-29 6PM PUSH
             .TB_AddressLine1.Text = Employee.SiteAddress1
             .TB_AddressLine2.Text = Employee.SiteAddress2
             .TB_SiteCity.Text = Employee.SiteCityName           ' Add New Field
