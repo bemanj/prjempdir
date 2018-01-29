@@ -47,27 +47,9 @@
         ' This call is required by the designer.
         InitializeComponent()
 
-        '*** START OF CHANGE - BK
-        '*** B KABAHAR - SPRINT 2
-        If _isEdit = False Then
-
-            ClearDatePicker(DT_Birth)
-            ClearDatePicker(DT_SFCDate)
-            ClearDatePicker(DT_StartDate)
-            DT_SFCDate.Enabled = False
-        End If
-        '*** END - B KABAHAR SPRINT 2
-
         _empinfo = New EmployeeRepository()
 
         _EmpEditService = New EmpEditService()
-
-        '*** B KABAHAR - 1/26
-        '*** BK START OF CHANGE
-        If CurrentUserType = 3 Then
-            _EmpEditService.ProtectFields(Me)
-        End If
-        '*** BK END OF CHANGE
 
         ' Add any initialization after the InitializeComponent() call.
 
@@ -79,6 +61,28 @@
     End Sub
 
     Public Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        '''' **** LMRS: Move Code from Constructor **** ''''
+        '*** START OF CHANGE - BK
+        '*** B KABAHAR - SPRINT 2
+        If _isEdit = False Then
+
+            ClearDatePicker(DT_Birth)
+            ClearDatePicker(DT_SFCDate)
+            ClearDatePicker(DT_StartDate)
+            DT_SFCDate.Enabled = False
+        End If
+        '*** END - B KABAHAR SPRINT 2
+
+        '*** B KABAHAR - 1/26
+        '*** BK START OF CHANGE
+        If CurrentUserType = 3 Then
+            _EmpEditService.ProtectFields(Me)
+        End If
+        '*** BK END OF CHANGE
+        '''' **** LMRS END: Move Code from Constructor **** ''''
+
+
         'disabled fields
         'If LogIn.Username.Text = "user" And LogIn.UsernamePassword.Text = "user" Then
         '    DT_StartDate.Enabled = False
