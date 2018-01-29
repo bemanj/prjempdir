@@ -78,6 +78,8 @@
         '*** BK START OF CHANGE
         If CurrentUserType = 3 Then
             _EmpEditService.ProtectFields(Me)
+            Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(CurrentUser))
+            EmpEditService.Employee = _tempSelectedRow
         End If
         '*** BK END OF CHANGE
         '''' **** LMRS END: Move Code from Constructor **** ''''
@@ -487,6 +489,7 @@
     End Sub
 
     Public Sub PopulateShiftList()
+        CB_Shift.Items.Clear()
         CB_Shift.Items.Add("8am - 5pm")
         CB_Shift.Items.Add("1pm - 10pm")
         CB_Shift.Items.Add("4pm - 1am")
@@ -505,7 +508,7 @@
                 TB_AddressLine1.Text = .SiteAddress1
                 TB_AddressLine2.Text = .SiteAddress2
                 TB_SiteCity.Text = .SiteCityName
-                TB_SiteZipcode.Text = .SiteZipCode
+                TB_SiteZip.Text = .SiteZipCode
                 TB_SiteRegion.Text = .SiteRegionName
                 TB_SiteCountry.Text = .SiteCountry
             End With
@@ -526,7 +529,7 @@
 
     ' **** START : VALIDATE AND REQUIRED FIELDS FOR MANAGER ***** '
     Public Sub BlackLabel()
-        OracleID_Label.ForeColor = Color.Black
+        Lbl_OracleID.ForeColor = Color.Black
         Team_Label.ForeColor = Color.Black
         LocMgr_Label.ForeColor = Color.Black
         OnbTkt_Label.ForeColor = Color.Black

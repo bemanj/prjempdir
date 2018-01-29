@@ -124,7 +124,7 @@
                 .TB_SiteRegion.Text = _site.SiteRegionName
                 .TB_AddressLine1.Text = _site.SiteAddress1
                 .TB_AddressLine2.Text = _site.SiteAddress2
-                .TB_SiteZipcode.Text = _site.SiteZipCode
+                .TB_SiteZip.Text = _site.SiteZipCode
             End If
             If Not Employee.Floor = String.Empty Then
                 .TB_Floor.Text = Employee.Floor.Trim()

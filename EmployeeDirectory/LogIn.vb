@@ -40,6 +40,7 @@
                 'Main.ToolStripStatusLabelUser.Text = "Current User: " & _LoginView.FirstName & " " & _LoginView.LastName
             ElseIf CurrentUserType = 3 Then 'USER'
                 Me.Hide()
+                EmployeeInfo.IsEdit = True
                 EmployeeInfo.Show()
                 EmployeeInfo.Btn_Cancel.Hide()
                 EmployeeInfo.TB_OracleID.Enabled = False
