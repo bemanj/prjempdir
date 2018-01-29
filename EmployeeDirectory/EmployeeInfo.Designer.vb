@@ -436,6 +436,7 @@ Partial Class EmployeeInfo
         '
         'TB_SiteZipcode
         '
+        Me.TB_SiteZipcode.Enabled = False
         Me.TB_SiteZipcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_SiteZipcode.Location = New System.Drawing.Point(830, 193)
         Me.TB_SiteZipcode.Mask = "00000"
@@ -518,6 +519,7 @@ Partial Class EmployeeInfo
         '
         'TB_SiteCountry
         '
+        Me.TB_SiteCountry.Enabled = False
         Me.TB_SiteCountry.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_SiteCountry.Location = New System.Drawing.Point(830, 163)
         Me.TB_SiteCountry.Name = "TB_SiteCountry"
@@ -526,6 +528,7 @@ Partial Class EmployeeInfo
         '
         'TB_SiteRegion
         '
+        Me.TB_SiteRegion.Enabled = False
         Me.TB_SiteRegion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_SiteRegion.Location = New System.Drawing.Point(830, 133)
         Me.TB_SiteRegion.Name = "TB_SiteRegion"
@@ -534,6 +537,7 @@ Partial Class EmployeeInfo
         '
         'TB_SiteCity
         '
+        Me.TB_SiteCity.Enabled = False
         Me.TB_SiteCity.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_SiteCity.Location = New System.Drawing.Point(830, 103)
         Me.TB_SiteCity.Name = "TB_SiteCity"
@@ -1458,8 +1462,8 @@ Partial Class EmployeeInfo
     Friend WithEvents MB_PhoneExtension As System.Windows.Forms.MaskedTextBox
     Friend WithEvents CB_Shift As System.Windows.Forms.ComboBox
     Friend WithEvents DT_SFCDate As System.Windows.Forms.DateTimePicker
-    Friend WithEvents TB_Floor As System.Windows.Forms.ComboBox
     Friend WithEvents DT_StartDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label52 As System.Windows.Forms.Label
     Friend WithEvents TB_SiteZipcode As System.Windows.Forms.MaskedTextBox
+    Public WithEvents TB_Floor As System.Windows.Forms.ComboBox
 End Class
