@@ -41,6 +41,7 @@
             ElseIf CurrentUserType = 3 Then 'USER'
                 Me.Hide()
                 EmployeeInfo.Show()
+                EmployeeInfo.EmployeeInfo_Load(e, e)
                 EmployeeInfo.Btn_Cancel.Hide()
             Else
                 RecorNotFound.Show()

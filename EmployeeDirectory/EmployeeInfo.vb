@@ -57,7 +57,7 @@
 
     End Sub
 
-    Private Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Public Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'disabled fields
         'If LogIn.Username.Text = "user" And LogIn.UsernamePassword.Text = "user" Then
         '    DT_StartDate.Enabled = False
@@ -102,9 +102,12 @@
 
         ClearFields()
 
-        If _isEdit Then
-            _EmpEditService.PopulateFields(Me)
+        If CurrentUserType = 3 Then
+            Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(CurrentUser))
+            EmpEditService.Employee = _tempSelectedRow
         End If
+
+        _EmpEditService.PopulateFields(Me)
 
 
 
