@@ -25,7 +25,7 @@ Partial Class admin
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(admin))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonGridView = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Btn_Logout = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,16 +52,16 @@ Partial Class admin
         Me.ButtonGridView.Text = "EMPLOYEE DIRECTORY"
         Me.ButtonGridView.UseVisualStyleBackColor = False
         '
-        'Button2
+        'Btn_Logout
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button2.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(203, 270)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(223, 33)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "LOGOUT"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Btn_Logout.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Btn_Logout.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Logout.Location = New System.Drawing.Point(203, 270)
+        Me.Btn_Logout.Name = "Btn_Logout"
+        Me.Btn_Logout.Size = New System.Drawing.Size(223, 33)
+        Me.Btn_Logout.TabIndex = 5
+        Me.Btn_Logout.Text = "LOGOUT"
+        Me.Btn_Logout.UseVisualStyleBackColor = False
         '
         'Button3
         '
@@ -90,12 +90,13 @@ Partial Class admin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(659, 359)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Btn_Logout)
         Me.Controls.Add(Me.ButtonGridView)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "admin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "IT APP DEV EMPLOYEE DIRECTORY - ADMIN"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -105,6 +106,6 @@ Partial Class admin
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents ButtonGridView As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Btn_Logout As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class

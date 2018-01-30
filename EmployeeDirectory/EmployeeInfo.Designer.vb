@@ -42,7 +42,6 @@ Partial Class EmployeeInfo
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Btn_Cancel = New System.Windows.Forms.Button()
         Me.Btn_Logout = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -136,13 +135,14 @@ Partial Class EmployeeInfo
         Me.TB_OracleID = New System.Windows.Forms.MaskedTextBox()
         Me.TB_MobileNo = New System.Windows.Forms.MaskedTextBox()
         Me.MB_Zipcode = New System.Windows.Forms.MaskedTextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.OfficeInfo.SuspendLayout()
         Me.AccessInfo.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Lbl_LastName
@@ -324,15 +324,6 @@ Partial Class EmployeeInfo
         Me.PictureBox3.TabIndex = 14
         Me.PictureBox3.TabStop = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.alorica_banner1
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1172, 166)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'Btn_Cancel
         '
         Me.Btn_Cancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -436,6 +427,7 @@ Partial Class EmployeeInfo
         '
         'TB_SiteZip
         '
+        Me.TB_SiteZip.Enabled = False
         Me.TB_SiteZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_SiteZip.Location = New System.Drawing.Point(830, 133)
         Me.TB_SiteZip.Name = "TB_SiteZip"
@@ -573,9 +565,10 @@ Partial Class EmployeeInfo
         '
         'TB_OfficeEmail
         '
+        Me.TB_OfficeEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_OfficeEmail.Location = New System.Drawing.Point(138, 43)
         Me.TB_OfficeEmail.Name = "TB_OfficeEmail"
-        Me.TB_OfficeEmail.Size = New System.Drawing.Size(171, 23)
+        Me.TB_OfficeEmail.Size = New System.Drawing.Size(171, 20)
         Me.TB_OfficeEmail.TabIndex = 18
         '
         'OffEmail_Label
@@ -1283,6 +1276,15 @@ Partial Class EmployeeInfo
         Me.MB_Zipcode.TabIndex = 16
         Me.MB_Zipcode.ValidatingType = GetType(Integer)
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.alorica_banner1
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1172, 166)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'EmployeeInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1336,20 +1338,20 @@ Partial Class EmployeeInfo
         Me.Controls.Add(Me.PictureBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EmployeeInfo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.OfficeInfo.ResumeLayout(False)
         Me.OfficeInfo.PerformLayout()
         Me.AccessInfo.ResumeLayout(False)
         Me.AccessInfo.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Lbl_LastName As System.Windows.Forms.Label
     Friend WithEvents Lbl_FirstName As System.Windows.Forms.Label
     Friend WithEvents TB_LastName As System.Windows.Forms.TextBox
@@ -1462,4 +1464,5 @@ Partial Class EmployeeInfo
     Friend WithEvents TB_SiteZip As System.Windows.Forms.TextBox
     Friend WithEvents Label52 As System.Windows.Forms.Label
     Public WithEvents TB_Floor As System.Windows.Forms.ComboBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

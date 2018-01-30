@@ -62,6 +62,9 @@
 
     Public Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        DT_Birth.MaxDate = Date.Today.AddYears(-28)
+
+
         '''' **** LMRS: Move Code from Constructor **** ''''
         '*** START OF CHANGE - BK
         '*** B KABAHAR - SPRINT 2
@@ -325,6 +328,7 @@
                 _EmpEditService.Employee = _emp
                 _EmpEditService.PopulateFields(Me)
                 EmpInfo.ValidateClear()
+                Main.ReloadDataGridWithSort()
             Else
                 '*** SET DEFAULT VALUES DURING ADD ***'
                 _emp.UserType = 3
@@ -335,6 +339,7 @@
                 _empinfo.InsertData(_emp)
                 ClearFields()
                 EmpInfo.ValidateClear()
+                Main.ReloadDataGridWithSort()
             End If
         ElseIf EmpInfo.EmpValidate = 2 Then
             Lbl_EAdd.ForeColor = Color.Red

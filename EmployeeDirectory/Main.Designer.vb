@@ -29,13 +29,11 @@ Partial Class Main
         Me.TB_MgrV_FirstName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TB_MgrV_OracleID = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridViewEmployee = New System.Windows.Forms.DataGridView()
         Me.Btn_Search = New System.Windows.Forms.Button()
         Me.Btn_Add = New System.Windows.Forms.Button()
         Me.BtnLogOut = New System.Windows.Forms.Button()
         Me.Btn_EmpInc = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BtnClose = New System.Windows.Forms.Button()
         Me.ButtonSFC = New System.Windows.Forms.Button()
         Me.LabelSFC = New System.Windows.Forms.Label()
@@ -43,16 +41,19 @@ Partial Class Main
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabelUser = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Label_ManagerName = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.DataGridViewEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TB_MgrV_LastName
         '
+        Me.TB_MgrV_LastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_MgrV_LastName.Location = New System.Drawing.Point(80, 263)
         Me.TB_MgrV_LastName.Name = "TB_MgrV_LastName"
-        Me.TB_MgrV_LastName.Size = New System.Drawing.Size(150, 21)
+        Me.TB_MgrV_LastName.Size = New System.Drawing.Size(150, 20)
         Me.TB_MgrV_LastName.TabIndex = 0
         '
         'Label1
@@ -77,9 +78,10 @@ Partial Class Main
         '
         'TB_MgrV_FirstName
         '
+        Me.TB_MgrV_FirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_MgrV_FirstName.Location = New System.Drawing.Point(262, 263)
         Me.TB_MgrV_FirstName.Name = "TB_MgrV_FirstName"
-        Me.TB_MgrV_FirstName.Size = New System.Drawing.Size(150, 21)
+        Me.TB_MgrV_FirstName.Size = New System.Drawing.Size(150, 20)
         Me.TB_MgrV_FirstName.TabIndex = 3
         '
         'Label4
@@ -94,22 +96,11 @@ Partial Class Main
         '
         'TB_MgrV_OracleID
         '
+        Me.TB_MgrV_OracleID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TB_MgrV_OracleID.Location = New System.Drawing.Point(80, 215)
         Me.TB_MgrV_OracleID.Name = "TB_MgrV_OracleID"
-        Me.TB_MgrV_OracleID.Size = New System.Drawing.Size(100, 21)
+        Me.TB_MgrV_OracleID.Size = New System.Drawing.Size(100, 20)
         Me.TB_MgrV_OracleID.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Corbel", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(285, 166)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(608, 49)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "ALORICA EMPLOYEE DIRECTORY"
         '
         'DataGridViewEmployee
         '
@@ -117,8 +108,8 @@ Partial Class Main
         Me.DataGridViewEmployee.AllowUserToDeleteRows = False
         Me.DataGridViewEmployee.AllowUserToOrderColumns = True
         Me.DataGridViewEmployee.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridViewEmployee.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.DataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewEmployee.Location = New System.Drawing.Point(80, 339)
@@ -174,17 +165,6 @@ Partial Class Main
         Me.Btn_EmpInc.TabIndex = 90
         Me.Btn_EmpInc.Text = "EMPLOYEE INCOMPLETE DATA"
         Me.Btn_EmpInc.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.alorica_banner1
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1164, 163)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
         '
         'BtnClose
         '
@@ -251,21 +231,45 @@ Partial Class Main
         '
         'Label_ManagerName
         '
-        Me.Label_ManagerName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label_ManagerName.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label_ManagerName.AutoSize = True
         Me.Label_ManagerName.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_ManagerName.Location = New System.Drawing.Point(186, 217)
+        Me.Label_ManagerName.Location = New System.Drawing.Point(501, 217)
         Me.Label_ManagerName.Name = "Label_ManagerName"
-        Me.Label_ManagerName.Size = New System.Drawing.Size(764, 19)
+        Me.Label_ManagerName.Size = New System.Drawing.Size(158, 19)
         Me.Label_ManagerName.TabIndex = 0
         Me.Label_ManagerName.Text = "Label_ManagerName"
         Me.Label_ManagerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.alorica_banner1
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1164, 160)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Corbel", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(285, 166)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(608, 49)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "ALORICA EMPLOYEE DIRECTORY"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1164, 862)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ButtonActive)
@@ -289,11 +293,12 @@ Partial Class Main
         Me.Font = New System.Drawing.Font("Corbel", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Main"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "IT APP DEV EMPLOYEE DIRECTORY"
         CType(Me.DataGridViewEmployee, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -304,8 +309,6 @@ Partial Class Main
     Friend WithEvents TB_MgrV_FirstName As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents TB_MgrV_OracleID As System.Windows.Forms.TextBox
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents DataGridViewEmployee As System.Windows.Forms.DataGridView
     Friend WithEvents Btn_Search As System.Windows.Forms.Button
     Friend WithEvents Btn_Add As System.Windows.Forms.Button
@@ -318,5 +321,7 @@ Partial Class Main
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents ToolStripStatusLabelUser As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents Label_ManagerName As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 
 End Class

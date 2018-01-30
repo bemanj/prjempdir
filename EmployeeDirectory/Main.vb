@@ -61,6 +61,8 @@ Public Class Main
         Me.Hide()
         LogIn.Show()
         LogIn.UsernamePassword.Clear()
+        LogIn.Username.Clear()
+        LogIn.Username.Focus()
     End Sub
 
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_EmpInc.Click
@@ -127,6 +129,7 @@ Public Class Main
         ls = mR.GetGridListData(mg)                                               '   - get list from db
         dt = ConvertToDataTable(ls)                                               '   - converts list to datatable to enable sorting
         DataGridViewEmployee.DataSource = dt
+        Me.DataGridViewEmployee.Columns("SFC").Visible = False
         If DataGridViewEmployee.Rows.Count <> 0 Then
             DataGridViewEmployee.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading
         End If
