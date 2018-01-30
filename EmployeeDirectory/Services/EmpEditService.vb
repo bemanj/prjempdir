@@ -64,6 +64,8 @@
             If Employee.SFCDate.HasValue Then                                   ' 2018-01-29 6PM PUSH
                 .DT_SFCDate.Value = CType(Employee.SFCDate, Date)             ' 2018-01-26 11PM PUSH
             End If                                                              ' 2018-01-29 6PM PUSH
+            .CB_SFC.SelectedItem = Employee.SFC
+
             .TB_AddressLine1.Text = Employee.SiteAddress1
             .TB_AddressLine2.Text = Employee.SiteAddress2
             .TB_SiteCity.Text = Employee.SiteCityName           ' Add New Field

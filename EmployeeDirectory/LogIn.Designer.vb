@@ -47,21 +47,21 @@ Partial Class LogIn
         '
         'Username
         '
-        Me.Username.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Username.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.Username.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Username.Location = New System.Drawing.Point(203, 198)
         Me.Username.Name = "Username"
-        Me.Username.Size = New System.Drawing.Size(227, 23)
+        Me.Username.Size = New System.Drawing.Size(227, 22)
         Me.Username.TabIndex = 3
         Me.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'UsernamePassword
         '
-        Me.UsernamePassword.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernamePassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.UsernamePassword.ForeColor = System.Drawing.SystemColors.ControlText
         Me.UsernamePassword.Location = New System.Drawing.Point(203, 244)
         Me.UsernamePassword.Name = "UsernamePassword"
-        Me.UsernamePassword.Size = New System.Drawing.Size(227, 23)
+        Me.UsernamePassword.Size = New System.Drawing.Size(227, 22)
         Me.UsernamePassword.TabIndex = 4
         Me.UsernamePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.UsernamePassword.UseSystemPasswordChar = True
@@ -134,6 +134,7 @@ Partial Class LogIn
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "LogIn"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " IT APP DEV EMPLOYEE DIRECTORY - LOGIN"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

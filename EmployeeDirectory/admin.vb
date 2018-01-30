@@ -1,11 +1,12 @@
 ﻿Public Class admin
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub Btn_Logout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Logout.Click
         Main.BtnClose.Hide()
-        LogIn.Username.Text = ""
-        LogIn.UsernamePassword.Text = ""
-        LogIn.Username.Focus()
+        LogIn.Username.Clear()
+        LogIn.UsernamePassword.Clear()
         Me.Close()
+        LogIn.Show()
+        LogIn.Username.Focus()
     End Sub
 
     Private Sub ButtonGridView_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonGridView.Click

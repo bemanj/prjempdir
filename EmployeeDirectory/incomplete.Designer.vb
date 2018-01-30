@@ -401,6 +401,7 @@ Partial Class incomplete
         Me.Controls.Add(Me.TextBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "incomplete"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "IT APP DEV EMPLOYEE DIRECTORY"
         CType(Me.DataGridViewEmployee, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

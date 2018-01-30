@@ -35,7 +35,7 @@ Public Class ManagerRepository
         _tempParamList.Add(New SqlParameter("@LocalManagerID", _employee.OracleID))
         _tempParamList.Add(New SqlParameter("@SFC", _employee.SFC))
         Dim _tempManagerList = MyBase.List("[uspGetMgrGridView]", _tempParamList.ToArray())
-        Return _tempManagerList.SingleMapToEntity(Of ManagerGrid)().ToList
+        Return (_tempManagerList.SingleMapToEntity(Of ManagerGrid)().ToList)
     End Function
 
 End Class

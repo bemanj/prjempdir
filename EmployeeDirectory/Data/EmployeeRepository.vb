@@ -75,6 +75,7 @@ Public Class EmployeeRepository
         Dim _tempParamList = New List(Of SqlParameter)()
         With _tempParamList
             .Add(New SqlParameter("@OracleID", _emp.OracleID))
+            .Add(New SqlParameter("@Password", _emp.OracleID))
             .Add(New SqlParameter("@Title", _emp.Title))
             .Add(New SqlParameter("@Position", _emp.Position))
             .Add(New SqlParameter("@LastName", _emp.LastName))
@@ -131,6 +132,13 @@ Public Class EmployeeRepository
 
     Public Sub Validate()
         EmpValidate = 0
+        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_OracleID.Text) Then
+            EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
+            EmpValidate = 1
+        Else
+            EmployeeInfo.Lbl_OracleID.ForeColor = Color.Black
+        End If
+
         If String.IsNullOrWhiteSpace(EmployeeInfo.TB_LastName.Text) Then
             EmployeeInfo.Lbl_LastName.ForeColor = Color.Red()
             EmpValidate = 1
@@ -231,6 +239,7 @@ Public Class EmployeeRepository
     End Sub
 
     Public Sub ValidateClear()
+        EmployeeInfo.Lbl_OracleID.ForeColor = Color.Black
         EmployeeInfo.Lbl_LastName.ForeColor = Color.Black
         EmployeeInfo.Lbl_FirstName.ForeColor = Color.Black
         EmployeeInfo.Lbl_MiddleName.ForeColor = Color.Black
