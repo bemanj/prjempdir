@@ -82,6 +82,7 @@
             .TB_GithubID.Text = Employee.GITHubID
             .CB_Gender.Text = Employee.Gender
             .CB_Country.Text = Employee.Country
+            .CB_Shift.Text = Employee.Shift
             ' ****** NEEDS COMBO BOX LOGIC/HANDLING ******
             '.CB_City.Text = Employee.CityName
             '.CB_Region.Text = Employee.RegionName

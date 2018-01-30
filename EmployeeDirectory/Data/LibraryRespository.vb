@@ -24,4 +24,32 @@ Public Class LibraryRespository
 
     End Function
 
+    Public Overloads Function GetListData(ByVal _id As Integer) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
+
+        Dim _tempParamList = New List(Of SqlParameter)()
+        _tempParamList.Add(New SqlParameter("@RegionId", _id))
+
+        Dim _tempCityList = MyBase.List("[uspGetCityRegion]", _tempParamList.ToArray())
+        Return _tempCityList.SingleMapToEntity(Of DropDownList)().ToList
+
+
+
+        'Dim _tempParamList = New List(Of SqlParameter)()
+        '_tempParamList.Add(New SqlParameter("@LocalManagerID", _employee.LocalManagerID))
+        'Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", _tempParamList.ToArray())
+        'Return _tempEmployeeList.SingleMapToEntity(Of Employee)().ToList
+    End Function
+
+    'Public Overrides Function GetData(ByVal entity As IEntity) As BASD.Helper.IEntity
+    '    Dim _id = CType(entity, DropDownList).ListID
+
+    '    Dim _tempParamList = New List(Of SqlParameter)()
+    '    _tempParamList.Add(New SqlParameter("@RegionId", _id))
+
+    '    Dim _tempCityList = MyBase.List("[uspGetCityRegion]", _tempParamList.ToArray())
+
+    '    Return _tempCityList.SingleMapToEntity(Of DropDownList)().ToList
+
+    'End Function
+
 End Class

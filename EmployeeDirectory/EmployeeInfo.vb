@@ -121,7 +121,7 @@
 
         PopulateList(CB_LocalMgr, "[uspGetAllManager]")
         'PopulateList(CB_Site, "[uspGetSiteList]")
-        PopulateList(CB_City, "[uspGetAllCity]")
+        'PopulateList(CB_City, "[uspGetAllCity]", "")
         PopulateList(CB_Region, "[uspGetAllRegion]")
         PopulateList(CB_Team, "[uspGetTeamList]")
         PopulateSiteList()
@@ -134,9 +134,9 @@
             ResetDatePicker(DT_Birth)               '2018-01-29 6PM PUSH
             ResetDatePicker(DT_SFCDate)             '2018-01-29 6PM PUSH
             ResetDatePicker(DT_StartDate)           '2018-01-29 6PM PUSH
+        Else
+            CB_Region.Text = SetListName(CB_Region, 1)
         End If
-
-
 
     End Sub
 
@@ -474,6 +474,7 @@
         Dim _dropdown As New DropDownList()
 
         cbox.DataSource = New BindingSource(_library.GetListData(spname), Nothing)
+
         cbox.DisplayMember = "ListName"
         cbox.ValueMember = "ListID"
     End Sub
@@ -486,6 +487,17 @@
         CB_Site.DisplayMember = "SiteName"
         CB_Site.ValueMember = "SiteID"
 
+    End Sub
+
+    Public Sub PopulateCity(ByRef cbox As ComboBox, ByVal param As Integer)
+        Dim _library As New LibraryRespository
+        Dim _dropdown As New DropDownList()
+
+        'CType(CB_Region.SelectedItem, DropDownList).ListID = param
+        cbox.DataSource = New BindingSource(_library.GetListData(param), Nothing)
+
+        cbox.DisplayMember = "ListName"
+        cbox.ValueMember = "ListID"
     End Sub
 
     Public Sub PopulateShiftList()
@@ -537,4 +549,15 @@
     End Sub
     ' ***** END : VALIDATE AND REQUIRED FIELDS FOR MANAGER/USER ***** '
 
+    Private Sub CB_Region_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_Region.SelectedValueChanged
+
+        Dim _id As Integer
+
+        If CB_Region.SelectedIndex > -1 Then
+            _id = CType(CB_Region.SelectedItem, DropDownList).ListID
+            PopulateCity(CB_City, _id)
+        Else
+            PopulateCity(CB_City, 1)
+        End If
+    End Sub
 End Class
