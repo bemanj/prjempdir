@@ -108,15 +108,15 @@ Partial Class Main
         Me.DataGridViewEmployee.AllowUserToDeleteRows = False
         Me.DataGridViewEmployee.AllowUserToOrderColumns = True
         Me.DataGridViewEmployee.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridViewEmployee.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.DataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewEmployee.Location = New System.Drawing.Point(80, 339)
         Me.DataGridViewEmployee.Name = "DataGridViewEmployee"
         Me.DataGridViewEmployee.ReadOnly = True
         Me.DataGridViewEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewEmployee.Size = New System.Drawing.Size(995, 442)
+        Me.DataGridViewEmployee.Size = New System.Drawing.Size(1145, 442)
         Me.DataGridViewEmployee.TabIndex = 10
         '
         'Btn_Search
@@ -135,7 +135,7 @@ Partial Class Main
         Me.Btn_Add.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Btn_Add.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Btn_Add.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Add.Location = New System.Drawing.Point(995, 304)
+        Me.Btn_Add.Location = New System.Drawing.Point(1145, 304)
         Me.Btn_Add.Name = "Btn_Add"
         Me.Btn_Add.Size = New System.Drawing.Size(80, 29)
         Me.Btn_Add.TabIndex = 13
@@ -147,7 +147,7 @@ Partial Class Main
         Me.BtnLogOut.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnLogOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnLogOut.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLogOut.Location = New System.Drawing.Point(1032, 12)
+        Me.BtnLogOut.Location = New System.Drawing.Point(1182, 12)
         Me.BtnLogOut.Name = "BtnLogOut"
         Me.BtnLogOut.Size = New System.Drawing.Size(120, 38)
         Me.BtnLogOut.TabIndex = 89
@@ -171,7 +171,7 @@ Partial Class Main
         Me.BtnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnClose.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnClose.Location = New System.Drawing.Point(1032, 56)
+        Me.BtnClose.Location = New System.Drawing.Point(1182, 56)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(120, 38)
         Me.BtnClose.TabIndex = 91
@@ -184,7 +184,7 @@ Partial Class Main
         Me.ButtonSFC.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonSFC.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ButtonSFC.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSFC.Location = New System.Drawing.Point(995, 787)
+        Me.ButtonSFC.Location = New System.Drawing.Point(1145, 787)
         Me.ButtonSFC.Name = "ButtonSFC"
         Me.ButtonSFC.Size = New System.Drawing.Size(80, 29)
         Me.ButtonSFC.TabIndex = 14
@@ -207,7 +207,7 @@ Partial Class Main
         Me.ButtonActive.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ButtonActive.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ButtonActive.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonActive.Location = New System.Drawing.Point(909, 787)
+        Me.ButtonActive.Location = New System.Drawing.Point(1059, 787)
         Me.ButtonActive.Name = "ButtonActive"
         Me.ButtonActive.Size = New System.Drawing.Size(80, 29)
         Me.ButtonActive.TabIndex = 93
@@ -219,7 +219,7 @@ Partial Class Main
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabelUser})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 840)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1164, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1314, 22)
         Me.StatusStrip1.TabIndex = 94
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -234,7 +234,7 @@ Partial Class Main
         Me.Label_ManagerName.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label_ManagerName.AutoSize = True
         Me.Label_ManagerName.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_ManagerName.Location = New System.Drawing.Point(501, 217)
+        Me.Label_ManagerName.Location = New System.Drawing.Point(576, 217)
         Me.Label_ManagerName.Name = "Label_ManagerName"
         Me.Label_ManagerName.Size = New System.Drawing.Size(158, 19)
         Me.Label_ManagerName.TabIndex = 0
@@ -247,7 +247,7 @@ Partial Class Main
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.alorica_banner1
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1164, 160)
+        Me.PictureBox1.Size = New System.Drawing.Size(1314, 160)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
@@ -258,7 +258,7 @@ Partial Class Main
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Corbel", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(285, 166)
+        Me.Label5.Location = New System.Drawing.Point(360, 166)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(608, 49)
         Me.Label5.TabIndex = 9
@@ -270,7 +270,7 @@ Partial Class Main
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1164, 862)
+        Me.ClientSize = New System.Drawing.Size(1314, 862)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ButtonActive)
         Me.Controls.Add(Me.LabelSFC)
@@ -292,6 +292,7 @@ Partial Class Main
         Me.Controls.Add(Me.TB_MgrV_LastName)
         Me.Font = New System.Drawing.Font("Corbel", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimumSize = New System.Drawing.Size(1330, 900)
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "IT APP DEV EMPLOYEE DIRECTORY"

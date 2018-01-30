@@ -1336,6 +1336,7 @@ Partial Class EmployeeInfo
         Me.Controls.Add(Me.Lbl_FirstName)
         Me.Controls.Add(Me.Lbl_LastName)
         Me.Controls.Add(Me.PictureBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EmployeeInfo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

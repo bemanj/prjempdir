@@ -132,7 +132,7 @@
         ClearFields()
 
         If _isEdit Then
-            '    _EmpEditService.PopulateFields(Me)
+            _EmpEditService.PopulateFields(Me)
             ResetDatePicker(DT_Birth)               '2018-01-29 6PM PUSH
             ResetDatePicker(DT_SFCDate)             '2018-01-29 6PM PUSH
             ResetDatePicker(DT_StartDate)           '2018-01-29 6PM PUSH
@@ -140,14 +140,13 @@
             CB_Region.Text = SetListName(CB_Region, 1)
         End If
 
-        _EmpEditService.PopulateFields(Me)
-
-        If CB_SFC.Text = "No" Then
-            ClearDatePicker(DT_SFCDate)
-            DT_SFCDate.Enabled = False
-        ElseIf CB_SFC.Text = "Yes" Then
-            ResetDatePicker(DT_SFCDate)
-        End If
+        Me.CB_SFC_SelectedIndexChanged(e, e)
+        'If CB_SFC.Text = "No" Then
+        '    ClearDatePicker(DT_SFCDate)
+        '    DT_SFCDate.Enabled = False
+        'ElseIf CB_SFC.Text = "Yes" Then
+        '    ResetDatePicker(DT_SFCDate)
+        'End If
 
     End Sub
 
