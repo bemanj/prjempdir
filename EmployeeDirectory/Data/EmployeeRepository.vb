@@ -75,6 +75,7 @@ Public Class EmployeeRepository
         Dim _tempParamList = New List(Of SqlParameter)()
         With _tempParamList
             .Add(New SqlParameter("@OracleID", _emp.OracleID))
+            .Add(New SqlParameter("@Password", _emp.OracleID))
             .Add(New SqlParameter("@Title", _emp.Title))
             .Add(New SqlParameter("@Position", _emp.Position))
             .Add(New SqlParameter("@LastName", _emp.LastName))

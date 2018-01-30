@@ -419,7 +419,7 @@ Partial Class EmployeeInfo
         '
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(720, 135)
+        Me.Label52.Location = New System.Drawing.Point(720, 193)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(79, 15)
         Me.Label52.TabIndex = 138
@@ -429,7 +429,7 @@ Partial Class EmployeeInfo
         '
         Me.TB_SiteZip.Enabled = False
         Me.TB_SiteZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.TB_SiteZip.Location = New System.Drawing.Point(830, 133)
+        Me.TB_SiteZip.Location = New System.Drawing.Point(830, 191)
         Me.TB_SiteZip.Name = "TB_SiteZip"
         Me.TB_SiteZip.Size = New System.Drawing.Size(185, 20)
         Me.TB_SiteZip.TabIndex = 36
@@ -510,7 +510,7 @@ Partial Class EmployeeInfo
         '
         Me.TB_SiteCountry.Enabled = False
         Me.TB_SiteCountry.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.TB_SiteCountry.Location = New System.Drawing.Point(830, 194)
+        Me.TB_SiteCountry.Location = New System.Drawing.Point(830, 163)
         Me.TB_SiteCountry.Name = "TB_SiteCountry"
         Me.TB_SiteCountry.Size = New System.Drawing.Size(185, 20)
         Me.TB_SiteCountry.TabIndex = 38
@@ -519,7 +519,7 @@ Partial Class EmployeeInfo
         '
         Me.TB_SiteRegion.Enabled = False
         Me.TB_SiteRegion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.TB_SiteRegion.Location = New System.Drawing.Point(830, 164)
+        Me.TB_SiteRegion.Location = New System.Drawing.Point(830, 133)
         Me.TB_SiteRegion.Name = "TB_SiteRegion"
         Me.TB_SiteRegion.Size = New System.Drawing.Size(185, 20)
         Me.TB_SiteRegion.TabIndex = 37
@@ -537,7 +537,7 @@ Partial Class EmployeeInfo
         '
         Me.Label51.AutoSize = True
         Me.Label51.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.Location = New System.Drawing.Point(720, 194)
+        Me.Label51.Location = New System.Drawing.Point(720, 163)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(74, 15)
         Me.Label51.TabIndex = 131
@@ -547,7 +547,7 @@ Partial Class EmployeeInfo
         '
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(720, 164)
+        Me.Label50.Location = New System.Drawing.Point(720, 133)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(69, 15)
         Me.Label50.TabIndex = 129

@@ -62,14 +62,13 @@
 
     Public Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        DT_Birth.MaxDate = Date.Today.AddYears(-28)
+        DT_Birth.MaxDate = Date.Today.AddYears(-25)
 
 
         '''' **** LMRS: Move Code from Constructor **** ''''
         '*** START OF CHANGE - BK
         '*** B KABAHAR - SPRINT 2
         If _isEdit = False Then
-
             ClearDatePicker(DT_Birth)
             ClearDatePicker(DT_SFCDate)
             ClearDatePicker(DT_StartDate)
@@ -133,13 +132,20 @@
         ClearFields()
 
         If _isEdit Then
-            _EmpEditService.PopulateFields(Me)
+            '    _EmpEditService.PopulateFields(Me)
             ResetDatePicker(DT_Birth)               '2018-01-29 6PM PUSH
             ResetDatePicker(DT_SFCDate)             '2018-01-29 6PM PUSH
             ResetDatePicker(DT_StartDate)           '2018-01-29 6PM PUSH
         End If
 
+        _EmpEditService.PopulateFields(Me)
 
+        If CB_SFC.Text = "No" Then
+            ClearDatePicker(DT_SFCDate)
+            DT_SFCDate.Enabled = False
+        ElseIf CB_SFC.Text = "Yes" Then
+            ResetDatePicker(DT_SFCDate)
+        End If
 
     End Sub
 
@@ -271,6 +277,9 @@
             .SFC = GetComboValue(CB_SFC)
             If Not DT_SFCDate.Text = String.Empty Then
                 .SFCDate = CType(DT_SFCDate.Value, Date)
+            End If
+            If CB_SFC.SelectedItem = "No" Then
+                .SFCDate = Nothing
             End If
 
             .SeatNumber = TB_SeatNo.Text

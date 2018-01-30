@@ -47,6 +47,7 @@
                     Me.Hide()
                     EmployeeInfo.IsEdit = True
                     EmployeeInfo.Show()
+                    EmployeeInfo.EmployeeInfo_Load(e, e)
                     EmployeeInfo.Btn_Cancel.Hide()
                     EmployeeInfo.TB_OracleID.Enabled = False
                     EmployeeInfo.TB_Title.Enabled = False
