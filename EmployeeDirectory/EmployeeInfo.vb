@@ -329,6 +329,7 @@
             .Floor = TB_Floor.Text
 
         End With
+
         '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
         BlackLabel()
         If (CurrentUserType = 1 Or
@@ -365,6 +366,7 @@
                 _empinfo.UpdateData(_emp)
                 _EmpEditService.Employee = _emp
                 _EmpEditService.PopulateFields(Me)
+                Main.ReloadDataGridWithSort()
             Else
                 '*** SET DEFAULT VALUES DURING ADD ***'
                 _emp.UserType = 3
@@ -373,9 +375,11 @@
                 '_emp.ExpirationDate =
                 '_emp.LastAccessedBy =
                 _empinfo.InsertData(_emp)
+                Main.ReloadDataGridWithSort()
                 ClearFields()
             End If
         End If
+
         EmpInfo.Validate()
 
         If EmpInfo.EmpValidate = 0 Then
