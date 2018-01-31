@@ -62,7 +62,7 @@ Partial Class EmployeeInfo
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Label49 = New System.Windows.Forms.Label()
         Me.TB_OfficeEmail = New System.Windows.Forms.TextBox()
-        Me.OffEmail_Label = New System.Windows.Forms.Label()
+        Me.lbl_OfficeEmail = New System.Windows.Forms.Label()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.CB_Team = New System.Windows.Forms.ComboBox()
         Me.CB_LocalMgr = New System.Windows.Forms.ComboBox()
@@ -87,13 +87,13 @@ Partial Class EmployeeInfo
         Me.TB_SeatNo = New System.Windows.Forms.TextBox()
         Me.TB_USMgr = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.OnbTkt_Label = New System.Windows.Forms.Label()
+        Me.Lbl_ObTicket = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.LocMgr_Label = New System.Windows.Forms.Label()
+        Me.Lbl_localMgr = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.Team_Label = New System.Windows.Forms.Label()
+        Me.Lbl_team = New System.Windows.Forms.Label()
         Me.AccessInfo = New System.Windows.Forms.TabPage()
         Me.TB_PCName = New System.Windows.Forms.TextBox()
         Me.Label40 = New System.Windows.Forms.Label()
@@ -375,7 +375,7 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.Controls.Add(Me.Label50)
         Me.OfficeInfo.Controls.Add(Me.Label49)
         Me.OfficeInfo.Controls.Add(Me.TB_OfficeEmail)
-        Me.OfficeInfo.Controls.Add(Me.OffEmail_Label)
+        Me.OfficeInfo.Controls.Add(Me.lbl_OfficeEmail)
         Me.OfficeInfo.Controls.Add(Me.Label47)
         Me.OfficeInfo.Controls.Add(Me.CB_Team)
         Me.OfficeInfo.Controls.Add(Me.CB_LocalMgr)
@@ -400,13 +400,13 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.Controls.Add(Me.TB_SeatNo)
         Me.OfficeInfo.Controls.Add(Me.TB_USMgr)
         Me.OfficeInfo.Controls.Add(Me.Label21)
-        Me.OfficeInfo.Controls.Add(Me.OnbTkt_Label)
+        Me.OfficeInfo.Controls.Add(Me.Lbl_ObTicket)
         Me.OfficeInfo.Controls.Add(Me.Label24)
         Me.OfficeInfo.Controls.Add(Me.Label25)
-        Me.OfficeInfo.Controls.Add(Me.LocMgr_Label)
+        Me.OfficeInfo.Controls.Add(Me.Lbl_localMgr)
         Me.OfficeInfo.Controls.Add(Me.Label27)
         Me.OfficeInfo.Controls.Add(Me.Label28)
-        Me.OfficeInfo.Controls.Add(Me.Team_Label)
+        Me.OfficeInfo.Controls.Add(Me.Lbl_team)
         Me.OfficeInfo.Location = New System.Drawing.Point(4, 24)
         Me.OfficeInfo.Name = "OfficeInfo"
         Me.OfficeInfo.Padding = New System.Windows.Forms.Padding(3)
@@ -571,15 +571,15 @@ Partial Class EmployeeInfo
         Me.TB_OfficeEmail.Size = New System.Drawing.Size(171, 20)
         Me.TB_OfficeEmail.TabIndex = 18
         '
-        'OffEmail_Label
+        'lbl_OfficeEmail
         '
-        Me.OffEmail_Label.AutoSize = True
-        Me.OffEmail_Label.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OffEmail_Label.Location = New System.Drawing.Point(41, 43)
-        Me.OffEmail_Label.Name = "OffEmail_Label"
-        Me.OffEmail_Label.Size = New System.Drawing.Size(81, 15)
-        Me.OffEmail_Label.TabIndex = 125
-        Me.OffEmail_Label.Text = "Email Address"
+        Me.lbl_OfficeEmail.AutoSize = True
+        Me.lbl_OfficeEmail.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_OfficeEmail.Location = New System.Drawing.Point(41, 43)
+        Me.lbl_OfficeEmail.Name = "lbl_OfficeEmail"
+        Me.lbl_OfficeEmail.Size = New System.Drawing.Size(81, 15)
+        Me.lbl_OfficeEmail.TabIndex = 125
+        Me.lbl_OfficeEmail.Text = "Email Address"
         '
         'Label47
         '
@@ -811,15 +811,15 @@ Partial Class EmployeeInfo
         Me.Label21.TabIndex = 93
         Me.Label21.Text = "SFC"
         '
-        'OnbTkt_Label
+        'Lbl_ObTicket
         '
-        Me.OnbTkt_Label.AutoSize = True
-        Me.OnbTkt_Label.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OnbTkt_Label.Location = New System.Drawing.Point(395, 13)
-        Me.OnbTkt_Label.Name = "OnbTkt_Label"
-        Me.OnbTkt_Label.Size = New System.Drawing.Size(107, 15)
-        Me.OnbTkt_Label.TabIndex = 91
-        Me.OnbTkt_Label.Text = "Onboarding Ticket"
+        Me.Lbl_ObTicket.AutoSize = True
+        Me.Lbl_ObTicket.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_ObTicket.Location = New System.Drawing.Point(395, 13)
+        Me.Lbl_ObTicket.Name = "Lbl_ObTicket"
+        Me.Lbl_ObTicket.Size = New System.Drawing.Size(107, 15)
+        Me.Lbl_ObTicket.TabIndex = 91
+        Me.Lbl_ObTicket.Text = "Onboarding Ticket"
         '
         'Label24
         '
@@ -841,15 +841,15 @@ Partial Class EmployeeInfo
         Me.Label25.TabIndex = 89
         Me.Label25.Text = "Floor"
         '
-        'LocMgr_Label
+        'Lbl_localMgr
         '
-        Me.LocMgr_Label.AutoSize = True
-        Me.LocMgr_Label.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LocMgr_Label.Location = New System.Drawing.Point(41, 193)
-        Me.LocMgr_Label.Name = "LocMgr_Label"
-        Me.LocMgr_Label.Size = New System.Drawing.Size(86, 15)
-        Me.LocMgr_Label.TabIndex = 88
-        Me.LocMgr_Label.Text = "Local Manager"
+        Me.Lbl_localMgr.AutoSize = True
+        Me.Lbl_localMgr.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_localMgr.Location = New System.Drawing.Point(41, 193)
+        Me.Lbl_localMgr.Name = "Lbl_localMgr"
+        Me.Lbl_localMgr.Size = New System.Drawing.Size(86, 15)
+        Me.Lbl_localMgr.TabIndex = 88
+        Me.Lbl_localMgr.Text = "Local Manager"
         '
         'Label27
         '
@@ -871,15 +871,15 @@ Partial Class EmployeeInfo
         Me.Label28.TabIndex = 86
         Me.Label28.Text = "US Manager"
         '
-        'Team_Label
+        'Lbl_team
         '
-        Me.Team_Label.AutoSize = True
-        Me.Team_Label.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Team_Label.Location = New System.Drawing.Point(41, 163)
-        Me.Team_Label.Name = "Team_Label"
-        Me.Team_Label.Size = New System.Drawing.Size(36, 15)
-        Me.Team_Label.TabIndex = 84
-        Me.Team_Label.Text = "Team"
+        Me.Lbl_team.AutoSize = True
+        Me.Lbl_team.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_team.Location = New System.Drawing.Point(41, 163)
+        Me.Lbl_team.Name = "Lbl_team"
+        Me.Lbl_team.Size = New System.Drawing.Size(36, 15)
+        Me.Lbl_team.TabIndex = 84
+        Me.Lbl_team.Text = "Team"
         '
         'AccessInfo
         '
@@ -1399,13 +1399,13 @@ Partial Class EmployeeInfo
     Friend WithEvents TB_SeatNo As System.Windows.Forms.TextBox
     Friend WithEvents TB_USMgr As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents OnbTkt_Label As System.Windows.Forms.Label
+    Friend WithEvents Lbl_ObTicket As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents LocMgr_Label As System.Windows.Forms.Label
+    Friend WithEvents Lbl_localMgr As System.Windows.Forms.Label
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents Team_Label As System.Windows.Forms.Label
+    Friend WithEvents Lbl_team As System.Windows.Forms.Label
     Friend WithEvents AccessInfo As System.Windows.Forms.TabPage
     Friend WithEvents TB_GithubID As System.Windows.Forms.TextBox
     Friend WithEvents TB_ElsevierID As System.Windows.Forms.TextBox
@@ -1449,7 +1449,7 @@ Partial Class EmployeeInfo
     Friend WithEvents Label50 As System.Windows.Forms.Label
     Friend WithEvents Label49 As System.Windows.Forms.Label
     Friend WithEvents TB_OfficeEmail As System.Windows.Forms.TextBox
-    Friend WithEvents OffEmail_Label As System.Windows.Forms.Label
+    Friend WithEvents lbl_OfficeEmail As System.Windows.Forms.Label
     Friend WithEvents Label47 As System.Windows.Forms.Label
     Friend WithEvents Lbl_Zip As System.Windows.Forms.Label
     Friend WithEvents TB_SiteCountry As System.Windows.Forms.TextBox

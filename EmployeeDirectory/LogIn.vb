@@ -10,15 +10,24 @@
 
     Private Sub SignIn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SignIn_Btn.Click
         'Dim _LoginViewTemp = _LogInService.SelectUser(Username.Text, UsernamePassword.Text)
+        'If Username.Text = Nothing Or              '***BUG FIXED - jlavares 01/31/2018*****
+        '    Not IsNumeric(Username.Text) Then      ' - changed to create generic message for scty purpose
+
+        '    MsgBox("Invalid/Blank UserName")
+        '    Username.Clear()
+        '    UsernamePassword.Clear()
+
+        'ElseIf UsernamePassword.Text = Nothing Then
+        '    MsgBox("Blank Password")
+
         If Username.Text = Nothing Or
+            UsernamePassword.Text = Nothing Or
             Not IsNumeric(Username.Text) Then
 
-            MsgBox("Invalid/Blank UserName")
+            MessageBox.Show("Invalid UserName or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Username.Clear()
             UsernamePassword.Clear()
-
-        ElseIf UsernamePassword.Text = Nothing Then
-            MsgBox("Blank Password")
+            Username.Focus()
         Else
             Dim _LoginViewTemp = _LogInService.SelectUser(Username.Text, UsernamePassword.Text)
 

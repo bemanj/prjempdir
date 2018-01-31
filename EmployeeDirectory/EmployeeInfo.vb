@@ -42,12 +42,15 @@
         End Set
     End Property
 
+    Dim mR As New ManagerRepository
+
     Public Sub New()
 
         ' This call is required by the designer.
         InitializeComponent()
 
         _empinfo = New EmployeeRepository()
+
 
         _EmpEditService = New EmpEditService()
 
@@ -62,18 +65,25 @@
 
     Public Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        DT_Birth.MaxDate = Date.Today.AddYears(-25)
-
+        'ROJOHN - Earliest possible birth year is 1999 = 18 years old minimum age of employment
+        'BUG # 50
+        'DT_Birth.MaxDate = Date.Today.AddYears(-18)
+        'DT_Birth.Value = DateTime.Now
 
         '''' **** LMRS: Move Code from Constructor **** ''''
         '*** START OF CHANGE - BK
         '*** B KABAHAR - SPRINT 2
         If _isEdit = False Then
             ClearDatePicker(DT_Birth)
-            ClearDatePicker(DT_SFCDate)
-            ClearDatePicker(DT_StartDate)
+            DT_Birth.Value = Date.Today.AddYears(-18)
+            DT_Birth.MaxDate = Date.Today.AddYears(-18)
+            DT_SFCDate.Value = DateTime.Now
+            DT_StartDate.Value = DateTime.Now
+
+            'ClearDatePicker(DT_SFCDate)
+            'ClearDatePicker(DT_StartDate)
             DT_SFCDate.Enabled = False
-        End If
+        End If 
         '*** END - B KABAHAR SPRINT 2
 
         '*** B KABAHAR - 1/26
@@ -142,10 +152,10 @@
 
         Me.CB_SFC_SelectedIndexChanged(e, e)
         'If CB_SFC.Text = "No" Then
-        '    ClearDatePicker(DT_SFCDate)
-        '    DT_SFCDate.Enabled = False
+        'ClearDatePicker(DT_SFCDate)
+        'DT_SFCDate.Enabled = False
         'ElseIf CB_SFC.Text = "Yes" Then
-        '    ResetDatePicker(DT_SFCDate)
+        'ResetDatePicker(DT_SFCDate)
         'End If
 
     End Sub
@@ -190,10 +200,13 @@
         'Me.Hide() 
         '*********Change Me.Hide() to Me.Close() to fix the logout from manager to user vice versa since
         '*********It was loading the form of the initial login since it was only hidden.
-
         Me.Close()
+        Main.Hide()
+        _empinfo.ValidateClear()
+        mR.ClearMgrValidate()
         LogIn.Show()
         LogIn.LogIn_Load(e, e)
+
         LogIn.Username.Clear()
         LogIn.UsernamePassword.Clear()
 
@@ -284,6 +297,7 @@
             End If
 
             .SeatNumber = TB_SeatNo.Text
+            .LastAccessedBy = CurrentUser
 
             .Shift = CB_Shift.Text
             .PCName = TB_PCName.Text
@@ -331,63 +345,51 @@
         End With
 
         '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
-        BlackLabel()
-        If (CurrentUserType = 1 Or
-            CurrentUserType = 2) Then
-            If _emp.OracleID = Nothing Then
-                IsMgrError = True
-                Lbl_OracleID.ForeColor = Color.Red
-            End If
-            If _emp.TeamName = String.Empty Then
-                IsMgrError = True
-                Team_Label.ForeColor = Color.Red
-            End If
-            If _emp.LocalManagerID = Nothing Then
-                IsMgrError = True
-                LocMgr_Label.ForeColor = Color.Red
-            End If
-            If _emp.OnboardingTicket = String.Empty Then
-                IsMgrError = True
-                OnbTkt_Label.ForeColor = Color.Red
-            End If
-            If _empinfo.ValidateEmail(_emp.OfficeEmail) = False Then
-                IsOffEmailError = True
-                OffEmail_Label.ForeColor = Color.Red
-            End If
+        
+
+        'If IsMgrError = True Then
+        '    MessageBox.Show("Please fill up required fields", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'ElseIf IsOffEmailError = True Then
+        '    MessageBox.Show("Please correct Office Email Address", "INVALID EMAIL ADDRESS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'Else
+        '    ' ***** END : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+        '    If Me.IsEdit = True Then
+        '        _empinfo.UpdateData(_emp)
+        '        _EmpEditService.Employee = _emp
+        '        _EmpEditService.PopulateFields(Me)
+        '        Main.ReloadDataGridWithSort()
+        '    Else
+        '        '*** SET DEFAULT VALUES DURING ADD ***'
+        '        _emp.UserType = 3
+        '        '_emp.Status =
+        '        '_emp.LastLogin =
+        '        '_emp.ExpirationDate =
+        '        '_emp.LastAccessedBy =
+        '        _empinfo.InsertData(_emp)
+        '        Main.ReloadDataGridWithSort()
+        '        ClearFields()
+        '    End If
+        'End If
+
+        If CurrentUserType = 3 Then
+            _empinfo.Validate()
+            mR.MgrValidate = 1
         End If
 
-        If IsMgrError = True Then
-            MessageBox.Show("Please fill up required fields", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        ElseIf IsOffEmailError = True Then
-            MessageBox.Show("Please correct Office Email Address", "INVALID EMAIL ADDRESS", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Else
-            ' ***** END : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
-            If Me.IsEdit = True Then
-                _empinfo.UpdateData(_emp)
-                _EmpEditService.Employee = _emp
-                _EmpEditService.PopulateFields(Me)
-                Main.ReloadDataGridWithSort()
-            Else
-                '*** SET DEFAULT VALUES DURING ADD ***'
-                _emp.UserType = 3
-                '_emp.Status =
-                '_emp.LastLogin =
-                '_emp.ExpirationDate =
-                '_emp.LastAccessedBy =
-                _empinfo.InsertData(_emp)
-                Main.ReloadDataGridWithSort()
-                ClearFields()
-            End If
+        If CurrentUserType = 1 Or CurrentUserType = 2 Then
+            mR.ValidateManager()
+            EmpInfo.EmpValidate = 1
         End If
 
-        EmpInfo.Validate()
 
-        If EmpInfo.EmpValidate = 0 Then
+
+        If EmpInfo.EmpValidate = 0 Or mR.MgrValidate = 0 Then
             If Me.IsEdit = True Then
                 _empinfo.UpdateData(_emp)
                 _EmpEditService.Employee = _emp
                 _EmpEditService.PopulateFields(Me)
                 EmpInfo.ValidateClear()
+                mR.ClearMgrValidate()
                 Main.ReloadDataGridWithSort()
             Else
                 '*** SET DEFAULT VALUES DURING ADD ***'
@@ -399,14 +401,15 @@
                 _empinfo.InsertData(_emp)
                 ClearFields()
                 EmpInfo.ValidateClear()
+                mR.ClearMgrValidate()
                 Main.ReloadDataGridWithSort()
             End If
-        ElseIf EmpInfo.EmpValidate = 2 Then
-            Lbl_EAdd.ForeColor = Color.Red
+        ElseIf EmpInfo.EmpValidate = 2 Or mR.MgrValidate = 2 Then
+            'Lbl_EAdd.ForeColor = Color.Red
             MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error)
             'EmpInfo.EmpValidate = 0
         Else
-            MessageBox.Show("Please fill up required fields", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Please fill up required field/s", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
             'EmpInfo.EmpValidate = 0
         End If
     End Sub
@@ -424,16 +427,18 @@
 
     Private Sub Btn_RevertClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_RevertClear.Click
         ' ***** START : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
-        BlackLabel()
+        'BlackLabel()
         ' ***** END   : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
         If _isEdit Then
             EmpInfo.ValidateClear()
+            mR.ClearMgrValidate()
             _EmpEditService.PopulateFields(Me)
             TB_OracleID.Focus()
         Else
             ClearFields()
             TB_OracleID.Focus()
             EmpInfo.ValidateClear()
+            mR.ClearMgrValidate()
         End If
 
     End Sub
@@ -450,7 +455,9 @@
     Private Sub Btn_Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Cancel.Click
         Me.Close()
         ClearFields()
-        'Main.Main_Load(e, e)
+        EmpInfo.ValidateClear()
+        mR.ClearMgrValidate()
+        'Main.Main_Load(e, e)       
         Main.Show()
 
     End Sub
@@ -483,6 +490,7 @@
                         ElseIf _item.GetType() = GetType(DateTimePicker) Then
                             CType(_item, DateTimePicker).Format = DateTimePickerFormat.Custom
                             CType(_item, DateTimePicker).CustomFormat = " "
+                            CType(_item, DateTimePicker).Enabled = False
                         End If
                     Next
                 Next
@@ -503,7 +511,18 @@
             ClearDatePicker(DT_SFCDate)
             DT_SFCDate.Enabled = False
         ElseIf CB_SFC.Text = "Yes" Then
-            ResetDatePicker(DT_SFCDate)
+            'ROJOHN - COMMENTED CODE TO HANDLE THE BUG THAT DISPLAY DATE WHEN YES IS CLICKED IN THE COMBO BOX.
+            'BUG #51
+            DT_SFCDate.Value = DateTime.Now
+
+            ClearDatePicker(DT_SFCDate)
+            'ResetDatePicker(DT_SFCDate)
+
+
+            '  DT_SFCDate.Value = DateTime.Now
+            ' ResetDatePicker(DT_SFCDate)
+            ' ClearDatePicker(DT_SFCDate)
+            ' DT_SFCDate.Enabled = True
         End If
 
     End Sub
@@ -531,6 +550,13 @@
         With dtPicker
             .Format = DateTimePickerFormat.Custom
             .CustomFormat = " "
+        End With
+    End Sub
+
+    Private Sub UnClearDatePicker(ByVal dtPicker As Object)
+        With dtPicker
+            .Format = DateTimePickerFormat.Short
+            .CustomFormat = String.Empty
         End With
     End Sub
 
@@ -604,16 +630,6 @@
 
     'End Sub
 
-    ' **** START : VALIDATE AND REQUIRED FIELDS FOR MANAGER ***** '
-    Public Sub BlackLabel()
-        Lbl_OracleID.ForeColor = Color.Black
-        Team_Label.ForeColor = Color.Black
-        LocMgr_Label.ForeColor = Color.Black
-        OnbTkt_Label.ForeColor = Color.Black
-        OffEmail_Label.ForeColor = Color.Black
-    End Sub
-    ' ***** END : VALIDATE AND REQUIRED FIELDS FOR MANAGER/USER ***** '
-
     Private Sub CB_Region_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_Region.SelectedValueChanged
 
         Dim _id As Integer
@@ -624,5 +640,12 @@
         Else
             PopulateCity(CB_City, 1)
         End If
+    End Sub
+
+    Private Sub DT_SFCDate_ValueChanged(sender As System.Object, e As System.EventArgs) Handles DT_SFCDate.ValueChanged
+        'MsgBox("hi")
+        'DT_SFCDate.Value.ToString()
+        ResetDatePicker(DT_SFCDate)
+        'UnClearDatePicker(DT_SFCDate)
     End Sub
 End Class

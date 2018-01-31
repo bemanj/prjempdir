@@ -233,6 +233,9 @@ Public Class EmployeeRepository
         If Not String.IsNullOrEmpty(EmployeeInfo.TB_PersonalEmail.Text) Then
             If ValidateEmail(EmployeeInfo.TB_PersonalEmail.Text) = False Then
                 EmpValidate = 2
+                EmployeeInfo.Lbl_EAdd.ForeColor = Color.Red
+            Else
+                EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
                 'MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End If
