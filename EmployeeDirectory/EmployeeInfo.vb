@@ -329,7 +329,53 @@
             .Floor = TB_Floor.Text
 
         End With
+        '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+        BlackLabel()
+        If (CurrentUserType = 1 Or
+            CurrentUserType = 2) Then
+            If _emp.OracleID = Nothing Then
+                IsMgrError = True
+                Lbl_OracleID.ForeColor = Color.Red
+            End If
+            If _emp.TeamName = String.Empty Then
+                IsMgrError = True
+                Team_Label.ForeColor = Color.Red
+            End If
+            If _emp.LocalManagerID = Nothing Then
+                IsMgrError = True
+                LocMgr_Label.ForeColor = Color.Red
+            End If
+            If _emp.OnboardingTicket = String.Empty Then
+                IsMgrError = True
+                OnbTkt_Label.ForeColor = Color.Red
+            End If
+            If _empinfo.ValidateEmail(_emp.OfficeEmail) = False Then
+                IsOffEmailError = True
+                OffEmail_Label.ForeColor = Color.Red
+            End If
+        End If
 
+        If IsMgrError = True Then
+            MessageBox.Show("Please fill up required fields", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ElseIf IsOffEmailError = True Then
+            MessageBox.Show("Please correct Office Email Address", "INVALID EMAIL ADDRESS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            ' ***** END : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
+            If Me.IsEdit = True Then
+                _empinfo.UpdateData(_emp)
+                _EmpEditService.Employee = _emp
+                _EmpEditService.PopulateFields(Me)
+            Else
+                '*** SET DEFAULT VALUES DURING ADD ***'
+                _emp.UserType = 3
+                '_emp.Status =
+                '_emp.LastLogin =
+                '_emp.ExpirationDate =
+                '_emp.LastAccessedBy =
+                _empinfo.InsertData(_emp)
+                ClearFields()
+            End If
+        End If
         EmpInfo.Validate()
 
         If EmpInfo.EmpValidate = 0 Then
