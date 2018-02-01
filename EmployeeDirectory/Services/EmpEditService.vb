@@ -85,11 +85,11 @@
             .CB_Gender.Text = Employee.Gender
             .CB_Country.Text = Employee.Country
             .CB_Shift.Text = Employee.Shift
+            '.DT_SFCDate.Text = Employee.SFCDate
             ' ****** NEEDS COMBO BOX LOGIC/HANDLING ******
             '.CB_City.Text = Employee.CityName
             '.CB_Region.Text = Employee.RegionName
-            '.CB_Country.Text = Employee.Country
-            '.CB_Team.Text = Employee.TeamName
+            '.CB_Country.Text = Employee.Country;
             '.CB_LocalMgr.Text = Employee.Mgr_Last_Name.Trim & ", " & Employee.Mgr_First_Name
             '.CB_WorkSched.Text = Employee.Shift         ' Add New Field
             '.CB_SFC.Text = Employee.SFC

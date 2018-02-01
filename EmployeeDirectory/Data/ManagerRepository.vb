@@ -121,6 +121,18 @@ Public Class ManagerRepository
             EmployeeInfo.lbl_OfficeEmail.ForeColor = Color.Black
         End If
 
+        If Not String.IsNullOrEmpty(EmployeeInfo.TB_PersonalEmail.Text) Then
+            If ValidateOfficeEmail(EmployeeInfo.TB_PersonalEmail.Text) = False Then
+                MgrValidate = 2
+                EmployeeInfo.Lbl_EAdd.ForeColor = Color.Red
+            Else
+                EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
+                'MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Else
+            EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
+        End If
+
         'If EmployeeInfo.TB_OracleID = Nothing Then
         '    IsMgrError = True 
         '    Lbl_OracleID.ForeColor = Color.Red
