@@ -50,6 +50,7 @@ Partial Class LogIn
         Me.Username.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.Username.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Username.Location = New System.Drawing.Point(203, 198)
+        Me.Username.MaxLength = 10
         Me.Username.Name = "Username"
         Me.Username.Size = New System.Drawing.Size(227, 22)
         Me.Username.TabIndex = 3
@@ -60,6 +61,7 @@ Partial Class LogIn
         Me.UsernamePassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.UsernamePassword.ForeColor = System.Drawing.SystemColors.ControlText
         Me.UsernamePassword.Location = New System.Drawing.Point(203, 244)
+        Me.UsernamePassword.MaxLength = 10
         Me.UsernamePassword.Name = "UsernamePassword"
         Me.UsernamePassword.Size = New System.Drawing.Size(227, 22)
         Me.UsernamePassword.TabIndex = 4
