@@ -53,12 +53,15 @@ Public Class ManagerRepository
         ' ***** END : VALIDATE AND REQUIRED FIELDS FOR MANAGER/USER ***** '
         MgrValidate = 0
 
-        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_OracleID.Text) Then
-            EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
-            MgrValidate = 1
-        Else
-            EmployeeInfo.Lbl_OracleID.ForeColor = Color.Black
-        End If
+        ' **** START : FIX INVALID ORACLE ID *** ' 
+        ' **** COMMENTED CODES BELOW *** ' 
+        'If String.IsNullOrWhiteSpace(EmployeeInfo.TB_OracleID.Text) Then
+        '    EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
+        '    MgrValidate = 1
+        'Else
+        '    EmployeeInfo.Lbl_OracleID.ForeColor = Color.Black
+        'End If
+        ' **** END  : FIX INVALID ORACLE ID *** ' 
 
         If String.IsNullOrWhiteSpace(EmployeeInfo.TB_FirstName.Text) Then
             EmployeeInfo.Lbl_FirstName.ForeColor = Color.Red()
@@ -120,6 +123,22 @@ Public Class ManagerRepository
         Else
             EmployeeInfo.lbl_OfficeEmail.ForeColor = Color.Black
         End If
+
+        ' **** START : FIX INVALID ORACLE ID *** ' 
+        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_OracleID.Text) Then
+            EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
+            MgrValidate = 1
+        Else
+            Dim _EmpEditService = New EmpEditService()
+            Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(EmployeeInfo.TB_OracleID.Text)
+            If _tempSelectedID Is Nothing Then
+                EmployeeInfo.Lbl_OracleID.ForeColor = Color.Black
+            Else
+                EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
+                MgrValidate = 3
+            End If
+        End If
+        ' **** END  : FIX INVALID ORACLE ID *** ' 
 
         'If EmployeeInfo.TB_OracleID = Nothing Then
         '    IsMgrError = True 
