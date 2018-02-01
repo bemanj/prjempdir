@@ -156,14 +156,11 @@
             _EmpEditService.PopulateFields(Me)
             ResetDatePicker(DT_Birth)               '2018-01-29 6PM PUSH
             ResetDatePicker(DT_SFCDate)             '2018-01-29 6PM PUSH
-
         Else
             CB_Region.Text = SetListName(CB_Region, 1)
         End If
 
         ResetDatePicker(DT_StartDate)           '2018-01-29 6PM PUSH
-
-
 
         Me.CB_SFC_SelectedIndexChanged(e, e)
         'If CB_SFC.Text = "No" Then
@@ -229,6 +226,7 @@
 
 
     Private Sub Btn_Save_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Save.Click
+        Dim retvalue As Integer
         ClickSave = True
         '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
         IsMgrError = False
@@ -415,8 +413,13 @@
                 '_emp.LastLogin =
                 '_emp.ExpirationDate =
                 '_emp.LastAccessedBy =
-                _empinfo.InsertData(_emp)
-                ClearFields()
+
+                retvalue = _empinfo.InsertData(_emp)        'fix to avoid error on duplicate Oracle ID's
+                If retvalue = 0 Then
+                    ClearFields()
+                End If
+
+
                 EmpInfo.ValidateClear()
                 mR.ClearMgrValidate()
                 Main.ReloadDataGridWithSort()
