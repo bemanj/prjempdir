@@ -406,10 +406,10 @@
             End If
         ElseIf EmpInfo.EmpValidate = 2 Or mR.MgrValidate = 2 Then
             'Lbl_EAdd.ForeColor = Color.Red
-            MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             'EmpInfo.EmpValidate = 0
         Else
-            MessageBox.Show("Please fill up required field/s", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Please fill up required field/s", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             'EmpInfo.EmpValidate = 0
         End If
     End Sub

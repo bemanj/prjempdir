@@ -20,11 +20,23 @@
         'ElseIf UsernamePassword.Text = Nothing Then
         '    MsgBox("Blank Password")
 
-        If Username.Text = Nothing Or
-            UsernamePassword.Text = Nothing Or
-            Not IsNumeric(Username.Text) Then
+        Dim ChrCnt As Long = 0                          '***BUG FIXED - jlavares 02/1/2018*****
+        Dim PwdChrCnt As Long = 0                       ' - changed to handle data value overflow
+        ChrCnt = Username.Text.Length                   ' - change the msgbox title and add new message
+        PwdChrCnt = UsernamePassword.Text.Length
 
-            MessageBox.Show("Invalid UserName or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If Username.Text = Nothing Or
+            UsernamePassword.Text = Nothing Then
+
+            MessageBox.Show("Please enter required field/s", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Username.Clear()
+            UsernamePassword.Clear()
+            Username.Focus()
+        ElseIf Not IsNumeric(Username.Text) Or
+            ChrCnt > 10 Or
+            PwdChrCnt > 10 Then
+
+            MessageBox.Show("Invalid UserName or Password", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Username.Clear()
             UsernamePassword.Clear()
             Username.Focus()
