@@ -52,8 +52,10 @@ Public Class EmployeeRepository
 
         If CInt(x) > 0 Then
             MessageBox.Show("Employee Added.")
+        Else
+            MessageBox.Show("Oracle ID already exists.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning) 'fix to avoid error on duplicate Oracle ID's
+            Return -1
         End If
-
         Return 0
     End Function
 
