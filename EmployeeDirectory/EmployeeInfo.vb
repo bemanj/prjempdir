@@ -307,7 +307,7 @@
             If Not DT_SFCDate.Text = String.Empty Then
                 .SFCDate = CType(DT_SFCDate.Value, Date)
             End If
-            If CB_SFC.SelectedItem = "No" Then
+            If CB_SFC.SelectedItem = "No" Or IsNothing(CB_SFC.SelectedItem) Then
                 .SFCDate = Nothing
             End If
 
