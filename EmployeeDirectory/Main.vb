@@ -84,7 +84,7 @@ Public Class Main
     Private Sub DataGridViewEmployee_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridViewEmployee.CellDoubleClick
         If Not e.RowIndex = -1 Then                                                                                                                 '   - to handle index out of range error
             Try
-                Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(Me.DataGridViewEmployee.SelectedRows(0).Cells("OracleID").Value)) '- set SelectionSet property to FullRowSelect
+                Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CLng(Me.DataGridViewEmployee.SelectedRows(0).Cells("OracleID").Value)) '- set SelectionSet property to FullRowSelect
                 EmployeeInfo.EmpEditService.Employee = _tempSelectedRow
                 EmployeeInfo.IsEdit = True
                 EmployeeInfo.Btn_RevertClear.Text = "Revert"

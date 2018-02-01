@@ -2,6 +2,7 @@
     Private _isEdit As Boolean
     Private ClickSave As Boolean
     Public Revert As Boolean
+    Dim SFCDateEmpty As Integer
     Public Property IsEdit() As Boolean
         Get
             Return _isEdit
@@ -397,8 +398,18 @@
         End If
 
 
+        '[--ROJOHN-- ADD VALIDATION FOR SFC DATE IF SFC COMBO BOX IS YES
+        If ClickSave = True And CB_SFC.Text = "Yes" Then
+            ClickSave = False
+            If String.IsNullOrWhiteSpace(DT_SFCDate.Text) Then
+                SFCDateEmpty = 1
+                ' MessageBox.Show("Please enter SFC date.", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                SFCDateEmpty = 0
+            End If
+        End If
 
-        If EmpInfo.EmpValidate = 0 Or mR.MgrValidate = 0 Then
+        If EmpInfo.EmpValidate = 0 Or mR.MgrValidate = 0 And SFCDateEmpty = 0 Then
             If Me.IsEdit = True Then
                 _empinfo.UpdateData(_emp)
                 _EmpEditService.Employee = _emp
@@ -426,14 +437,16 @@
             End If
             ' **** START : FIX INVALID ORACLE ID *** ' 
         ElseIf mR.MgrValidate = 3 Then
-            MessageBox.Show("Oracle ID already exists.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Oracle ID already exists.", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             ' **** END   : FIX INVALID ORACLE ID *** ' 
         ElseIf EmpInfo.EmpValidate = 2 Or mR.MgrValidate = 2 Then
             'Lbl_EAdd.ForeColor = Color.Red
-            MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Email is not valid, Please check your email address.", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             'EmpInfo.EmpValidate = 0
+        ElseIf SFCDateEmpty = 1 Then
+            MessageBox.Show("Please enter SFC date.", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
-            MessageBox.Show("Please fill up required field/s", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please fill up required field/s", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             'EmpInfo.EmpValidate = 0
         End If
     End Sub
@@ -536,6 +549,7 @@
         If CB_SFC.Text = "No" Then
             ClearDatePicker(DT_SFCDate)
             DT_SFCDate.Enabled = False
+            SFCDateEmpty = 0
         ElseIf CB_SFC.Text = "Yes" Then
             'ROJOHN - COMMENTED CODE TO HANDLE THE BUG THAT DISPLAY DATE WHEN YES IS CLICKED IN THE COMBO BOX.
             'BUG #51
@@ -550,13 +564,13 @@
                 ResetDatePicker(DT_SFCDate)
             End If
 
-            If ClickSave = True Then
-                ResetDatePicker(DT_SFCDate)
-                ClickSave = False
-                If String.IsNullOrWhiteSpace(DT_SFCDate.Text) Then
-                    MessageBox.Show("Please enter date in SFC date.", "SFC DATE EMPTY", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-            End If
+            'If ClickSave = True Then
+            '  ResetDatePicker(DT_SFCDate)
+            '    ClickSave = False
+            '    If String.IsNullOrWhiteSpace(DT_SFCDate.Text) Then
+            '        MessageBox.Show("Please enter date in SFC date.", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            '    End If
+            'End If
 
         End If
 
