@@ -124,21 +124,17 @@ Public Class ManagerRepository
             EmployeeInfo.lbl_OfficeEmail.ForeColor = Color.Black
         End If
 
-        ' **** START : FIX INVALID ORACLE ID *** ' 
-        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_OracleID.Text) Then
-            EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
-            MgrValidate = 1
-        Else
-            Dim _EmpEditService = New EmpEditService()
-            Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(EmployeeInfo.TB_OracleID.Text)
-            If _tempSelectedID Is Nothing Then
-                EmployeeInfo.Lbl_OracleID.ForeColor = Color.Black
+        If Not String.IsNullOrEmpty(EmployeeInfo.TB_PersonalEmail.Text) Then
+            If ValidateOfficeEmail(EmployeeInfo.TB_PersonalEmail.Text) = False Then
+                MgrValidate = 2
+                EmployeeInfo.Lbl_EAdd.ForeColor = Color.Red
             Else
-                EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
-                MgrValidate = 3
+                EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
+                'MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
+        Else
+            EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
         End If
-        ' **** END  : FIX INVALID ORACLE ID *** ' 
 
         'If EmployeeInfo.TB_OracleID = Nothing Then
         '    IsMgrError = True 

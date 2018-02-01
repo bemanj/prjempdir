@@ -1,6 +1,7 @@
 ﻿Public Class EmployeeInfo
-
     Private _isEdit As Boolean
+    Private ClickSave As Boolean
+    Public Revert As Boolean
     Public Property IsEdit() As Boolean
         Get
             Return _isEdit
@@ -73,7 +74,16 @@
         '''' **** LMRS: Move Code from Constructor **** ''''
         '*** START OF CHANGE - BK
         '*** B KABAHAR - SPRINT 2
+        '   If _isEdit And Main.Sfc = True Then
+        ' ClearDatePicker(DT_SFCDate)
+        'ResetDatePicker(DT_SFCDate)
+        '
+        'Main.Sfc = False
+        ' End If
+
+
         If _isEdit = False Then
+            ' CB_SFC.SelectedIndex = 0
             ClearDatePicker(DT_Birth)
             DT_Birth.Value = Date.Today.AddYears(-18)
             DT_Birth.MaxDate = Date.Today.AddYears(-18)
@@ -83,7 +93,7 @@
             'ClearDatePicker(DT_SFCDate)
             'ClearDatePicker(DT_StartDate)
             DT_SFCDate.Enabled = False
-        End If 
+        End If
         '*** END - B KABAHAR SPRINT 2
 
         '*** B KABAHAR - 1/26
@@ -214,7 +224,7 @@
 
 
     Private Sub Btn_Save_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Save.Click
-
+        ClickSave = True
         '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
         IsMgrError = False
         IsOffEmailError = False
@@ -309,6 +319,8 @@
             .EGSPremID = TB_EGSPREMID.Text
             .ElsevierID = TB_ElsevierID.Text
             .GITHubID = TB_GithubID.Text
+            '
+            '.SFCDate = DT_SFCDate.Text
             '.Mgr_Last_Name = CB_LocalMgr.Text
 
             'COMBOBOX
@@ -345,7 +357,7 @@
         End With
 
         '***** START: VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
-        
+
 
         'If IsMgrError = True Then
         '    MessageBox.Show("Please fill up required fields", "EMPTY FIELDS", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -430,6 +442,7 @@
 
 
     Private Sub Btn_RevertClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_RevertClear.Click
+        Revert = True
         ' ***** START : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
         'BlackLabel()
         ' ***** END   : VALIDATION AND REQUIRED FIELDS FOR MANAGER *****
@@ -511,23 +524,33 @@
     '*** START OF CHANGE - BK
     '*** B KABAHAR - SPRINT 2
     Private Sub CB_SFC_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_SFC.SelectedIndexChanged
+        Dim _emp As New Employee
         If CB_SFC.Text = "No" Then
             ClearDatePicker(DT_SFCDate)
             DT_SFCDate.Enabled = False
         ElseIf CB_SFC.Text = "Yes" Then
             'ROJOHN - COMMENTED CODE TO HANDLE THE BUG THAT DISPLAY DATE WHEN YES IS CLICKED IN THE COMBO BOX.
             'BUG #51
-            DT_SFCDate.Value = DateTime.Now
 
+
+            ResetDatePicker(DT_SFCDate)
             ClearDatePicker(DT_SFCDate)
-            'ResetDatePicker(DT_SFCDate)
 
+            If Main.Sfc = True Then
+                'ResetDatePicker(DT_SFCDate)
+                ClearDatePicker(DT_SFCDate)
+                ResetDatePicker(DT_SFCDate)
+            End If
 
-            '  DT_SFCDate.Value = DateTime.Now
-            ' ResetDatePicker(DT_SFCDate)
-            ' ClearDatePicker(DT_SFCDate)
-            ' DT_SFCDate.Enabled = True
-        End If
+            If ClickSave = True Then
+                ResetDatePicker(DT_SFCDate)
+                ClickSave = False
+                If String.IsNullOrWhiteSpace(DT_SFCDate.Text) Then
+                    MessageBox.Show("Please enter date in SFC date.", "SFC DATE EMPTY", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+
+            End If
 
     End Sub
 
@@ -543,6 +566,12 @@
 
     End Sub
 
+    Private Sub DT_SFCDate_ValueChanged(sender As System.Object, e As System.EventArgs) Handles DT_SFCDate.ValueChanged
+
+        ResetDatePicker(DT_SFCDate)
+
+    End Sub
+
     Private Sub ResetDatePicker(ByVal dtPicker As Object)
         With dtPicker
             .Format = DateTimePickerFormat.Short
@@ -554,13 +583,6 @@
         With dtPicker
             .Format = DateTimePickerFormat.Custom
             .CustomFormat = " "
-        End With
-    End Sub
-
-    Private Sub UnClearDatePicker(ByVal dtPicker As Object)
-        With dtPicker
-            .Format = DateTimePickerFormat.Short
-            .CustomFormat = String.Empty
         End With
     End Sub
 
@@ -646,10 +668,4 @@
         End If
     End Sub
 
-    Private Sub DT_SFCDate_ValueChanged(sender As System.Object, e As System.EventArgs) Handles DT_SFCDate.ValueChanged
-        'MsgBox("hi")
-        'DT_SFCDate.Value.ToString()
-        ResetDatePicker(DT_SFCDate)
-        'UnClearDatePicker(DT_SFCDate)
-    End Sub
 End Class

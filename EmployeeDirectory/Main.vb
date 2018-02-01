@@ -6,6 +6,9 @@ Public Class Main
     Dim eR As New EmployeeRepository
     Dim mR As New ManagerRepository
     Dim _EmpEditService As New EmpEditService
+    Public Sfc As Boolean
+    Public Add As Boolean
+
 
     Dim emp As New Employee
     Dim _LoginView As New LoginView
@@ -41,6 +44,7 @@ Public Class Main
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Add.Click
+        Add = True
         EmployeeInfo.TB_OracleID.Enabled = True
         EmployeeInfo.IsEdit = False
         EmployeeInfo.Btn_RevertClear.Text = "Clear"
@@ -115,6 +119,7 @@ Public Class Main
     End Function
 
     Public Sub ButtonSFC_Click(sender As System.Object, e As System.EventArgs) Handles ButtonSFC.Click
+        Sfc = True
         LabelSFC.Text = "SFC Employees"
         mg.OracleID = CurrentUser
         mg.SFC = True
@@ -122,6 +127,7 @@ Public Class Main
     End Sub
 
     Public Sub ButtonActive_Click(sender As System.Object, e As System.EventArgs) Handles ButtonActive.Click
+        Sfc = False
         LabelSFC.Text = "Current Employees"
         mg.OracleID = CurrentUser
         mg.SFC = False
