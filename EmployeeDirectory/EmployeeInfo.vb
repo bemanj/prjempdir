@@ -404,6 +404,10 @@
                 mR.ClearMgrValidate()
                 Main.ReloadDataGridWithSort()
             End If
+            ' **** START : FIX INVALID ORACLE ID *** ' 
+        ElseIf mR.MgrValidate = 3 Then
+            MessageBox.Show("Oracle ID already exists.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            ' **** END   : FIX INVALID ORACLE ID *** ' 
         ElseIf EmpInfo.EmpValidate = 2 Or mR.MgrValidate = 2 Then
             'Lbl_EAdd.ForeColor = Color.Red
             MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Warning)
