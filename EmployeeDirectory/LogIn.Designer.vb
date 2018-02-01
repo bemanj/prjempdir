@@ -127,7 +127,7 @@ Partial Class LogIn
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(32, 13)
         Me.Label4.TabIndex = 8
-        Me.Label4.Text = "V.2.3"
+        Me.Label4.Text = "V.2.4"
         '
         'LogIn
         '
