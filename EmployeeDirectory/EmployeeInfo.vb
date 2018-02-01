@@ -89,6 +89,7 @@
             DT_Birth.MaxDate = Date.Today.AddYears(-18)
             DT_SFCDate.Value = DateTime.Now
             DT_StartDate.Value = DateTime.Now
+            DT_SFCDate.Enabled = False
 
             'ClearDatePicker(DT_SFCDate)
             'ClearDatePicker(DT_StartDate)
@@ -155,10 +156,14 @@
             _EmpEditService.PopulateFields(Me)
             ResetDatePicker(DT_Birth)               '2018-01-29 6PM PUSH
             ResetDatePicker(DT_SFCDate)             '2018-01-29 6PM PUSH
-            ResetDatePicker(DT_StartDate)           '2018-01-29 6PM PUSH
+
         Else
             CB_Region.Text = SetListName(CB_Region, 1)
         End If
+
+        ResetDatePicker(DT_StartDate)           '2018-01-29 6PM PUSH
+
+
 
         Me.CB_SFC_SelectedIndexChanged(e, e)
         'If CB_SFC.Text = "No" Then
@@ -550,7 +555,7 @@
                 End If
             End If
 
-            End If
+        End If
 
     End Sub
 
