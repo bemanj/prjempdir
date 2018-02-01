@@ -2,6 +2,8 @@
     Private _isEdit As Boolean
     Private ClickSave As Boolean
     Public Revert As Boolean
+    Private BirthChange As Boolean = False
+
     Public Property IsEdit() As Boolean
         Get
             Return _isEdit
@@ -273,9 +275,13 @@
             .LastName = TB_LastName.Text
             .FirstName = TB_FirstName.Text
             .MiddleName = TB_MiddleName.Text
-            If Not DT_Birth.Text = String.Empty Then
+            'If Not DT_Birth.Text = String.Empty Then
+            '    .Birthday = CType(DT_Birth.Value, Date)
+            'End If
+            If BirthChange = True Then
                 .Birthday = CType(DT_Birth.Value, Date)
-
+            Else
+                .Birthday = Nothing
             End If
             .PersonalEmail = TB_PersonalEmail.Text
             If Not TB_MobileNo.Text = String.Empty Then
@@ -310,6 +316,8 @@
             If CB_SFC.SelectedItem = "No" Or IsNothing(CB_SFC.SelectedItem) Then
                 .SFCDate = Nothing
             End If
+
+
 
             .SeatNumber = TB_SeatNo.Text
             .LastAccessedBy = CurrentUser
@@ -462,7 +470,7 @@
             EmpInfo.ValidateClear()
             mR.ClearMgrValidate()
         End If
-
+        ResetDatePicker(DT_StartDate)
     End Sub
 
     'Rojohn- Commented out this codes since it is redundant to the Logout button
@@ -524,6 +532,7 @@
         '*** B KABAHAR - SPRINT 2
         TB_OracleID.Focus()
         '*** END - B KABAHAR SPRINT 2
+        ResetDatePicker(DT_StartDate)
 
     End Sub
     '*** START OF CHANGE - BK
@@ -562,7 +571,6 @@
     Private Sub DT_Birth_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DT_Birth.ValueChanged
 
         ResetDatePicker(DT_Birth)
-
     End Sub
 
     Private Sub TB_StartDate_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DT_StartDate.ValueChanged
