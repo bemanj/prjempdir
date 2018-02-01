@@ -129,13 +129,14 @@ Public Class ManagerRepository
             EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
             MgrValidate = 1
         Else
-            Dim _EmpEditService = New EmpEditService()
-            Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(EmployeeInfo.TB_OracleID.Text)
-            If _tempSelectedID Is Nothing Then
-                EmployeeInfo.Lbl_OracleID.ForeColor = Color.Black
-            Else
-                EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
-                MgrValidate = 3
+            EmployeeInfo.Lbl_OracleID.ForeColor = Color.Black
+            If EmployeeInfo.IsEdit = False Then 'This will add insert Oracle ID'
+                Dim _EmpEditService = New EmpEditService()
+                Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(EmployeeInfo.TB_OracleID.Text)
+                If Not _tempSelectedID Is Nothing Then
+                    EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
+                    MgrValidate = 3
+                End If
             End If
         End If
         ' **** END  : FIX INVALID ORACLE ID *** ' 
