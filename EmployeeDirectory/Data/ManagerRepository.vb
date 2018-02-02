@@ -136,6 +136,22 @@ Public Class ManagerRepository
             EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
         End If
 
+        ' **** START : FIX INVALID ORACLE ID *** ' 
+        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_OracleID.Text) Then
+            EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
+            MgrValidate = 1
+        Else
+            If EmployeeInfo.IsEdit = False Then 'This will add insert Oracle ID'
+                Dim _EmpEditService = New EmpEditService()
+                Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(EmployeeInfo.TB_OracleID.Text)
+                If Not _tempSelectedID Is Nothing Then
+                    EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
+                    MgrValidate = 3
+                End If
+            End If
+        End If
+        ' **** END  : FIX INVALID ORACLE ID *** ' 
+
         'If EmployeeInfo.TB_OracleID = Nothing Then
         '    IsMgrError = True 
         '    Lbl_OracleID.ForeColor = Color.Red
@@ -165,12 +181,18 @@ Public Class ManagerRepository
 
     Public Function ValidateOfficeEmail(EmailAddress) As Boolean
         ' Dim email As New Regex("^(?<user>[^@]+)@(?<host>.+)$")
-        Dim email As New Regex("([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})")
-        If email.IsMatch(EmailAddress) Then
-            Return True
-        Else
+        'Dim email As New Regex("([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})")
+        'If email.IsMatch(EmailAddress) Then
+        '    Return True
+        'Else
+        '    Return False
+        'End If
+        Try
+            Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
+        Catch ex As Exception
             Return False
-        End If
+        End Try
+        Return True
     End Function
 
     Public Sub ClearMgrValidate()
@@ -185,4 +207,9 @@ Public Class ManagerRepository
         EmployeeInfo.Lbl_ObTicket.ForeColor = Color.Black
 
     End Sub
+
+    Public Sub CheckDupOracleID()
+        EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
+    End Sub
+
 End Class

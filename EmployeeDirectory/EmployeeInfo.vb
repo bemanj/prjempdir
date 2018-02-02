@@ -428,8 +428,9 @@
                 retvalue = _empinfo.InsertData(_emp)        'fix to avoid error on duplicate Oracle ID's
                 If retvalue = 0 Then
                     ClearFields()
+                ElseIf retvalue = -1 Then
+                    mR.CheckDupOracleID()
                 End If
-
 
                 EmpInfo.ValidateClear()
                 mR.ClearMgrValidate()
