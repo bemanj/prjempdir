@@ -71,9 +71,13 @@ Public Class Main
         LogIn.Username.Focus()
     End Sub
 
-    Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_EmpInc.Click
-        Me.Hide()
-        incomplete.Show()
+    Private Sub Btn_EmpInc_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_EmpInc.Click
+        'Me.Hide()
+        'incomplete.Show()
+
+        Threading.Thread.Sleep(2000)
+        Dim webAddress As String = "http://mnl02s55581d1:3030/index.html"
+        Process.Start(webAddress)
     End Sub
 
     Private Sub BtnClose_Click(sender As System.Object, e As System.EventArgs) Handles BtnClose.Click
@@ -145,4 +149,7 @@ Public Class Main
         End If
     End Sub
 
+    Private Sub Btn_Search_Click(sender As System.Object, e As System.EventArgs) Handles Btn_Search.Click
+
+    End Sub
 End Class
