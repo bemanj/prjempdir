@@ -262,12 +262,17 @@ Public Class EmployeeRepository
 
     Public Function ValidateEmail(EmailAddress) As Boolean
         ' Dim email As New Regex("^(?<user>[^@]+)@(?<host>.+)$")
-        Dim email As New Regex("([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})")
-        If email.IsMatch(emailAddress) Then
-            Return True
-        Else
+        'Dim email As New Regex("([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})")
+        'If email.IsMatch(emailAddress) Then
+        '    Return True
+        'Else
+        '    Return False
+        'End If
+        Try
+            Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
+        Catch ex As Exception
             Return False
-        End If
+        End Try
+        Return True
     End Function
-
 End Class
