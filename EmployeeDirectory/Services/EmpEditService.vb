@@ -37,6 +37,9 @@
             .TB_MiddleName.Text = Employee.MiddleName
             If Employee.Birthday.HasValue Then                                  ' 2018-01-29 6PM PUSH
                 .DT_Birth.Value = CType(Employee.Birthday, Date)                ' Add New Field
+                EmployeeInfo.ResetDatePicker(EmployeeInfo.DT_Birth)
+            Else
+                EmployeeInfo.ClearDatePicker(EmployeeInfo.DT_Birth)
             End If                                                              ' 2018-01-29 6PM PUSH
             .TB_PersonalEmail.Text = Employee.PersonalEmail                     ' Change Field Name
             If Employee.MobileNo > 0 Then
