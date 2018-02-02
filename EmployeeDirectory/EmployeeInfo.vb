@@ -3,6 +3,8 @@
     Private ClickSave As Boolean
     Public Revert As Boolean
     Dim SFCDateEmpty As Integer
+    Private BirthChange As Boolean = False
+
     Public Property IsEdit() As Boolean
         Get
             Return _isEdit
@@ -88,6 +90,7 @@
             ClearDatePicker(DT_Birth)
             DT_Birth.Value = Date.Today.AddYears(-18)
             DT_Birth.MaxDate = Date.Today.AddYears(-18)
+            BirthChange = False
             DT_SFCDate.Value = DateTime.Now
             DT_StartDate.Value = DateTime.Now
             DT_SFCDate.Enabled = False
@@ -102,7 +105,7 @@
         '*** BK START OF CHANGE
         If CurrentUserType = 3 Then
             _EmpEditService.ProtectFields(Me)
-            Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CInt(CurrentUser))
+            Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CLng(CurrentUser))
             EmpEditService.Employee = _tempSelectedRow
         End If
         '*** BK END OF CHANGE
@@ -155,7 +158,7 @@
 
         If _isEdit Then
             _EmpEditService.PopulateFields(Me)
-            ResetDatePicker(DT_Birth)               '2018-01-29 6PM PUSH
+            '' ResetDatePicker(DT_Birth)               '2018-01-29 6PM PUSH
             ResetDatePicker(DT_SFCDate)             '2018-01-29 6PM PUSH
         Else
             CB_Region.Text = SetListName(CB_Region, 1)
@@ -272,9 +275,13 @@
             .LastName = TB_LastName.Text
             .FirstName = TB_FirstName.Text
             .MiddleName = TB_MiddleName.Text
-            If Not DT_Birth.Text = String.Empty Then
+            'If Not DT_Birth.Text = String.Empty Then
+            '    .Birthday = CType(DT_Birth.Value, Date)
+            'End If
+            If BirthChange = True Then
                 .Birthday = CType(DT_Birth.Value, Date)
-
+            Else
+                .Birthday = Nothing
             End If
             .PersonalEmail = TB_PersonalEmail.Text
             If Not TB_MobileNo.Text = String.Empty Then
@@ -479,7 +486,7 @@
             EmpInfo.ValidateClear()
             mR.ClearMgrValidate()
         End If
-
+        ResetDatePicker(DT_StartDate)
     End Sub
 
     'Rojohn- Commented out this codes since it is redundant to the Logout button
@@ -541,7 +548,7 @@
         '*** B KABAHAR - SPRINT 2
         TB_OracleID.Focus()
         '*** END - B KABAHAR SPRINT 2
-
+        ResetDatePicker(DT_StartDate)
     End Sub
     '*** START OF CHANGE - BK
     '*** B KABAHAR - SPRINT 2
@@ -578,9 +585,8 @@
     End Sub
 
     Private Sub DT_Birth_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DT_Birth.ValueChanged
-
         ResetDatePicker(DT_Birth)
-
+        BirthChange = True
     End Sub
 
     Private Sub TB_StartDate_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DT_StartDate.ValueChanged
@@ -595,14 +601,14 @@
 
     End Sub
 
-    Private Sub ResetDatePicker(ByVal dtPicker As Object)
+    Public Sub ResetDatePicker(ByVal dtPicker As Object)
         With dtPicker
             .Format = DateTimePickerFormat.Short
             .Enabled = True
         End With
     End Sub
 
-    Private Sub ClearDatePicker(ByVal dtPicker As Object)
+    Public Sub ClearDatePicker(ByVal dtPicker As Object)
         With dtPicker
             .Format = DateTimePickerFormat.Custom
             .CustomFormat = " "
