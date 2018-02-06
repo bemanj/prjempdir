@@ -22,9 +22,6 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.TB_MgrV_LastName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -34,7 +31,7 @@ Partial Class Main
         Me.TB_MgrV_OracleID = New System.Windows.Forms.TextBox()
         Me.DataGridViewEmployee = New System.Windows.Forms.DataGridView()
         Me.Btn_Search = New System.Windows.Forms.Button()
-        Me.Btn_Add = New System.Windows.Forms.Button()
+        Me.AddEmployeeButton = New System.Windows.Forms.Button()
         Me.BtnLogOut = New System.Windows.Forms.Button()
         Me.Btn_EmpInc = New System.Windows.Forms.Button()
         Me.BtnClose = New System.Windows.Forms.Button()
@@ -43,7 +40,7 @@ Partial Class Main
         Me.ButtonActive = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabelUser = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.Label_ManagerName = New System.Windows.Forms.Label()
+        Me.ManagerNameLabel = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.DataGridViewEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,38 +108,14 @@ Partial Class Main
         Me.DataGridViewEmployee.AllowUserToDeleteRows = False
         Me.DataGridViewEmployee.AllowUserToOrderColumns = True
         Me.DataGridViewEmployee.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridViewEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridViewEmployee.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewEmployee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewEmployee.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewEmployee.Location = New System.Drawing.Point(80, 339)
         Me.DataGridViewEmployee.Name = "DataGridViewEmployee"
         Me.DataGridViewEmployee.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewEmployee.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewEmployee.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DataGridViewEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewEmployee.Size = New System.Drawing.Size(1145, 442)
@@ -159,17 +132,17 @@ Partial Class Main
         Me.Btn_Search.Text = "Search"
         Me.Btn_Search.UseVisualStyleBackColor = False
         '
-        'Btn_Add
+        'AddEmployeeButton
         '
-        Me.Btn_Add.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Btn_Add.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Btn_Add.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Add.Location = New System.Drawing.Point(1145, 304)
-        Me.Btn_Add.Name = "Btn_Add"
-        Me.Btn_Add.Size = New System.Drawing.Size(80, 29)
-        Me.Btn_Add.TabIndex = 13
-        Me.Btn_Add.Text = "Add New"
-        Me.Btn_Add.UseVisualStyleBackColor = False
+        Me.AddEmployeeButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.AddEmployeeButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.AddEmployeeButton.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AddEmployeeButton.Location = New System.Drawing.Point(1105, 304)
+        Me.AddEmployeeButton.Name = "AddEmployeeButton"
+        Me.AddEmployeeButton.Size = New System.Drawing.Size(120, 29)
+        Me.AddEmployeeButton.TabIndex = 13
+        Me.AddEmployeeButton.Text = "Add Employee"
+        Me.AddEmployeeButton.UseVisualStyleBackColor = False
         '
         'BtnLogOut
         '
@@ -246,7 +219,7 @@ Partial Class Main
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabelUser})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 840)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 720)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1314, 22)
         Me.StatusStrip1.TabIndex = 94
@@ -258,17 +231,17 @@ Partial Class Main
         Me.ToolStripStatusLabelUser.Size = New System.Drawing.Size(79, 17)
         Me.ToolStripStatusLabelUser.Text = "Current User: "
         '
-        'Label_ManagerName
+        'ManagerNameLabel
         '
-        Me.Label_ManagerName.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label_ManagerName.AutoSize = True
-        Me.Label_ManagerName.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label_ManagerName.Location = New System.Drawing.Point(576, 217)
-        Me.Label_ManagerName.Name = "Label_ManagerName"
-        Me.Label_ManagerName.Size = New System.Drawing.Size(158, 19)
-        Me.Label_ManagerName.TabIndex = 0
-        Me.Label_ManagerName.Text = "Label_ManagerName"
-        Me.Label_ManagerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ManagerNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ManagerNameLabel.AutoSize = True
+        Me.ManagerNameLabel.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.ManagerNameLabel.Location = New System.Drawing.Point(576, 217)
+        Me.ManagerNameLabel.Name = "ManagerNameLabel"
+        Me.ManagerNameLabel.Size = New System.Drawing.Size(158, 19)
+        Me.ManagerNameLabel.TabIndex = 0
+        Me.ManagerNameLabel.Text = "Label_ManagerName"
+        Me.ManagerNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox1
         '
@@ -299,16 +272,16 @@ Partial Class Main
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1314, 862)
+        Me.ClientSize = New System.Drawing.Size(1314, 742)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ButtonActive)
         Me.Controls.Add(Me.LabelSFC)
         Me.Controls.Add(Me.BtnClose)
-        Me.Controls.Add(Me.Label_ManagerName)
+        Me.Controls.Add(Me.ManagerNameLabel)
         Me.Controls.Add(Me.Btn_EmpInc)
         Me.Controls.Add(Me.BtnLogOut)
         Me.Controls.Add(Me.ButtonSFC)
-        Me.Controls.Add(Me.Btn_Add)
+        Me.Controls.Add(Me.AddEmployeeButton)
         Me.Controls.Add(Me.Btn_Search)
         Me.Controls.Add(Me.DataGridViewEmployee)
         Me.Controls.Add(Me.Label5)
@@ -321,7 +294,7 @@ Partial Class Main
         Me.Controls.Add(Me.TB_MgrV_LastName)
         Me.Font = New System.Drawing.Font("Corbel", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MinimumSize = New System.Drawing.Size(1330, 900)
+        Me.MinimumSize = New System.Drawing.Size(1330, 726)
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "IT APP DEV EMPLOYEE DIRECTORY"
@@ -341,7 +314,7 @@ Partial Class Main
     Friend WithEvents TB_MgrV_OracleID As System.Windows.Forms.TextBox
     Friend WithEvents DataGridViewEmployee As System.Windows.Forms.DataGridView
     Friend WithEvents Btn_Search As System.Windows.Forms.Button
-    Friend WithEvents Btn_Add As System.Windows.Forms.Button
+    Friend WithEvents AddEmployeeButton As System.Windows.Forms.Button
     Friend WithEvents BtnLogOut As System.Windows.Forms.Button
     Friend WithEvents Btn_EmpInc As System.Windows.Forms.Button
     Friend WithEvents BtnClose As System.Windows.Forms.Button
@@ -350,7 +323,7 @@ Partial Class Main
     Friend WithEvents ButtonActive As System.Windows.Forms.Button
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents ToolStripStatusLabelUser As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents Label_ManagerName As System.Windows.Forms.Label
+    Friend WithEvents ManagerNameLabel As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
 

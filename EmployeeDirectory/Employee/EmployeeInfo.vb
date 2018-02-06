@@ -63,10 +63,6 @@
     End Sub
 
 
-    Private Sub TextBox26_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
     Public Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         'ROJOHN - Earliest possible birth year is 1999 = 18 years old minimum age of employment
@@ -223,8 +219,8 @@
         LogIn.Show()
         LogIn.LogIn_Load(e, e)
 
-        LogIn.Username.Clear()
-        LogIn.UsernamePassword.Clear()
+        LogIn.UsernameTextBox.Clear()
+        LogIn.PasswordTextBox.Clear()
 
     End Sub
 
@@ -555,7 +551,7 @@
     Private Sub CB_SFC_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_SFC.SelectedIndexChanged
         Dim _emp As New Employee
         If CB_SFC.Text = "No" Then
-            ClearDatePicker(DT_SFCDate)
+            ClearDatePicker(DT_SFCDate) 'rename descriptive function name
             DT_SFCDate.Enabled = False
             SFCDateEmpty = 0
         ElseIf CB_SFC.Text = "Yes" Then
@@ -563,10 +559,11 @@
             'BUG #51
 
 
-            ResetDatePicker(DT_SFCDate)
-            ClearDatePicker(DT_SFCDate)
+            ResetDatePicker(DT_SFCDate) 'rename descriptive function name
+            ClearDatePicker(DT_SFCDate) 'rename descriptive function name
 
-            If Main.Sfc = True Then
+            'FOR DELETION BUT CHECK IT FIRST
+            If Main.IsSFC = True Then
                 'ResetDatePicker(DT_SFCDate)
                 ClearDatePicker(DT_SFCDate)
                 ResetDatePicker(DT_SFCDate)

@@ -1,16 +1,16 @@
-﻿Imports System.Data.SqlClient
-Imports System.Configuration
+﻿'Imports System.Data.SqlClient
+'Imports System.Configuration
 Imports System.ComponentModel
 
 Public Class Main
-    Dim eR As New EmployeeRepository
+    'Dim eR As New EmployeeRepository
     Dim mR As New ManagerRepository
-    Dim _EmpEditService As New EmpEditService
-    Public Sfc As Boolean
-    Public Add As Boolean
+    Dim _EmpEditService As New EmpEditService           'rename to standard, dependcy inject, private
+    Public IsSFC As Boolean 'private
+    'Public Add As Boolean
 
 
-    Dim emp As New Employee
+    'Dim emp As New Employee
     Dim _LoginView As New LoginView
     Dim mg As New ManagerGrid
 
@@ -18,9 +18,13 @@ Public Class Main
     Dim ls As New List(Of ManagerGrid)
 
     Public Sub New()
-        InitializeComponent()
-    End Sub
 
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     Private Sub Main_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
     End Sub
@@ -35,16 +39,16 @@ Public Class Main
         'End If
 
         ButtonActive_Click(e, e)
-        If CurrentUserType = 2 Then          
+        If CurrentUserType = 2 Then
             ToolStripStatusLabelUser.Text = "Current User: " & _LoginView.FirstName & " " & _LoginView.LastName
         Else
             ToolStripStatusLabelUser.Text = "Current User: Admin"
-            Label_ManagerName.Text = "Hello Admin!"
+            ManagerNameLabel.Text = "Hello Admin!"
         End If
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_Add.Click
-        Add = True
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddEmployeeButton.Click
+        'Add = True
         EmployeeInfo.TB_OracleID.Enabled = True
         EmployeeInfo.IsEdit = False
         EmployeeInfo.Btn_RevertClear.Text = "Clear"
@@ -63,12 +67,12 @@ Public Class Main
     End Sub
 
     Public Sub BtnLogOut_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogOut.Click
-        BtnClose.Hide()                
+        BtnClose.Hide()
         Me.Hide()
         LogIn.Show()
-        LogIn.UsernamePassword.Clear()
-        LogIn.Username.Clear()
-        LogIn.Username.Focus()
+        LogIn.PasswordTextBox.Clear()
+        LogIn.UsernameTextBox.Clear()
+        LogIn.UsernameTextBox.Focus()
     End Sub
 
     Private Sub Btn_EmpInc_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_EmpInc.Click
@@ -80,7 +84,7 @@ Public Class Main
         Process.Start(webAddress)
     End Sub
 
-    Private Sub BtnClose_Click(sender As System.Object, e As System.EventArgs) Handles BtnClose.Click
+    Private Sub BtnClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnClose.Click
         Me.Hide()
         admin.Show()
     End Sub
@@ -122,16 +126,16 @@ Public Class Main
         Return dt
     End Function
 
-    Public Sub ButtonSFC_Click(sender As System.Object, e As System.EventArgs) Handles ButtonSFC.Click
-        Sfc = True
+    Public Sub ButtonSFC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonSFC.Click
+        IsSFC = True
         LabelSFC.Text = "SFC Employees"
         mg.OracleID = CurrentUser
         mg.SFC = True
         ReloadDataGridWithSort()
     End Sub
 
-    Public Sub ButtonActive_Click(sender As System.Object, e As System.EventArgs) Handles ButtonActive.Click
-        Sfc = False
+    Public Sub ButtonActive_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonActive.Click
+        IsSFC = False
         LabelSFC.Text = "Current Employees"
         mg.OracleID = CurrentUser
         mg.SFC = False

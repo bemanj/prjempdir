@@ -8,7 +8,7 @@
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
         Me.Hide()
         LogIn.Show()
-        LogIn.Username.Text = " "
-        LogIn.UsernamePassword.Text = ""
+        LogIn.UsernameTextBox.Text = " "
+        LogIn.PasswordTextBox.Text = ""
     End Sub
 End Class

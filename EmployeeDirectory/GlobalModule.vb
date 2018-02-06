@@ -1,6 +1,9 @@
 ﻿Imports System.Runtime.CompilerServices
 
 Public Module GlobalModule
+
+
+    Public Const MessageRequiredFields As String = "Please enter required field/s"
     Public Property CurrentUser As Long
     Public Property CurrentUserType As Integer
 
@@ -38,7 +41,7 @@ Public Module GlobalModule
 
         Dim j As Integer = sitecombo.Items.Count
         Dim _site As New Site()
-        
+
 
         Dim i As Integer = 0
 

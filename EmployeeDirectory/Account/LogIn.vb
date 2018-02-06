@@ -1,14 +1,25 @@
 ﻿Public Class LogIn
 
-    Private _LoginRepository As New LoginRepository
-    Private _LoginView As New LoginView
-    Private mg As New ManagerGrid
-    Private mR As New ManagerRepository
-    Private dt As New DataTable
-    Private ls As New List(Of ManagerGrid)
-    Private _LogInService As New LogInService
+    'Private _LoginRepository As New LoginRepository
+    'Private loginView As New LoginView
+    ' Private mg As New ManagerGrid
+    'Private _managerRepository As ManagerRepository
+    'Private dt As New DataTable
+    ' Private ls As New List(Of ManagerGrid)
+    Private _loginService As LogInService
 
-    Private Sub SignIn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SignIn_Btn.Click
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        '_managerRepository = New ManagerRepository()
+        _loginService = New LogInService()
+    End Sub
+
+    Private Sub SignInButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SignInButton.Click
+        
         'Dim _LoginViewTemp = _LogInService.SelectUser(Username.Text, UsernamePassword.Text)
         'If Username.Text = Nothing Or              '***BUG FIXED - jlavares 01/31/2018*****
         '    Not IsNumeric(Username.Text) Then      ' - changed to create generic message for scty purpose
@@ -20,54 +31,54 @@
         'ElseIf UsernamePassword.Text = Nothing Then
         '    MsgBox("Blank Password")
 
-        Dim ChrCnt As Long = 0                          '***BUG FIXED - jlavares 02/1/2018*****
-        Dim PwdChrCnt As Long = 0                       ' - changed to handle data value overflow
-        ChrCnt = Username.Text.Length                   ' - change the msgbox title and add new message
-        PwdChrCnt = UsernamePassword.Text.Length
+        Dim tempCharCount As Long = 0                          '***BUG FIXED - jlavares 02/1/2018*****
+        Dim tempPasswordCharCount As Long = 0                       ' - changed to handle data value overflow
+        tempCharCount = UsernameTextBox.Text.Length                   ' - change the msgbox title and add new message
+        tempPasswordCharCount = PasswordTextBox.Text.Length
 
-        If Username.Text = Nothing Or
-            UsernamePassword.Text = Nothing Then
+        If UsernameTextBox.Text = Nothing Or
+            PasswordTextBox.Text = Nothing Then
 
-            MessageBox.Show("Please enter required field/s", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Username.Clear()
-            UsernamePassword.Clear()
-            Username.Focus()
-        ElseIf Not IsNumeric(Username.Text) Or
-            ChrCnt > 10 Or
-            PwdChrCnt > 10 Then
+            MessageBox.Show(MessageRequiredFields, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            clearAndFocus()
+        ElseIf Not IsNumeric(UsernameTextBox.Text) Or
+            tempCharCount > 10 Or
+            tempPasswordCharCount > 10 Then
 
             MessageBox.Show("Invalid UserName or Password", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Username.Clear()
-            UsernamePassword.Clear()
-            Username.Focus()
+            clearAndFocus()
         Else
-            Dim _LoginViewTemp = _LogInService.SelectUser(Username.Text, UsernamePassword.Text)
+            Dim tempLoginView = _loginService.SelectUser(UsernameTextBox.Text, PasswordTextBox.Text)
 
-            If IsNothing(_LoginViewTemp) Or
-                IsDBNull(_LoginViewTemp) Then
-                RecorNotFound.Show()
+            If IsNothing(tempLoginView) Or
+                IsDBNull(tempLoginView) Then
+                RecorNotFound.ShowDialog()
                 RecorNotFound.Label2.Text = "PLEASE CONTACT YOUR MANAGER"
             Else
-                CurrentUser = _LoginViewTemp.OracleID
-                CurrentUserType = _LoginViewTemp.UserType
+                CurrentUser = tempLoginView.OracleID
+                CurrentUserType = tempLoginView.UserType
                 If CurrentUserType = 1 Then     'ADMIN'
                     Me.Hide()
-                    admin.Show()
+                    Admin.Show()
                 ElseIf CurrentUserType = 2 Then 'MANAGER'
-                    EmployeeInfo.TB_SiteZip.Enabled = False
                     Me.Hide()
-                    ''''' ***** LMRS START: Code to display Manager's Name ***** '''''
-                    Main.Label_ManagerName.Text = (_LoginViewTemp.LastName & ", " & _LoginViewTemp.FirstName & " " & _LoginViewTemp.MiddleName)
-                    ''''' ***** LMRS END: Code to display Manager's Name ***** '''''
                     Main.Show()
-                    Main.ToolStripStatusLabelUser.Text = "Current User: " & _LoginViewTemp.FirstName & " " & _LoginViewTemp.LastName
-                    dt.Clear()
+
+                    ''FOR TRANSFER IN DESIGNATED FORM BY: RAIN AND BERT 2018
+                    EmployeeInfo.TB_SiteZip.Enabled = False
+                    ''''' ***** LMRS START: Code to display Manager's Name ***** '''''
+                    Main.ManagerNameLabel.Text = (tempLoginView.LastName & ", " & tempLoginView.FirstName & " " & tempLoginView.MiddleName)
+                    ''''' ***** LMRS END: Code to display Manager's Name ***** '''''
+                    Main.ToolStripStatusLabelUser.Text = "Current User: " & tempLoginView.FirstName & " " & tempLoginView.LastName
+                    'dt.Clear()
                     Main.ButtonActive_Click(e, e)
 
                 ElseIf CurrentUserType = 3 Then 'USER'
                     Me.Hide()
-                    EmployeeInfo.IsEdit = True
                     EmployeeInfo.Show()
+
+                    'FOR TRANSFER IN DESIGNATED FORM BY: RAIN AND BERT 2018
+                    EmployeeInfo.IsEdit = True
                     EmployeeInfo.EmployeeInfo_Load(e, e)
                     EmployeeInfo.Btn_Cancel.Hide()
                     EmployeeInfo.TB_OracleID.Enabled = False
@@ -96,7 +107,7 @@
                     EmployeeInfo.TB_EISID.Enabled = False
                     EmployeeInfo.TB_OraclePRD.Enabled = False
                 Else
-                    RecorNotFound.Show()
+                    RecorNotFound.ShowDialog()
                     RecorNotFound.Label2.Text = "PLEASE CONTACT ADMIN"
                 End If
             End If
@@ -104,25 +115,29 @@
     End Sub
 
     Public Sub LogIn_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Username.Clear()
-        UsernamePassword.Clear()
-        Username.Focus()
+        clearAndFocus()
     End Sub
 
     '***** Will perform Submit Button when Enter is pressed *******
-    Private Sub LoginTextBoxes_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Username.KeyPress, UsernamePassword.KeyPress
+    Private Sub LoginTextBoxes_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles UsernameTextBox.KeyPress, PasswordTextBox.KeyPress
         'If sender.GetType() = GetType(TextBox) Then
         '    If CType(sender, TextBox).Name = "NameTextBox" Then
         '        NameTextBoxKeyPress()
         '    End If
         'End If
         If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
-            Me.SignIn_Click(sender, e)
+            Me.SignInButton_Click(sender, e)
         End If
     End Sub
 
     'Private Sub NameTextBoxKeyPress()
 
     'End Sub
+
+    Private Sub clearAndFocus()
+        UsernameTextBox.Clear()
+        PasswordTextBox.Clear()
+        UsernameTextBox.Focus()
+    End Sub
 
 End Class

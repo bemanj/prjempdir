@@ -24,9 +24,9 @@ Partial Class LogIn
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogIn))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Username = New System.Windows.Forms.TextBox()
-        Me.UsernamePassword = New System.Windows.Forms.TextBox()
-        Me.SignIn_Btn = New System.Windows.Forms.Button()
+        Me.UsernameTextBox = New System.Windows.Forms.TextBox()
+        Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.SignInButton = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -46,39 +46,39 @@ Partial Class LogIn
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "SIGN IN WITH YOUR CREDENTIALS"
         '
-        'Username
+        'UsernameTextBox
         '
-        Me.Username.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.Username.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Username.Location = New System.Drawing.Point(203, 198)
-        Me.Username.MaxLength = 10
-        Me.Username.Name = "Username"
-        Me.Username.Size = New System.Drawing.Size(227, 22)
-        Me.Username.TabIndex = 3
-        Me.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.UsernameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.UsernameTextBox.ForeColor = System.Drawing.SystemColors.Desktop
+        Me.UsernameTextBox.Location = New System.Drawing.Point(203, 198)
+        Me.UsernameTextBox.MaxLength = 10
+        Me.UsernameTextBox.Name = "UsernameTextBox"
+        Me.UsernameTextBox.Size = New System.Drawing.Size(227, 22)
+        Me.UsernameTextBox.TabIndex = 3
+        Me.UsernameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'UsernamePassword
+        'PasswordTextBox
         '
-        Me.UsernamePassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.UsernamePassword.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.UsernamePassword.Location = New System.Drawing.Point(203, 244)
-        Me.UsernamePassword.MaxLength = 10
-        Me.UsernamePassword.Name = "UsernamePassword"
-        Me.UsernamePassword.Size = New System.Drawing.Size(227, 22)
-        Me.UsernamePassword.TabIndex = 4
-        Me.UsernamePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.UsernamePassword.UseSystemPasswordChar = True
+        Me.PasswordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.PasswordTextBox.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.PasswordTextBox.Location = New System.Drawing.Point(203, 244)
+        Me.PasswordTextBox.MaxLength = 10
+        Me.PasswordTextBox.Name = "PasswordTextBox"
+        Me.PasswordTextBox.Size = New System.Drawing.Size(227, 22)
+        Me.PasswordTextBox.TabIndex = 4
+        Me.PasswordTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.PasswordTextBox.UseSystemPasswordChar = True
         '
-        'SignIn_Btn
+        'SignInButton
         '
-        Me.SignIn_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.SignIn_Btn.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SignIn_Btn.Location = New System.Drawing.Point(203, 282)
-        Me.SignIn_Btn.Name = "SignIn_Btn"
-        Me.SignIn_Btn.Size = New System.Drawing.Size(227, 37)
-        Me.SignIn_Btn.TabIndex = 5
-        Me.SignIn_Btn.Text = "SIGN IN"
-        Me.SignIn_Btn.UseVisualStyleBackColor = False
+        Me.SignInButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.SignInButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SignInButton.Location = New System.Drawing.Point(203, 282)
+        Me.SignInButton.Name = "SignInButton"
+        Me.SignInButton.Size = New System.Drawing.Size(227, 37)
+        Me.SignInButton.TabIndex = 5
+        Me.SignInButton.Text = "SIGN IN"
+        Me.SignInButton.UseVisualStyleBackColor = False
         '
         'PictureBox2
         '
@@ -137,9 +137,9 @@ Partial Class LogIn
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.SignIn_Btn)
-        Me.Controls.Add(Me.UsernamePassword)
-        Me.Controls.Add(Me.Username)
+        Me.Controls.Add(Me.SignInButton)
+        Me.Controls.Add(Me.PasswordTextBox)
+        Me.Controls.Add(Me.UsernameTextBox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -158,9 +158,9 @@ Partial Class LogIn
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Username As System.Windows.Forms.TextBox
-    Friend WithEvents UsernamePassword As System.Windows.Forms.TextBox
-    Friend WithEvents SignIn_Btn As System.Windows.Forms.Button
+    Friend WithEvents UsernameTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents PasswordTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents SignInButton As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
