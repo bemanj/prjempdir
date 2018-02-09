@@ -30,9 +30,9 @@ Partial Class Main
         Me.EmployeeDataGridView = New System.Windows.Forms.DataGridView()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.AddEmployeeButton = New System.Windows.Forms.Button()
-        Me.BtnLogOut = New System.Windows.Forms.Button()
-        Me.Btn_EmpInc = New System.Windows.Forms.Button()
-        Me.BtnClose = New System.Windows.Forms.Button()
+        Me.LogOutButton = New System.Windows.Forms.Button()
+        Me.EmployeeIncButton = New System.Windows.Forms.Button()
+        Me.CloseButton = New System.Windows.Forms.Button()
         Me.InactiveButton = New System.Windows.Forms.Button()
         Me.EmployeeListLabel = New System.Windows.Forms.Label()
         Me.ActiveButton = New System.Windows.Forms.Button()
@@ -126,44 +126,45 @@ Partial Class Main
         Me.AddEmployeeButton.Text = "Add Employee"
         Me.AddEmployeeButton.UseVisualStyleBackColor = False
         '
-        'BtnLogOut
+        'LogOutButton
         '
-        Me.BtnLogOut.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnLogOut.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnLogOut.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLogOut.ForeColor = System.Drawing.Color.White
-        Me.BtnLogOut.Location = New System.Drawing.Point(1134, 12)
-        Me.BtnLogOut.Name = "BtnLogOut"
-        Me.BtnLogOut.Size = New System.Drawing.Size(120, 38)
-        Me.BtnLogOut.TabIndex = 89
-        Me.BtnLogOut.Text = "LOGOUT"
-        Me.BtnLogOut.UseVisualStyleBackColor = False
+        Me.LogOutButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LogOutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LogOutButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogOutButton.ForeColor = System.Drawing.Color.White
+        Me.LogOutButton.Location = New System.Drawing.Point(1134, 12)
+        Me.LogOutButton.Name = "LogOutButton"
+        Me.LogOutButton.Size = New System.Drawing.Size(120, 38)
+        Me.LogOutButton.TabIndex = 89
+        Me.LogOutButton.Text = "LOGOUT"
+        Me.LogOutButton.UseVisualStyleBackColor = False
         '
-        'Btn_EmpInc
+        'EmployeeIncButton
         '
-        Me.Btn_EmpInc.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Btn_EmpInc.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Btn_EmpInc.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_EmpInc.Location = New System.Drawing.Point(81, 819)
-        Me.Btn_EmpInc.Name = "Btn_EmpInc"
-        Me.Btn_EmpInc.Size = New System.Drawing.Size(245, 29)
-        Me.Btn_EmpInc.TabIndex = 90
-        Me.Btn_EmpInc.Text = "EMPLOYEE INCOMPLETE DATA"
-        Me.Btn_EmpInc.UseVisualStyleBackColor = False
+        Me.EmployeeIncButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.EmployeeIncButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.EmployeeIncButton.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeIncButton.ForeColor = System.Drawing.Color.White
+        Me.EmployeeIncButton.Location = New System.Drawing.Point(80, 677)
+        Me.EmployeeIncButton.Name = "EmployeeIncButton"
+        Me.EmployeeIncButton.Size = New System.Drawing.Size(245, 29)
+        Me.EmployeeIncButton.TabIndex = 90
+        Me.EmployeeIncButton.Text = "EMPLOYEE INCOMPLETE DATA"
+        Me.EmployeeIncButton.UseVisualStyleBackColor = False
         '
-        'BtnClose
+        'CloseButton
         '
-        Me.BtnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnClose.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnClose.ForeColor = System.Drawing.Color.White
-        Me.BtnClose.Location = New System.Drawing.Point(1134, 56)
-        Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(120, 38)
-        Me.BtnClose.TabIndex = 91
-        Me.BtnClose.Text = " CLOSE"
-        Me.BtnClose.UseVisualStyleBackColor = False
-        Me.BtnClose.Visible = False
+        Me.CloseButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CloseButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.CloseButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CloseButton.ForeColor = System.Drawing.Color.White
+        Me.CloseButton.Location = New System.Drawing.Point(1134, 56)
+        Me.CloseButton.Name = "CloseButton"
+        Me.CloseButton.Size = New System.Drawing.Size(120, 38)
+        Me.CloseButton.TabIndex = 91
+        Me.CloseButton.Text = " CLOSE"
+        Me.CloseButton.UseVisualStyleBackColor = False
+        Me.CloseButton.Visible = False
         '
         'InactiveButton
         '
@@ -263,10 +264,10 @@ Partial Class Main
         Me.Controls.Add(Me.MainStatusStrip)
         Me.Controls.Add(Me.ActiveButton)
         Me.Controls.Add(Me.EmployeeListLabel)
-        Me.Controls.Add(Me.BtnClose)
+        Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.ManagerNameLabel)
-        Me.Controls.Add(Me.Btn_EmpInc)
-        Me.Controls.Add(Me.BtnLogOut)
+        Me.Controls.Add(Me.EmployeeIncButton)
+        Me.Controls.Add(Me.LogOutButton)
         Me.Controls.Add(Me.InactiveButton)
         Me.Controls.Add(Me.AddEmployeeButton)
         Me.Controls.Add(Me.SearchButton)
@@ -298,9 +299,9 @@ Partial Class Main
     Friend WithEvents EmployeeDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents SearchButton As System.Windows.Forms.Button
     Friend WithEvents AddEmployeeButton As System.Windows.Forms.Button
-    Friend WithEvents BtnLogOut As System.Windows.Forms.Button
-    Friend WithEvents Btn_EmpInc As System.Windows.Forms.Button
-    Friend WithEvents BtnClose As System.Windows.Forms.Button
+    Friend WithEvents LogOutButton As System.Windows.Forms.Button
+    Friend WithEvents EmployeeIncButton As System.Windows.Forms.Button
+    Friend WithEvents CloseButton As System.Windows.Forms.Button
     Friend WithEvents InactiveButton As System.Windows.Forms.Button
     Friend WithEvents EmployeeListLabel As System.Windows.Forms.Label
     Friend WithEvents ActiveButton As System.Windows.Forms.Button

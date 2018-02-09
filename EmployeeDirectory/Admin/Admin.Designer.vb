@@ -24,8 +24,8 @@ Partial Class Admin
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Admin))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ButtonGridView = New System.Windows.Forms.Button()
-        Me.Btn_Logout = New System.Windows.Forms.Button()
+        Me.EmployeeDirButton = New System.Windows.Forms.Button()
+        Me.LogoutButton = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,29 +41,29 @@ Partial Class Admin
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "WELCOME ADMIN!"
         '
-        'ButtonGridView
+        'EmployeeDirButton
         '
-        Me.ButtonGridView.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ButtonGridView.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonGridView.ForeColor = System.Drawing.Color.White
-        Me.ButtonGridView.Location = New System.Drawing.Point(203, 192)
-        Me.ButtonGridView.Name = "ButtonGridView"
-        Me.ButtonGridView.Size = New System.Drawing.Size(223, 33)
-        Me.ButtonGridView.TabIndex = 4
-        Me.ButtonGridView.Text = "EMPLOYEE DIRECTORY"
-        Me.ButtonGridView.UseVisualStyleBackColor = False
+        Me.EmployeeDirButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.EmployeeDirButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeDirButton.ForeColor = System.Drawing.Color.White
+        Me.EmployeeDirButton.Location = New System.Drawing.Point(203, 192)
+        Me.EmployeeDirButton.Name = "EmployeeDirButton"
+        Me.EmployeeDirButton.Size = New System.Drawing.Size(223, 33)
+        Me.EmployeeDirButton.TabIndex = 4
+        Me.EmployeeDirButton.Text = "EMPLOYEE DIRECTORY"
+        Me.EmployeeDirButton.UseVisualStyleBackColor = False
         '
-        'Btn_Logout
+        'LogoutButton
         '
-        Me.Btn_Logout.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Btn_Logout.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Logout.ForeColor = System.Drawing.Color.White
-        Me.Btn_Logout.Location = New System.Drawing.Point(203, 270)
-        Me.Btn_Logout.Name = "Btn_Logout"
-        Me.Btn_Logout.Size = New System.Drawing.Size(223, 33)
-        Me.Btn_Logout.TabIndex = 5
-        Me.Btn_Logout.Text = "LOGOUT"
-        Me.Btn_Logout.UseVisualStyleBackColor = False
+        Me.LogoutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LogoutButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogoutButton.ForeColor = System.Drawing.Color.White
+        Me.LogoutButton.Location = New System.Drawing.Point(203, 270)
+        Me.LogoutButton.Name = "LogoutButton"
+        Me.LogoutButton.Size = New System.Drawing.Size(223, 33)
+        Me.LogoutButton.TabIndex = 5
+        Me.LogoutButton.Text = "LOGOUT"
+        Me.LogoutButton.UseVisualStyleBackColor = False
         '
         'Button3
         '
@@ -93,8 +93,8 @@ Partial Class Admin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(659, 359)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Btn_Logout)
-        Me.Controls.Add(Me.ButtonGridView)
+        Me.Controls.Add(Me.LogoutButton)
+        Me.Controls.Add(Me.EmployeeDirButton)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -111,7 +111,7 @@ Partial Class Admin
     End Sub
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ButtonGridView As System.Windows.Forms.Button
-    Friend WithEvents Btn_Logout As System.Windows.Forms.Button
+    Friend WithEvents EmployeeDirButton As System.Windows.Forms.Button
+    Friend WithEvents LogoutButton As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class

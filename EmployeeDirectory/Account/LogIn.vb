@@ -21,7 +21,6 @@
     End Sub
 
     Private Sub SignInButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SignInButton.Click
-
         Dim tempCharCount As Long = 0
         Dim tempPasswordCharCount As Long = 0
         tempCharCount = UsernameTextBox.Text.Length
@@ -54,6 +53,7 @@
                         Main.Show()
                         Me.Dispose()
                     Case 3
+                        UserAccount.SelectedOracleID = UserAccount.UserID
                         EmployeeInfo.Show()
                         Me.Dispose()
                     Case Else
@@ -72,4 +72,7 @@
         End If
     End Sub
 
+    Private Sub LogIn_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
+    End Sub
 End Class

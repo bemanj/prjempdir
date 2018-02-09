@@ -3,7 +3,7 @@
 Public Class Main
 
     Dim mR As New ManagerRepository
-    Dim _EmpEditService As New EmpEditService           'rename to standard, dependcy inject, private
+    Dim _EmpEditService As New EmpEditService           'rename to standard, dependency inject, private
     'Private IsSFC As Boolean 'private
 
 
@@ -57,6 +57,7 @@ Public Class Main
         mg.SFC = False
         ReloadDataGridWithSort()
     End Sub
+
 #End Region
 
     Private Sub Main_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
@@ -64,18 +65,18 @@ Public Class Main
     End Sub
 
     Public Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'ShowActiveEmployees()
         ActiveButton.Focus()
 
-        If UserAccount.UserType = 2 Then
-            UserToolStripStatusLabel.Text = "Current User: " & _LoginView.FirstName & " " & _LoginView.LastName
-            ManagerNameLabel.Text = ("Employee(s) under " & UserAccount.UserName)
-            UserToolStripStatusLabel.Text = "Current User: " & UserAccount.UserName
+        If UserAccount.UserType = 2 Then                    ' MANAGER
+            CloseButton.Hide()
             ShowActiveEmployees()
-        Else
-            UserToolStripStatusLabel.Text = "Current User: Admin"
-            ManagerNameLabel.Text = "Hello Admin!"
+        ElseIf UserAccount.UserType = 1 Then                ' ADMIN
+            CloseButton.Show()
         End If
+
+        UserToolStripStatusLabel.Text = "Current User: " & _LoginView.FirstName & " " & _LoginView.LastName
+        ManagerNameLabel.Text = ("Employee(s) under " & UserAccount.UserName)
+        UserToolStripStatusLabel.Text = "Current User: " & UserAccount.UserName
     End Sub
 
     Private Sub AddEmployeeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddEmployeeButton.Click
@@ -90,32 +91,33 @@ Public Class Main
 
     End Sub
 
-    Public Sub BtnLogOut_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnLogOut.Click
-        BtnClose.Hide()
-        Me.Hide()
+    Public Sub LogOutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogOutButton.Click
+        CloseButton.Hide()
+        Me.Dispose()
         LogIn.Show()
         LogIn.PasswordTextBox.Clear()
         LogIn.UsernameTextBox.Clear()
         LogIn.UsernameTextBox.Focus()
     End Sub
 
-    Private Sub Btn_EmpInc_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_EmpInc.Click
+    Private Sub EmployeeIncButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EmployeeIncButton.Click
         Threading.Thread.Sleep(2000)
         Dim webAddress As String = "http://mnl02s55581d1:3030/index.html"
         Process.Start(webAddress)
     End Sub
 
-    Private Sub BtnClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnClose.Click
-        Me.Hide()
+    Private Sub CloseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseButton.Click
+        Me.Dispose()
         Admin.Show()
     End Sub
 
     Private Sub EmployeeDataGridView_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles EmployeeDataGridView.CellDoubleClick
         If Not e.RowIndex = -1 Then                                                                                                                 '   - to handle index out of range error
             Try
-                Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CLng(Me.EmployeeDataGridView.SelectedRows(0).Cells("OracleID").Value)) '- set SelectionSet property to FullRowSelect
+                'Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CLng(Me.EmployeeDataGridView.SelectedRows(0).Cells("OracleID").Value)) '- set SelectionSet property to FullRowSelect
                 'EmployeeInfo.EmpEditService.Employee = _tempSelectedRow
-                EmployeeInfo.emp = _tempSelectedRow
+                'EmployeeInfo.emp = _tempSelectedRow
+                UserAccount.SelectedOracleID = CLng(Me.EmployeeDataGridView.SelectedRows(0).Cells("OracleID").Value)
                 UserAccount.IsEdit = True
                 EmployeeInfo.ShowDialog()
             Catch ex As Exception
@@ -136,4 +138,5 @@ Public Class Main
     Public Sub ActiveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ActiveButton.Click
         ShowActiveEmployees()
     End Sub
+
 End Class

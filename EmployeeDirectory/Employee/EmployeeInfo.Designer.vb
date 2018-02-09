@@ -442,6 +442,7 @@ Partial Class EmployeeInfo
         '
         'StartDatePicker
         '
+        Me.StartDatePicker.CustomFormat = ""
         Me.StartDatePicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.StartDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.StartDatePicker.Location = New System.Drawing.Point(504, 197)

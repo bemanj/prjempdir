@@ -10,23 +10,23 @@
         End Set
     End Property
 
-    Private Shared _UserType As Integer
+    Private Shared _userType As Integer
     Public Shared Property UserType() As Integer
         Get
-            Return _UserType
+            Return _userType
         End Get
         Set(ByVal value As Integer)
-            _UserType = value
+            _userType = value
         End Set
     End Property
 
-    Private Shared _UserName As String
+    Private Shared _userName As String
     Public Shared Property UserName() As String
         Get
-            Return _UserName
+            Return _userName
         End Get
         Set(ByVal value As String)
-            _UserName = value
+            _userName = value
         End Set
     End Property
 
@@ -41,5 +41,13 @@
     End Property
 
 
-
+    Private Shared _selectedOracleID As Long
+    Public Shared Property SelectedOracleID() As Long
+        Get
+            Return _selectedOracleID
+        End Get
+        Set(ByVal value As Long)
+            _selectedOracleID = value
+        End Set
+    End Property
 End Class
