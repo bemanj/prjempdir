@@ -1,9 +1,25 @@
 ﻿Public Class EmployeeInfo
 
     Private ClickSave As Boolean
-    Public Revert As Boolean
+    'Public Revert As Boolean
     Dim SFCDateEmpty As Integer
     Private BirthChange As Boolean = False
+    Dim mR As New ManagerRepository
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        _empinfo = New EmployeeRepository()
+
+        _EmpEditService = New EmpEditService()
+
+        _emp = New Employee
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
 
 #Region "PROPERTIES"
     Private _IsMgrError As Boolean
@@ -58,22 +74,7 @@
 
 #End Region
    
-    Dim mR As New ManagerRepository
-
-    Public Sub New()
-
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        _empinfo = New EmployeeRepository()
-
-        _EmpEditService = New EmpEditService()
-
-        _emp = New Employee
-
-        ' Add any initialization after the InitializeComponent() call.
-
-    End Sub
+    
 
 #Region "SUB ROUTINES"
 
@@ -151,11 +152,14 @@
             Else
                 .ClearDatePicker(.StartDatePicker)
             End If
-            If _emp.SFCDate.HasValue Then
-                .SFCDatePicker.Value = CType(_emp.SFCDate, Date)
-            End If
-            .SFCComboBox.SelectedItem = _emp.SFC
+            'If _emp.SFCDate.HasValue Then
+            '    .SFCDatePicker.Value = CType(_emp.SFCDate, Date)
+            '    .ResetDatePicker(.SFCDatePicker)
+            'Else
+            '    .ClearDatePicker(.SFCDatePicker)
+            'End If
 
+            .SFCComboBox.SelectedItem = _emp.SFC
             .SiteAdd1TextBox.Text = _emp.SiteAddress1
             .SiteAdd2TextBox.Text = _emp.SiteAddress2
             .SiteCityTextBox.Text = _emp.SiteCityName
@@ -218,24 +222,32 @@
             Else
                 .SFCComboBox.SelectedItem = "Yes"
             End If
+
+            If _emp.SFCDate.HasValue Then
+                .SFCDatePicker.Value = CType(_emp.SFCDate, Date)
+                .ResetDatePicker(.SFCDatePicker)
+            Else
+                .ClearDatePicker(.SFCDatePicker)
+            End If
         End With
 
     End Sub
 
     Private Sub EnableDisableSFCDate()
-        Dim _emp As New Employee
+        'Dim _emp As New Employee
         If SFCComboBox.Text = "No" Then
             ClearDatePicker(SFCDatePicker) 'rename descriptive function name
             SFCDatePicker.Enabled = False
             SFCDateEmpty = 0
         ElseIf SFCComboBox.Text = "Yes" Then
+            SFCDatePicker.Value = DateTime.Now
             ResetDatePicker(SFCDatePicker) 'rename descriptive function name
-            ClearDatePicker(SFCDatePicker) 'rename descriptive function name
+            'ClearDatePicker(SFCDatePicker) 'rename descriptive function name
             'FOR DELETION BUT CHECK IT FIRST
-            If Main.IsSFC = True Then
-                ClearDatePicker(SFCDatePicker)
-                ResetDatePicker(SFCDatePicker)
-            End If
+            'If Main.IsSFC = True Then
+            '    ClearDatePicker(SFCDatePicker)
+            '    ResetDatePicker(SFCDatePicker)
+            'End If
         End If
     End Sub
 
@@ -336,9 +348,14 @@
         Next
 
         OracleIDTextBox.Focus()
-        ResetDatePicker(StartDatePicker)
+        'ResetDatePicker(StartDatePicker)
     End Sub
 #End Region
+
+    Private Sub EmployeeInfo_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        Me.Dispose()
+    End Sub
+
 
     Public Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -369,20 +386,21 @@
 
         If UserAccount.IsEdit = True Then
             PopulateFields()
-            ResetDatePicker(SFCDatePicker)
+            'ResetDatePicker(SFCDatePicker)
             RevertClearButton.Text = "Revert"
             OracleIDTextBox.Enabled = False
         Else
             RegionComboBox.Text = SetListName(RegionComboBox, 1)
 
-            ClearDatePicker(BirthDatePicker)
-            BirthDatePicker.Value = Date.Today.AddYears(-18)
+            'BirthDatePicker.Value = Date.Today.AddYears(-18)
             BirthDatePicker.MaxDate = Date.Today.AddYears(-18)
             BirthChange = False
-            SFCDatePicker.Value = DateTime.Now
-            StartDatePicker.Value = DateTime.Now
+            'SFCDatePicker.Value = DateTime.Now
+            'StartDatePicker.Value = DateTime.Now
             SFCDatePicker.Enabled = False
-            SFCDatePicker.Enabled = False
+            ClearDatePicker(BirthDatePicker)
+            ClearDatePicker(StartDatePicker)
+            ClearDatePicker(SFCDatePicker)
 
             'FROM MAIN FORM
             OracleIDTextBox.Enabled = True
@@ -395,7 +413,7 @@
             InitializeEmployeeForm()
         End If
 
-        ResetDatePicker(StartDatePicker)
+        'ResetDatePicker(StartDatePicker)
 
         EnableDisableSFCDate()
     End Sub
@@ -571,50 +589,51 @@
     End Sub
 
     Private Sub RevertClearButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RevertClearButton.Click
-        Revert = True
+        'Revert = True
 
         If UserAccount.IsEdit = True Then
             EmpInfo.ValidateClear()
             mR.ClearMgrValidate()
             PopulateFields()
             OracleIDTextBox.Focus()
+            ResetDatePicker(SFCDatePicker)
         Else
             ClearFields()
             OracleIDTextBox.Focus()
             EmpInfo.ValidateClear()
             mR.ClearMgrValidate()
         End If
-        ResetDatePicker(StartDatePicker)
+        'ResetDatePicker(StartDatePicker)
     End Sub
 
     Private Sub Cancel_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel_Button.Click
-        Me.Close()
         ClearFields()
         EmpInfo.ValidateClear()
         mR.ClearMgrValidate()
         Main.Show()
+        Me.Close()
     End Sub
 
     
-    Private Sub CB_SFC_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SFCComboBox.SelectedIndexChanged
+    Private Sub SFCComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SFCComboBox.SelectedIndexChanged
 
         EnableDisableSFCDate()
-       
+
     End Sub
 
 
-    Private Sub DT_Birth_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BirthDatePicker.ValueChanged
+    Private Sub BirthDatePicker_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BirthDatePicker.ValueChanged
         ResetDatePicker(BirthDatePicker)
         BirthChange = True
     End Sub
 
-    Private Sub TB_StartDate_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartDatePicker.ValueChanged
+    Private Sub StartDatePicker_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartDatePicker.ValueChanged
 
         ResetDatePicker(StartDatePicker)
 
     End Sub
 
-    Private Sub DT_SFCDate_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SFCDatePicker.ValueChanged
+    Private Sub SFCDatePicker_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SFCDatePicker.ValueChanged
 
         ResetDatePicker(SFCDatePicker)
 

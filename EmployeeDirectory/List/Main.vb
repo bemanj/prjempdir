@@ -4,7 +4,7 @@ Public Class Main
 
     Dim mR As New ManagerRepository
     Dim _EmpEditService As New EmpEditService           'rename to standard, dependcy inject, private
-    Public IsSFC As Boolean 'private
+    'Private IsSFC As Boolean 'private
 
 
     Dim _LoginView As New LoginView
@@ -51,7 +51,7 @@ Public Class Main
     End Function
 
     Public Sub ShowActiveEmployees()
-        IsSFC = False
+        'IsSFC = False
         EmployeeListLabel.Text = "Active Employees"
         mg.OracleID = UserAccount.UserID
         mg.SFC = False
@@ -126,7 +126,7 @@ Public Class Main
     End Sub
 
     Public Sub InactiveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InactiveButton.Click
-        IsSFC = True
+        'IsSFC = True
         EmployeeListLabel.Text = "Inactive Employees"
         mg.OracleID = UserAccount.UserID
         mg.SFC = True
