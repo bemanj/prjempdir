@@ -7,7 +7,7 @@ Imports System.Text.RegularExpressions
 Public Class ManagerRepository
     Inherits BaseRepository
 
-    Public MgrValidate As Integer = 0
+    Public ManagerValidate As Integer = 0
 
     Public Sub New()
         MyBase.New(ConfigurationManager.ConnectionStrings("EmployeeDirectoryConnectionString").ConnectionString.Decrypt)
@@ -51,7 +51,7 @@ Public Class ManagerRepository
         'EmployeeInfo.OffEmail_Label.ForeColor = Color.Black
 
         ' ***** END : VALIDATE AND REQUIRED FIELDS FOR MANAGER/USER ***** '
-        MgrValidate = 0
+        ManagerValidate = 0
 
         ' **** START : FIX INVALID ORACLE ID *** ' 
         ' **** COMMENTED CODES BELOW *** ' 
@@ -65,56 +65,56 @@ Public Class ManagerRepository
 
         If String.IsNullOrWhiteSpace(EmployeeInfo.FirstNameTextBox.Text) Then
             EmployeeInfo.FirstNameLabel.ForeColor = Color.Red()
-            MgrValidate = 1
+            ManagerValidate = 1
         Else
             EmployeeInfo.FirstNameLabel.ForeColor = Color.Black
         End If
 
         If String.IsNullOrWhiteSpace(EmployeeInfo.LastNameTextBox.Text) Then
             EmployeeInfo.LastNameLabel.ForeColor = Color.Red()
-            MgrValidate = 1
+            ManagerValidate = 1
         Else
             EmployeeInfo.LastNameLabel.ForeColor = Color.Black
         End If
 
         If String.IsNullOrWhiteSpace(EmployeeInfo.MiddleNameTextBox.Text) Then
             EmployeeInfo.MiddleNameLabel.ForeColor = Color.Red()
-            MgrValidate = 1
+            ManagerValidate = 1
         Else
             EmployeeInfo.MiddleNameLabel.ForeColor = Color.Black
         End If
 
         If String.IsNullOrWhiteSpace(EmployeeInfo.GenderComboBox.Text) Then
             EmployeeInfo.GenderLabel.ForeColor = Color.Red()
-            MgrValidate = 1
+            ManagerValidate = 1
         Else
             EmployeeInfo.GenderLabel.ForeColor = Color.Black
         End If
 
         If String.IsNullOrWhiteSpace(EmployeeInfo.TeamComboBox.Text) Then
             EmployeeInfo.Lbl_team.ForeColor = Color.Red()
-            MgrValidate = 1
+            ManagerValidate = 1
         Else
             EmployeeInfo.Lbl_team.ForeColor = Color.Black
         End If
 
         If String.IsNullOrWhiteSpace(EmployeeInfo.LocalManagerComboBox.Text) Then
             EmployeeInfo.Lbl_localMgr.ForeColor = Color.Red()
-            MgrValidate = 1
+            ManagerValidate = 1
         Else
             EmployeeInfo.Lbl_localMgr.ForeColor = Color.Black
         End If
 
         If String.IsNullOrWhiteSpace(EmployeeInfo.OnboardingTicketTextBox.Text) Then
             EmployeeInfo.Lbl_ObTicket.ForeColor = Color.Red()
-            MgrValidate = 1
+            ManagerValidate = 1
         Else
             EmployeeInfo.Lbl_ObTicket.ForeColor = Color.Black
         End If
 
         If Not String.IsNullOrEmpty(EmployeeInfo.OfficeEmailTextBox.Text) Then
             If ValidateOfficeEmail(EmployeeInfo.OfficeEmailTextBox.Text) = False Then
-                MgrValidate = 2
+                ManagerValidate = 2
                 EmployeeInfo.OfficeEmailLabel.ForeColor = Color.Red
             Else
                 EmployeeInfo.OfficeEmailLabel.ForeColor = Color.Black
@@ -126,7 +126,7 @@ Public Class ManagerRepository
 
         If Not String.IsNullOrEmpty(EmployeeInfo.PersonalEmailTextBox.Text) Then
             If ValidateOfficeEmail(EmployeeInfo.PersonalEmailTextBox.Text) = False Then
-                MgrValidate = 2
+                ManagerValidate = 2
                 EmployeeInfo.PersonalEmailLabel.ForeColor = Color.Red
             Else
                 EmployeeInfo.PersonalEmailLabel.ForeColor = Color.Black
@@ -139,14 +139,14 @@ Public Class ManagerRepository
         ' **** START : FIX INVALID ORACLE ID *** ' 
         If String.IsNullOrWhiteSpace(EmployeeInfo.OracleIDTextBox.Text) Then
             EmployeeInfo.OracleIDLabel.ForeColor = Color.Red()
-            MgrValidate = 1
+            ManagerValidate = 1
         Else
             If UserAccount.IsEdit = False Then 'This will add insert Oracle ID'
                 Dim _EmpEditService = New EmpEditService()
                 Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(EmployeeInfo.OracleIDTextBox.Text)
                 If Not _tempSelectedID Is Nothing Then
                     EmployeeInfo.OracleIDLabel.ForeColor = Color.Red()
-                    MgrValidate = 3
+                    ManagerValidate = 3
                 End If
             End If
         End If

@@ -1196,9 +1196,9 @@ Partial Class EmployeeInfo
         Me.CityComboBox.DisplayMember = """ListName"""
         Me.CityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CityComboBox.FormattingEnabled = True
-        Me.CityComboBox.Location = New System.Drawing.Point(134, 391)
+        Me.CityComboBox.Location = New System.Drawing.Point(134, 392)
         Me.CityComboBox.Name = "CityComboBox"
-        Me.CityComboBox.Size = New System.Drawing.Size(132, 21)
+        Me.CityComboBox.Size = New System.Drawing.Size(131, 21)
         Me.CityComboBox.TabIndex = 13
         Me.CityComboBox.ValueMember = """ListID"""
         '
@@ -1206,7 +1206,7 @@ Partial Class EmployeeInfo
         '
         Me.CityLabel.AutoSize = True
         Me.CityLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.CityLabel.Location = New System.Drawing.Point(94, 394)
+        Me.CityLabel.Location = New System.Drawing.Point(94, 392)
         Me.CityLabel.Name = "CityLabel"
         Me.CityLabel.Size = New System.Drawing.Size(30, 15)
         Me.CityLabel.TabIndex = 104
@@ -1217,7 +1217,7 @@ Partial Class EmployeeInfo
         Me.RegionComboBox.DisplayMember = """ListName"""
         Me.RegionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.RegionComboBox.FormattingEnabled = True
-        Me.RegionComboBox.Location = New System.Drawing.Point(368, 392)
+        Me.RegionComboBox.Location = New System.Drawing.Point(374, 392)
         Me.RegionComboBox.Name = "RegionComboBox"
         Me.RegionComboBox.Size = New System.Drawing.Size(132, 21)
         Me.RegionComboBox.TabIndex = 14
@@ -1227,7 +1227,7 @@ Partial Class EmployeeInfo
         '
         Me.RegionLabel.AutoSize = True
         Me.RegionLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.RegionLabel.Location = New System.Drawing.Point(277, 395)
+        Me.RegionLabel.Location = New System.Drawing.Point(277, 392)
         Me.RegionLabel.Name = "RegionLabel"
         Me.RegionLabel.Size = New System.Drawing.Size(82, 15)
         Me.RegionLabel.TabIndex = 106
@@ -1238,7 +1238,7 @@ Partial Class EmployeeInfo
         Me.CountryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CountryComboBox.FormattingEnabled = True
         Me.CountryComboBox.Items.AddRange(New Object() {"Philippines"})
-        Me.CountryComboBox.Location = New System.Drawing.Point(563, 392)
+        Me.CountryComboBox.Location = New System.Drawing.Point(569, 392)
         Me.CountryComboBox.Name = "CountryComboBox"
         Me.CountryComboBox.Size = New System.Drawing.Size(117, 21)
         Me.CountryComboBox.TabIndex = 15
@@ -1247,7 +1247,7 @@ Partial Class EmployeeInfo
         '
         Me.CountryLabel.AutoSize = True
         Me.CountryLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.CountryLabel.Location = New System.Drawing.Point(506, 394)
+        Me.CountryLabel.Location = New System.Drawing.Point(506, 392)
         Me.CountryLabel.Name = "CountryLabel"
         Me.CountryLabel.Size = New System.Drawing.Size(53, 15)
         Me.CountryLabel.TabIndex = 108
@@ -1258,7 +1258,7 @@ Partial Class EmployeeInfo
         Me.ZipCodeLabel.AutoSize = True
         Me.ZipCodeLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
         Me.ZipCodeLabel.ForeColor = System.Drawing.Color.Blue
-        Me.ZipCodeLabel.Location = New System.Drawing.Point(688, 393)
+        Me.ZipCodeLabel.Location = New System.Drawing.Point(688, 392)
         Me.ZipCodeLabel.Name = "ZipCodeLabel"
         Me.ZipCodeLabel.Size = New System.Drawing.Size(56, 15)
         Me.ZipCodeLabel.TabIndex = 110

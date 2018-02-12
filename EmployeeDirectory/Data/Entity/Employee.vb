@@ -108,12 +108,12 @@
     End Property
 
     'Sprint 2: New Field
-    Private _ZipCode As Integer
-    Public Property ZipCode() As Integer
+    Private _ZipCode As Integer?
+    Public Property ZipCode() As Integer?
         Get
             Return _ZipCode
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Integer?)
             _ZipCode = value
         End Set
     End Property
@@ -183,12 +183,12 @@
         End Set
     End Property
 
-    Private _MobileNo As Int64
-    Public Property MobileNo() As Int64
+    Private _MobileNo As Int64?
+    Public Property MobileNo() As Int64?
         Get
             Return _MobileNo
         End Get
-        Set(ByVal value As Int64)
+        Set(ByVal value As Int64?)
             _MobileNo = value
         End Set
     End Property
@@ -204,12 +204,12 @@
         End Set
     End Property
 
-    Private _PhoneExtension As Integer
-    Public Property PhoneExtension() As Integer
+    Private _PhoneExtension As Integer?
+    Public Property PhoneExtension() As Integer?
         Get
             Return _PhoneExtension
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Integer?)
             _PhoneExtension = value
         End Set
     End Property

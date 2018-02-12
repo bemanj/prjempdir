@@ -109,11 +109,107 @@
         OraclePRDTextbox.Enabled = False
     End Sub
 
-    Private Sub PopulateFields()
+    Private Sub GetFieldTextValues()
 
-        'SFCComboBox.Items.Clear()
-        'SFCComboBox.Items.Add("Yes")
-        'SFCComboBox.Items.Add("No")
+        With _emp
+            .OracleID = OracleIDTextBox.Text
+            .Title = JobTitleTextBox.Text
+            .Position = PositionTextBox.Text
+            .LastName = LastNameTextBox.Text
+            .FirstName = FirstNameTextBox.Text
+            .MiddleName = MiddleNameTextBox.Text
+            .PersonalEmail = PersonalEmailTextBox.Text
+            If BirthChange = True Then
+                .Birthday = CType(BirthDatePicker.Value, Date)
+            Else
+                .Birthday = Nothing
+            End If
+
+            If Not MobileNoTextBox.Text = String.Empty Then
+                .MobileNo = CType(MobileNoTextBox.Text, Long)
+            Else
+                .MobileNo = Nothing
+            End If
+
+            .HomeAddress1 = HomeAdd1TextBox.Text
+            .HomeAddress2 = HomeAdd2TextBox.Text
+
+            If Not ZipCodeTextBox.Text = String.Empty Then
+                .ZipCode = ZipCodeTextBox.Text
+            Else
+                .ZipCode = Nothing
+            End If
+            If Not PhoneExtensionTextBox.Text = String.Empty Then
+                .PhoneExtension = PhoneExtensionTextBox.Text
+            Else
+                .PhoneExtension = Nothing
+            End If
+
+            If Not LandlineTextBox.Text = String.Empty Then
+                .LandlineNo = LandlineTextBox.Text
+            End If
+
+            .OfficeEmail = OfficeEmailTextBox.Text
+            .Entity = EntityTextBox.Text
+            .Division = DivisionTextBox.Text
+            .Department = DepartmentTextBox.Text
+            .USManager = USManagerTextBox.Text
+            .OnboardingTicket = OnboardingTicketTextBox.Text
+            .Recruiter = RecruiterTextBox.Text
+            If Not StartDatePicker.Text = String.Empty Then
+                .StartDate = CType(StartDatePicker.Value, Date)
+            End If
+            .SFC = GetComboValue(SFCComboBox)
+            If Not SFCDatePicker.Text = String.Empty Then
+                .SFCDate = CType(SFCDatePicker.Value, Date)
+            End If
+            If SFCComboBox.SelectedItem = "No" Or IsNothing(SFCComboBox.SelectedItem) Then
+                .SFCDate = Nothing
+            End If
+
+            .SeatNumber = SeatNoTextBox.Text
+            .LastAccessedBy = UserAccount.UserID
+
+            .Shift = ShiftComboBox.Text
+            .PCName = PCNameTextbox.Text
+            .MercuryID = MercuryIDTextbox.Text
+            .EISID = EISIDTextbox.Text
+            .OraclePRDID = OraclePRDTextbox.Text
+            .InsightID = InsightIDTextbox.Text
+            .NCOGroup = NCOGrpIDTextbox.Text
+            .EGSPremID = EGSPREMIDTextbox.Text
+            .ElsevierID = ElsevierIDTextbox.Text
+            .GITHubID = GithubIDTextbox.Text
+
+            .Shift = ShiftComboBox.Text
+            .Gender = GenderComboBox.Text
+            .IDCreated = GetComboValue(IDCreatedComboBox)
+            .Country = CountryComboBox.Text
+            .CityName = CityComboBox.Text
+            If CityComboBox.SelectedItem IsNot Nothing Then
+                .CityID = CType(CityComboBox.SelectedItem, DropDownList).ListID
+            End If
+            .RegionName = RegionComboBox.Text
+            If RegionComboBox.SelectedItem IsNot Nothing Then
+                .RegionID = CType(RegionComboBox.SelectedItem, DropDownList).ListID
+            End If
+            .TeamName = TeamComboBox.Text
+            If TeamComboBox.SelectedItem IsNot Nothing Then
+                .TeamID = CType(TeamComboBox.SelectedItem, DropDownList).ListID
+            End If
+            If LocalManagerComboBox.SelectedItem IsNot Nothing Then
+                .LocalManagerID = CType(LocalManagerComboBox.SelectedItem, DropDownList).ListID
+            End If
+            .SiteName = SiteComboBox.Text
+            If SiteComboBox.SelectedItem IsNot Nothing Then
+                .SiteID = CType(SiteComboBox.SelectedItem, Site).SiteID
+            End If
+            .Floor = FloorComboBox.Text
+        End With
+
+    End Sub
+
+    Private Sub PopulateFields()
 
         With Me
             .OracleIDTextBox.Text = CType(_emp.OracleID, String)
@@ -154,12 +250,6 @@
             Else
                 .ClearDatePicker(.StartDatePicker)
             End If
-            'If _emp.SFCDate.HasValue Then
-            '    .SFCDatePicker.Value = CType(_emp.SFCDate, Date)
-            '    .ResetDatePicker(.SFCDatePicker)
-            'Else
-            '    .ClearDatePicker(.SFCDatePicker)
-            'End If
 
             .SFCComboBox.SelectedItem = _emp.SFC
             .SiteAdd1TextBox.Text = _emp.SiteAddress1
@@ -236,9 +326,9 @@
     End Sub
 
     Private Sub EnableDisableSFCDate()
-        'If Not (UserAccount.UserType = 3) Then
+
         If SFCComboBox.Text = "No" Then
-            ClearDatePicker(SFCDatePicker) 'rename descriptive function name
+            ClearDatePicker(SFCDatePicker)
             SFCDatePicker.Enabled = False
             SFCDateEmpty = 0
         ElseIf SFCComboBox.Text = "Yes" Then
@@ -248,19 +338,13 @@
                 ResetDatePicker(SFCDatePicker)
             End If
             SFCDatePicker.Enabled = True
-            'ClearDatePicker(SFCDatePicker) 'rename descriptive function name
-            'FOR DELETION BUT CHECK IT FIRST
-            'If Main.IsSFC = True Then
-            'ClearDatePicker(SFCDatePicker)
-            'ResetDatePicker(SFCDatePicker)
-            'End If
+           
         End If
-        'Else
-        'SFCDatePicker.Enabled = False
-        'End If
+     
     End Sub
 
     Private Sub PopulateList(ByRef cbox As ComboBox, ByVal spname As String)
+
         Dim _library As New LibraryRespository
         Dim _dropdown As New DropDownList()
 
@@ -268,9 +352,11 @@
 
         cbox.DisplayMember = "ListName"
         cbox.ValueMember = "ListID"
+
     End Sub
 
     Private Sub PopulateSiteList()
+
         Dim _library As New LibraryRespository
         Dim _dropdown As New DropDownList()
 
@@ -281,6 +367,7 @@
     End Sub
 
     Private Sub PopulateCity(ByRef cbox As ComboBox, ByVal param As Integer)
+
         Dim _library As New LibraryRespository
         Dim _dropdown As New DropDownList()
 
@@ -288,13 +375,16 @@
 
         cbox.DisplayMember = "ListName"
         cbox.ValueMember = "ListID"
+
     End Sub
 
     Private Sub PopulateShiftList()
+
         ShiftComboBox.Items.Clear()
         ShiftComboBox.Items.Add("8am - 5pm")
         ShiftComboBox.Items.Add("1pm - 10pm")
         ShiftComboBox.Items.Add("3pm - 12am")
+
     End Sub
 
     Private Function GetComboValue(ByRef cbox As ComboBox) As Boolean
@@ -357,34 +447,31 @@
         Next
 
         OracleIDTextBox.Focus()
-        'ResetDatePicker(StartDatePicker)
+
     End Sub
 
     Public Sub GetExistingData()
+
         _emp = _EmpEditService.SelectEmpFromList(UserAccount.SelectedOracleID)
         PopulateFields()
-        'EnableDisableSFCDate()
-        ''ResetDatePicker(SFCDatePicker)
-        'RevertClearButton.Text = "Revert"
-        'OracleIDTextBox.Enabled = False
+     
     End Sub
 
     Private Sub AddEmployeeForm()
-        RegionComboBox.Text = SetListName(RegionComboBox, 1)
 
         'BirthDatePicker.Value = Date.Today.AddYears(-18)
-        BirthDatePicker.MaxDate = Date.Today.AddYears(-18)
-        BirthChange = False
         'SFCDatePicker.Value = DateTime.Now
         'StartDatePicker.Value = DateTime.Now
+
+        RegionComboBox.Text = SetListName(RegionComboBox, 1)
+        BirthDatePicker.MaxDate = Date.Today.AddYears(-18)
+        BirthChange = False
         SFCDatePicker.Enabled = False
         ClearDatePicker(BirthDatePicker)
         ClearDatePicker(StartDatePicker)
         ClearDatePicker(SFCDatePicker)
 
-        'FROM MAIN FORM
         OracleIDTextBox.Enabled = True
-        'IsEdit = False
         RevertClearButton.Text = "Clear"
         OracleIDTextBox.Focus()
     End Sub
@@ -414,192 +501,60 @@
                 Else
                     AddEmployeeForm()
                 End If
-
             Case 3
                 GetExistingData()
                 EmployeeUserForm()
-
-                'SFCDatePicker.Enabled = False
         End Select
-
-        'If UserAccount.UserType = 3 Then ' EMPLOYEE
-        '    InitializeEmployeeForm()
-        '    GetExistingData()
-        'Else
-        '    If UserAccount.IsEdit = True Then
-        '        GetExistingData()
-        '    Else
-        '        RegionComboBox.Text = SetListName(RegionComboBox, 1)
-
-        '        'BirthDatePicker.Value = Date.Today.AddYears(-18)
-        '        BirthDatePicker.MaxDate = Date.Today.AddYears(-18)
-        '        BirthChange = False
-        '        'SFCDatePicker.Value = DateTime.Now
-        '        'StartDatePicker.Value = DateTime.Now
-        '        SFCDatePicker.Enabled = False
-        '        ClearDatePicker(BirthDatePicker)
-        '        ClearDatePicker(StartDatePicker)
-        '        ClearDatePicker(SFCDatePicker)
-
-        '        'FROM MAIN FORM
-        '        OracleIDTextBox.Enabled = True
-        '        'IsEdit = False
-        '        RevertClearButton.Text = "Clear"
-        '        OracleIDTextBox.Focus()
-        '    End If
-        '    'EnableDisableSFCDate() '--- nipasok to ni jlavares
-        'End If
-
-
-        'If UserAccount.IsEdit = False Then
-        '    ClearDatePicker(BirthDatePicker)
-        '    BirthDatePicker.Value = Date.Today.AddYears(-18)
-        '    BirthDatePicker.MaxDate = Date.Today.AddYears(-18)
-        '    BirthChange = False
-        '    SFCDatePicker.Value = DateTime.Now
-        '    StartDatePicker.Value = DateTime.Now
-        '    SFCDatePicker.Enabled = False
-        '    SFCDatePicker.Enabled = False
-
-        '    'FROM MAIN FORM
-        '    OracleIDTextBox.Enabled = True
-        '    'IsEdit = False
-        '    RevertClearButton.Text = "Clear"
-        '    OracleIDTextBox.Focus()
-        'End If
-
-
-
-
-
-        'ResetDatePicker(StartDatePicker)
 
     End Sub
 
     Private Sub LogoutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutButton.Click
+
         _empinfo.ValidateClear()
         mR.ClearMgrValidate()
         LogIn.Show()
-        LogIn.LogIn_Load(e, e)
-        LogIn.UsernameTextBox.Clear()
-        LogIn.PasswordTextBox.Clear()
+
         Select Case UserAccount.UserType
             'Case 1
             Case 2
                 Main.Dispose()
+                Me.Close()
             Case 3
                 Me.Close()
         End Select
     End Sub
 
     Private Sub SaveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveButton.Click
+
         Dim retvalue As Integer
         ClickSave = True
         IsMgrError = False
         IsOffEmailError = False
 
-        With _emp
+        GetFieldTextValues()
 
-            If Not OracleIDTextBox.Text = String.Empty Then
-                .OracleID = OracleIDTextBox.Text
-            End If
+        'If UserAccount.UserType = 3 Then
+        '    _empinfo.Validate()
+        '    mR.MgrValidate = 1
+        'End If
 
-            .Title = JobTitleTextBox.Text
-            .Position = PositionTextBox.Text
-            .LastName = LastNameTextBox.Text
-            .FirstName = FirstNameTextBox.Text
-            .MiddleName = MiddleNameTextBox.Text
+        'If UserAccount.UserType = 1 Or UserAccount.UserType = 2 Then
+        '    mR.ValidateManager()
+        '    EmpInfo.EmpValidate = 1
+        'End If
 
-            If BirthChange = True Then
-                .Birthday = CType(BirthDatePicker.Value, Date)
-            Else
-                .Birthday = Nothing
-            End If
-            .PersonalEmail = PersonalEmailTextBox.Text
-            If Not MobileNoTextBox.Text = String.Empty Then
-                .MobileNo = CType(MobileNoTextBox.Text, Long)
-            End If
-            If Not LandlineTextBox.Text = String.Empty Then
-                .LandlineNo = LandlineTextBox.Text
-            End If
-            .HomeAddress1 = HomeAdd1TextBox.Text
-            .HomeAddress2 = HomeAdd2TextBox.Text
-            If Not ZipCodeTextBox.Text = String.Empty Then
-                .ZipCode = ZipCodeTextBox.Text
-            End If
-            If Not PhoneExtensionTextBox.Text = String.Empty Then
-                .PhoneExtension = PhoneExtensionTextBox.Text
-            End If
+        Select Case UserAccount.UserType
+            Case 1
+                mR.ValidateManager()
+                EmpInfo.EmpValidate = 1
+            Case 2
+                mR.ValidateManager()
+                EmpInfo.EmpValidate = 1
+            Case 3
+                EmpInfo.Validate()
+                mR.ManagerValidate = 1
+        End Select
 
-            .OfficeEmail = OfficeEmailTextBox.Text
-            .Entity = EntityTextBox.Text
-            .Division = DivisionTextBox.Text
-            .Department = DepartmentTextBox.Text
-            .USManager = USManagerTextBox.Text
-            .OnboardingTicket = OnboardingTicketTextBox.Text
-            .Recruiter = RecruiterTextBox.Text
-            If Not StartDatePicker.Text = String.Empty Then
-                .StartDate = CType(StartDatePicker.Value, Date)
-            End If
-            .SFC = GetComboValue(SFCComboBox)
-            If Not SFCDatePicker.Text = String.Empty Then
-                .SFCDate = CType(SFCDatePicker.Value, Date)
-            End If
-            If SFCComboBox.SelectedItem = "No" Or IsNothing(SFCComboBox.SelectedItem) Then
-                .SFCDate = Nothing
-            End If
-
-            .SeatNumber = SeatNoTextBox.Text
-            .LastAccessedBy = UserAccount.UserID
-
-            .Shift = ShiftComboBox.Text
-            .PCName = PCNameTextbox.Text
-            .MercuryID = MercuryIDTextbox.Text
-            .EISID = EISIDTextbox.Text
-            .OraclePRDID = OraclePRDTextbox.Text
-            .InsightID = InsightIDTextbox.Text
-            .NCOGroup = NCOGrpIDTextbox.Text
-            .EGSPremID = EGSPREMIDTextbox.Text
-            .ElsevierID = ElsevierIDTextbox.Text
-            .GITHubID = GithubIDTextbox.Text
-
-            .Shift = ShiftComboBox.Text
-            .Gender = GenderComboBox.Text
-            .IDCreated = GetComboValue(IDCreatedComboBox)
-            .Country = CountryComboBox.Text
-            .CityName = CityComboBox.Text
-            If CityComboBox.SelectedItem IsNot Nothing Then
-                .CityID = CType(CityComboBox.SelectedItem, DropDownList).ListID
-            End If
-            .RegionName = RegionComboBox.Text
-            If RegionComboBox.SelectedItem IsNot Nothing Then
-                .RegionID = CType(RegionComboBox.SelectedItem, DropDownList).ListID
-            End If
-            .TeamName = TeamComboBox.Text
-            If TeamComboBox.SelectedItem IsNot Nothing Then
-                .TeamID = CType(TeamComboBox.SelectedItem, DropDownList).ListID
-            End If
-            If LocalManagerComboBox.SelectedItem IsNot Nothing Then
-                .LocalManagerID = CType(LocalManagerComboBox.SelectedItem, DropDownList).ListID
-            End If
-            .SiteName = SiteComboBox.Text
-            If SiteComboBox.SelectedItem IsNot Nothing Then
-                .SiteID = CType(SiteComboBox.SelectedItem, Site).SiteID
-            End If
-
-            .Floor = FloorComboBox.Text
-
-        End With
-
-        If UserAccount.UserType = 3 Then
-            _empinfo.Validate()
-            mR.MgrValidate = 1
-        End If
-
-        If UserAccount.UserType = 1 Or UserAccount.UserType = 2 Then
-            mR.ValidateManager()
-            EmpInfo.EmpValidate = 1
-        End If
 
         If ClickSave = True And SFCComboBox.Text = "Yes" Then
             ClickSave = False
@@ -611,7 +566,7 @@
             End If
         End If
 
-        If EmpInfo.EmpValidate = 0 Or mR.MgrValidate = 0 And SFCDateEmpty = 0 Then
+        If EmpInfo.EmpValidate = 0 Or mR.ManagerValidate = 0 And SFCDateEmpty = 0 Then
             If UserAccount.IsEdit = True Then
                 _empinfo.UpdateData(_emp)
                 _EmpEditService.Employee = _emp
@@ -636,10 +591,10 @@
                 Main.ReloadDataGridWithSort()
             End If
 
-        ElseIf mR.MgrValidate = 3 Then
+        ElseIf mR.ManagerValidate = 3 Then
             MessageBox.Show("Oracle ID already exists.", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
-        ElseIf EmpInfo.EmpValidate = 2 Or mR.MgrValidate = 2 Then
+        ElseIf EmpInfo.EmpValidate = 2 Or mR.ManagerValidate = 2 Then
 
             MessageBox.Show("Email is not valid, Please check your email address.", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
