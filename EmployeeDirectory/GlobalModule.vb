@@ -2,8 +2,12 @@
 
 Public Module GlobalModule
 
-    Public Const MessageRequiredFields As String = "Please enter username/password"
+    Public Const MessageLoginError As String = "Please enter username/password"
     Public Const MessageUserNotFound As String = "UserName/Password not found!"
+    Public Const MessageDuplicateOracleID As String = "Oracle ID already exists."
+    Public Const MessageEmailError As String = "Email is not valid, Please check your email address."
+    Public Const MessageSFCError As String = "Please enter SFC date."
+    Public Const MessageRequiredFields As String = "Please fill up required field/s"
    
     'Public Sub SetSelectedValue(ByVal comboBox As ComboBox, ByVal value As Integer)
 

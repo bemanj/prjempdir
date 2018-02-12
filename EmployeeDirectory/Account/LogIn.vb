@@ -29,7 +29,7 @@
         If UsernameTextBox.Text = Nothing Or
             PasswordTextBox.Text = Nothing Then
 
-            MessageBox.Show(MessageRequiredFields, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(MessageLoginError, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             clearAndFocus()
         ElseIf Not IsNumeric(UsernameTextBox.Text) Then
             MessageBox.Show(MessageUserNotFound, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)

@@ -51,7 +51,6 @@ Public Class Main
     End Function
 
     Public Sub ShowActiveEmployees()
-        'IsSFC = False
         EmployeeListLabel.Text = "Active Employees"
         mg.OracleID = UserAccount.UserID
         mg.SFC = False
@@ -80,15 +79,9 @@ Public Class Main
     End Sub
 
     Private Sub AddEmployeeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddEmployeeButton.Click
-        'EmployeeInfo.OracleIDTextBox.Enabled = True
-        'EmployeeInfo.IsEdit = False
-        'EmployeeInfo.RevertClearButton.Text = "Clear"
-        'EmployeeInfo.OracleIDTextBox.Focus()
         UserAccount.IsEdit = False
         Me.Hide()
         EmployeeInfo.ShowDialog()
-        'EmployeeInfo.EmployeeInfo_Load(e, e)
-
     End Sub
 
     Public Sub LogOutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogOutButton.Click
@@ -114,9 +107,6 @@ Public Class Main
     Private Sub EmployeeDataGridView_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles EmployeeDataGridView.CellDoubleClick
         If Not e.RowIndex = -1 Then                                                                                                                 '   - to handle index out of range error
             Try
-                'Dim _tempSelectedRow = Me._EmpEditService.SelectEmpFromList(CLng(Me.EmployeeDataGridView.SelectedRows(0).Cells("OracleID").Value)) '- set SelectionSet property to FullRowSelect
-                'EmployeeInfo.EmpEditService.Employee = _tempSelectedRow
-                'EmployeeInfo.emp = _tempSelectedRow
                 UserAccount.SelectedOracleID = CLng(Me.EmployeeDataGridView.SelectedRows(0).Cells("OracleID").Value)
                 UserAccount.IsEdit = True
                 EmployeeInfo.ShowDialog()
@@ -128,7 +118,6 @@ Public Class Main
     End Sub
 
     Public Sub InactiveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InactiveButton.Click
-        'IsSFC = True
         EmployeeListLabel.Text = "Inactive Employees"
         mg.OracleID = UserAccount.UserID
         mg.SFC = True

@@ -3,8 +3,12 @@
     Private ClickSave As Boolean
     'Public Revert As Boolean
     Dim SFCDateEmpty As Integer
-    Private BirthChange As Boolean = False
-    Dim mR As New ManagerRepository
+    'Dim mR As New ManagerRepository
+    'Private _managerValidate As Integer = 0
+    'Public EmpValidate As Integer = 0
+    Private HasError As Boolean = False
+    Private ErrorMessage As String
+
 
     Public Sub New()
 
@@ -13,7 +17,7 @@
 
         _empinfo = New EmployeeRepository()
 
-        _EmpEditService = New EmpEditService()
+        _empEditService = New EmpEditService()
 
         _emp = New Employee
 
@@ -22,25 +26,6 @@
     End Sub
 
 #Region "PROPERTIES"
-    Private _IsMgrError As Boolean
-    Public Property IsMgrError() As Boolean
-        Get
-            Return _IsMgrError
-        End Get
-        Set(ByVal value As Boolean)
-            _IsMgrError = value
-        End Set
-    End Property
-
-    Private _IsOffEmailError As Boolean
-    Public Property IsOffEmailError() As Boolean
-        Get
-            Return _IsOffEmailError
-        End Get
-        Set(ByVal value As Boolean)
-            _IsOffEmailError = value
-        End Set
-    End Property
 
     Private _empinfo As New EmployeeRepository
     Public Property EmpInfo() As EmployeeRepository
@@ -52,18 +37,18 @@
         End Set
     End Property
 
-    Private _EmpEditService As EmpEditService
+    Private _empEditService As EmpEditService
     Public Property EmpEditService() As EmpEditService
         Get
-            Return _EmpEditService
+            Return _empEditService
         End Get
         Set(ByVal value As EmpEditService)
-            _EmpEditService = value
+            _empEditService = value
         End Set
     End Property
 
     Private _emp As Employee
-    Public Property emp() As Employee
+    Public Property Emp() As Employee
         Get
             Return _emp
         End Get
@@ -73,17 +58,13 @@
     End Property
 
 #End Region
-   
-    
+
+
 
 #Region "SUB ROUTINES"
 
-    
-    Public Sub EmployeeUserForm()
-        '_EmpEditService.ProtectFields(Me)
-        '_emp = _EmpEditService.SelectEmpFromList(CLng(UserAccount.UserID))        
-        'EmpEditService.Employee = _emp
 
+    Public Sub EmployeeUserForm()
         UserAccount.IsEdit = True
 
         Cancel_Button.Hide()
@@ -109,6 +90,97 @@
         OraclePRDTextbox.Enabled = False
     End Sub
 
+    Public Sub ValidateEmployee()
+        'EmpValidate = 0
+
+        ValidateTextBox(OracleIDTextBox, OracleIDLabel, False)
+
+        ValidateTextBox(LastNameTextBox, LastNameLabel, True)
+
+        ValidateTextBox(FirstNameTextBox, FirstNameLabel, True)
+
+        ValidateTextBox(MiddleNameTextBox, MiddleNameLabel, True)
+
+        ValidateTextBox(GenderComboBox, GenderLabel, True)
+
+        ValidateTextBox(BirthDatePicker, BirthDateLabel, True)
+
+        ValidateTextBox(PersonalEmailTextBox, PersonalEmailLabel, True)
+
+        ValidateTextBox(MobileNoTextBox, MobileNoLabel, False)
+
+        ValidateTextBox(HomeAdd1TextBox, HomeAdd1Label, True)
+
+        ValidateTextBox(HomeAdd2TextBox, HomeAdd2Label, True)
+
+        ValidateTextBox(CityComboBox, CityLabel, True)
+
+        ValidateTextBox(RegionComboBox, RegionLabel, True)
+
+        ValidateTextBox(CountryComboBox, CountryLabel, True)
+
+        ValidateTextBox(ZipCodeTextBox, ZipCodeLabel, False)
+
+        If Not String.IsNullOrEmpty(PersonalEmailTextBox.Text) Then
+            If ValidateEmail(PersonalEmailTextBox.Text) = False Then
+                HasError = True
+                ErrorMessage = MessageEmailError
+                'EmpValidate = 2
+                PersonalEmailLabel.ForeColor = Color.Red
+            Else
+                PersonalEmailLabel.ForeColor = Color.Black
+            End If
+        End If
+    End Sub
+
+    '### IDEA NI BENEDICT KABAHAR
+    '### ValidateTextBox(TextBoxName, LabelName, True) True if string validation
+    Public Sub ValidateTextBox(ByVal TextBoxValue As Object, ByVal LabelName As Label, ByVal StringTextBox As Boolean)
+
+        'EmpValidate = 0
+        If String.IsNullOrWhiteSpace(TextBoxValue.Text) Then
+            LabelName.ForeColor = Color.Red
+            HasError = True
+            ErrorMessage = MessageRequiredFields
+            'EmpValidate = 1
+        Else
+            If StringTextBox Then
+                LabelName.ForeColor = Color.Black
+            Else
+                LabelName.ForeColor = Color.Blue
+            End If
+        End If
+
+        'Return EmpValidate
+    End Sub
+    '### PAGTATAPOS NG IDEA NI BENEDICT KABAHAR
+
+    Public Function ValidateEmail(ByVal EmailAddress) As Boolean
+        Try
+            Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
+        Catch ex As Exception
+            Return False
+        End Try
+        Return True
+    End Function
+
+    Private Sub ValidateClear()
+        OracleIDLabel.ForeColor = Color.Black
+        LastNameLabel.ForeColor = Color.Black
+        FirstNameLabel.ForeColor = Color.Black
+        MiddleNameLabel.ForeColor = Color.Black
+        GenderLabel.ForeColor = Color.Black
+        BirthDateLabel.ForeColor = Color.Black
+        PersonalEmailLabel.ForeColor = Color.Black
+        MobileNoLabel.ForeColor = Color.Blue
+        HomeAdd1Label.ForeColor = Color.Black
+        HomeAdd2Label.ForeColor = Color.Black
+        CityLabel.ForeColor = Color.Black
+        ZipCodeLabel.ForeColor = Color.Blue
+        RegionLabel.ForeColor = Color.Black
+        CountryLabel.ForeColor = Color.Black
+    End Sub
+
     Private Sub GetFieldTextValues()
 
         With _emp
@@ -119,7 +191,8 @@
             .FirstName = FirstNameTextBox.Text
             .MiddleName = MiddleNameTextBox.Text
             .PersonalEmail = PersonalEmailTextBox.Text
-            If BirthChange = True Then
+
+            If Not Trim(BirthDatePicker.Text) = String.Empty Then
                 .Birthday = CType(BirthDatePicker.Value, Date)
             Else
                 .Birthday = Nothing
@@ -156,8 +229,10 @@
             .USManager = USManagerTextBox.Text
             .OnboardingTicket = OnboardingTicketTextBox.Text
             .Recruiter = RecruiterTextBox.Text
-            If Not StartDatePicker.Text = String.Empty Then
+            If Not Trim(StartDatePicker.Text) = String.Empty Then
                 .StartDate = CType(StartDatePicker.Value, Date)
+            Else
+                .StartDate = Nothing
             End If
             .SFC = GetComboValue(SFCComboBox)
             If Not SFCDatePicker.Text = String.Empty Then
@@ -222,6 +297,10 @@
                 .BirthDatePicker.Value = CType(_emp.Birthday, Date)
                 .ResetDatePicker(.BirthDatePicker)
             Else
+                '.BirthDatePicker.MaxDate = DateTime.Today.AddYears(-18)
+                .BirthDatePicker.MaxDate = DateTime.Now.AddYears(-18)
+                '.BirthDatePicker.Format = DateTimePickerFormat.Short
+                '.BirthDatePicker.Value = CType("01/01/1753", Date)
                 .ClearDatePicker(.BirthDatePicker)
             End If
             .PersonalEmailTextBox.Text = _emp.PersonalEmail
@@ -311,16 +390,19 @@
 
             If _emp.SFC = False Then
                 .SFCComboBox.SelectedItem = "No"
+                .ClearDatePicker(.SFCDatePicker)
             Else
                 .SFCComboBox.SelectedItem = "Yes"
-            End If
-
-            If _emp.SFCDate.HasValue Then
                 .SFCDatePicker.Value = CType(_emp.SFCDate, Date)
                 .ResetDatePicker(.SFCDatePicker)
-            Else
-                .ClearDatePicker(.SFCDatePicker)
             End If
+
+            'If _emp.SFCDate.HasValue Then
+            '    .SFCDatePicker.Value = CType(_emp.SFCDate, Date)
+            '    .ResetDatePicker(.SFCDatePicker)
+            'Else
+            '    .ClearDatePicker(.SFCDatePicker)
+            'End If
         End With
 
     End Sub
@@ -332,15 +414,15 @@
             SFCDatePicker.Enabled = False
             SFCDateEmpty = 0
         ElseIf SFCComboBox.Text = "Yes" Then
-            If emp.SFC = False Then
+            If Emp.SFC = False Then
                 SFCDatePicker.Value = DateTime.Now
             Else
                 ResetDatePicker(SFCDatePicker)
             End If
             SFCDatePicker.Enabled = True
-           
+
         End If
-     
+
     End Sub
 
     Private Sub PopulateList(ByRef cbox As ComboBox, ByVal spname As String)
@@ -406,6 +488,7 @@
 
     Public Sub ClearDatePicker(ByVal dtPicker As Object)
         With dtPicker
+            '.Value = "1/1/1753"
             .Format = DateTimePickerFormat.Custom
             .CustomFormat = " "
         End With
@@ -422,6 +505,7 @@
             ElseIf _control.GetType() = GetType(ComboBox) Then
                 CType(_control, ComboBox).SelectedIndex = -1
             ElseIf _control.GetType() = GetType(DateTimePicker) Then
+                'CType(_control, DateTimePicker).Value = "02/11/2018"
                 CType(_control, DateTimePicker).Format = DateTimePickerFormat.Custom
                 CType(_control, DateTimePicker).CustomFormat = " "
             End If
@@ -452,9 +536,9 @@
 
     Public Sub GetExistingData()
 
-        _emp = _EmpEditService.SelectEmpFromList(UserAccount.SelectedOracleID)
+        _emp = _empEditService.SelectEmpFromList(UserAccount.SelectedOracleID)
         PopulateFields()
-     
+
     End Sub
 
     Private Sub AddEmployeeForm()
@@ -463,9 +547,12 @@
         'SFCDatePicker.Value = DateTime.Now
         'StartDatePicker.Value = DateTime.Now
 
-        RegionComboBox.Text = SetListName(RegionComboBox, 1)
-        BirthDatePicker.MaxDate = Date.Today.AddYears(-18)
-        BirthChange = False
+        'RegionComboBox.Text = SetListName(RegionComboBox, 1)
+        'BirthDatePicker.MaxDate = DateTime.Today.AddYears(-18)
+        BirthDatePicker.MaxDate = DateTime.Now.AddYears(-18)
+
+        'BirthDatePicker.Value = CType("01/01/1753", Date)
+
         SFCDatePicker.Enabled = False
         ClearDatePicker(BirthDatePicker)
         ClearDatePicker(StartDatePicker)
@@ -510,8 +597,8 @@
 
     Private Sub LogoutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutButton.Click
 
-        _empinfo.ValidateClear()
-        mR.ClearMgrValidate()
+        ValidateClear()
+        ClearMgrValidate()
         LogIn.Show()
 
         Select Case UserAccount.UserType
@@ -527,55 +614,87 @@
     Private Sub SaveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveButton.Click
 
         Dim retvalue As Integer
-        ClickSave = True
-        IsMgrError = False
-        IsOffEmailError = False
+        HasError = False
+        'ClickSave = True   -- FOR FURTHER INVESTIGATION
 
-        GetFieldTextValues()
-
-        'If UserAccount.UserType = 3 Then
-        '    _empinfo.Validate()
-        '    mR.MgrValidate = 1
-        'End If
-
-        'If UserAccount.UserType = 1 Or UserAccount.UserType = 2 Then
-        '    mR.ValidateManager()
-        '    EmpInfo.EmpValidate = 1
-        'End If
+        'GetFieldTextValues() -- MOVED AFTER ALL VALIDATIONS PASSED
 
         Select Case UserAccount.UserType
             Case 1
-                mR.ValidateManager()
-                EmpInfo.EmpValidate = 1
+                ValidateManager()
+                'EmpValidate = 1
             Case 2
-                mR.ValidateManager()
-                EmpInfo.EmpValidate = 1
+                ValidateManager()
+                'EmpValidate = 1
             Case 3
-                EmpInfo.Validate()
-                mR.ManagerValidate = 1
+                ValidateEmployee()
+                '_managerValidate = 1
         End Select
 
 
-        If ClickSave = True And SFCComboBox.Text = "Yes" Then
-            ClickSave = False
-            If String.IsNullOrWhiteSpace(SFCDatePicker.Text) Then
-                SFCDateEmpty = 1
+        'If ClickSave = True And SFCComboBox.Text = "Yes" Then
+        '    ClickSave = False
+        'If SFCComboBox.Text = "Yes" Then
+        '    If String.IsNullOrWhiteSpace(SFCDatePicker.Text) Then
+        '        SFCDateEmpty = 1
+        '    Else
+        '        SFCDateEmpty = 0
+        '    End If
+        'End If
 
-            Else
-                SFCDateEmpty = 0
-            End If
-        End If
+        'If EmpInfo.EmpValidate = 0 Or _managerValidate = 0 And SFCDateEmpty = 0 Then
+        'If EmpValidate = 0 Or _managerValidate = 0 Or HasError Then
 
-        If EmpInfo.EmpValidate = 0 Or mR.ManagerValidate = 0 And SFCDateEmpty = 0 Then
+        '    GetFieldTextValues()
+        '    If UserAccount.IsEdit = True Then
+        '        _empinfo.UpdateData(_emp)
+        '        _empEditService.Employee = _emp
+        '        PopulateFields()
+        '        ValidateClear()
+        '        ClearMgrValidate()
+        '        Main.ReloadDataGridWithSort()
+        '    Else
+        '        _emp.UserType = 3
+
+
+        '        retvalue = _empinfo.InsertData(_emp)        'fix to avoid error on duplicate Oracle ID's
+        '        If retvalue = 0 Then
+        '            ClearFields()
+        '        ElseIf retvalue = -1 Then
+        '            CheckDupOracleID()
+        '        End If
+
+        '        ValidateClear()
+        '        ClearMgrValidate()
+        '        Main.ReloadDataGridWithSort()
+        '    End If
+
+        'ElseIf _managerValidate = 3 Then
+        '    MessageBox.Show(MessageDuplicateOracleID, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+        'ElseIf EmpValidate = 2 Or _managerValidate = 2 Then
+
+        '    MessageBox.Show(MessageEmailError, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+        'ElseIf SFCDateEmpty = 1 Then
+        '    MessageBox.Show(MessageSFCError, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        'Else
+        '    MessageBox.Show(MessageRequiredFields, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+        'End If
+
+        If HasError Then
+            MessageBox.Show(ErrorMessage, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            GetFieldTextValues()
             If UserAccount.IsEdit = True Then
                 _empinfo.UpdateData(_emp)
-                _EmpEditService.Employee = _emp
+                _empEditService.Employee = _emp
                 PopulateFields()
-                EmpInfo.ValidateClear()
-                mR.ClearMgrValidate()
+                ValidateClear()
+                ClearMgrValidate()
                 Main.ReloadDataGridWithSort()
             Else
-                '*** SET DEFAULT VALUES DURING ADD ***'
                 _emp.UserType = 3
 
 
@@ -583,84 +702,62 @@
                 If retvalue = 0 Then
                     ClearFields()
                 ElseIf retvalue = -1 Then
-                    mR.CheckDupOracleID()
+                    CheckDupOracleID()
                 End If
 
-                EmpInfo.ValidateClear()
-                mR.ClearMgrValidate()
+                ValidateClear()
+                ClearMgrValidate()
                 Main.ReloadDataGridWithSort()
             End If
 
-        ElseIf mR.ManagerValidate = 3 Then
-            MessageBox.Show("Oracle ID already exists.", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-        ElseIf EmpInfo.EmpValidate = 2 Or mR.ManagerValidate = 2 Then
-
-            MessageBox.Show("Email is not valid, Please check your email address.", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-        ElseIf SFCDateEmpty = 1 Then
-            MessageBox.Show("Please enter SFC date.", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        Else
-            MessageBox.Show("Please fill up required field/s", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
         End If
+
     End Sub
 
     Private Sub RevertClearButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RevertClearButton.Click
-        'Revert = True
 
         If UserAccount.IsEdit = True Then
-            EmpInfo.ValidateClear()
-            mR.ClearMgrValidate()
+
+            ValidateClear()
+            ClearMgrValidate()
             PopulateFields()
             OracleIDTextBox.Focus()
-            'ClearDatePicker(SFCDatePicker)
             Debug.Print("Chenes: " & SFCDatePicker.Value.ToString) 'chenes
-            'If SFCDateEmpty = 1 Then
-            '    ResetDatePicker(SFCDatePicker)
-            'End If
         Else
             ClearFields()
             OracleIDTextBox.Focus()
-            EmpInfo.ValidateClear()
-            mR.ClearMgrValidate()
+            ValidateClear()
+            ClearMgrValidate()
         End If
-        'ResetDatePicker(StartDatePicker)
     End Sub
 
     Private Sub Cancel_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel_Button.Click
         ClearFields()
-        EmpInfo.ValidateClear()
-        mR.ClearMgrValidate()
+        ValidateClear()
+        ClearMgrValidate()
         Main.Show()
         Me.Close()
     End Sub
 
-    
+
     Private Sub SFCComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SFCComboBox.SelectedIndexChanged
 
         EnableDisableSFCDate()
 
     End Sub
 
-
     Private Sub BirthDatePicker_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BirthDatePicker.ValueChanged
         ResetDatePicker(BirthDatePicker)
-        BirthChange = True
     End Sub
 
     Private Sub StartDatePicker_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartDatePicker.ValueChanged
-
         ResetDatePicker(StartDatePicker)
-
     End Sub
 
     Private Sub SFCDatePicker_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SFCDatePicker.ValueChanged
-
         ResetDatePicker(SFCDatePicker)
-
     End Sub
- 
+
     Private Sub SiteComboBox_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SiteComboBox.SelectedValueChanged
 
         Dim _site As New Site
@@ -701,5 +798,149 @@
         Else
             PopulateCity(CityComboBox, 1)
         End If
+    End Sub
+
+    Private Sub ValidateManager()
+        '_managerValidate = 0
+
+        If String.IsNullOrWhiteSpace(FirstNameTextBox.Text) Then
+            FirstNameLabel.ForeColor = Color.Red()
+            '_managerValidate = 1
+            HasError = True
+            ErrorMessage = MessageRequiredFields
+        Else
+            FirstNameLabel.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(LastNameTextBox.Text) Then
+            LastNameLabel.ForeColor = Color.Red()
+            '_managerValidate = 1
+            HasError = True
+            ErrorMessage = MessageRequiredFields
+        Else
+            LastNameLabel.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(MiddleNameTextBox.Text) Then
+            MiddleNameLabel.ForeColor = Color.Red()
+            '_managerValidate = 1
+            HasError = True
+            ErrorMessage = MessageRequiredFields
+        Else
+            MiddleNameLabel.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(GenderComboBox.Text) Then
+            GenderLabel.ForeColor = Color.Red()
+            '_managerValidate = 1
+            HasError = True
+            ErrorMessage = MessageRequiredFields
+        Else
+            GenderLabel.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(TeamComboBox.Text) Then
+            TeamLabel.ForeColor = Color.Red()
+            '_managerValidate = 1
+            HasError = True
+            ErrorMessage = MessageRequiredFields
+        Else
+            TeamLabel.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(LocalManagerComboBox.Text) Then
+            LocalManagerLabel.ForeColor = Color.Red()
+            '_managerValidate = 1
+            HasError = True
+            ErrorMessage = MessageRequiredFields
+        Else
+            LocalManagerLabel.ForeColor = Color.Black
+        End If
+
+        If String.IsNullOrWhiteSpace(OnboardingTicketTextBox.Text) Then
+            OnboardingTicketLabel.ForeColor = Color.Red()
+            '_managerValidate = 1
+            HasError = True
+            ErrorMessage = MessageRequiredFields
+        Else
+            OnboardingTicketLabel.ForeColor = Color.Black
+        End If
+
+        If Not String.IsNullOrEmpty(OfficeEmailTextBox.Text) Then
+            If ValidateOfficeEmail(OfficeEmailTextBox.Text) = False Then
+                '_managerValidate = 2
+                HasError = True
+                ErrorMessage = MessageEmailError
+                OfficeEmailLabel.ForeColor = Color.Red
+            Else
+                OfficeEmailLabel.ForeColor = Color.Black
+            End If
+        Else
+            OfficeEmailLabel.ForeColor = Color.Black
+        End If
+
+        If Not String.IsNullOrEmpty(PersonalEmailTextBox.Text) Then
+            If ValidateOfficeEmail(PersonalEmailTextBox.Text) = False Then
+                '_managerValidate = 2
+                HasError = True
+                ErrorMessage = MessageEmailError
+                PersonalEmailLabel.ForeColor = Color.Red
+            Else
+                PersonalEmailLabel.ForeColor = Color.Black
+            End If
+        Else
+            PersonalEmailLabel.ForeColor = Color.Black
+        End If
+
+        ' **** START : FIX INVALID ORACLE ID *** ' 
+        If String.IsNullOrWhiteSpace(OracleIDTextBox.Text) Then
+            OracleIDLabel.ForeColor = Color.Red()
+            '_managerValidate = 1
+            HasError = True
+            ErrorMessage = MessageRequiredFields
+        Else
+            If UserAccount.IsEdit = False Then 'This will insert Oracle ID'
+                Dim _EmpEditService = New EmpEditService()
+                Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(OracleIDTextBox.Text)
+                If Not _tempSelectedID Is Nothing Then
+                    OracleIDLabel.ForeColor = Color.Red()
+                    '_managerValidate = 3
+                    HasError = True
+                    ErrorMessage = MessageDuplicateOracleID
+                Else
+                    OracleIDLabel.ForeColor = Color.Blue()
+                End If
+            Else
+                OracleIDLabel.ForeColor = Color.Blue()
+            End If
+        End If
+        ' **** END  : FIX INVALID ORACLE ID *** ' 
+
+    End Sub
+
+    Public Function ValidateOfficeEmail(ByVal EmailAddress) As Boolean
+        Try
+            Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
+        Catch ex As Exception
+            Return False
+        End Try
+        Return True
+    End Function
+
+    Public Sub ClearMgrValidate()
+        OracleIDLabel.ForeColor = Color.Blue
+        LastNameLabel.ForeColor = Color.Black
+        FirstNameLabel.ForeColor = Color.Black
+        MiddleNameLabel.ForeColor = Color.Black
+        GenderLabel.ForeColor = Color.Black
+        OfficeEmailLabel.ForeColor = Color.Black
+        PersonalEmailLabel.ForeColor = Color.Black
+        TeamLabel.ForeColor = Color.Black
+        LocalManagerLabel.ForeColor = Color.Black
+        OnboardingTicketLabel.ForeColor = Color.Black
+    End Sub
+
+    Public Sub CheckDupOracleID()
+        OracleIDLabel.ForeColor = Color.Red()
     End Sub
 End Class

@@ -87,13 +87,13 @@ Partial Class EmployeeInfo
         Me.SeatNoTextBox = New System.Windows.Forms.TextBox()
         Me.USManagerTextBox = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.Lbl_ObTicket = New System.Windows.Forms.Label()
+        Me.OnboardingTicketLabel = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.Lbl_localMgr = New System.Windows.Forms.Label()
+        Me.LocalManagerLabel = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.Lbl_team = New System.Windows.Forms.Label()
+        Me.TeamLabel = New System.Windows.Forms.Label()
         Me.AccessInfo = New System.Windows.Forms.TabPage()
         Me.PCNameTextbox = New System.Windows.Forms.TextBox()
         Me.Label40 = New System.Windows.Forms.Label()
@@ -406,13 +406,13 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.Controls.Add(Me.SeatNoTextBox)
         Me.OfficeInfo.Controls.Add(Me.USManagerTextBox)
         Me.OfficeInfo.Controls.Add(Me.Label21)
-        Me.OfficeInfo.Controls.Add(Me.Lbl_ObTicket)
+        Me.OfficeInfo.Controls.Add(Me.OnboardingTicketLabel)
         Me.OfficeInfo.Controls.Add(Me.Label24)
         Me.OfficeInfo.Controls.Add(Me.Label25)
-        Me.OfficeInfo.Controls.Add(Me.Lbl_localMgr)
+        Me.OfficeInfo.Controls.Add(Me.LocalManagerLabel)
         Me.OfficeInfo.Controls.Add(Me.Label27)
         Me.OfficeInfo.Controls.Add(Me.Label28)
-        Me.OfficeInfo.Controls.Add(Me.Lbl_team)
+        Me.OfficeInfo.Controls.Add(Me.TeamLabel)
         Me.OfficeInfo.Location = New System.Drawing.Point(4, 24)
         Me.OfficeInfo.Name = "OfficeInfo"
         Me.OfficeInfo.Padding = New System.Windows.Forms.Padding(3)
@@ -822,15 +822,15 @@ Partial Class EmployeeInfo
         Me.Label21.TabIndex = 93
         Me.Label21.Text = "SFC"
         '
-        'Lbl_ObTicket
+        'OnboardingTicketLabel
         '
-        Me.Lbl_ObTicket.AutoSize = True
-        Me.Lbl_ObTicket.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_ObTicket.Location = New System.Drawing.Point(394, 17)
-        Me.Lbl_ObTicket.Name = "Lbl_ObTicket"
-        Me.Lbl_ObTicket.Size = New System.Drawing.Size(107, 15)
-        Me.Lbl_ObTicket.TabIndex = 91
-        Me.Lbl_ObTicket.Text = "Onboarding Ticket"
+        Me.OnboardingTicketLabel.AutoSize = True
+        Me.OnboardingTicketLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OnboardingTicketLabel.Location = New System.Drawing.Point(394, 17)
+        Me.OnboardingTicketLabel.Name = "OnboardingTicketLabel"
+        Me.OnboardingTicketLabel.Size = New System.Drawing.Size(107, 15)
+        Me.OnboardingTicketLabel.TabIndex = 91
+        Me.OnboardingTicketLabel.Text = "Onboarding Ticket"
         '
         'Label24
         '
@@ -852,15 +852,15 @@ Partial Class EmployeeInfo
         Me.Label25.TabIndex = 89
         Me.Label25.Text = "Floor"
         '
-        'Lbl_localMgr
+        'LocalManagerLabel
         '
-        Me.Lbl_localMgr.AutoSize = True
-        Me.Lbl_localMgr.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_localMgr.Location = New System.Drawing.Point(40, 197)
-        Me.Lbl_localMgr.Name = "Lbl_localMgr"
-        Me.Lbl_localMgr.Size = New System.Drawing.Size(86, 15)
-        Me.Lbl_localMgr.TabIndex = 88
-        Me.Lbl_localMgr.Text = "Local Manager"
+        Me.LocalManagerLabel.AutoSize = True
+        Me.LocalManagerLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LocalManagerLabel.Location = New System.Drawing.Point(40, 197)
+        Me.LocalManagerLabel.Name = "LocalManagerLabel"
+        Me.LocalManagerLabel.Size = New System.Drawing.Size(86, 15)
+        Me.LocalManagerLabel.TabIndex = 88
+        Me.LocalManagerLabel.Text = "Local Manager"
         '
         'Label27
         '
@@ -882,15 +882,15 @@ Partial Class EmployeeInfo
         Me.Label28.TabIndex = 86
         Me.Label28.Text = "US Manager"
         '
-        'Lbl_team
+        'TeamLabel
         '
-        Me.Lbl_team.AutoSize = True
-        Me.Lbl_team.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_team.Location = New System.Drawing.Point(40, 167)
-        Me.Lbl_team.Name = "Lbl_team"
-        Me.Lbl_team.Size = New System.Drawing.Size(36, 15)
-        Me.Lbl_team.TabIndex = 84
-        Me.Lbl_team.Text = "Team"
+        Me.TeamLabel.AutoSize = True
+        Me.TeamLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TeamLabel.Location = New System.Drawing.Point(40, 167)
+        Me.TeamLabel.Name = "TeamLabel"
+        Me.TeamLabel.Size = New System.Drawing.Size(36, 15)
+        Me.TeamLabel.TabIndex = 84
+        Me.TeamLabel.Text = "Team"
         '
         'AccessInfo
         '
@@ -1157,12 +1157,13 @@ Partial Class EmployeeInfo
         '
         'BirthDatePicker
         '
+        Me.BirthDatePicker.CustomFormat = ""
+        Me.BirthDatePicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.BirthDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.BirthDatePicker.Location = New System.Drawing.Point(131, 302)
+        Me.BirthDatePicker.Location = New System.Drawing.Point(134, 302)
         Me.BirthDatePicker.Name = "BirthDatePicker"
         Me.BirthDatePicker.Size = New System.Drawing.Size(111, 20)
         Me.BirthDatePicker.TabIndex = 6
-        Me.BirthDatePicker.Value = New Date(2018, 1, 23, 0, 0, 0, 0)
         '
         'BirthDateLabel
         '
@@ -1318,6 +1319,7 @@ Partial Class EmployeeInfo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1206, 780)
+        Me.Controls.Add(Me.BirthDatePicker)
         Me.Controls.Add(Me.LogoutButton)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.NoteLabel)
@@ -1359,7 +1361,6 @@ Partial Class EmployeeInfo
         Me.Controls.Add(Me.RegionLabel)
         Me.Controls.Add(Me.LastNameTextBox)
         Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.BirthDatePicker)
         Me.Controls.Add(Me.PersonalEmailTextBox)
         Me.Controls.Add(Me.HomeAdd2Label)
         Me.Controls.Add(Me.OracleIDTextBox)
@@ -1426,13 +1427,13 @@ Partial Class EmployeeInfo
     Friend WithEvents SeatNoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents USManagerTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents Lbl_ObTicket As System.Windows.Forms.Label
+    Friend WithEvents OnboardingTicketLabel As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents Lbl_localMgr As System.Windows.Forms.Label
+    Friend WithEvents LocalManagerLabel As System.Windows.Forms.Label
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents Label28 As System.Windows.Forms.Label
-    Friend WithEvents Lbl_team As System.Windows.Forms.Label
+    Friend WithEvents TeamLabel As System.Windows.Forms.Label
     Friend WithEvents AccessInfo As System.Windows.Forms.TabPage
     Friend WithEvents GithubIDTextbox As System.Windows.Forms.TextBox
     Friend WithEvents ElsevierIDTextbox As System.Windows.Forms.TextBox
@@ -1461,7 +1462,6 @@ Partial Class EmployeeInfo
     Friend WithEvents TeamComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents PositionTextBox As System.Windows.Forms.TextBox
     Friend WithEvents PositionLabel As System.Windows.Forms.Label
-    Friend WithEvents BirthDatePicker As System.Windows.Forms.DateTimePicker
     Friend WithEvents BirthDateLabel As System.Windows.Forms.Label
     Friend WithEvents LandlineTextBox As System.Windows.Forms.TextBox
     Friend WithEvents LandLineNoLabel As System.Windows.Forms.Label
@@ -1495,4 +1495,5 @@ Partial Class EmployeeInfo
     Public WithEvents FloorComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents NoteLabel As System.Windows.Forms.Label
+    Friend WithEvents BirthDatePicker As System.Windows.Forms.DateTimePicker
 End Class

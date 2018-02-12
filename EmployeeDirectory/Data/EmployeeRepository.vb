@@ -6,7 +6,6 @@ Imports System.Text.RegularExpressions
 
 Public Class EmployeeRepository
     Inherits BaseRepository
-    Public EmpValidate As Integer = 0
 
 
     Public Sub New()
@@ -32,17 +31,7 @@ Public Class EmployeeRepository
         Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", _tempParamList.ToArray())
         Return _tempEmployeeList.SingleMapToEntity(Of Employee)().ToList
     End Function
-    'Public Overrides Function GetListData(ByVal entity As IEntity) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
-    '    Dim _tempParamList = New List(Of SqlParameter)()
-    '    _tempParamList.Add(New SqlParameter("@ManagerID", entity.Id))
-
-    '    '    Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
-    '    '    Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
-    '    'End Function
-    '    Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
-    '    Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
-    'End Function
-    'sofie
+    
     Public Overrides Function InsertData(ByVal entity As BASD.Helper.IEntity) As Integer
         Dim _tempParamList = New List(Of SqlParameter)()
 
@@ -132,147 +121,4 @@ Public Class EmployeeRepository
 
     End Function
 
-    Public Sub Validate()
-        EmpValidate = 0
-        If String.IsNullOrWhiteSpace(EmployeeInfo.OracleIDTextBox.Text) Then
-            EmployeeInfo.OracleIDLabel.ForeColor = Color.Red()
-            EmpValidate = 1
-        Else
-            EmployeeInfo.OracleIDLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.LastNameTextBox.Text) Then
-            EmployeeInfo.LastNameLabel.ForeColor = Color.Red()
-            EmpValidate = 1
-        Else
-            EmployeeInfo.LastNameLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.FirstNameTextBox.Text) Then
-            EmployeeInfo.FirstNameLabel.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.FirstNameLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.MiddleNameTextBox.Text) Then
-            EmployeeInfo.MiddleNameLabel.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.MiddleNameLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.GenderComboBox.Text) Then
-            EmployeeInfo.GenderLabel.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.GenderLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.BirthDatePicker.Text) Then
-            EmployeeInfo.BirthDateLabel.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.BirthDateLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.PersonalEmailTextBox.Text) Then
-            EmployeeInfo.PersonalEmailLabel.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.PersonalEmailLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.MobileNoTextBox.Text) Then
-            EmployeeInfo.MobileNoLabel.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.MobileNoLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.HomeAdd1TextBox.Text) Then
-            EmployeeInfo.HomeAdd1Label.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.HomeAdd1Label.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.HomeAdd2TextBox.Text) Then
-            EmployeeInfo.HomeAdd2Label.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.HomeAdd2Label.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.CityComboBox.Text) Then
-            EmployeeInfo.CityLabel.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.CityLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.RegionComboBox.Text) Then
-            EmployeeInfo.RegionLabel.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.RegionLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.CountryComboBox.Text) Then
-            EmployeeInfo.CountryLabel.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.CountryLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.ZipCodeTextBox.Text) Then
-            EmployeeInfo.ZipCodeLabel.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.ZipCodeLabel.ForeColor = Color.Black
-        End If
-
-        If Not String.IsNullOrEmpty(EmployeeInfo.PersonalEmailTextBox.Text) Then
-            If ValidateEmail(EmployeeInfo.PersonalEmailTextBox.Text) = False Then
-                EmpValidate = 2
-                EmployeeInfo.PersonalEmailLabel.ForeColor = Color.Red
-            Else
-                EmployeeInfo.PersonalEmailLabel.ForeColor = Color.Black
-                'MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-        End If
-    End Sub
-
-    Public Sub ValidateClear()
-        EmployeeInfo.OracleIDLabel.ForeColor = Color.Black
-        EmployeeInfo.LastNameLabel.ForeColor = Color.Black
-        EmployeeInfo.FirstNameLabel.ForeColor = Color.Black
-        EmployeeInfo.MiddleNameLabel.ForeColor = Color.Black
-        EmployeeInfo.GenderLabel.ForeColor = Color.Black
-        EmployeeInfo.BirthDateLabel.ForeColor = Color.Black
-        EmployeeInfo.PersonalEmailLabel.ForeColor = Color.Black
-        EmployeeInfo.MobileNoLabel.ForeColor = Color.Black
-        EmployeeInfo.HomeAdd1Label.ForeColor = Color.Black
-        EmployeeInfo.HomeAdd2Label.ForeColor = Color.Black
-        EmployeeInfo.CityLabel.ForeColor = Color.Black
-        EmployeeInfo.ZipCodeLabel.ForeColor = Color.Black
-        EmployeeInfo.RegionLabel.ForeColor = Color.Black
-        EmployeeInfo.CountryLabel.ForeColor = Color.Black
-    End Sub
-
-    Public Function ValidateEmail(EmailAddress) As Boolean
-        ' Dim email As New Regex("^(?<user>[^@]+)@(?<host>.+)$")
-        'Dim email As New Regex("([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})")
-        'If email.IsMatch(emailAddress) Then
-        '    Return True
-        'Else
-        '    Return False
-        'End If
-        Try
-            Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
-        Catch ex As Exception
-            Return False
-        End Try
-        Return True
-    End Function
 End Class
