@@ -137,6 +137,7 @@ Partial Class EmployeeInfo
         Me.ZipCodeTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.NoteLabel = New System.Windows.Forms.Label()
+        Me.EmployeeInfoPanel = New System.Windows.Forms.Panel()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,13 +145,14 @@ Partial Class EmployeeInfo
         Me.OfficeInfo.SuspendLayout()
         Me.AccessInfo.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.EmployeeInfoPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'LastNameLabel
         '
         Me.LastNameLabel.AutoSize = True
         Me.LastNameLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LastNameLabel.Location = New System.Drawing.Point(41, 272)
+        Me.LastNameLabel.Location = New System.Drawing.Point(56, 119)
         Me.LastNameLabel.Name = "LastNameLabel"
         Me.LastNameLabel.Size = New System.Drawing.Size(69, 15)
         Me.LastNameLabel.TabIndex = 1
@@ -160,7 +162,7 @@ Partial Class EmployeeInfo
         '
         Me.FirstNameLabel.AutoSize = True
         Me.FirstNameLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FirstNameLabel.Location = New System.Drawing.Point(302, 272)
+        Me.FirstNameLabel.Location = New System.Drawing.Point(317, 119)
         Me.FirstNameLabel.Name = "FirstNameLabel"
         Me.FirstNameLabel.Size = New System.Drawing.Size(70, 15)
         Me.FirstNameLabel.TabIndex = 2
@@ -168,14 +170,14 @@ Partial Class EmployeeInfo
         '
         'LastNameTextBox
         '
-        Me.LastNameTextBox.Location = New System.Drawing.Point(131, 272)
+        Me.LastNameTextBox.Location = New System.Drawing.Point(146, 119)
         Me.LastNameTextBox.Name = "LastNameTextBox"
         Me.LastNameTextBox.Size = New System.Drawing.Size(162, 20)
         Me.LastNameTextBox.TabIndex = 3
         '
         'FirstNameTextBox
         '
-        Me.FirstNameTextBox.Location = New System.Drawing.Point(374, 272)
+        Me.FirstNameTextBox.Location = New System.Drawing.Point(389, 119)
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
         Me.FirstNameTextBox.Size = New System.Drawing.Size(162, 20)
         Me.FirstNameTextBox.TabIndex = 4
@@ -184,7 +186,7 @@ Partial Class EmployeeInfo
         '
         Me.MiddleNameLabel.AutoSize = True
         Me.MiddleNameLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MiddleNameLabel.Location = New System.Drawing.Point(569, 272)
+        Me.MiddleNameLabel.Location = New System.Drawing.Point(584, 119)
         Me.MiddleNameLabel.Name = "MiddleNameLabel"
         Me.MiddleNameLabel.Size = New System.Drawing.Size(82, 15)
         Me.MiddleNameLabel.TabIndex = 5
@@ -192,7 +194,7 @@ Partial Class EmployeeInfo
         '
         'MiddleNameTextBox
         '
-        Me.MiddleNameTextBox.Location = New System.Drawing.Point(652, 272)
+        Me.MiddleNameTextBox.Location = New System.Drawing.Point(667, 119)
         Me.MiddleNameTextBox.Name = "MiddleNameTextBox"
         Me.MiddleNameTextBox.Size = New System.Drawing.Size(162, 20)
         Me.MiddleNameTextBox.TabIndex = 5
@@ -202,7 +204,7 @@ Partial Class EmployeeInfo
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Corbel", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(87, 175)
+        Me.Label4.Location = New System.Drawing.Point(102, 22)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(355, 42)
         Me.Label4.TabIndex = 7
@@ -212,7 +214,7 @@ Partial Class EmployeeInfo
         '
         Me.JobTitleLabel.AutoSize = True
         Me.JobTitleLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.JobTitleLabel.Location = New System.Drawing.Point(302, 242)
+        Me.JobTitleLabel.Location = New System.Drawing.Point(317, 89)
         Me.JobTitleLabel.Name = "JobTitleLabel"
         Me.JobTitleLabel.Size = New System.Drawing.Size(53, 15)
         Me.JobTitleLabel.TabIndex = 8
@@ -222,7 +224,7 @@ Partial Class EmployeeInfo
         '
         Me.GenderLabel.AutoSize = True
         Me.GenderLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GenderLabel.Location = New System.Drawing.Point(41, 332)
+        Me.GenderLabel.Location = New System.Drawing.Point(56, 179)
         Me.GenderLabel.Name = "GenderLabel"
         Me.GenderLabel.Size = New System.Drawing.Size(49, 15)
         Me.GenderLabel.TabIndex = 9
@@ -233,7 +235,7 @@ Partial Class EmployeeInfo
         Me.MobileNoLabel.AutoSize = True
         Me.MobileNoLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MobileNoLabel.ForeColor = System.Drawing.Color.Blue
-        Me.MobileNoLabel.Location = New System.Drawing.Point(374, 332)
+        Me.MobileNoLabel.Location = New System.Drawing.Point(389, 179)
         Me.MobileNoLabel.Name = "MobileNoLabel"
         Me.MobileNoLabel.Size = New System.Drawing.Size(68, 15)
         Me.MobileNoLabel.TabIndex = 10
@@ -243,7 +245,7 @@ Partial Class EmployeeInfo
         '
         Me.PersonalEmailLabel.AutoSize = True
         Me.PersonalEmailLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PersonalEmailLabel.Location = New System.Drawing.Point(374, 302)
+        Me.PersonalEmailLabel.Location = New System.Drawing.Point(389, 149)
         Me.PersonalEmailLabel.Name = "PersonalEmailLabel"
         Me.PersonalEmailLabel.Size = New System.Drawing.Size(90, 15)
         Me.PersonalEmailLabel.TabIndex = 11
@@ -251,14 +253,14 @@ Partial Class EmployeeInfo
         '
         'JobTitleTextBox
         '
-        Me.JobTitleTextBox.Location = New System.Drawing.Point(374, 242)
+        Me.JobTitleTextBox.Location = New System.Drawing.Point(389, 89)
         Me.JobTitleTextBox.Name = "JobTitleTextBox"
         Me.JobTitleTextBox.Size = New System.Drawing.Size(162, 20)
         Me.JobTitleTextBox.TabIndex = 1
         '
         'PersonalEmailTextBox
         '
-        Me.PersonalEmailTextBox.Location = New System.Drawing.Point(472, 302)
+        Me.PersonalEmailTextBox.Location = New System.Drawing.Point(487, 149)
         Me.PersonalEmailTextBox.Name = "PersonalEmailTextBox"
         Me.PersonalEmailTextBox.Size = New System.Drawing.Size(342, 20)
         Me.PersonalEmailTextBox.TabIndex = 7
@@ -268,7 +270,7 @@ Partial Class EmployeeInfo
         Me.SaveButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.SaveButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SaveButton.ForeColor = System.Drawing.Color.White
-        Me.SaveButton.Location = New System.Drawing.Point(770, 792)
+        Me.SaveButton.Location = New System.Drawing.Point(785, 639)
         Me.SaveButton.Name = "SaveButton"
         Me.SaveButton.Size = New System.Drawing.Size(120, 38)
         Me.SaveButton.TabIndex = 50
@@ -280,7 +282,7 @@ Partial Class EmployeeInfo
         Me.RevertClearButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.RevertClearButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RevertClearButton.ForeColor = System.Drawing.Color.White
-        Me.RevertClearButton.Location = New System.Drawing.Point(896, 792)
+        Me.RevertClearButton.Location = New System.Drawing.Point(911, 639)
         Me.RevertClearButton.Name = "RevertClearButton"
         Me.RevertClearButton.Size = New System.Drawing.Size(120, 38)
         Me.RevertClearButton.TabIndex = 51
@@ -292,7 +294,7 @@ Partial Class EmployeeInfo
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Corbel", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(87, 423)
+        Me.Label19.Location = New System.Drawing.Point(102, 270)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(326, 42)
         Me.Label19.TabIndex = 85
@@ -301,7 +303,7 @@ Partial Class EmployeeInfo
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.ACCOUNTINFO
-        Me.PictureBox4.Location = New System.Drawing.Point(41, 423)
+        Me.PictureBox4.Location = New System.Drawing.Point(56, 270)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(40, 40)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -311,7 +313,7 @@ Partial Class EmployeeInfo
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.PERSONALINFO
-        Me.PictureBox2.Location = New System.Drawing.Point(41, 175)
+        Me.PictureBox2.Location = New System.Drawing.Point(56, 22)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(40, 40)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -321,7 +323,7 @@ Partial Class EmployeeInfo
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.WindowsApplication1.My.Resources.Resources.EMPLOYEE_PHOTO
-        Me.PictureBox3.Location = New System.Drawing.Point(929, 175)
+        Me.PictureBox3.Location = New System.Drawing.Point(944, 22)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(204, 194)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -333,7 +335,7 @@ Partial Class EmployeeInfo
         Me.Cancel_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Cancel_Button.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel_Button.ForeColor = System.Drawing.Color.White
-        Me.Cancel_Button.Location = New System.Drawing.Point(1022, 792)
+        Me.Cancel_Button.Location = New System.Drawing.Point(1037, 639)
         Me.Cancel_Button.Name = "Cancel_Button"
         Me.Cancel_Button.Size = New System.Drawing.Size(120, 38)
         Me.Cancel_Button.TabIndex = 52
@@ -342,10 +344,11 @@ Partial Class EmployeeInfo
         '
         'LogoutButton
         '
+        Me.LogoutButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LogoutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LogoutButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogoutButton.ForeColor = System.Drawing.Color.White
-        Me.LogoutButton.Location = New System.Drawing.Point(1040, 12)
+        Me.LogoutButton.Location = New System.Drawing.Point(1063, 12)
         Me.LogoutButton.Name = "LogoutButton"
         Me.LogoutButton.Size = New System.Drawing.Size(120, 38)
         Me.LogoutButton.TabIndex = 53
@@ -357,7 +360,7 @@ Partial Class EmployeeInfo
         Me.TabControl1.Controls.Add(Me.OfficeInfo)
         Me.TabControl1.Controls.Add(Me.AccessInfo)
         Me.TabControl1.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(41, 473)
+        Me.TabControl1.Location = New System.Drawing.Point(56, 320)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1101, 313)
@@ -1087,7 +1090,7 @@ Partial Class EmployeeInfo
         Me.OracleIDLabel.AutoSize = True
         Me.OracleIDLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OracleIDLabel.ForeColor = System.Drawing.Color.Blue
-        Me.OracleIDLabel.Location = New System.Drawing.Point(41, 242)
+        Me.OracleIDLabel.Location = New System.Drawing.Point(56, 89)
         Me.OracleIDLabel.Name = "OracleIDLabel"
         Me.OracleIDLabel.Size = New System.Drawing.Size(61, 15)
         Me.OracleIDLabel.TabIndex = 45
@@ -1095,14 +1098,14 @@ Partial Class EmployeeInfo
         '
         'HomeAdd2TextBox
         '
-        Me.HomeAdd2TextBox.Location = New System.Drawing.Point(472, 362)
+        Me.HomeAdd2TextBox.Location = New System.Drawing.Point(487, 209)
         Me.HomeAdd2TextBox.Name = "HomeAdd2TextBox"
         Me.HomeAdd2TextBox.Size = New System.Drawing.Size(342, 20)
         Me.HomeAdd2TextBox.TabIndex = 12
         '
         'HomeAdd1TextBox
         '
-        Me.HomeAdd1TextBox.Location = New System.Drawing.Point(131, 362)
+        Me.HomeAdd1TextBox.Location = New System.Drawing.Point(146, 209)
         Me.HomeAdd1TextBox.Name = "HomeAdd1TextBox"
         Me.HomeAdd1TextBox.Size = New System.Drawing.Size(233, 20)
         Me.HomeAdd1TextBox.TabIndex = 11
@@ -1111,7 +1114,7 @@ Partial Class EmployeeInfo
         '
         Me.HomeAdd2Label.AutoSize = True
         Me.HomeAdd2Label.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.HomeAdd2Label.Location = New System.Drawing.Point(374, 362)
+        Me.HomeAdd2Label.Location = New System.Drawing.Point(389, 209)
         Me.HomeAdd2Label.Name = "HomeAdd2Label"
         Me.HomeAdd2Label.Size = New System.Drawing.Size(90, 15)
         Me.HomeAdd2Label.TabIndex = 93
@@ -1121,7 +1124,7 @@ Partial Class EmployeeInfo
         '
         Me.HomeAdd1Label.AutoSize = True
         Me.HomeAdd1Label.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HomeAdd1Label.Location = New System.Drawing.Point(41, 362)
+        Me.HomeAdd1Label.Location = New System.Drawing.Point(56, 209)
         Me.HomeAdd1Label.Name = "HomeAdd1Label"
         Me.HomeAdd1Label.Size = New System.Drawing.Size(90, 15)
         Me.HomeAdd1Label.TabIndex = 92
@@ -1133,14 +1136,14 @@ Partial Class EmployeeInfo
         Me.GenderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.GenderComboBox.FormattingEnabled = True
         Me.GenderComboBox.Items.AddRange(New Object() {"F", "M"})
-        Me.GenderComboBox.Location = New System.Drawing.Point(131, 332)
+        Me.GenderComboBox.Location = New System.Drawing.Point(146, 179)
         Me.GenderComboBox.Name = "GenderComboBox"
         Me.GenderComboBox.Size = New System.Drawing.Size(49, 21)
         Me.GenderComboBox.TabIndex = 8
         '
         'PositionTextBox
         '
-        Me.PositionTextBox.Location = New System.Drawing.Point(652, 242)
+        Me.PositionTextBox.Location = New System.Drawing.Point(667, 89)
         Me.PositionTextBox.Name = "PositionTextBox"
         Me.PositionTextBox.Size = New System.Drawing.Size(162, 20)
         Me.PositionTextBox.TabIndex = 2
@@ -1149,7 +1152,7 @@ Partial Class EmployeeInfo
         '
         Me.PositionLabel.AutoSize = True
         Me.PositionLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.PositionLabel.Location = New System.Drawing.Point(569, 242)
+        Me.PositionLabel.Location = New System.Drawing.Point(584, 89)
         Me.PositionLabel.Name = "PositionLabel"
         Me.PositionLabel.Size = New System.Drawing.Size(52, 15)
         Me.PositionLabel.TabIndex = 98
@@ -1160,7 +1163,7 @@ Partial Class EmployeeInfo
         Me.BirthDatePicker.CustomFormat = ""
         Me.BirthDatePicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.BirthDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.BirthDatePicker.Location = New System.Drawing.Point(134, 302)
+        Me.BirthDatePicker.Location = New System.Drawing.Point(149, 149)
         Me.BirthDatePicker.Name = "BirthDatePicker"
         Me.BirthDatePicker.Size = New System.Drawing.Size(111, 20)
         Me.BirthDatePicker.TabIndex = 6
@@ -1169,7 +1172,7 @@ Partial Class EmployeeInfo
         '
         Me.BirthDateLabel.AutoSize = True
         Me.BirthDateLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BirthDateLabel.Location = New System.Drawing.Point(41, 302)
+        Me.BirthDateLabel.Location = New System.Drawing.Point(56, 149)
         Me.BirthDateLabel.Name = "BirthDateLabel"
         Me.BirthDateLabel.Size = New System.Drawing.Size(66, 15)
         Me.BirthDateLabel.TabIndex = 101
@@ -1177,7 +1180,7 @@ Partial Class EmployeeInfo
         '
         'LandlineTextBox
         '
-        Me.LandlineTextBox.Location = New System.Drawing.Point(652, 332)
+        Me.LandlineTextBox.Location = New System.Drawing.Point(667, 179)
         Me.LandlineTextBox.Name = "LandlineTextBox"
         Me.LandlineTextBox.Size = New System.Drawing.Size(162, 20)
         Me.LandlineTextBox.TabIndex = 10
@@ -1186,7 +1189,7 @@ Partial Class EmployeeInfo
         '
         Me.LandLineNoLabel.AutoSize = True
         Me.LandLineNoLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.LandLineNoLabel.Location = New System.Drawing.Point(569, 332)
+        Me.LandLineNoLabel.Location = New System.Drawing.Point(584, 179)
         Me.LandLineNoLabel.Name = "LandLineNoLabel"
         Me.LandLineNoLabel.Size = New System.Drawing.Size(78, 15)
         Me.LandLineNoLabel.TabIndex = 102
@@ -1197,7 +1200,7 @@ Partial Class EmployeeInfo
         Me.CityComboBox.DisplayMember = """ListName"""
         Me.CityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CityComboBox.FormattingEnabled = True
-        Me.CityComboBox.Location = New System.Drawing.Point(134, 392)
+        Me.CityComboBox.Location = New System.Drawing.Point(149, 239)
         Me.CityComboBox.Name = "CityComboBox"
         Me.CityComboBox.Size = New System.Drawing.Size(131, 21)
         Me.CityComboBox.TabIndex = 13
@@ -1207,7 +1210,7 @@ Partial Class EmployeeInfo
         '
         Me.CityLabel.AutoSize = True
         Me.CityLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.CityLabel.Location = New System.Drawing.Point(94, 392)
+        Me.CityLabel.Location = New System.Drawing.Point(109, 239)
         Me.CityLabel.Name = "CityLabel"
         Me.CityLabel.Size = New System.Drawing.Size(30, 15)
         Me.CityLabel.TabIndex = 104
@@ -1218,7 +1221,7 @@ Partial Class EmployeeInfo
         Me.RegionComboBox.DisplayMember = """ListName"""
         Me.RegionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.RegionComboBox.FormattingEnabled = True
-        Me.RegionComboBox.Location = New System.Drawing.Point(374, 392)
+        Me.RegionComboBox.Location = New System.Drawing.Point(389, 239)
         Me.RegionComboBox.Name = "RegionComboBox"
         Me.RegionComboBox.Size = New System.Drawing.Size(132, 21)
         Me.RegionComboBox.TabIndex = 14
@@ -1228,7 +1231,7 @@ Partial Class EmployeeInfo
         '
         Me.RegionLabel.AutoSize = True
         Me.RegionLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.RegionLabel.Location = New System.Drawing.Point(277, 392)
+        Me.RegionLabel.Location = New System.Drawing.Point(292, 239)
         Me.RegionLabel.Name = "RegionLabel"
         Me.RegionLabel.Size = New System.Drawing.Size(82, 15)
         Me.RegionLabel.TabIndex = 106
@@ -1239,7 +1242,7 @@ Partial Class EmployeeInfo
         Me.CountryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CountryComboBox.FormattingEnabled = True
         Me.CountryComboBox.Items.AddRange(New Object() {"Philippines"})
-        Me.CountryComboBox.Location = New System.Drawing.Point(569, 392)
+        Me.CountryComboBox.Location = New System.Drawing.Point(584, 239)
         Me.CountryComboBox.Name = "CountryComboBox"
         Me.CountryComboBox.Size = New System.Drawing.Size(117, 21)
         Me.CountryComboBox.TabIndex = 15
@@ -1248,7 +1251,7 @@ Partial Class EmployeeInfo
         '
         Me.CountryLabel.AutoSize = True
         Me.CountryLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.CountryLabel.Location = New System.Drawing.Point(506, 392)
+        Me.CountryLabel.Location = New System.Drawing.Point(521, 239)
         Me.CountryLabel.Name = "CountryLabel"
         Me.CountryLabel.Size = New System.Drawing.Size(53, 15)
         Me.CountryLabel.TabIndex = 108
@@ -1259,7 +1262,7 @@ Partial Class EmployeeInfo
         Me.ZipCodeLabel.AutoSize = True
         Me.ZipCodeLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
         Me.ZipCodeLabel.ForeColor = System.Drawing.Color.Blue
-        Me.ZipCodeLabel.Location = New System.Drawing.Point(688, 392)
+        Me.ZipCodeLabel.Location = New System.Drawing.Point(703, 239)
         Me.ZipCodeLabel.Name = "ZipCodeLabel"
         Me.ZipCodeLabel.Size = New System.Drawing.Size(56, 15)
         Me.ZipCodeLabel.TabIndex = 110
@@ -1267,7 +1270,7 @@ Partial Class EmployeeInfo
         '
         'OracleIDTextBox
         '
-        Me.OracleIDTextBox.Location = New System.Drawing.Point(131, 242)
+        Me.OracleIDTextBox.Location = New System.Drawing.Point(146, 89)
         Me.OracleIDTextBox.Mask = "0000000000"
         Me.OracleIDTextBox.Name = "OracleIDTextBox"
         Me.OracleIDTextBox.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
@@ -1276,7 +1279,7 @@ Partial Class EmployeeInfo
         '
         'MobileNoTextBox
         '
-        Me.MobileNoTextBox.Location = New System.Drawing.Point(472, 332)
+        Me.MobileNoTextBox.Location = New System.Drawing.Point(487, 179)
         Me.MobileNoTextBox.Mask = "00000000000"
         Me.MobileNoTextBox.Name = "MobileNoTextBox"
         Me.MobileNoTextBox.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
@@ -1285,7 +1288,7 @@ Partial Class EmployeeInfo
         '
         'ZipCodeTextBox
         '
-        Me.ZipCodeTextBox.Location = New System.Drawing.Point(748, 392)
+        Me.ZipCodeTextBox.Location = New System.Drawing.Point(763, 239)
         Me.ZipCodeTextBox.Mask = "00000"
         Me.ZipCodeTextBox.Name = "ZipCodeTextBox"
         Me.ZipCodeTextBox.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
@@ -1295,10 +1298,12 @@ Partial Class EmployeeInfo
         '
         'PictureBox1
         '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.alorica_banner1
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1172, 166)
+        Me.PictureBox1.Size = New System.Drawing.Size(1195, 123)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -1307,64 +1312,73 @@ Partial Class EmployeeInfo
         Me.NoteLabel.AutoSize = True
         Me.NoteLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NoteLabel.ForeColor = System.Drawing.Color.Blue
-        Me.NoteLabel.Location = New System.Drawing.Point(618, 197)
+        Me.NoteLabel.Location = New System.Drawing.Point(633, 44)
         Me.NoteLabel.Name = "NoteLabel"
         Me.NoteLabel.Size = New System.Drawing.Size(195, 13)
         Me.NoteLabel.TabIndex = 111
         Me.NoteLabel.Text = "Note: All blue labeled fields are numeric."
+        '
+        'EmployeeInfoPanel
+        '
+        Me.EmployeeInfoPanel.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.EmployeeInfoPanel.Controls.Add(Me.PictureBox3)
+        Me.EmployeeInfoPanel.Controls.Add(Me.BirthDatePicker)
+        Me.EmployeeInfoPanel.Controls.Add(Me.GenderLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.OracleIDTextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.HomeAdd2Label)
+        Me.EmployeeInfoPanel.Controls.Add(Me.NoteLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.PersonalEmailTextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.PictureBox2)
+        Me.EmployeeInfoPanel.Controls.Add(Me.PictureBox4)
+        Me.EmployeeInfoPanel.Controls.Add(Me.PersonalEmailLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.LastNameTextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.GenderComboBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.RegionLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.LandlineTextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.CityComboBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.MiddleNameTextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.FirstNameTextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.LastNameLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.Cancel_Button)
+        Me.EmployeeInfoPanel.Controls.Add(Me.CountryLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.PositionTextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.LandLineNoLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.JobTitleTextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.RevertClearButton)
+        Me.EmployeeInfoPanel.Controls.Add(Me.HomeAdd1TextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.TabControl1)
+        Me.EmployeeInfoPanel.Controls.Add(Me.MobileNoTextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.CountryComboBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.JobTitleLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.MobileNoLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.OracleIDLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.Label4)
+        Me.EmployeeInfoPanel.Controls.Add(Me.ZipCodeLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.ZipCodeTextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.HomeAdd1Label)
+        Me.EmployeeInfoPanel.Controls.Add(Me.HomeAdd2TextBox)
+        Me.EmployeeInfoPanel.Controls.Add(Me.SaveButton)
+        Me.EmployeeInfoPanel.Controls.Add(Me.BirthDateLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.PositionLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.Label19)
+        Me.EmployeeInfoPanel.Controls.Add(Me.MiddleNameLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.FirstNameLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.CityLabel)
+        Me.EmployeeInfoPanel.Controls.Add(Me.RegionComboBox)
+        Me.EmployeeInfoPanel.Location = New System.Drawing.Point(0, 130)
+        Me.EmployeeInfoPanel.Name = "EmployeeInfoPanel"
+        Me.EmployeeInfoPanel.Size = New System.Drawing.Size(1192, 690)
+        Me.EmployeeInfoPanel.TabIndex = 112
         '
         'EmployeeInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1206, 780)
-        Me.Controls.Add(Me.BirthDatePicker)
+        Me.ClientSize = New System.Drawing.Size(1195, 824)
+        Me.Controls.Add(Me.EmployeeInfoPanel)
         Me.Controls.Add(Me.LogoutButton)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.NoteLabel)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PersonalEmailLabel)
-        Me.Controls.Add(Me.GenderComboBox)
-        Me.Controls.Add(Me.LandlineTextBox)
-        Me.Controls.Add(Me.MiddleNameTextBox)
-        Me.Controls.Add(Me.LastNameLabel)
-        Me.Controls.Add(Me.CountryLabel)
-        Me.Controls.Add(Me.LandLineNoLabel)
-        Me.Controls.Add(Me.RevertClearButton)
-        Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.CountryComboBox)
-        Me.Controls.Add(Me.MobileNoLabel)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.ZipCodeTextBox)
-        Me.Controls.Add(Me.HomeAdd2TextBox)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PositionLabel)
-        Me.Controls.Add(Me.MiddleNameLabel)
-        Me.Controls.Add(Me.CityLabel)
-        Me.Controls.Add(Me.RegionComboBox)
-        Me.Controls.Add(Me.FirstNameLabel)
-        Me.Controls.Add(Me.Label19)
-        Me.Controls.Add(Me.BirthDateLabel)
-        Me.Controls.Add(Me.SaveButton)
-        Me.Controls.Add(Me.HomeAdd1Label)
-        Me.Controls.Add(Me.ZipCodeLabel)
-        Me.Controls.Add(Me.OracleIDLabel)
-        Me.Controls.Add(Me.JobTitleLabel)
-        Me.Controls.Add(Me.MobileNoTextBox)
-        Me.Controls.Add(Me.HomeAdd1TextBox)
-        Me.Controls.Add(Me.JobTitleTextBox)
-        Me.Controls.Add(Me.PositionTextBox)
-        Me.Controls.Add(Me.Cancel_Button)
-        Me.Controls.Add(Me.FirstNameTextBox)
-        Me.Controls.Add(Me.CityComboBox)
-        Me.Controls.Add(Me.RegionLabel)
-        Me.Controls.Add(Me.LastNameTextBox)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.PersonalEmailTextBox)
-        Me.Controls.Add(Me.HomeAdd2Label)
-        Me.Controls.Add(Me.OracleIDTextBox)
-        Me.Controls.Add(Me.GenderLabel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "EmployeeInfo"
@@ -1378,8 +1392,9 @@ Partial Class EmployeeInfo
         Me.AccessInfo.ResumeLayout(False)
         Me.AccessInfo.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.EmployeeInfoPanel.ResumeLayout(False)
+        Me.EmployeeInfoPanel.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents LastNameLabel As System.Windows.Forms.Label
@@ -1496,4 +1511,5 @@ Partial Class EmployeeInfo
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents NoteLabel As System.Windows.Forms.Label
     Friend WithEvents BirthDatePicker As System.Windows.Forms.DateTimePicker
+    Friend WithEvents EmployeeInfoPanel As System.Windows.Forms.Panel
 End Class

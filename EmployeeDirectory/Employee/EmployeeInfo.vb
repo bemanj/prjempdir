@@ -1,13 +1,14 @@
 ﻿Public Class EmployeeInfo
 
-    Private ClickSave As Boolean
+    Private HasError As Boolean
+    Private ErrorMessage As String
+
+    'Private ClickSave As Boolean
     'Public Revert As Boolean
-    Dim SFCDateEmpty As Integer
+    'Private SFCDateEmpty As Integer
     'Dim mR As New ManagerRepository
     'Private _managerValidate As Integer = 0
     'Public EmpValidate As Integer = 0
-    Private HasError As Boolean = False
-    Private ErrorMessage As String
 
 
     Public Sub New()
@@ -16,11 +17,8 @@
         InitializeComponent()
 
         _empinfo = New EmployeeRepository()
-
         _empEditService = New EmpEditService()
-
         _emp = New Employee
-
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -410,7 +408,7 @@
         If SFCComboBox.Text = "No" Then
             ClearDatePicker(SFCDatePicker)
             SFCDatePicker.Enabled = False
-            SFCDateEmpty = 0
+            'SFCDateEmpty = 0
         ElseIf SFCComboBox.Text = "Yes" Then
             If Emp.SFC = False Then
                 SFCDatePicker.Value = DateTime.Now
@@ -533,10 +531,8 @@
     End Sub
 
     Public Sub GetExistingData()
-
         _emp = _empEditService.SelectEmpFromList(UserAccount.SelectedOracleID)
         PopulateFields()
-
     End Sub
 
     Private Sub AddEmployeeForm()
@@ -568,6 +564,8 @@
 
 
     Public Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        HasError = False
+        ErrorMessage = ""
         PopulateList(LocalManagerComboBox, "[uspGetAllManager]")
         PopulateList(RegionComboBox, "[uspGetAllRegion]")
         PopulateList(TeamComboBox, "[uspGetTeamList]")
@@ -577,7 +575,6 @@
 
         Select Case UserAccount.UserType
             'Case 1
-
             Case 2
                 If UserAccount.IsEdit = True Then
                     OracleIDTextBox.Enabled = False
@@ -594,7 +591,6 @@
     End Sub
 
     Private Sub LogoutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutButton.Click
-
         ValidateClear()
         ClearMgrValidate()
         LogIn.Show()
@@ -610,9 +606,9 @@
     End Sub
 
     Private Sub SaveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveButton.Click
-
         Dim retvalue As Integer
         HasError = False
+        ErrorMessage = ""
         'ClickSave = True   -- FOR FURTHER INVESTIGATION
 
         'GetFieldTextValues() -- MOVED AFTER ALL VALIDATIONS PASSED
@@ -707,20 +703,15 @@
                 ClearMgrValidate()
                 Main.ReloadDataGridWithSort()
             End If
-
         End If
-
     End Sub
 
     Private Sub RevertClearButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RevertClearButton.Click
-
         If UserAccount.IsEdit = True Then
-
             ValidateClear()
             ClearMgrValidate()
             PopulateFields()
-            OracleIDTextBox.Focus()
-            Debug.Print("Chenes: " & SFCDatePicker.Value.ToString) 'chenes
+            OracleIDTextBox.Focus()            
         Else
             ClearFields()
             OracleIDTextBox.Focus()
@@ -737,11 +728,8 @@
         Me.Close()
     End Sub
 
-
     Private Sub SFCComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SFCComboBox.SelectedIndexChanged
-
         EnableDisableSFCDate()
-
     End Sub
 
     Private Sub BirthDatePicker_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BirthDatePicker.ValueChanged
@@ -757,7 +745,6 @@
     End Sub
 
     Private Sub SiteComboBox_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SiteComboBox.SelectedValueChanged
-
         Dim _site As New Site
         Dim _flr As String = "n/a"
 
