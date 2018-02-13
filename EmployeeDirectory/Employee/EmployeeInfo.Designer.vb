@@ -270,7 +270,7 @@ Partial Class EmployeeInfo
         Me.SaveButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.SaveButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SaveButton.ForeColor = System.Drawing.Color.White
-        Me.SaveButton.Location = New System.Drawing.Point(785, 639)
+        Me.SaveButton.Location = New System.Drawing.Point(784, 626)
         Me.SaveButton.Name = "SaveButton"
         Me.SaveButton.Size = New System.Drawing.Size(120, 38)
         Me.SaveButton.TabIndex = 50
@@ -282,7 +282,7 @@ Partial Class EmployeeInfo
         Me.RevertClearButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.RevertClearButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RevertClearButton.ForeColor = System.Drawing.Color.White
-        Me.RevertClearButton.Location = New System.Drawing.Point(911, 639)
+        Me.RevertClearButton.Location = New System.Drawing.Point(910, 626)
         Me.RevertClearButton.Name = "RevertClearButton"
         Me.RevertClearButton.Size = New System.Drawing.Size(120, 38)
         Me.RevertClearButton.TabIndex = 51
@@ -335,7 +335,7 @@ Partial Class EmployeeInfo
         Me.Cancel_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Cancel_Button.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel_Button.ForeColor = System.Drawing.Color.White
-        Me.Cancel_Button.Location = New System.Drawing.Point(1037, 639)
+        Me.Cancel_Button.Location = New System.Drawing.Point(1036, 626)
         Me.Cancel_Button.Name = "Cancel_Button"
         Me.Cancel_Button.Size = New System.Drawing.Size(120, 38)
         Me.Cancel_Button.TabIndex = 52
@@ -348,7 +348,7 @@ Partial Class EmployeeInfo
         Me.LogoutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LogoutButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogoutButton.ForeColor = System.Drawing.Color.White
-        Me.LogoutButton.Location = New System.Drawing.Point(1063, 12)
+        Me.LogoutButton.Location = New System.Drawing.Point(1041, 12)
         Me.LogoutButton.Name = "LogoutButton"
         Me.LogoutButton.Size = New System.Drawing.Size(120, 38)
         Me.LogoutButton.TabIndex = 53
@@ -360,7 +360,7 @@ Partial Class EmployeeInfo
         Me.TabControl1.Controls.Add(Me.OfficeInfo)
         Me.TabControl1.Controls.Add(Me.AccessInfo)
         Me.TabControl1.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(56, 320)
+        Me.TabControl1.Location = New System.Drawing.Point(56, 313)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1101, 313)
@@ -1302,7 +1302,7 @@ Partial Class EmployeeInfo
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.alorica_banner1
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1195, 123)
+        Me.PictureBox1.Size = New System.Drawing.Size(1173, 98)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -1365,9 +1365,9 @@ Partial Class EmployeeInfo
         Me.EmployeeInfoPanel.Controls.Add(Me.FirstNameLabel)
         Me.EmployeeInfoPanel.Controls.Add(Me.CityLabel)
         Me.EmployeeInfoPanel.Controls.Add(Me.RegionComboBox)
-        Me.EmployeeInfoPanel.Location = New System.Drawing.Point(0, 130)
+        Me.EmployeeInfoPanel.Location = New System.Drawing.Point(6, 100)
         Me.EmployeeInfoPanel.Name = "EmployeeInfoPanel"
-        Me.EmployeeInfoPanel.Size = New System.Drawing.Size(1192, 690)
+        Me.EmployeeInfoPanel.Size = New System.Drawing.Size(1160, 670)
         Me.EmployeeInfoPanel.TabIndex = 112
         '
         'EmployeeInfo
@@ -1375,7 +1375,7 @@ Partial Class EmployeeInfo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1195, 824)
+        Me.ClientSize = New System.Drawing.Size(1190, 768)
         Me.Controls.Add(Me.EmployeeInfoPanel)
         Me.Controls.Add(Me.LogoutButton)
         Me.Controls.Add(Me.PictureBox1)

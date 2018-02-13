@@ -2,6 +2,7 @@
 
     Private HasError As Boolean
     Private ErrorMessage As String
+    Private LogoutAction As Boolean
 
     'Private ClickSave As Boolean
     'Public Revert As Boolean
@@ -58,9 +59,35 @@
 #End Region
 
 
-
 #Region "SUB ROUTINES"
+    Private Sub LogoutEmployeeInfo()
+        'ValidateClear()
+        'ClearMgrValidate()
 
+        Select Case UserAccount.UserType
+            'Case 1
+            Case 2
+                Main.Dispose()
+                Me.Dispose()
+            Case 3
+                Me.Dispose()
+        End Select
+        LogIn.Show()
+    End Sub
+
+    Private Sub CloseEmployeeInfo()
+        'ClearFields()
+        'ValidateClear()
+        'ClearMgrValidate()
+        Select Case UserAccount.UserType
+            Case 2
+                Main.Show()
+                Me.Dispose()
+            Case 3
+                Application.Exit()
+        End Select
+        
+    End Sub
 
     Public Sub EmployeeUserForm()
         UserAccount.IsEdit = True
@@ -86,6 +113,9 @@
         MercuryIDTextbox.Enabled = False
         EISIDTextbox.Enabled = False
         OraclePRDTextbox.Enabled = False
+        SaveButton.Location = New Point(910, 626)
+        RevertClearButton.Location = New Point(1036, 626)
+
     End Sub
 
     Public Sub ValidateEmployee()
@@ -180,13 +210,13 @@
     Private Sub GetFieldTextValues()
 
         With _emp
-            .OracleID = OracleIDTextBox.Text
-            .Title = JobTitleTextBox.Text
-            .Position = PositionTextBox.Text
-            .LastName = LastNameTextBox.Text
-            .FirstName = FirstNameTextBox.Text
-            .MiddleName = MiddleNameTextBox.Text
-            .PersonalEmail = PersonalEmailTextBox.Text
+            .OracleID = Trim(OracleIDTextBox.Text)
+            .Title = Trim(JobTitleTextBox.Text)
+            .Position = Trim(PositionTextBox.Text)
+            .LastName = Trim(LastNameTextBox.Text)
+            .FirstName = Trim(FirstNameTextBox.Text)
+            .MiddleName = Trim(MiddleNameTextBox.Text)
+            .PersonalEmail = Trim(PersonalEmailTextBox.Text)
 
             If Not Trim(BirthDatePicker.Text) = String.Empty Then
                 .Birthday = CType(BirthDatePicker.Value, Date)
@@ -195,36 +225,34 @@
             End If
 
             If Not MobileNoTextBox.Text = String.Empty Then
-                .MobileNo = CType(MobileNoTextBox.Text, Long)
+                .MobileNo = CType(Trim(MobileNoTextBox.Text), Long)
             Else
                 .MobileNo = Nothing
             End If
 
-            .HomeAddress1 = HomeAdd1TextBox.Text
-            .HomeAddress2 = HomeAdd2TextBox.Text
+            .HomeAddress1 = Trim(HomeAdd1TextBox.Text)
+            .HomeAddress2 = Trim(HomeAdd2TextBox.Text)
 
             If Not ZipCodeTextBox.Text = String.Empty Then
-                .ZipCode = ZipCodeTextBox.Text
+                .ZipCode = Trim(ZipCodeTextBox.Text)
             Else
                 .ZipCode = Nothing
             End If
             If Not PhoneExtensionTextBox.Text = String.Empty Then
-                .PhoneExtension = PhoneExtensionTextBox.Text
+                .PhoneExtension = Trim(PhoneExtensionTextBox.Text)
             Else
                 .PhoneExtension = Nothing
             End If
 
-            If Not LandlineTextBox.Text = String.Empty Then
-                .LandlineNo = LandlineTextBox.Text
-            End If
+            .LandlineNo = Trim(LandlineTextBox.Text)
 
-            .OfficeEmail = OfficeEmailTextBox.Text
-            .Entity = EntityTextBox.Text
-            .Division = DivisionTextBox.Text
-            .Department = DepartmentTextBox.Text
-            .USManager = USManagerTextBox.Text
-            .OnboardingTicket = OnboardingTicketTextBox.Text
-            .Recruiter = RecruiterTextBox.Text
+            .OfficeEmail = Trim(OfficeEmailTextBox.Text)
+            .Entity = Trim(EntityTextBox.Text)
+            .Division = Trim(DivisionTextBox.Text)
+            .Department = Trim(DepartmentTextBox.Text)
+            .USManager = Trim(USManagerTextBox.Text)
+            .OnboardingTicket = Trim(OnboardingTicketTextBox.Text)
+            .Recruiter = Trim(RecruiterTextBox.Text)
             If Not Trim(StartDatePicker.Text) = String.Empty Then
                 .StartDate = CType(StartDatePicker.Value, Date)
             Else
@@ -238,21 +266,20 @@
                 .SFCDate = Nothing
             End If
 
-            .SeatNumber = SeatNoTextBox.Text
+            .SeatNumber = Trim(SeatNoTextBox.Text)
             .LastAccessedBy = UserAccount.UserID
 
-            .Shift = ShiftComboBox.Text
-            .PCName = PCNameTextbox.Text
-            .MercuryID = MercuryIDTextbox.Text
-            .EISID = EISIDTextbox.Text
-            .OraclePRDID = OraclePRDTextbox.Text
-            .InsightID = InsightIDTextbox.Text
-            .NCOGroup = NCOGrpIDTextbox.Text
-            .EGSPremID = EGSPREMIDTextbox.Text
-            .ElsevierID = ElsevierIDTextbox.Text
-            .GITHubID = GithubIDTextbox.Text
+            .Shift = Trim(ShiftComboBox.Text)
+            .PCName = Trim(PCNameTextbox.Text)
+            .MercuryID = Trim(MercuryIDTextbox.Text)
+            .EISID = Trim(EISIDTextbox.Text)
+            .OraclePRDID = Trim(OraclePRDTextbox.Text)
+            .InsightID = Trim(InsightIDTextbox.Text)
+            .NCOGroup = Trim(NCOGrpIDTextbox.Text)
+            .EGSPremID = Trim(EGSPREMIDTextbox.Text)
+            .ElsevierID = Trim(ElsevierIDTextbox.Text)
+            .GITHubID = Trim(GithubIDTextbox.Text)
 
-            .Shift = ShiftComboBox.Text
             .Gender = GenderComboBox.Text
             .IDCreated = GetComboValue(IDCreatedComboBox)
             .Country = CountryComboBox.Text
@@ -302,15 +329,21 @@
             .PersonalEmailTextBox.Text = _emp.PersonalEmail
             If _emp.MobileNo > 0 Then
                 .MobileNoTextBox.Text = CType(_emp.MobileNo, String)
+            Else
+                .MobileNoTextBox.Text = String.Empty
             End If
             .LandlineTextBox.Text = _emp.LandlineNo
             .HomeAdd1TextBox.Text = _emp.HomeAddress1
             .HomeAdd2TextBox.Text = _emp.HomeAddress2
             If _emp.ZipCode > 0 Then
                 .ZipCodeTextBox.Text = CType(_emp.ZipCode, String)
+            Else
+                .ZipCodeTextBox.Text = String.Empty
             End If
             If _emp.PhoneExtension > 0 Then
                 .PhoneExtensionTextBox.Text = CType(_emp.PhoneExtension, String)
+            Else
+                .PhoneExtensionTextBox.Text = String.Empty
             End If
             .OfficeEmailTextBox.Text = _emp.OfficeEmail
             .EntityTextBox.Text = _emp.Entity
@@ -422,7 +455,6 @@
     End Sub
 
     Private Sub PopulateList(ByRef cbox As ComboBox, ByVal spname As String)
-
         Dim _library As New LibraryRespository
         Dim _dropdown As New DropDownList()
 
@@ -434,7 +466,6 @@
     End Sub
 
     Private Sub PopulateSiteList()
-
         Dim _library As New LibraryRespository
         Dim _dropdown As New DropDownList()
 
@@ -556,14 +587,99 @@
         RevertClearButton.Text = "Clear"
         OracleIDTextBox.Focus()
     End Sub
+
+
+    Private Sub ValidateManager()
+        ValidateRequiredFields(FirstNameTextBox, FirstNameLabel, True)
+        ValidateRequiredFields(LastNameTextBox, LastNameLabel, True)
+        ValidateRequiredFields(MiddleNameTextBox, MiddleNameLabel, True)
+        ValidateRequiredFields(GenderComboBox, GenderLabel, True)
+        ValidateRequiredFields(LocalManagerComboBox, LocalManagerLabel, True)
+        ValidateRequiredFields(OnboardingTicketTextBox, OnboardingTicketLabel, True)
+
+        If EmpEditService.ValidateEmail(OfficeEmailTextBox.Text) Then
+            OfficeEmailLabel.ForeColor = Color.Black
+        Else
+            HasError = True
+            ErrorMessage = MessageEmailError
+            OfficeEmailLabel.ForeColor = Color.Red
+        End If
+
+        If EmpEditService.ValidateEmail(PersonalEmailTextBox.Text) Then
+            PersonalEmailLabel.ForeColor = Color.Black
+        Else
+            HasError = True
+            ErrorMessage = MessageEmailError
+            PersonalEmailLabel.ForeColor = Color.Red
+        End If
+
+        If String.IsNullOrWhiteSpace(OracleIDTextBox.Text) Then
+            OracleIDLabel.ForeColor = Color.Red()
+            HasError = True
+            ErrorMessage = MessageRequiredFields
+        Else
+            If Not UserAccount.IsEdit Then 'This will insert Oracle ID'
+                Dim _EmpEditService = New EmpEditService()
+                Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(OracleIDTextBox.Text)
+                If Not _tempSelectedID Is Nothing Then
+                    OracleIDLabel.ForeColor = Color.Red()
+                    HasError = True
+                    ErrorMessage = MessageDuplicateOracleID
+                Else
+                    OracleIDLabel.ForeColor = Color.Blue()
+                End If
+            Else
+                OracleIDLabel.ForeColor = Color.Blue()
+            End If
+        End If
+    End Sub
+
+    Public Sub ClearMgrValidate()
+        OracleIDLabel.ForeColor = Color.Blue
+        LastNameLabel.ForeColor = Color.Black
+        FirstNameLabel.ForeColor = Color.Black
+        MiddleNameLabel.ForeColor = Color.Black
+        GenderLabel.ForeColor = Color.Black
+        OfficeEmailLabel.ForeColor = Color.Black
+        PersonalEmailLabel.ForeColor = Color.Black
+        TeamLabel.ForeColor = Color.Black
+        LocalManagerLabel.ForeColor = Color.Black
+        OnboardingTicketLabel.ForeColor = Color.Black
+    End Sub
+
+    Public Sub CheckDupOracleID()
+        OracleIDLabel.ForeColor = Color.Red()
+    End Sub
+
 #End Region
 
-    Private Sub EmployeeInfo_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        Me.Dispose()
+    Private Sub EmployeeInfo_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        'Select Case UserAccount.UserType
+        '    Case 2
+        'Select Case MessageBox.Show("Are you sure?", "WARNING!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning)
+        '    Case vbYes
+        '        Application.Exit()
+        '    Case vbNo
+        '        MsgBox("No")
+        'End Select
+
+        If Not LogoutAction Then
+            CloseEmployeeInfo()
+        End If
+
+        '    Case 3
+        'LogoutEmployeeInfo()
+        'End Select
+        'ClearFields()
+        'ValidateClear()
+        'ClearMgrValidate()
+        'Main.Show()
+        'Me.Close()
     End Sub
 
 
     Public Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        LogoutAction = False
         HasError = False
         ErrorMessage = ""
         PopulateList(LocalManagerComboBox, "[uspGetAllManager]")
@@ -591,18 +707,20 @@
     End Sub
 
     Private Sub LogoutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutButton.Click
-        ValidateClear()
-        ClearMgrValidate()
-        LogIn.Show()
+        LogoutAction = True
+        LogoutEmployeeInfo()
+        'ValidateClear()
+        'ClearMgrValidate()
+        'LogIn.Show()
 
-        Select Case UserAccount.UserType
-            'Case 1
-            Case 2
-                Main.Dispose()
-                Me.Close()
-            Case 3
-                Me.Close()
-        End Select
+        'Select Case UserAccount.UserType
+        '    'Case 1
+        '    Case 2
+        '        Main.Dispose()
+        '        Me.Close()
+        '    Case 3
+        '        Me.Close()
+        'End Select
     End Sub
 
     Private Sub SaveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveButton.Click
@@ -711,7 +829,7 @@
             ValidateClear()
             ClearMgrValidate()
             PopulateFields()
-            OracleIDTextBox.Focus()            
+            OracleIDTextBox.Focus()
         Else
             ClearFields()
             OracleIDTextBox.Focus()
@@ -721,10 +839,11 @@
     End Sub
 
     Private Sub Cancel_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel_Button.Click
-        ClearFields()
-        ValidateClear()
-        ClearMgrValidate()
-        Main.Show()
+        'CloseEmployeeInfo()
+        'ClearFields()
+        'ValidateClear()
+        'ClearMgrValidate()
+        'Main.Show()
         Me.Close()
     End Sub
 
@@ -774,7 +893,6 @@
     End Sub
 
     Private Sub RegionComboBox_SelectedValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegionComboBox.SelectedValueChanged
-
         Dim _id As Integer
 
         If RegionComboBox.SelectedIndex > -1 Then
@@ -782,51 +900,6 @@
             PopulateCity(CityComboBox, _id)
         Else
             PopulateCity(CityComboBox, 1)
-        End If
-    End Sub
-
-    Private Sub ValidateManager()
-        ValidateRequiredFields(FirstNameTextBox, FirstNameLabel, True)
-        ValidateRequiredFields(LastNameTextBox, LastNameLabel, True)
-        ValidateRequiredFields(MiddleNameTextBox, MiddleNameLabel, True)
-        ValidateRequiredFields(GenderComboBox, GenderLabel, True)
-        ValidateRequiredFields(LocalManagerComboBox, LocalManagerLabel, True)
-        ValidateRequiredFields(OnboardingTicketTextBox, OnboardingTicketLabel, True)
-
-        If EmpEditService.ValidateEmail(OfficeEmailTextBox.Text) Then
-            OfficeEmailLabel.ForeColor = Color.Black
-        Else
-            HasError = True
-            ErrorMessage = MessageEmailError
-            OfficeEmailLabel.ForeColor = Color.Red
-        End If
-
-        If EmpEditService.ValidateEmail(PersonalEmailTextBox.Text) Then
-            PersonalEmailLabel.ForeColor = Color.Black
-        Else
-            HasError = True
-            ErrorMessage = MessageEmailError
-            PersonalEmailLabel.ForeColor = Color.Red
-        End If
-
-        If String.IsNullOrWhiteSpace(OracleIDTextBox.Text) Then
-            OracleIDLabel.ForeColor = Color.Red()
-            HasError = True
-            ErrorMessage = MessageRequiredFields
-        Else
-            If Not UserAccount.IsEdit Then 'This will insert Oracle ID'
-                Dim _EmpEditService = New EmpEditService()
-                Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(OracleIDTextBox.Text)
-                If Not _tempSelectedID Is Nothing Then
-                    OracleIDLabel.ForeColor = Color.Red()
-                    HasError = True
-                    ErrorMessage = MessageDuplicateOracleID
-                Else
-                    OracleIDLabel.ForeColor = Color.Blue()
-                End If
-            Else
-                OracleIDLabel.ForeColor = Color.Blue()
-            End If
         End If
     End Sub
 
@@ -957,20 +1030,58 @@
     '    Return True
     'End Function
 
-    Public Sub ClearMgrValidate()
-        OracleIDLabel.ForeColor = Color.Blue
-        LastNameLabel.ForeColor = Color.Black
-        FirstNameLabel.ForeColor = Color.Black
-        MiddleNameLabel.ForeColor = Color.Black
-        GenderLabel.ForeColor = Color.Black
-        OfficeEmailLabel.ForeColor = Color.Black
-        PersonalEmailLabel.ForeColor = Color.Black
-        TeamLabel.ForeColor = Color.Black
-        LocalManagerLabel.ForeColor = Color.Black
-        OnboardingTicketLabel.ForeColor = Color.Black
+
+
+    '*************** masked textbox handling **************
+    Private Sub OracleIDTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles OracleIDTextBox.KeyDown
+        If e.KeyCode = Keys.Space Then
+            e.Handled = True
+            e.SuppressKeyPress = True
+        End If
     End Sub
 
-    Public Sub CheckDupOracleID()
-        OracleIDLabel.ForeColor = Color.Red()
+    Private Sub MobileNoTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MobileNoTextBox.KeyDown
+        If e.KeyCode = Keys.Space Then
+            e.Handled = True
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+
+    Private Sub PhoneExtensionTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles PhoneExtensionTextBox.KeyDown
+        If e.KeyCode = Keys.Space Then
+            e.Handled = True
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+
+    Private Sub ZipCodeTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ZipCodeTextBox.KeyDown
+        If e.KeyCode = Keys.Space Then
+            e.Handled = True
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+
+    Private Sub OracleIDTextBox_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles OracleIDTextBox.MouseDown
+        If OracleIDTextBox.Text = Nothing Then
+            OracleIDTextBox.Select(0, 0)
+        End If
+    End Sub
+
+    Private Sub MobileNoTextBox_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MobileNoTextBox.MouseDown
+        If MobileNoTextBox.Text = Nothing Then
+            MobileNoTextBox.Select(0, 0)
+        End If
+    End Sub
+
+    Private Sub ZipCodeTextBox_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ZipCodeTextBox.MouseDown
+        If ZipCodeTextBox.Text = Nothing Then
+            ZipCodeTextBox.Select(0, 0)
+        End If
+    End Sub
+
+    Private Sub PhoneExtensionTextBox_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PhoneExtensionTextBox.MouseDown
+        If PhoneExtensionTextBox.Text = Nothing Then
+            PhoneExtensionTextBox.Select(0, 0)
+        End If
     End Sub
 End Class

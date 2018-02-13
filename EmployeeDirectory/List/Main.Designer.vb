@@ -49,7 +49,7 @@ Partial Class Main
         'TB_MgrV_LastName
         '
         Me.TB_MgrV_LastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.TB_MgrV_LastName.Location = New System.Drawing.Point(80, 263)
+        Me.TB_MgrV_LastName.Location = New System.Drawing.Point(64, 263)
         Me.TB_MgrV_LastName.Name = "TB_MgrV_LastName"
         Me.TB_MgrV_LastName.Size = New System.Drawing.Size(150, 20)
         Me.TB_MgrV_LastName.TabIndex = 0
@@ -58,7 +58,7 @@ Partial Class Main
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(259, 246)
+        Me.Label1.Location = New System.Drawing.Point(243, 246)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 15)
         Me.Label1.TabIndex = 1
@@ -68,7 +68,7 @@ Partial Class Main
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(80, 246)
+        Me.Label2.Location = New System.Drawing.Point(64, 246)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(65, 15)
         Me.Label2.TabIndex = 2
@@ -77,7 +77,7 @@ Partial Class Main
         'TB_MgrV_FirstName
         '
         Me.TB_MgrV_FirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.TB_MgrV_FirstName.Location = New System.Drawing.Point(262, 263)
+        Me.TB_MgrV_FirstName.Location = New System.Drawing.Point(246, 263)
         Me.TB_MgrV_FirstName.Name = "TB_MgrV_FirstName"
         Me.TB_MgrV_FirstName.Size = New System.Drawing.Size(150, 20)
         Me.TB_MgrV_FirstName.TabIndex = 3
@@ -90,15 +90,15 @@ Partial Class Main
         Me.EmployeeDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.EmployeeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.EmployeeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.EmployeeDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.EmployeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EmployeeDataGridView.Location = New System.Drawing.Point(80, 339)
+        Me.EmployeeDataGridView.Location = New System.Drawing.Point(64, 339)
         Me.EmployeeDataGridView.Name = "EmployeeDataGridView"
         Me.EmployeeDataGridView.ReadOnly = True
         Me.EmployeeDataGridView.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EmployeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.EmployeeDataGridView.Size = New System.Drawing.Size(1131, 332)
+        Me.EmployeeDataGridView.Size = New System.Drawing.Size(1133, 320)
         Me.EmployeeDataGridView.TabIndex = 10
         '
         'SearchButton
@@ -106,7 +106,7 @@ Partial Class Main
         Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.SearchButton.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchButton.ForeColor = System.Drawing.Color.White
-        Me.SearchButton.Location = New System.Drawing.Point(429, 257)
+        Me.SearchButton.Location = New System.Drawing.Point(413, 257)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(80, 29)
         Me.SearchButton.TabIndex = 11
@@ -119,7 +119,7 @@ Partial Class Main
         Me.AddEmployeeButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.AddEmployeeButton.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddEmployeeButton.ForeColor = System.Drawing.Color.White
-        Me.AddEmployeeButton.Location = New System.Drawing.Point(1091, 304)
+        Me.AddEmployeeButton.Location = New System.Drawing.Point(1077, 304)
         Me.AddEmployeeButton.Name = "AddEmployeeButton"
         Me.AddEmployeeButton.Size = New System.Drawing.Size(120, 29)
         Me.AddEmployeeButton.TabIndex = 13
@@ -132,7 +132,7 @@ Partial Class Main
         Me.LogOutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LogOutButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogOutButton.ForeColor = System.Drawing.Color.White
-        Me.LogOutButton.Location = New System.Drawing.Point(1134, 12)
+        Me.LogOutButton.Location = New System.Drawing.Point(1136, 12)
         Me.LogOutButton.Name = "LogOutButton"
         Me.LogOutButton.Size = New System.Drawing.Size(120, 38)
         Me.LogOutButton.TabIndex = 89
@@ -145,7 +145,7 @@ Partial Class Main
         Me.EmployeeIncButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.EmployeeIncButton.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EmployeeIncButton.ForeColor = System.Drawing.Color.White
-        Me.EmployeeIncButton.Location = New System.Drawing.Point(80, 677)
+        Me.EmployeeIncButton.Location = New System.Drawing.Point(64, 665)
         Me.EmployeeIncButton.Name = "EmployeeIncButton"
         Me.EmployeeIncButton.Size = New System.Drawing.Size(245, 29)
         Me.EmployeeIncButton.TabIndex = 90
@@ -158,7 +158,7 @@ Partial Class Main
         Me.CloseButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.CloseButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CloseButton.ForeColor = System.Drawing.Color.White
-        Me.CloseButton.Location = New System.Drawing.Point(1134, 56)
+        Me.CloseButton.Location = New System.Drawing.Point(1136, 56)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(120, 38)
         Me.CloseButton.TabIndex = 91
@@ -172,7 +172,7 @@ Partial Class Main
         Me.InactiveButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.InactiveButton.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.InactiveButton.ForeColor = System.Drawing.Color.White
-        Me.InactiveButton.Location = New System.Drawing.Point(1130, 677)
+        Me.InactiveButton.Location = New System.Drawing.Point(1116, 665)
         Me.InactiveButton.Name = "InactiveButton"
         Me.InactiveButton.Size = New System.Drawing.Size(80, 29)
         Me.InactiveButton.TabIndex = 14
@@ -184,7 +184,7 @@ Partial Class Main
         Me.EmployeeListLabel.AutoSize = True
         Me.EmployeeListLabel.Font = New System.Drawing.Font("Corbel", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EmployeeListLabel.ForeColor = System.Drawing.Color.Maroon
-        Me.EmployeeListLabel.Location = New System.Drawing.Point(83, 304)
+        Me.EmployeeListLabel.Location = New System.Drawing.Point(67, 304)
         Me.EmployeeListLabel.Name = "EmployeeListLabel"
         Me.EmployeeListLabel.Size = New System.Drawing.Size(164, 26)
         Me.EmployeeListLabel.TabIndex = 92
@@ -196,7 +196,7 @@ Partial Class Main
         Me.ActiveButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ActiveButton.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ActiveButton.ForeColor = System.Drawing.Color.White
-        Me.ActiveButton.Location = New System.Drawing.Point(1044, 677)
+        Me.ActiveButton.Location = New System.Drawing.Point(1030, 665)
         Me.ActiveButton.Name = "ActiveButton"
         Me.ActiveButton.Size = New System.Drawing.Size(80, 29)
         Me.ActiveButton.TabIndex = 93
@@ -206,9 +206,9 @@ Partial Class Main
         'MainStatusStrip
         '
         Me.MainStatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserToolStripStatusLabel})
-        Me.MainStatusStrip.Location = New System.Drawing.Point(0, 752)
+        Me.MainStatusStrip.Location = New System.Drawing.Point(0, 740)
         Me.MainStatusStrip.Name = "MainStatusStrip"
-        Me.MainStatusStrip.Size = New System.Drawing.Size(1262, 22)
+        Me.MainStatusStrip.Size = New System.Drawing.Size(1264, 22)
         Me.MainStatusStrip.TabIndex = 94
         Me.MainStatusStrip.Text = "StatusStrip1"
         '
@@ -226,7 +226,7 @@ Partial Class Main
         Me.ManagerNameLabel.Location = New System.Drawing.Point(0, 215)
         Me.ManagerNameLabel.Name = "ManagerNameLabel"
         Me.ManagerNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ManagerNameLabel.Size = New System.Drawing.Size(1262, 19)
+        Me.ManagerNameLabel.Size = New System.Drawing.Size(1264, 19)
         Me.ManagerNameLabel.TabIndex = 0
         Me.ManagerNameLabel.Text = "Label_ManagerName"
         Me.ManagerNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -237,7 +237,7 @@ Partial Class Main
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.alorica_banner1
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1262, 160)
+        Me.PictureBox1.Size = New System.Drawing.Size(1264, 160)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
@@ -250,7 +250,7 @@ Partial Class Main
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(0, 166)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(1262, 49)
+        Me.Label5.Size = New System.Drawing.Size(1264, 49)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "ALORICA EMPLOYEE DIRECTORY"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -260,7 +260,7 @@ Partial Class Main
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1262, 774)
+        Me.ClientSize = New System.Drawing.Size(1264, 762)
         Me.Controls.Add(Me.MainStatusStrip)
         Me.Controls.Add(Me.ActiveButton)
         Me.Controls.Add(Me.EmployeeListLabel)

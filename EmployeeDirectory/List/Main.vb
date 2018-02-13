@@ -30,7 +30,7 @@ Public Class Main
         'dt = ConvertToDataTable(ls)                                               '   - converts list to datatable to enable sorting
         _dataTable = _managerRepository.GetDataTable(_managerGrid)                                                '   - get dtatable from db 
         EmployeeDataGridView.DataSource = _dataTable
-        Me.EmployeeDataGridView.Columns("SFC").Visible = False
+        'Me.EmployeeDataGridView.Columns("SFC").Visible = False
 
         If EmployeeDataGridView.Rows.Count <> 0 Then
             EmployeeDataGridView.Item(0, 0).Selected = False                '   - to remove highlighted item upon initial loading

@@ -1,4 +1,6 @@
-﻿Public Class EmpEditService
+﻿Imports System.Text.RegularExpressions
+
+Public Class EmpEditService
 
     Private _EmployeeRepository As New EmployeeRepository
     Private _Employee As New Employee
@@ -20,8 +22,14 @@
     Public Function ValidateEmail(ByVal EmailAddress) As Boolean
         Try
             'Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
-            If Not String.IsNullOrEmpty(EmailAddress) Then
-                Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
+            'If Not String.IsNullOrEmpty(EmailAddress) Then
+            '    Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
+            'End If
+            Dim email As New Regex("([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})")
+            If email.IsMatch(EmailAddress) Then
+                Return True
+            Else
+                Return False
             End If
         Catch ex As Exception
             Return False
