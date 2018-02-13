@@ -17,6 +17,18 @@
         Return _EmployeeRepository.GetData(New Employee() With {.OracleID = OracleID})
     End Function
 
+    Public Function ValidateEmail(ByVal EmailAddress) As Boolean
+        Try
+            'Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
+            If Not String.IsNullOrEmpty(EmailAddress) Then
+                Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+        Return True
+    End Function
+
     ''*** B KABAHAR - 1/26
     ''*** BK START OF CHANGE
     'Public Sub ProtectFields(ByVal owner As EmployeeInfo)

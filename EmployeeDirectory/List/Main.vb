@@ -11,7 +11,7 @@ Public Class Main
     Dim mg As New ManagerGrid
 
     Dim dt As New DataTable
-    Dim ls As New List(Of ManagerGrid)
+    'Dim ls As New List(Of ManagerGrid)
 
     Public Sub New()
 
@@ -24,8 +24,9 @@ Public Class Main
 
 #Region "SUB ROUTINES"
     Public Sub ReloadDataGridWithSort()
-        ls = mR.GetGridListData(mg)                                               '   - get list from db
-        dt = ConvertToDataTable(ls)                                               '   - converts list to datatable to enable sorting
+        'ls = mR.GetGridListData(mg)                                               '   - get list from db
+        'dt = ConvertToDataTable(ls)                                               '   - converts list to datatable to enable sorting
+        dt = mR.GetDataTable(mg)                                                '   - get dtatable from db 
         EmployeeDataGridView.DataSource = dt
         Me.EmployeeDataGridView.Columns("SFC").Visible = False
         If EmployeeDataGridView.Rows.Count <> 0 Then
@@ -33,22 +34,22 @@ Public Class Main
         End If
     End Sub
 
-    Public Shared Function ConvertToDataTable(Of T)(ByVal list As IList(Of T)) As DataTable
-        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(GetType(T))
-        Dim dt As New DataTable()
-        For i As Integer = 0 To properties.Count - 1
-            Dim [property] As PropertyDescriptor = properties(i)
-            dt.Columns.Add([property].Name, [property].PropertyType)
-        Next
-        Dim values As Object() = New Object(properties.Count - 1) {}
-        For Each item As T In list
-            For i As Integer = 0 To values.Length - 1
-                values(i) = properties(i).GetValue(item)
-            Next
-            dt.Rows.Add(values)
-        Next
-        Return dt
-    End Function
+    'Public Shared Function ConvertToDataTable(Of T)(ByVal list As IList(Of T)) As DataTable
+    '    Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(GetType(T))
+    '    Dim dt As New DataTable()
+    '    For i As Integer = 0 To properties.Count - 1
+    '        Dim [property] As PropertyDescriptor = properties(i)
+    '        dt.Columns.Add([property].Name, [property].PropertyType)
+    '    Next
+    '    Dim values As Object() = New Object(properties.Count - 1) {}
+    '    For Each item As T In list
+    '        For i As Integer = 0 To values.Length - 1
+    '            values(i) = properties(i).GetValue(item)
+    '        Next
+    '        dt.Rows.Add(values)
+    '    Next
+    '    Return dt
+    'End Function
 
     Public Sub ShowActiveEmployees()
         EmployeeListLabel.Text = "Active Employees"

@@ -93,58 +93,66 @@
     Public Sub ValidateEmployee()
         'EmpValidate = 0
 
-        ValidateTextBox(OracleIDTextBox, OracleIDLabel, False)
+        ValidateRequiredFields(OracleIDTextBox, OracleIDLabel, False)
 
-        ValidateTextBox(LastNameTextBox, LastNameLabel, True)
+        ValidateRequiredFields(LastNameTextBox, LastNameLabel, True)
 
-        ValidateTextBox(FirstNameTextBox, FirstNameLabel, True)
+        ValidateRequiredFields(FirstNameTextBox, FirstNameLabel, True)
 
-        ValidateTextBox(MiddleNameTextBox, MiddleNameLabel, True)
+        ValidateRequiredFields(MiddleNameTextBox, MiddleNameLabel, True)
 
-        ValidateTextBox(GenderComboBox, GenderLabel, True)
+        ValidateRequiredFields(GenderComboBox, GenderLabel, True)
 
-        ValidateTextBox(BirthDatePicker, BirthDateLabel, True)
+        ValidateRequiredFields(BirthDatePicker, BirthDateLabel, True)
 
-        ValidateTextBox(PersonalEmailTextBox, PersonalEmailLabel, True)
+        ValidateRequiredFields(PersonalEmailTextBox, PersonalEmailLabel, True)
 
-        ValidateTextBox(MobileNoTextBox, MobileNoLabel, False)
+        ValidateRequiredFields(MobileNoTextBox, MobileNoLabel, False)
 
-        ValidateTextBox(HomeAdd1TextBox, HomeAdd1Label, True)
+        ValidateRequiredFields(HomeAdd1TextBox, HomeAdd1Label, True)
 
-        ValidateTextBox(HomeAdd2TextBox, HomeAdd2Label, True)
+        ValidateRequiredFields(HomeAdd2TextBox, HomeAdd2Label, True)
 
-        ValidateTextBox(CityComboBox, CityLabel, True)
+        ValidateRequiredFields(CityComboBox, CityLabel, True)
 
-        ValidateTextBox(RegionComboBox, RegionLabel, True)
+        ValidateRequiredFields(RegionComboBox, RegionLabel, True)
 
-        ValidateTextBox(CountryComboBox, CountryLabel, True)
+        ValidateRequiredFields(CountryComboBox, CountryLabel, True)
 
-        ValidateTextBox(ZipCodeTextBox, ZipCodeLabel, False)
+        ValidateRequiredFields(ZipCodeTextBox, ZipCodeLabel, False)
 
-        If Not String.IsNullOrEmpty(PersonalEmailTextBox.Text) Then
-            If ValidateEmail(PersonalEmailTextBox.Text) = False Then
-                HasError = True
-                ErrorMessage = MessageEmailError
-                'EmpValidate = 2
-                PersonalEmailLabel.ForeColor = Color.Red
-            Else
-                PersonalEmailLabel.ForeColor = Color.Black
-            End If
+        If EmpEditService.ValidateEmail(PersonalEmailTextBox.Text) Then
+            PersonalEmailLabel.ForeColor = Color.Black
+        Else
+            HasError = True
+            ErrorMessage = MessageEmailError
+            PersonalEmailLabel.ForeColor = Color.Red
         End If
+
+        'If Not String.IsNullOrEmpty(PersonalEmailTextBox.Text) Then
+        '    If EmpEditService.ValidateEmail(PersonalEmailTextBox.Text) = False Then
+        '        HasError = True
+        '        ErrorMessage = MessageEmailError
+        '        'EmpValidate = 2
+        '        PersonalEmailLabel.ForeColor = Color.Red
+        '    Else
+        '        PersonalEmailLabel.ForeColor = Color.Black
+        '    End If
+        'End If
     End Sub
 
     '### IDEA NI BENEDICT KABAHAR
     '### ValidateTextBox(TextBoxName, LabelName, True) True if string validation
-    Public Sub ValidateTextBox(ByVal TextBoxValue As Object, ByVal LabelName As Label, ByVal StringTextBox As Boolean)
+    Public Sub ValidateRequiredFields(ByVal ObjectValue As Object, ByVal LabelName As Label, ByVal IsString As Boolean)
 
         'EmpValidate = 0
-        If String.IsNullOrWhiteSpace(TextBoxValue.Text) Then
+        If String.IsNullOrWhiteSpace(ObjectValue.Text) Then
             LabelName.ForeColor = Color.Red
             HasError = True
             ErrorMessage = MessageRequiredFields
             'EmpValidate = 1
         Else
-            If StringTextBox Then
+            If IsString Then
                 LabelName.ForeColor = Color.Black
             Else
                 LabelName.ForeColor = Color.Blue
@@ -153,16 +161,6 @@
 
         'Return EmpValidate
     End Sub
-    '### PAGTATAPOS NG IDEA NI BENEDICT KABAHAR
-
-    Public Function ValidateEmail(ByVal EmailAddress) As Boolean
-        Try
-            Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
-        Catch ex As Exception
-            Return False
-        End Try
-        Return True
-    End Function
 
     Private Sub ValidateClear()
         OracleIDLabel.ForeColor = Color.Black
@@ -801,110 +799,39 @@
     End Sub
 
     Private Sub ValidateManager()
-        '_managerValidate = 0
+        ValidateRequiredFields(FirstNameTextBox, FirstNameLabel, True)
+        ValidateRequiredFields(LastNameTextBox, LastNameLabel, True)
+        ValidateRequiredFields(MiddleNameTextBox, MiddleNameLabel, True)
+        ValidateRequiredFields(GenderComboBox, GenderLabel, True)
+        ValidateRequiredFields(LocalManagerComboBox, LocalManagerLabel, True)
+        ValidateRequiredFields(OnboardingTicketTextBox, OnboardingTicketLabel, True)
 
-        If String.IsNullOrWhiteSpace(FirstNameTextBox.Text) Then
-            FirstNameLabel.ForeColor = Color.Red()
-            '_managerValidate = 1
-            HasError = True
-            ErrorMessage = MessageRequiredFields
-        Else
-            FirstNameLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(LastNameTextBox.Text) Then
-            LastNameLabel.ForeColor = Color.Red()
-            '_managerValidate = 1
-            HasError = True
-            ErrorMessage = MessageRequiredFields
-        Else
-            LastNameLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(MiddleNameTextBox.Text) Then
-            MiddleNameLabel.ForeColor = Color.Red()
-            '_managerValidate = 1
-            HasError = True
-            ErrorMessage = MessageRequiredFields
-        Else
-            MiddleNameLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(GenderComboBox.Text) Then
-            GenderLabel.ForeColor = Color.Red()
-            '_managerValidate = 1
-            HasError = True
-            ErrorMessage = MessageRequiredFields
-        Else
-            GenderLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(TeamComboBox.Text) Then
-            TeamLabel.ForeColor = Color.Red()
-            '_managerValidate = 1
-            HasError = True
-            ErrorMessage = MessageRequiredFields
-        Else
-            TeamLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(LocalManagerComboBox.Text) Then
-            LocalManagerLabel.ForeColor = Color.Red()
-            '_managerValidate = 1
-            HasError = True
-            ErrorMessage = MessageRequiredFields
-        Else
-            LocalManagerLabel.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(OnboardingTicketTextBox.Text) Then
-            OnboardingTicketLabel.ForeColor = Color.Red()
-            '_managerValidate = 1
-            HasError = True
-            ErrorMessage = MessageRequiredFields
-        Else
-            OnboardingTicketLabel.ForeColor = Color.Black
-        End If
-
-        If Not String.IsNullOrEmpty(OfficeEmailTextBox.Text) Then
-            If ValidateOfficeEmail(OfficeEmailTextBox.Text) = False Then
-                '_managerValidate = 2
-                HasError = True
-                ErrorMessage = MessageEmailError
-                OfficeEmailLabel.ForeColor = Color.Red
-            Else
-                OfficeEmailLabel.ForeColor = Color.Black
-            End If
-        Else
+        If EmpEditService.ValidateEmail(OfficeEmailTextBox.Text) Then
             OfficeEmailLabel.ForeColor = Color.Black
-        End If
-
-        If Not String.IsNullOrEmpty(PersonalEmailTextBox.Text) Then
-            If ValidateOfficeEmail(PersonalEmailTextBox.Text) = False Then
-                '_managerValidate = 2
-                HasError = True
-                ErrorMessage = MessageEmailError
-                PersonalEmailLabel.ForeColor = Color.Red
-            Else
-                PersonalEmailLabel.ForeColor = Color.Black
-            End If
         Else
-            PersonalEmailLabel.ForeColor = Color.Black
+            HasError = True
+            ErrorMessage = MessageEmailError
+            OfficeEmailLabel.ForeColor = Color.Red
         End If
 
-        ' **** START : FIX INVALID ORACLE ID *** ' 
+        If EmpEditService.ValidateEmail(PersonalEmailTextBox.Text) Then
+            PersonalEmailLabel.ForeColor = Color.Black
+        Else
+            HasError = True
+            ErrorMessage = MessageEmailError
+            PersonalEmailLabel.ForeColor = Color.Red
+        End If
+
         If String.IsNullOrWhiteSpace(OracleIDTextBox.Text) Then
             OracleIDLabel.ForeColor = Color.Red()
-            '_managerValidate = 1
             HasError = True
             ErrorMessage = MessageRequiredFields
         Else
-            If UserAccount.IsEdit = False Then 'This will insert Oracle ID'
+            If Not UserAccount.IsEdit Then 'This will insert Oracle ID'
                 Dim _EmpEditService = New EmpEditService()
                 Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(OracleIDTextBox.Text)
                 If Not _tempSelectedID Is Nothing Then
                     OracleIDLabel.ForeColor = Color.Red()
-                    '_managerValidate = 3
                     HasError = True
                     ErrorMessage = MessageDuplicateOracleID
                 Else
@@ -914,18 +841,134 @@
                 OracleIDLabel.ForeColor = Color.Blue()
             End If
         End If
-        ' **** END  : FIX INVALID ORACLE ID *** ' 
-
     End Sub
 
-    Public Function ValidateOfficeEmail(ByVal EmailAddress) As Boolean
-        Try
-            Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
-        Catch ex As Exception
-            Return False
-        End Try
-        Return True
-    End Function
+#Region "Commented Out in Employee Info"
+    '_managerValidate = 0
+    '        If String.IsNullOrWhiteSpace(FirstNameTextBox.Text) Then
+    '    FirstNameLabel.ForeColor = Color.Red()
+    '    '_managerValidate = 1
+    '    HasError = True
+    '    ErrorMessage = MessageRequiredFields
+    'Else
+    '    FirstNameLabel.ForeColor = Color.Black
+    'End If
+
+    'If String.IsNullOrWhiteSpace(LastNameTextBox.Text) Then
+    '    LastNameLabel.ForeColor = Color.Red()
+    '    '_managerValidate = 1
+    '    HasError = True
+    '    ErrorMessage = MessageRequiredFields
+    'Else
+    '    LastNameLabel.ForeColor = Color.Black
+    'End If
+
+    'If String.IsNullOrWhiteSpace(MiddleNameTextBox.Text) Then
+    '    MiddleNameLabel.ForeColor = Color.Red()
+    '    '_managerValidate = 1
+    '    HasError = True
+    '    ErrorMessage = MessageRequiredFields
+    'Else
+    '    MiddleNameLabel.ForeColor = Color.Black
+    'End If
+
+    'If String.IsNullOrWhiteSpace(GenderComboBox.Text) Then
+    '    GenderLabel.ForeColor = Color.Red()
+    '    '_managerValidate = 1
+    '    HasError = True
+    '    ErrorMessage = MessageRequiredFields
+    'Else
+    '    GenderLabel.ForeColor = Color.Black
+    'End If
+
+    'If String.IsNullOrWhiteSpace(TeamComboBox.Text) Then
+    '    TeamLabel.ForeColor = Color.Red()
+    '    '_managerValidate = 1
+    '    HasError = True
+    '    ErrorMessage = MessageRequiredFields
+    'Else
+    '    TeamLabel.ForeColor = Color.Black
+    'End If
+
+    'If String.IsNullOrWhiteSpace(LocalManagerComboBox.Text) Then
+    '    LocalManagerLabel.ForeColor = Color.Red()
+    '    '_managerValidate = 1
+    '    HasError = True
+    '    ErrorMessage = MessageRequiredFields
+    'Else
+    '    LocalManagerLabel.ForeColor = Color.Black
+    'End If
+
+    'If String.IsNullOrWhiteSpace(OnboardingTicketTextBox.Text) Then
+    '    OnboardingTicketLabel.ForeColor = Color.Red()
+    '    '_managerValidate = 1
+    '    HasError = True
+    '    ErrorMessage = MessageRequiredFields
+    'Else
+    '    OnboardingTicketLabel.ForeColor = Color.Black
+    'End If
+
+    'If Not String.IsNullOrEmpty(OfficeEmailTextBox.Text) Then
+    '    'If ValidateOfficeEmail(OfficeEmailTextBox.Text) = False Then
+    '    If EmpEditService.ValidateEmail(OfficeEmailTextBox.Text) Then
+    '        '_managerValidate = 2
+    '        OfficeEmailLabel.ForeColor = Color.Black
+    '    Else
+    '        HasError = True
+    '        ErrorMessage = MessageEmailError
+    '        OfficeEmailLabel.ForeColor = Color.Red
+    '    End If
+    'Else
+    '    OfficeEmailLabel.ForeColor = Color.Black
+    'End If
+
+    'If Not String.IsNullOrEmpty(PersonalEmailTextBox.Text) Then
+    '    If ValidateOfficeEmail(PersonalEmailTextBox.Text) = False Then
+    '        '_managerValidate = 2
+    '        HasError = True
+    '        ErrorMessage = MessageEmailError
+    '        PersonalEmailLabel.ForeColor = Color.Red
+    '    Else
+    '        PersonalEmailLabel.ForeColor = Color.Black
+    '    End If
+    'Else
+    '    PersonalEmailLabel.ForeColor = Color.Black
+    'End If
+
+    ' **** START : FIX INVALID ORACLE ID *** ' 
+    'If String.IsNullOrWhiteSpace(OracleIDTextBox.Text) Then
+    '    OracleIDLabel.ForeColor = Color.Red()
+    '    '_managerValidate = 1
+    '    HasError = True
+    '    ErrorMessage = MessageRequiredFields
+    'Else
+    '    If Not UserAccount.IsEdit Then 'This will insert Oracle ID'
+    '        Dim _EmpEditService = New EmpEditService()
+    '        Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(OracleIDTextBox.Text)
+    '        If Not _tempSelectedID Is Nothing Then
+    '            OracleIDLabel.ForeColor = Color.Red()
+    '            '_managerValidate = 3
+    '            HasError = True
+    '            ErrorMessage = MessageDuplicateOracleID
+    '        Else
+    '            OracleIDLabel.ForeColor = Color.Blue()
+    '        End If
+    '    Else
+    '        OracleIDLabel.ForeColor = Color.Blue()
+    '    End If
+    'End If
+    ' **** END  : FIX INVALID ORACLE ID *** ' 
+
+#End Region
+
+    'Public Function ValidateOfficeEmail(ByVal EmailAddress) As Boolean
+    '    Try
+    '        Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
+    '    Catch ex As Exception
+    '        Return False
+    '    End Try
+    '    Return True
+    'End Function
 
     Public Sub ClearMgrValidate()
         OracleIDLabel.ForeColor = Color.Blue
