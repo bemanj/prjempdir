@@ -10,8 +10,4 @@ Public Interface IRepository
     Sub UpdateData(ByVal updateEntity As SqlClient.SqlParameter, ByVal entity As IEntity)
     Sub DeleteData(ByVal entity As IEntity)
 
-    ' ---- GET LOGIN ------- '
-    Function GetUserLogin(ByVal entity As IEntity) As IEntity
-    Function GetLogin(ByVal entity As IEntity) As IEntity
-
 End Interface

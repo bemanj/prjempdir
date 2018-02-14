@@ -7,11 +7,7 @@ Public Class Main
     Private _loginView As LoginView
     Private _managerGrid As ManagerGrid
     Private _dataTable As DataTable
-    'Dim _managerRepository As New ManagerRepository
-    'Dim _EmpEditService As New EmpEditService           'rename to standard, dependency inject, private
-    'Private IsSFC As Boolean 'private
-    'Dim _loginView As New LoginView
-    'Dim ls As New List(Of ManagerGrid)
+
 
     Public Sub New()
         ' This call is required by the designer.
@@ -126,10 +122,14 @@ Public Class Main
 
     Public Sub InactiveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles InactiveButton.Click
         ShowInActiveEmployees()
+        InactiveButton.Enabled = False
+        ActiveButton.Enabled = True
     End Sub
 
     Public Sub ActiveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ActiveButton.Click
         ShowActiveEmployees()
+        ActiveButton.Enabled = False
+        InactiveButton.Enabled = True
     End Sub
 
 End Class

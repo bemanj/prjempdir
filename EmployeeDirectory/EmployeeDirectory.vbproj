@@ -136,12 +136,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Dialogs\RecorNotFound.Designer.vb">
-      <DependentUpon>RecorNotFound.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\RecorNotFound.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Services\EmpEditService.vb" />
     <Compile Include="Services\LogInService.vb" />
   </ItemGroup>
@@ -171,9 +165,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\RecorNotFound.resx">
-      <DependentUpon>RecorNotFound.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -219,7 +210,9 @@
       <Name>BASD.Helper</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Dialogs\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

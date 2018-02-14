@@ -10,7 +10,7 @@ Public Class LoginRepository
         MyBase.New(ConfigurationManager.ConnectionStrings("EmployeeDirectoryConnectionString").ConnectionString.Decrypt)
     End Sub
 
-    Public Overrides Function GetUserLogin(ByVal entity As IEntity) As BASD.Helper.IEntity
+    Public Overrides Function GetData(ByVal entity As IEntity) As BASD.Helper.IEntity
         Dim _login = CType(entity, LoginView)
 
         Dim _tempParamList = New List(Of SqlParameter)()
