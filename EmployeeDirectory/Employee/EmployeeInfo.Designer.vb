@@ -152,7 +152,7 @@ Partial Class EmployeeInfo
         '
         Me.LastNameLabel.AutoSize = True
         Me.LastNameLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LastNameLabel.Location = New System.Drawing.Point(56, 119)
+        Me.LastNameLabel.Location = New System.Drawing.Point(63, 119)
         Me.LastNameLabel.Name = "LastNameLabel"
         Me.LastNameLabel.Size = New System.Drawing.Size(69, 15)
         Me.LastNameLabel.TabIndex = 1
@@ -162,7 +162,7 @@ Partial Class EmployeeInfo
         '
         Me.FirstNameLabel.AutoSize = True
         Me.FirstNameLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FirstNameLabel.Location = New System.Drawing.Point(317, 119)
+        Me.FirstNameLabel.Location = New System.Drawing.Point(324, 119)
         Me.FirstNameLabel.Name = "FirstNameLabel"
         Me.FirstNameLabel.Size = New System.Drawing.Size(70, 15)
         Me.FirstNameLabel.TabIndex = 2
@@ -170,14 +170,14 @@ Partial Class EmployeeInfo
         '
         'LastNameTextBox
         '
-        Me.LastNameTextBox.Location = New System.Drawing.Point(146, 119)
+        Me.LastNameTextBox.Location = New System.Drawing.Point(153, 119)
         Me.LastNameTextBox.Name = "LastNameTextBox"
         Me.LastNameTextBox.Size = New System.Drawing.Size(162, 20)
         Me.LastNameTextBox.TabIndex = 3
         '
         'FirstNameTextBox
         '
-        Me.FirstNameTextBox.Location = New System.Drawing.Point(389, 119)
+        Me.FirstNameTextBox.Location = New System.Drawing.Point(396, 119)
         Me.FirstNameTextBox.Name = "FirstNameTextBox"
         Me.FirstNameTextBox.Size = New System.Drawing.Size(162, 20)
         Me.FirstNameTextBox.TabIndex = 4
@@ -186,7 +186,7 @@ Partial Class EmployeeInfo
         '
         Me.MiddleNameLabel.AutoSize = True
         Me.MiddleNameLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MiddleNameLabel.Location = New System.Drawing.Point(584, 119)
+        Me.MiddleNameLabel.Location = New System.Drawing.Point(591, 119)
         Me.MiddleNameLabel.Name = "MiddleNameLabel"
         Me.MiddleNameLabel.Size = New System.Drawing.Size(82, 15)
         Me.MiddleNameLabel.TabIndex = 5
@@ -194,7 +194,7 @@ Partial Class EmployeeInfo
         '
         'MiddleNameTextBox
         '
-        Me.MiddleNameTextBox.Location = New System.Drawing.Point(667, 119)
+        Me.MiddleNameTextBox.Location = New System.Drawing.Point(674, 119)
         Me.MiddleNameTextBox.Name = "MiddleNameTextBox"
         Me.MiddleNameTextBox.Size = New System.Drawing.Size(162, 20)
         Me.MiddleNameTextBox.TabIndex = 5
@@ -204,7 +204,7 @@ Partial Class EmployeeInfo
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Corbel", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(102, 22)
+        Me.Label4.Location = New System.Drawing.Point(109, 22)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(355, 42)
         Me.Label4.TabIndex = 7
@@ -214,7 +214,7 @@ Partial Class EmployeeInfo
         '
         Me.JobTitleLabel.AutoSize = True
         Me.JobTitleLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.JobTitleLabel.Location = New System.Drawing.Point(317, 89)
+        Me.JobTitleLabel.Location = New System.Drawing.Point(324, 89)
         Me.JobTitleLabel.Name = "JobTitleLabel"
         Me.JobTitleLabel.Size = New System.Drawing.Size(53, 15)
         Me.JobTitleLabel.TabIndex = 8
@@ -224,7 +224,7 @@ Partial Class EmployeeInfo
         '
         Me.GenderLabel.AutoSize = True
         Me.GenderLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GenderLabel.Location = New System.Drawing.Point(56, 179)
+        Me.GenderLabel.Location = New System.Drawing.Point(63, 179)
         Me.GenderLabel.Name = "GenderLabel"
         Me.GenderLabel.Size = New System.Drawing.Size(49, 15)
         Me.GenderLabel.TabIndex = 9
@@ -235,7 +235,7 @@ Partial Class EmployeeInfo
         Me.MobileNoLabel.AutoSize = True
         Me.MobileNoLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MobileNoLabel.ForeColor = System.Drawing.Color.Blue
-        Me.MobileNoLabel.Location = New System.Drawing.Point(389, 179)
+        Me.MobileNoLabel.Location = New System.Drawing.Point(396, 179)
         Me.MobileNoLabel.Name = "MobileNoLabel"
         Me.MobileNoLabel.Size = New System.Drawing.Size(68, 15)
         Me.MobileNoLabel.TabIndex = 10
@@ -245,7 +245,7 @@ Partial Class EmployeeInfo
         '
         Me.PersonalEmailLabel.AutoSize = True
         Me.PersonalEmailLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PersonalEmailLabel.Location = New System.Drawing.Point(389, 149)
+        Me.PersonalEmailLabel.Location = New System.Drawing.Point(396, 149)
         Me.PersonalEmailLabel.Name = "PersonalEmailLabel"
         Me.PersonalEmailLabel.Size = New System.Drawing.Size(90, 15)
         Me.PersonalEmailLabel.TabIndex = 11
@@ -253,14 +253,14 @@ Partial Class EmployeeInfo
         '
         'JobTitleTextBox
         '
-        Me.JobTitleTextBox.Location = New System.Drawing.Point(389, 89)
+        Me.JobTitleTextBox.Location = New System.Drawing.Point(396, 89)
         Me.JobTitleTextBox.Name = "JobTitleTextBox"
         Me.JobTitleTextBox.Size = New System.Drawing.Size(162, 20)
         Me.JobTitleTextBox.TabIndex = 1
         '
         'PersonalEmailTextBox
         '
-        Me.PersonalEmailTextBox.Location = New System.Drawing.Point(487, 149)
+        Me.PersonalEmailTextBox.Location = New System.Drawing.Point(494, 149)
         Me.PersonalEmailTextBox.Name = "PersonalEmailTextBox"
         Me.PersonalEmailTextBox.Size = New System.Drawing.Size(342, 20)
         Me.PersonalEmailTextBox.TabIndex = 7
@@ -270,7 +270,7 @@ Partial Class EmployeeInfo
         Me.SaveButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.SaveButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SaveButton.ForeColor = System.Drawing.Color.White
-        Me.SaveButton.Location = New System.Drawing.Point(784, 626)
+        Me.SaveButton.Location = New System.Drawing.Point(791, 626)
         Me.SaveButton.Name = "SaveButton"
         Me.SaveButton.Size = New System.Drawing.Size(120, 38)
         Me.SaveButton.TabIndex = 50
@@ -282,7 +282,7 @@ Partial Class EmployeeInfo
         Me.RevertClearButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.RevertClearButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RevertClearButton.ForeColor = System.Drawing.Color.White
-        Me.RevertClearButton.Location = New System.Drawing.Point(910, 626)
+        Me.RevertClearButton.Location = New System.Drawing.Point(917, 626)
         Me.RevertClearButton.Name = "RevertClearButton"
         Me.RevertClearButton.Size = New System.Drawing.Size(120, 38)
         Me.RevertClearButton.TabIndex = 51
@@ -294,7 +294,7 @@ Partial Class EmployeeInfo
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Corbel", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(102, 270)
+        Me.Label19.Location = New System.Drawing.Point(109, 270)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(326, 42)
         Me.Label19.TabIndex = 85
@@ -303,7 +303,7 @@ Partial Class EmployeeInfo
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.WindowsApplication1.My.Resources.Resources.ACCOUNTINFO
-        Me.PictureBox4.Location = New System.Drawing.Point(56, 270)
+        Me.PictureBox4.Location = New System.Drawing.Point(63, 270)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(40, 40)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -313,7 +313,7 @@ Partial Class EmployeeInfo
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.PERSONALINFO
-        Me.PictureBox2.Location = New System.Drawing.Point(56, 22)
+        Me.PictureBox2.Location = New System.Drawing.Point(63, 22)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(40, 40)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -323,7 +323,7 @@ Partial Class EmployeeInfo
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.WindowsApplication1.My.Resources.Resources.EMPLOYEE_PHOTO
-        Me.PictureBox3.Location = New System.Drawing.Point(944, 22)
+        Me.PictureBox3.Location = New System.Drawing.Point(951, 22)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(204, 194)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -335,7 +335,7 @@ Partial Class EmployeeInfo
         Me.Cancel_Button.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Cancel_Button.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel_Button.ForeColor = System.Drawing.Color.White
-        Me.Cancel_Button.Location = New System.Drawing.Point(1036, 626)
+        Me.Cancel_Button.Location = New System.Drawing.Point(1043, 626)
         Me.Cancel_Button.Name = "Cancel_Button"
         Me.Cancel_Button.Size = New System.Drawing.Size(120, 38)
         Me.Cancel_Button.TabIndex = 52
@@ -348,7 +348,7 @@ Partial Class EmployeeInfo
         Me.LogoutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LogoutButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogoutButton.ForeColor = System.Drawing.Color.White
-        Me.LogoutButton.Location = New System.Drawing.Point(939, 12)
+        Me.LogoutButton.Location = New System.Drawing.Point(1057, 12)
         Me.LogoutButton.Name = "LogoutButton"
         Me.LogoutButton.Size = New System.Drawing.Size(120, 38)
         Me.LogoutButton.TabIndex = 53
@@ -361,7 +361,7 @@ Partial Class EmployeeInfo
         Me.TabControl1.Controls.Add(Me.OfficeInfo)
         Me.TabControl1.Controls.Add(Me.AccessInfo)
         Me.TabControl1.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(56, 313)
+        Me.TabControl1.Location = New System.Drawing.Point(63, 313)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1101, 313)
@@ -429,7 +429,7 @@ Partial Class EmployeeInfo
         '
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(719, 197)
+        Me.Label52.Location = New System.Drawing.Point(726, 197)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(79, 15)
         Me.Label52.TabIndex = 138
@@ -439,7 +439,7 @@ Partial Class EmployeeInfo
         '
         Me.SiteZipCodeTextBox.Enabled = False
         Me.SiteZipCodeTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.SiteZipCodeTextBox.Location = New System.Drawing.Point(829, 195)
+        Me.SiteZipCodeTextBox.Location = New System.Drawing.Point(836, 195)
         Me.SiteZipCodeTextBox.Name = "SiteZipCodeTextBox"
         Me.SiteZipCodeTextBox.Size = New System.Drawing.Size(185, 20)
         Me.SiteZipCodeTextBox.TabIndex = 36
@@ -449,7 +449,7 @@ Partial Class EmployeeInfo
         Me.StartDatePicker.CustomFormat = ""
         Me.StartDatePicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.StartDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.StartDatePicker.Location = New System.Drawing.Point(504, 197)
+        Me.StartDatePicker.Location = New System.Drawing.Point(511, 197)
         Me.StartDatePicker.Name = "StartDatePicker"
         Me.StartDatePicker.Size = New System.Drawing.Size(121, 20)
         Me.StartDatePicker.TabIndex = 29
@@ -458,7 +458,7 @@ Partial Class EmployeeInfo
         '
         Me.SFCDatePicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.SFCDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.SFCDatePicker.Location = New System.Drawing.Point(504, 257)
+        Me.SFCDatePicker.Location = New System.Drawing.Point(511, 257)
         Me.SFCDatePicker.Name = "SFCDatePicker"
         Me.SFCDatePicker.Size = New System.Drawing.Size(121, 20)
         Me.SFCDatePicker.TabIndex = 31
@@ -470,7 +470,7 @@ Partial Class EmployeeInfo
         Me.FloorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.FloorComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.FloorComboBox.FormattingEnabled = True
-        Me.FloorComboBox.Location = New System.Drawing.Point(829, 227)
+        Me.FloorComboBox.Location = New System.Drawing.Point(836, 227)
         Me.FloorComboBox.Name = "FloorComboBox"
         Me.FloorComboBox.Size = New System.Drawing.Size(121, 21)
         Me.FloorComboBox.TabIndex = 39
@@ -482,7 +482,7 @@ Partial Class EmployeeInfo
         Me.ShiftComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ShiftComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.ShiftComboBox.FormattingEnabled = True
-        Me.ShiftComboBox.Location = New System.Drawing.Point(137, 257)
+        Me.ShiftComboBox.Location = New System.Drawing.Point(144, 257)
         Me.ShiftComboBox.Name = "ShiftComboBox"
         Me.ShiftComboBox.Size = New System.Drawing.Size(171, 21)
         Me.ShiftComboBox.TabIndex = 25
@@ -491,7 +491,7 @@ Partial Class EmployeeInfo
         'PhoneExtensionTextBox
         '
         Me.PhoneExtensionTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.PhoneExtensionTextBox.Location = New System.Drawing.Point(137, 17)
+        Me.PhoneExtensionTextBox.Location = New System.Drawing.Point(144, 17)
         Me.PhoneExtensionTextBox.Mask = "000000000000000"
         Me.PhoneExtensionTextBox.Name = "PhoneExtensionTextBox"
         Me.PhoneExtensionTextBox.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
@@ -502,7 +502,7 @@ Partial Class EmployeeInfo
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(394, 47)
+        Me.Label34.Location = New System.Drawing.Point(401, 47)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(56, 15)
         Me.Label34.TabIndex = 136
@@ -512,7 +512,7 @@ Partial Class EmployeeInfo
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(394, 197)
+        Me.Label22.Location = New System.Drawing.Point(401, 197)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(63, 15)
         Me.Label22.TabIndex = 135
@@ -522,7 +522,7 @@ Partial Class EmployeeInfo
         '
         Me.SiteCountryTextBox.Enabled = False
         Me.SiteCountryTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.SiteCountryTextBox.Location = New System.Drawing.Point(829, 167)
+        Me.SiteCountryTextBox.Location = New System.Drawing.Point(836, 167)
         Me.SiteCountryTextBox.Name = "SiteCountryTextBox"
         Me.SiteCountryTextBox.Size = New System.Drawing.Size(185, 20)
         Me.SiteCountryTextBox.TabIndex = 38
@@ -531,7 +531,7 @@ Partial Class EmployeeInfo
         '
         Me.SiteRegionTextBox.Enabled = False
         Me.SiteRegionTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.SiteRegionTextBox.Location = New System.Drawing.Point(829, 137)
+        Me.SiteRegionTextBox.Location = New System.Drawing.Point(836, 137)
         Me.SiteRegionTextBox.Name = "SiteRegionTextBox"
         Me.SiteRegionTextBox.Size = New System.Drawing.Size(185, 20)
         Me.SiteRegionTextBox.TabIndex = 37
@@ -540,7 +540,7 @@ Partial Class EmployeeInfo
         '
         Me.SiteCityTextBox.Enabled = False
         Me.SiteCityTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.SiteCityTextBox.Location = New System.Drawing.Point(829, 107)
+        Me.SiteCityTextBox.Location = New System.Drawing.Point(836, 107)
         Me.SiteCityTextBox.Name = "SiteCityTextBox"
         Me.SiteCityTextBox.Size = New System.Drawing.Size(185, 20)
         Me.SiteCityTextBox.TabIndex = 35
@@ -549,7 +549,7 @@ Partial Class EmployeeInfo
         '
         Me.Label51.AutoSize = True
         Me.Label51.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.Location = New System.Drawing.Point(719, 167)
+        Me.Label51.Location = New System.Drawing.Point(726, 167)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(74, 15)
         Me.Label51.TabIndex = 131
@@ -559,7 +559,7 @@ Partial Class EmployeeInfo
         '
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.Location = New System.Drawing.Point(719, 137)
+        Me.Label50.Location = New System.Drawing.Point(726, 137)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(69, 15)
         Me.Label50.TabIndex = 129
@@ -569,7 +569,7 @@ Partial Class EmployeeInfo
         '
         Me.Label49.AutoSize = True
         Me.Label49.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.Location = New System.Drawing.Point(719, 107)
+        Me.Label49.Location = New System.Drawing.Point(726, 107)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(52, 15)
         Me.Label49.TabIndex = 127
@@ -578,7 +578,7 @@ Partial Class EmployeeInfo
         'OfficeEmailTextBox
         '
         Me.OfficeEmailTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.OfficeEmailTextBox.Location = New System.Drawing.Point(137, 47)
+        Me.OfficeEmailTextBox.Location = New System.Drawing.Point(144, 47)
         Me.OfficeEmailTextBox.Name = "OfficeEmailTextBox"
         Me.OfficeEmailTextBox.Size = New System.Drawing.Size(171, 20)
         Me.OfficeEmailTextBox.TabIndex = 18
@@ -587,7 +587,7 @@ Partial Class EmployeeInfo
         '
         Me.OfficeEmailLabel.AutoSize = True
         Me.OfficeEmailLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OfficeEmailLabel.Location = New System.Drawing.Point(40, 47)
+        Me.OfficeEmailLabel.Location = New System.Drawing.Point(47, 47)
         Me.OfficeEmailLabel.Name = "OfficeEmailLabel"
         Me.OfficeEmailLabel.Size = New System.Drawing.Size(73, 15)
         Me.OfficeEmailLabel.TabIndex = 125
@@ -598,7 +598,7 @@ Partial Class EmployeeInfo
         Me.Label47.AutoSize = True
         Me.Label47.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label47.ForeColor = System.Drawing.Color.Blue
-        Me.Label47.Location = New System.Drawing.Point(40, 17)
+        Me.Label47.Location = New System.Drawing.Point(47, 17)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(95, 15)
         Me.Label47.TabIndex = 123
@@ -610,7 +610,7 @@ Partial Class EmployeeInfo
         Me.TeamComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.TeamComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.TeamComboBox.FormattingEnabled = True
-        Me.TeamComboBox.Location = New System.Drawing.Point(137, 167)
+        Me.TeamComboBox.Location = New System.Drawing.Point(144, 167)
         Me.TeamComboBox.Name = "TeamComboBox"
         Me.TeamComboBox.Size = New System.Drawing.Size(171, 21)
         Me.TeamComboBox.TabIndex = 22
@@ -622,7 +622,7 @@ Partial Class EmployeeInfo
         Me.LocalManagerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.LocalManagerComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.LocalManagerComboBox.FormattingEnabled = True
-        Me.LocalManagerComboBox.Location = New System.Drawing.Point(137, 197)
+        Me.LocalManagerComboBox.Location = New System.Drawing.Point(144, 197)
         Me.LocalManagerComboBox.Name = "LocalManagerComboBox"
         Me.LocalManagerComboBox.Size = New System.Drawing.Size(171, 21)
         Me.LocalManagerComboBox.TabIndex = 23
@@ -633,7 +633,7 @@ Partial Class EmployeeInfo
         Me.SiteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SiteComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.SiteComboBox.FormattingEnabled = True
-        Me.SiteComboBox.Location = New System.Drawing.Point(829, 17)
+        Me.SiteComboBox.Location = New System.Drawing.Point(836, 17)
         Me.SiteComboBox.Name = "SiteComboBox"
         Me.SiteComboBox.Size = New System.Drawing.Size(185, 21)
         Me.SiteComboBox.TabIndex = 32
@@ -645,7 +645,7 @@ Partial Class EmployeeInfo
         Me.IDCreatedComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.IDCreatedComboBox.FormattingEnabled = True
         Me.IDCreatedComboBox.Items.AddRange(New Object() {"Yes", "No"})
-        Me.IDCreatedComboBox.Location = New System.Drawing.Point(504, 77)
+        Me.IDCreatedComboBox.Location = New System.Drawing.Point(511, 77)
         Me.IDCreatedComboBox.Name = "IDCreatedComboBox"
         Me.IDCreatedComboBox.Size = New System.Drawing.Size(121, 21)
         Me.IDCreatedComboBox.TabIndex = 28
@@ -654,7 +654,7 @@ Partial Class EmployeeInfo
         '
         Me.SiteAdd2TextBox.Enabled = False
         Me.SiteAdd2TextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.SiteAdd2TextBox.Location = New System.Drawing.Point(829, 77)
+        Me.SiteAdd2TextBox.Location = New System.Drawing.Point(836, 77)
         Me.SiteAdd2TextBox.Name = "SiteAdd2TextBox"
         Me.SiteAdd2TextBox.Size = New System.Drawing.Size(185, 20)
         Me.SiteAdd2TextBox.TabIndex = 34
@@ -663,7 +663,7 @@ Partial Class EmployeeInfo
         '
         Me.SiteAdd1TextBox.Enabled = False
         Me.SiteAdd1TextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.SiteAdd1TextBox.Location = New System.Drawing.Point(829, 47)
+        Me.SiteAdd1TextBox.Location = New System.Drawing.Point(836, 47)
         Me.SiteAdd1TextBox.Name = "SiteAdd1TextBox"
         Me.SiteAdd1TextBox.Size = New System.Drawing.Size(185, 20)
         Me.SiteAdd1TextBox.TabIndex = 33
@@ -671,7 +671,7 @@ Partial Class EmployeeInfo
         'EntityTextBox
         '
         Me.EntityTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.EntityTextBox.Location = New System.Drawing.Point(137, 77)
+        Me.EntityTextBox.Location = New System.Drawing.Point(144, 77)
         Me.EntityTextBox.Name = "EntityTextBox"
         Me.EntityTextBox.Size = New System.Drawing.Size(171, 20)
         Me.EntityTextBox.TabIndex = 19
@@ -679,7 +679,7 @@ Partial Class EmployeeInfo
         'DepartmentTextBox
         '
         Me.DepartmentTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.DepartmentTextBox.Location = New System.Drawing.Point(137, 137)
+        Me.DepartmentTextBox.Location = New System.Drawing.Point(144, 137)
         Me.DepartmentTextBox.Name = "DepartmentTextBox"
         Me.DepartmentTextBox.Size = New System.Drawing.Size(171, 20)
         Me.DepartmentTextBox.TabIndex = 21
@@ -687,7 +687,7 @@ Partial Class EmployeeInfo
         'DivisionTextBox
         '
         Me.DivisionTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.DivisionTextBox.Location = New System.Drawing.Point(137, 107)
+        Me.DivisionTextBox.Location = New System.Drawing.Point(144, 107)
         Me.DivisionTextBox.Name = "DivisionTextBox"
         Me.DivisionTextBox.Size = New System.Drawing.Size(171, 20)
         Me.DivisionTextBox.TabIndex = 20
@@ -695,7 +695,7 @@ Partial Class EmployeeInfo
         'RecruiterTextBox
         '
         Me.RecruiterTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.RecruiterTextBox.Location = New System.Drawing.Point(504, 47)
+        Me.RecruiterTextBox.Location = New System.Drawing.Point(511, 47)
         Me.RecruiterTextBox.Name = "RecruiterTextBox"
         Me.RecruiterTextBox.Size = New System.Drawing.Size(121, 20)
         Me.RecruiterTextBox.TabIndex = 27
@@ -704,7 +704,7 @@ Partial Class EmployeeInfo
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(719, 77)
+        Me.Label20.Location = New System.Drawing.Point(726, 77)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(108, 15)
         Me.Label20.TabIndex = 111
@@ -714,7 +714,7 @@ Partial Class EmployeeInfo
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.Location = New System.Drawing.Point(719, 47)
+        Me.Label30.Location = New System.Drawing.Point(726, 47)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(107, 15)
         Me.Label30.TabIndex = 110
@@ -724,7 +724,7 @@ Partial Class EmployeeInfo
         '
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.Location = New System.Drawing.Point(40, 257)
+        Me.Label31.Location = New System.Drawing.Point(47, 257)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(87, 15)
         Me.Label31.TabIndex = 109
@@ -734,7 +734,7 @@ Partial Class EmployeeInfo
         '
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(40, 77)
+        Me.Label32.Location = New System.Drawing.Point(47, 77)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(40, 15)
         Me.Label32.TabIndex = 108
@@ -744,7 +744,7 @@ Partial Class EmployeeInfo
         '
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(40, 137)
+        Me.Label33.Location = New System.Drawing.Point(47, 137)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(73, 15)
         Me.Label33.TabIndex = 107
@@ -754,7 +754,7 @@ Partial Class EmployeeInfo
         '
         Me.Label35.AutoSize = True
         Me.Label35.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(40, 107)
+        Me.Label35.Location = New System.Drawing.Point(47, 107)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(50, 15)
         Me.Label35.TabIndex = 105
@@ -764,7 +764,7 @@ Partial Class EmployeeInfo
         '
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(394, 77)
+        Me.Label36.Location = New System.Drawing.Point(401, 77)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(63, 15)
         Me.Label36.TabIndex = 104
@@ -774,7 +774,7 @@ Partial Class EmployeeInfo
         '
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.Location = New System.Drawing.Point(394, 257)
+        Me.Label37.Location = New System.Drawing.Point(401, 257)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(58, 15)
         Me.Label37.TabIndex = 102
@@ -787,7 +787,7 @@ Partial Class EmployeeInfo
         Me.SFCComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.SFCComboBox.FormattingEnabled = True
         Me.SFCComboBox.Items.AddRange(New Object() {"Yes", "No"})
-        Me.SFCComboBox.Location = New System.Drawing.Point(504, 227)
+        Me.SFCComboBox.Location = New System.Drawing.Point(511, 227)
         Me.SFCComboBox.Name = "SFCComboBox"
         Me.SFCComboBox.Size = New System.Drawing.Size(121, 21)
         Me.SFCComboBox.TabIndex = 30
@@ -795,7 +795,7 @@ Partial Class EmployeeInfo
         'OnboardingTicketTextBox
         '
         Me.OnboardingTicketTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.OnboardingTicketTextBox.Location = New System.Drawing.Point(504, 17)
+        Me.OnboardingTicketTextBox.Location = New System.Drawing.Point(511, 17)
         Me.OnboardingTicketTextBox.Name = "OnboardingTicketTextBox"
         Me.OnboardingTicketTextBox.Size = New System.Drawing.Size(121, 20)
         Me.OnboardingTicketTextBox.TabIndex = 26
@@ -803,7 +803,7 @@ Partial Class EmployeeInfo
         'SeatNoTextBox
         '
         Me.SeatNoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.SeatNoTextBox.Location = New System.Drawing.Point(829, 257)
+        Me.SeatNoTextBox.Location = New System.Drawing.Point(836, 257)
         Me.SeatNoTextBox.Name = "SeatNoTextBox"
         Me.SeatNoTextBox.Size = New System.Drawing.Size(121, 20)
         Me.SeatNoTextBox.TabIndex = 40
@@ -811,7 +811,7 @@ Partial Class EmployeeInfo
         'USManagerTextBox
         '
         Me.USManagerTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.USManagerTextBox.Location = New System.Drawing.Point(137, 227)
+        Me.USManagerTextBox.Location = New System.Drawing.Point(144, 227)
         Me.USManagerTextBox.Name = "USManagerTextBox"
         Me.USManagerTextBox.Size = New System.Drawing.Size(171, 20)
         Me.USManagerTextBox.TabIndex = 24
@@ -820,7 +820,7 @@ Partial Class EmployeeInfo
         '
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(394, 227)
+        Me.Label21.Location = New System.Drawing.Point(401, 227)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(29, 15)
         Me.Label21.TabIndex = 93
@@ -830,7 +830,7 @@ Partial Class EmployeeInfo
         '
         Me.OnboardingTicketLabel.AutoSize = True
         Me.OnboardingTicketLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OnboardingTicketLabel.Location = New System.Drawing.Point(394, 17)
+        Me.OnboardingTicketLabel.Location = New System.Drawing.Point(401, 17)
         Me.OnboardingTicketLabel.Name = "OnboardingTicketLabel"
         Me.OnboardingTicketLabel.Size = New System.Drawing.Size(107, 15)
         Me.OnboardingTicketLabel.TabIndex = 91
@@ -840,7 +840,7 @@ Partial Class EmployeeInfo
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(719, 257)
+        Me.Label24.Location = New System.Drawing.Point(726, 257)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(53, 15)
         Me.Label24.TabIndex = 90
@@ -850,7 +850,7 @@ Partial Class EmployeeInfo
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(719, 227)
+        Me.Label25.Location = New System.Drawing.Point(726, 227)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(35, 15)
         Me.Label25.TabIndex = 89
@@ -860,7 +860,7 @@ Partial Class EmployeeInfo
         '
         Me.LocalManagerLabel.AutoSize = True
         Me.LocalManagerLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LocalManagerLabel.Location = New System.Drawing.Point(40, 197)
+        Me.LocalManagerLabel.Location = New System.Drawing.Point(47, 197)
         Me.LocalManagerLabel.Name = "LocalManagerLabel"
         Me.LocalManagerLabel.Size = New System.Drawing.Size(86, 15)
         Me.LocalManagerLabel.TabIndex = 88
@@ -870,7 +870,7 @@ Partial Class EmployeeInfo
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(719, 17)
+        Me.Label27.Location = New System.Drawing.Point(726, 17)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(28, 15)
         Me.Label27.TabIndex = 87
@@ -880,7 +880,7 @@ Partial Class EmployeeInfo
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(40, 227)
+        Me.Label28.Location = New System.Drawing.Point(47, 227)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(73, 15)
         Me.Label28.TabIndex = 86
@@ -890,7 +890,7 @@ Partial Class EmployeeInfo
         '
         Me.TeamLabel.AutoSize = True
         Me.TeamLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TeamLabel.Location = New System.Drawing.Point(40, 167)
+        Me.TeamLabel.Location = New System.Drawing.Point(47, 167)
         Me.TeamLabel.Name = "TeamLabel"
         Me.TeamLabel.Size = New System.Drawing.Size(36, 15)
         Me.TeamLabel.TabIndex = 84
@@ -927,7 +927,7 @@ Partial Class EmployeeInfo
         'PCNameTextbox
         '
         Me.PCNameTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.PCNameTextbox.Location = New System.Drawing.Point(131, 17)
+        Me.PCNameTextbox.Location = New System.Drawing.Point(138, 17)
         Me.PCNameTextbox.Name = "PCNameTextbox"
         Me.PCNameTextbox.Size = New System.Drawing.Size(121, 20)
         Me.PCNameTextbox.TabIndex = 41
@@ -936,7 +936,7 @@ Partial Class EmployeeInfo
         '
         Me.Label40.AutoSize = True
         Me.Label40.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(40, 17)
+        Me.Label40.Location = New System.Drawing.Point(47, 17)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(55, 15)
         Me.Label40.TabIndex = 63
@@ -945,7 +945,7 @@ Partial Class EmployeeInfo
         'GithubIDTextbox
         '
         Me.GithubIDTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.GithubIDTextbox.Location = New System.Drawing.Point(497, 107)
+        Me.GithubIDTextbox.Location = New System.Drawing.Point(504, 107)
         Me.GithubIDTextbox.Name = "GithubIDTextbox"
         Me.GithubIDTextbox.Size = New System.Drawing.Size(121, 20)
         Me.GithubIDTextbox.TabIndex = 49
@@ -953,7 +953,7 @@ Partial Class EmployeeInfo
         'ElsevierIDTextbox
         '
         Me.ElsevierIDTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.ElsevierIDTextbox.Location = New System.Drawing.Point(497, 77)
+        Me.ElsevierIDTextbox.Location = New System.Drawing.Point(504, 77)
         Me.ElsevierIDTextbox.Name = "ElsevierIDTextbox"
         Me.ElsevierIDTextbox.Size = New System.Drawing.Size(121, 20)
         Me.ElsevierIDTextbox.TabIndex = 48
@@ -961,7 +961,7 @@ Partial Class EmployeeInfo
         'EGSPREMIDTextbox
         '
         Me.EGSPREMIDTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.EGSPREMIDTextbox.Location = New System.Drawing.Point(497, 47)
+        Me.EGSPREMIDTextbox.Location = New System.Drawing.Point(504, 47)
         Me.EGSPREMIDTextbox.Name = "EGSPREMIDTextbox"
         Me.EGSPREMIDTextbox.Size = New System.Drawing.Size(121, 20)
         Me.EGSPREMIDTextbox.TabIndex = 47
@@ -969,7 +969,7 @@ Partial Class EmployeeInfo
         'InsightIDTextbox
         '
         Me.InsightIDTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.InsightIDTextbox.Location = New System.Drawing.Point(131, 137)
+        Me.InsightIDTextbox.Location = New System.Drawing.Point(138, 137)
         Me.InsightIDTextbox.Name = "InsightIDTextbox"
         Me.InsightIDTextbox.Size = New System.Drawing.Size(121, 20)
         Me.InsightIDTextbox.TabIndex = 45
@@ -977,7 +977,7 @@ Partial Class EmployeeInfo
         'EISIDTextbox
         '
         Me.EISIDTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.EISIDTextbox.Location = New System.Drawing.Point(131, 77)
+        Me.EISIDTextbox.Location = New System.Drawing.Point(138, 77)
         Me.EISIDTextbox.Name = "EISIDTextbox"
         Me.EISIDTextbox.Size = New System.Drawing.Size(121, 20)
         Me.EISIDTextbox.TabIndex = 43
@@ -985,7 +985,7 @@ Partial Class EmployeeInfo
         'NCOGrpIDTextbox
         '
         Me.NCOGrpIDTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.NCOGrpIDTextbox.Location = New System.Drawing.Point(497, 17)
+        Me.NCOGrpIDTextbox.Location = New System.Drawing.Point(504, 17)
         Me.NCOGrpIDTextbox.Name = "NCOGrpIDTextbox"
         Me.NCOGrpIDTextbox.Size = New System.Drawing.Size(121, 20)
         Me.NCOGrpIDTextbox.TabIndex = 46
@@ -993,7 +993,7 @@ Partial Class EmployeeInfo
         'MercuryIDTextbox
         '
         Me.MercuryIDTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.MercuryIDTextbox.Location = New System.Drawing.Point(131, 47)
+        Me.MercuryIDTextbox.Location = New System.Drawing.Point(138, 47)
         Me.MercuryIDTextbox.Name = "MercuryIDTextbox"
         Me.MercuryIDTextbox.Size = New System.Drawing.Size(121, 20)
         Me.MercuryIDTextbox.TabIndex = 42
@@ -1001,7 +1001,7 @@ Partial Class EmployeeInfo
         'OraclePRDTextbox
         '
         Me.OraclePRDTextbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.OraclePRDTextbox.Location = New System.Drawing.Point(131, 107)
+        Me.OraclePRDTextbox.Location = New System.Drawing.Point(138, 107)
         Me.OraclePRDTextbox.Name = "OraclePRDTextbox"
         Me.OraclePRDTextbox.Size = New System.Drawing.Size(121, 20)
         Me.OraclePRDTextbox.TabIndex = 44
@@ -1010,7 +1010,7 @@ Partial Class EmployeeInfo
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(404, 107)
+        Me.Label18.Location = New System.Drawing.Point(411, 107)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(60, 15)
         Me.Label18.TabIndex = 54
@@ -1020,7 +1020,7 @@ Partial Class EmployeeInfo
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(404, 77)
+        Me.Label17.Location = New System.Drawing.Point(411, 77)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(62, 15)
         Me.Label17.TabIndex = 53
@@ -1030,7 +1030,7 @@ Partial Class EmployeeInfo
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(404, 47)
+        Me.Label16.Location = New System.Drawing.Point(411, 47)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(78, 15)
         Me.Label16.TabIndex = 52
@@ -1040,7 +1040,7 @@ Partial Class EmployeeInfo
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(40, 137)
+        Me.Label15.Location = New System.Drawing.Point(47, 137)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(59, 15)
         Me.Label15.TabIndex = 51
@@ -1050,7 +1050,7 @@ Partial Class EmployeeInfo
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(40, 77)
+        Me.Label14.Location = New System.Drawing.Point(47, 77)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(39, 15)
         Me.Label14.TabIndex = 50
@@ -1060,7 +1060,7 @@ Partial Class EmployeeInfo
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(40, 107)
+        Me.Label13.Location = New System.Drawing.Point(47, 107)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(84, 15)
         Me.Label13.TabIndex = 49
@@ -1070,7 +1070,7 @@ Partial Class EmployeeInfo
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(404, 17)
+        Me.Label11.Location = New System.Drawing.Point(411, 17)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(85, 15)
         Me.Label11.TabIndex = 48
@@ -1080,7 +1080,7 @@ Partial Class EmployeeInfo
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(40, 47)
+        Me.Label10.Location = New System.Drawing.Point(47, 47)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 15)
         Me.Label10.TabIndex = 47
@@ -1091,7 +1091,7 @@ Partial Class EmployeeInfo
         Me.OracleIDLabel.AutoSize = True
         Me.OracleIDLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OracleIDLabel.ForeColor = System.Drawing.Color.Blue
-        Me.OracleIDLabel.Location = New System.Drawing.Point(56, 89)
+        Me.OracleIDLabel.Location = New System.Drawing.Point(63, 89)
         Me.OracleIDLabel.Name = "OracleIDLabel"
         Me.OracleIDLabel.Size = New System.Drawing.Size(61, 15)
         Me.OracleIDLabel.TabIndex = 45
@@ -1099,14 +1099,14 @@ Partial Class EmployeeInfo
         '
         'HomeAdd2TextBox
         '
-        Me.HomeAdd2TextBox.Location = New System.Drawing.Point(487, 209)
+        Me.HomeAdd2TextBox.Location = New System.Drawing.Point(494, 209)
         Me.HomeAdd2TextBox.Name = "HomeAdd2TextBox"
         Me.HomeAdd2TextBox.Size = New System.Drawing.Size(342, 20)
         Me.HomeAdd2TextBox.TabIndex = 12
         '
         'HomeAdd1TextBox
         '
-        Me.HomeAdd1TextBox.Location = New System.Drawing.Point(146, 209)
+        Me.HomeAdd1TextBox.Location = New System.Drawing.Point(153, 209)
         Me.HomeAdd1TextBox.Name = "HomeAdd1TextBox"
         Me.HomeAdd1TextBox.Size = New System.Drawing.Size(233, 20)
         Me.HomeAdd1TextBox.TabIndex = 11
@@ -1115,7 +1115,7 @@ Partial Class EmployeeInfo
         '
         Me.HomeAdd2Label.AutoSize = True
         Me.HomeAdd2Label.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.HomeAdd2Label.Location = New System.Drawing.Point(389, 209)
+        Me.HomeAdd2Label.Location = New System.Drawing.Point(396, 209)
         Me.HomeAdd2Label.Name = "HomeAdd2Label"
         Me.HomeAdd2Label.Size = New System.Drawing.Size(90, 15)
         Me.HomeAdd2Label.TabIndex = 93
@@ -1125,7 +1125,7 @@ Partial Class EmployeeInfo
         '
         Me.HomeAdd1Label.AutoSize = True
         Me.HomeAdd1Label.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HomeAdd1Label.Location = New System.Drawing.Point(56, 209)
+        Me.HomeAdd1Label.Location = New System.Drawing.Point(63, 209)
         Me.HomeAdd1Label.Name = "HomeAdd1Label"
         Me.HomeAdd1Label.Size = New System.Drawing.Size(90, 15)
         Me.HomeAdd1Label.TabIndex = 92
@@ -1137,14 +1137,14 @@ Partial Class EmployeeInfo
         Me.GenderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.GenderComboBox.FormattingEnabled = True
         Me.GenderComboBox.Items.AddRange(New Object() {"F", "M"})
-        Me.GenderComboBox.Location = New System.Drawing.Point(146, 179)
+        Me.GenderComboBox.Location = New System.Drawing.Point(153, 179)
         Me.GenderComboBox.Name = "GenderComboBox"
         Me.GenderComboBox.Size = New System.Drawing.Size(49, 21)
         Me.GenderComboBox.TabIndex = 8
         '
         'PositionTextBox
         '
-        Me.PositionTextBox.Location = New System.Drawing.Point(667, 89)
+        Me.PositionTextBox.Location = New System.Drawing.Point(674, 89)
         Me.PositionTextBox.Name = "PositionTextBox"
         Me.PositionTextBox.Size = New System.Drawing.Size(162, 20)
         Me.PositionTextBox.TabIndex = 2
@@ -1153,7 +1153,7 @@ Partial Class EmployeeInfo
         '
         Me.PositionLabel.AutoSize = True
         Me.PositionLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.PositionLabel.Location = New System.Drawing.Point(584, 89)
+        Me.PositionLabel.Location = New System.Drawing.Point(591, 89)
         Me.PositionLabel.Name = "PositionLabel"
         Me.PositionLabel.Size = New System.Drawing.Size(52, 15)
         Me.PositionLabel.TabIndex = 98
@@ -1164,7 +1164,7 @@ Partial Class EmployeeInfo
         Me.BirthDatePicker.CustomFormat = ""
         Me.BirthDatePicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.BirthDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.BirthDatePicker.Location = New System.Drawing.Point(149, 149)
+        Me.BirthDatePicker.Location = New System.Drawing.Point(156, 149)
         Me.BirthDatePicker.Name = "BirthDatePicker"
         Me.BirthDatePicker.Size = New System.Drawing.Size(111, 20)
         Me.BirthDatePicker.TabIndex = 6
@@ -1173,7 +1173,7 @@ Partial Class EmployeeInfo
         '
         Me.BirthDateLabel.AutoSize = True
         Me.BirthDateLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BirthDateLabel.Location = New System.Drawing.Point(56, 149)
+        Me.BirthDateLabel.Location = New System.Drawing.Point(63, 149)
         Me.BirthDateLabel.Name = "BirthDateLabel"
         Me.BirthDateLabel.Size = New System.Drawing.Size(66, 15)
         Me.BirthDateLabel.TabIndex = 101
@@ -1181,7 +1181,7 @@ Partial Class EmployeeInfo
         '
         'LandlineTextBox
         '
-        Me.LandlineTextBox.Location = New System.Drawing.Point(667, 179)
+        Me.LandlineTextBox.Location = New System.Drawing.Point(674, 179)
         Me.LandlineTextBox.Name = "LandlineTextBox"
         Me.LandlineTextBox.Size = New System.Drawing.Size(162, 20)
         Me.LandlineTextBox.TabIndex = 10
@@ -1190,7 +1190,7 @@ Partial Class EmployeeInfo
         '
         Me.LandLineNoLabel.AutoSize = True
         Me.LandLineNoLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.LandLineNoLabel.Location = New System.Drawing.Point(584, 179)
+        Me.LandLineNoLabel.Location = New System.Drawing.Point(591, 179)
         Me.LandLineNoLabel.Name = "LandLineNoLabel"
         Me.LandLineNoLabel.Size = New System.Drawing.Size(78, 15)
         Me.LandLineNoLabel.TabIndex = 102
@@ -1201,7 +1201,7 @@ Partial Class EmployeeInfo
         Me.CityComboBox.DisplayMember = """ListName"""
         Me.CityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CityComboBox.FormattingEnabled = True
-        Me.CityComboBox.Location = New System.Drawing.Point(149, 239)
+        Me.CityComboBox.Location = New System.Drawing.Point(156, 239)
         Me.CityComboBox.Name = "CityComboBox"
         Me.CityComboBox.Size = New System.Drawing.Size(131, 21)
         Me.CityComboBox.TabIndex = 13
@@ -1211,7 +1211,7 @@ Partial Class EmployeeInfo
         '
         Me.CityLabel.AutoSize = True
         Me.CityLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.CityLabel.Location = New System.Drawing.Point(109, 239)
+        Me.CityLabel.Location = New System.Drawing.Point(116, 239)
         Me.CityLabel.Name = "CityLabel"
         Me.CityLabel.Size = New System.Drawing.Size(30, 15)
         Me.CityLabel.TabIndex = 104
@@ -1222,7 +1222,7 @@ Partial Class EmployeeInfo
         Me.RegionComboBox.DisplayMember = """ListName"""
         Me.RegionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.RegionComboBox.FormattingEnabled = True
-        Me.RegionComboBox.Location = New System.Drawing.Point(389, 239)
+        Me.RegionComboBox.Location = New System.Drawing.Point(396, 239)
         Me.RegionComboBox.Name = "RegionComboBox"
         Me.RegionComboBox.Size = New System.Drawing.Size(132, 21)
         Me.RegionComboBox.TabIndex = 14
@@ -1232,7 +1232,7 @@ Partial Class EmployeeInfo
         '
         Me.RegionLabel.AutoSize = True
         Me.RegionLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.RegionLabel.Location = New System.Drawing.Point(292, 239)
+        Me.RegionLabel.Location = New System.Drawing.Point(299, 239)
         Me.RegionLabel.Name = "RegionLabel"
         Me.RegionLabel.Size = New System.Drawing.Size(82, 15)
         Me.RegionLabel.TabIndex = 106
@@ -1243,7 +1243,7 @@ Partial Class EmployeeInfo
         Me.CountryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CountryComboBox.FormattingEnabled = True
         Me.CountryComboBox.Items.AddRange(New Object() {"Philippines"})
-        Me.CountryComboBox.Location = New System.Drawing.Point(584, 239)
+        Me.CountryComboBox.Location = New System.Drawing.Point(591, 239)
         Me.CountryComboBox.Name = "CountryComboBox"
         Me.CountryComboBox.Size = New System.Drawing.Size(117, 21)
         Me.CountryComboBox.TabIndex = 15
@@ -1252,7 +1252,7 @@ Partial Class EmployeeInfo
         '
         Me.CountryLabel.AutoSize = True
         Me.CountryLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.CountryLabel.Location = New System.Drawing.Point(521, 239)
+        Me.CountryLabel.Location = New System.Drawing.Point(528, 239)
         Me.CountryLabel.Name = "CountryLabel"
         Me.CountryLabel.Size = New System.Drawing.Size(53, 15)
         Me.CountryLabel.TabIndex = 108
@@ -1263,7 +1263,7 @@ Partial Class EmployeeInfo
         Me.ZipCodeLabel.AutoSize = True
         Me.ZipCodeLabel.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Bold)
         Me.ZipCodeLabel.ForeColor = System.Drawing.Color.Blue
-        Me.ZipCodeLabel.Location = New System.Drawing.Point(703, 239)
+        Me.ZipCodeLabel.Location = New System.Drawing.Point(710, 239)
         Me.ZipCodeLabel.Name = "ZipCodeLabel"
         Me.ZipCodeLabel.Size = New System.Drawing.Size(56, 15)
         Me.ZipCodeLabel.TabIndex = 110
@@ -1271,7 +1271,7 @@ Partial Class EmployeeInfo
         '
         'OracleIDTextBox
         '
-        Me.OracleIDTextBox.Location = New System.Drawing.Point(146, 89)
+        Me.OracleIDTextBox.Location = New System.Drawing.Point(153, 89)
         Me.OracleIDTextBox.Mask = "0000000000"
         Me.OracleIDTextBox.Name = "OracleIDTextBox"
         Me.OracleIDTextBox.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
@@ -1280,7 +1280,7 @@ Partial Class EmployeeInfo
         '
         'MobileNoTextBox
         '
-        Me.MobileNoTextBox.Location = New System.Drawing.Point(487, 179)
+        Me.MobileNoTextBox.Location = New System.Drawing.Point(494, 179)
         Me.MobileNoTextBox.Mask = "00000000000"
         Me.MobileNoTextBox.Name = "MobileNoTextBox"
         Me.MobileNoTextBox.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
@@ -1289,7 +1289,7 @@ Partial Class EmployeeInfo
         '
         'ZipCodeTextBox
         '
-        Me.ZipCodeTextBox.Location = New System.Drawing.Point(763, 239)
+        Me.ZipCodeTextBox.Location = New System.Drawing.Point(770, 239)
         Me.ZipCodeTextBox.Mask = "00000"
         Me.ZipCodeTextBox.Name = "ZipCodeTextBox"
         Me.ZipCodeTextBox.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
@@ -1303,7 +1303,7 @@ Partial Class EmployeeInfo
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.alorica_banner1
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1207, 98)
+        Me.PictureBox1.Size = New System.Drawing.Size(1190, 98)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -1313,7 +1313,7 @@ Partial Class EmployeeInfo
         Me.NoteLabel.AutoSize = True
         Me.NoteLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NoteLabel.ForeColor = System.Drawing.Color.Blue
-        Me.NoteLabel.Location = New System.Drawing.Point(633, 44)
+        Me.NoteLabel.Location = New System.Drawing.Point(640, 44)
         Me.NoteLabel.Name = "NoteLabel"
         Me.NoteLabel.Size = New System.Drawing.Size(195, 13)
         Me.NoteLabel.TabIndex = 111
@@ -1366,9 +1366,9 @@ Partial Class EmployeeInfo
         Me.EmployeeInfoPanel.Controls.Add(Me.FirstNameLabel)
         Me.EmployeeInfoPanel.Controls.Add(Me.CityLabel)
         Me.EmployeeInfoPanel.Controls.Add(Me.RegionComboBox)
-        Me.EmployeeInfoPanel.Location = New System.Drawing.Point(-43, 100)
+        Me.EmployeeInfoPanel.Location = New System.Drawing.Point(19, 100)
         Me.EmployeeInfoPanel.Name = "EmployeeInfoPanel"
-        Me.EmployeeInfoPanel.Size = New System.Drawing.Size(1160, 670)
+        Me.EmployeeInfoPanel.Size = New System.Drawing.Size(1163, 670)
         Me.EmployeeInfoPanel.TabIndex = 112
         '
         'EmployeeInfo
@@ -1376,7 +1376,7 @@ Partial Class EmployeeInfo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1224, 768)
+        Me.ClientSize = New System.Drawing.Size(1207, 768)
         Me.Controls.Add(Me.EmployeeInfoPanel)
         Me.Controls.Add(Me.LogoutButton)
         Me.Controls.Add(Me.PictureBox1)

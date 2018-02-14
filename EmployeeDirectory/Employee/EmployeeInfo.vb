@@ -273,11 +273,11 @@
     Private Sub PopulateFields()
 
         OracleIDTextBox.Text = CType(_emp.OracleID, String)
-        JobTitleTextBox.Text = _emp.Title.Trim
-        PositionTextBox.Text = _emp.Position.Trim
-        LastNameTextBox.Text = _emp.LastName.Trim
-        FirstNameTextBox.Text = _emp.FirstName.Trim
-        MiddleNameTextBox.Text = _emp.MiddleName.Trim
+        JobTitleTextBox.Text = Trim(_emp.Title)
+        PositionTextBox.Text = Trim(_emp.Position)
+        LastNameTextBox.Text = Trim(_emp.LastName)
+        FirstNameTextBox.Text = Trim(_emp.FirstName)
+        MiddleNameTextBox.Text = Trim(_emp.MiddleName)
         If _emp.Birthday.HasValue Then
             BirthDatePicker.Value = CType(_emp.Birthday, Date)
             ResetDatePicker(BirthDatePicker)
@@ -291,9 +291,9 @@
         Else
             MobileNoTextBox.Text = String.Empty
         End If
-        LandlineTextBox.Text = _emp.LandlineNo.Trim
-        HomeAdd1TextBox.Text = _emp.HomeAddress1.Trim
-        HomeAdd2TextBox.Text = _emp.HomeAddress2.Trim
+        LandlineTextBox.Text = Trim(_emp.LandlineNo)
+        HomeAdd1TextBox.Text = Trim(_emp.HomeAddress1)
+        HomeAdd2TextBox.Text = Trim(_emp.HomeAddress2)
         If _emp.ZipCode > 0 Then
             ZipCodeTextBox.Text = CType(_emp.ZipCode, String)
         Else
@@ -304,13 +304,13 @@
         Else
             PhoneExtensionTextBox.Text = String.Empty
         End If
-        OfficeEmailTextBox.Text = _emp.OfficeEmail.Trim
-        EntityTextBox.Text = _emp.Entity.Trim
-        DivisionTextBox.Text = _emp.Division.Trim
-        DepartmentTextBox.Text = _emp.Department.Trim
-        USManagerTextBox.Text = _emp.USManager.Trim
-        OnboardingTicketTextBox.Text = _emp.OnboardingTicket.Trim
-        RecruiterTextBox.Text = _emp.Recruiter.Trim
+        OfficeEmailTextBox.Text = Trim(_emp.OfficeEmail)
+        EntityTextBox.Text = Trim(_emp.Entity)
+        DivisionTextBox.Text = Trim(_emp.Division)
+        DepartmentTextBox.Text = Trim(_emp.Department)
+        USManagerTextBox.Text = Trim(_emp.USManager)
+        OnboardingTicketTextBox.Text = Trim(_emp.OnboardingTicket)
+        RecruiterTextBox.Text = Trim(_emp.Recruiter)
         If _emp.StartDate.HasValue Then
             StartDatePicker.Value = CType(_emp.StartDate, Date)
             ResetDatePicker(StartDatePicker)
@@ -326,18 +326,27 @@
         SiteCountryTextBox.Text = _emp.SiteCountry
 
         SeatNoTextBox.Text = _emp.SeatNumber
-        PCNameTextbox.Text = _emp.PCName.Trim
-        MercuryIDTextbox.Text = _emp.MercuryID.Trim
-        EISIDTextbox.Text = _emp.EISID.Trim
-        OraclePRDTextbox.Text = _emp.OraclePRDID.Trim
-        InsightIDTextbox.Text = _emp.InsightID.Trim
-        NCOGrpIDTextbox.Text = _emp.NCOGroup.Trim
-        EGSPREMIDTextbox.Text = _emp.EGSPremID.Trim
-        ElsevierIDTextbox.Text = _emp.ElsevierID.Trim
-        GithubIDTextbox.Text = _emp.GITHubID.Trim
-        GenderComboBox.Text = _emp.Gender.Trim
-        CountryComboBox.Text = _emp.Country.Trim
-        ShiftComboBox.Text = _emp.Shift.Trim
+        PCNameTextbox.Text = Trim(_emp.PCName)
+        MercuryIDTextbox.Text = Trim(_emp.MercuryID)
+        EISIDTextbox.Text = Trim(_emp.EISID)
+        OraclePRDTextbox.Text = Trim(_emp.OraclePRDID)
+        InsightIDTextbox.Text = Trim(_emp.InsightID)
+        NCOGrpIDTextbox.Text = Trim(_emp.NCOGroup)
+        EGSPREMIDTextbox.Text = Trim(_emp.EGSPremID)
+        ElsevierIDTextbox.Text = Trim(_emp.ElsevierID)
+        GithubIDTextbox.Text = Trim(_emp.GITHubID)
+        GenderComboBox.Text = Trim(_emp.Gender)
+        If Trim(_emp.Country) = String.Empty Then
+            CountryComboBox.SelectedIndex = -1
+        Else
+            CountryComboBox.Text = Trim(_emp.Country)
+        End If
+
+        If Trim(_emp.Shift) = String.Empty Then
+            ShiftComboBox.SelectedIndex = -1
+        Else
+            ShiftComboBox.Text = Trim(_emp.Shift)
+        End If
 
         LocalManagerComboBox.Text = EmpEditService.SetListName(LocalManagerComboBox, _emp.LocalManagerID)
 
@@ -358,11 +367,18 @@
             End If
 
         End If
-        If Not _emp.Floor = String.Empty Then
-            FloorComboBox.Text = _emp.Floor.Trim()
+        If Not Trim(_emp.Floor) = String.Empty Then
+            FloorComboBox.Text = Trim(_emp.Floor)
+        Else
+            FloorComboBox.SelectedIndex = -1
         End If
 
-        TeamComboBox.Text = EmpEditService.SetListName(TeamComboBox, _emp.TeamID)
+        If _emp.TeamID > 0 Then
+            TeamComboBox.Text = EmpEditService.SetListName(TeamComboBox, _emp.TeamID)
+        Else
+            TeamComboBox.SelectedIndex = -1
+        End If
+
         If _emp.RegionID > 0 Then
             RegionComboBox.Text = EmpEditService.SetListName(RegionComboBox, _emp.RegionID)
         Else
@@ -633,7 +649,7 @@
 #End Region
 
     Private Sub EmployeeInfo_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
-        SetFocus()
+        'SetFocus()
     End Sub
 
     Private Sub EmployeeInfo_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
