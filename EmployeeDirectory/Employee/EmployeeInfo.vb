@@ -1,20 +1,20 @@
 ﻿Public Class EmployeeInfo
 
-    Private HasError As Boolean
-    Private ErrorMessage As String
-    Private LogoutAction As Boolean
+    Private _hasError As Boolean
+    Private _errorMessage As String
+    Private _logoutAction As Boolean
 
+#Region "CONSTRUCTOR"
     Public Sub New()
-
         ' This call is required by the designer.
         InitializeComponent()
 
+        ' Add any initialization after the InitializeComponent() call.
         _empinfo = New EmployeeRepository()
         _empEditService = New EmpEditService()
         _emp = New Employee
-        ' Add any initialization after the InitializeComponent() call.
-
     End Sub
+#End Region
 
 #Region "PROPERTIES"
 
@@ -50,7 +50,6 @@
 
 #End Region
 
-
 #Region "SUB ROUTINES"
     Private Sub LogoutEmployeeInfo()
 
@@ -74,7 +73,7 @@
             Case 3
                 Application.Exit()
         End Select
-        
+
     End Sub
 
     Public Sub EmployeeUserForm()
@@ -107,7 +106,6 @@
     End Sub
 
     Public Sub ValidateEmployee()
-        'EmpValidate = 0
 
         ValidateRequiredFields(OracleIDTextBox, OracleIDLabel, False)
 
@@ -140,22 +138,21 @@
         If EmpEditService.ValidateEmail(PersonalEmailTextBox.Text) Then
             PersonalEmailLabel.ForeColor = Color.Black
         Else
-            HasError = True
-            ErrorMessage = MessageEmailError
+            _hasError = True
+            _errorMessage = MessageEmailError
             PersonalEmailLabel.ForeColor = Color.Red
         End If
     End Sub
 
-    '### IDEA NI BENEDICT KABAHAR
-    '### ValidateTextBox(TextBoxName, LabelName, True) True if string validation
+    '### ValidateRequiredFields(TextBoxName, LabelName, True) True if string validation
     Public Sub ValidateRequiredFields(ByVal ObjectValue As Object, ByVal LabelName As Label, ByVal IsString As Boolean)
 
-        'EmpValidate = 0
+
         If String.IsNullOrWhiteSpace(ObjectValue.Text) Then
             LabelName.ForeColor = Color.Red
-            HasError = True
-            ErrorMessage = MessageRequiredFields
-            'EmpValidate = 1
+            _hasError = True
+            _errorMessage = MessageRequiredFields
+
         Else
             If IsString Then
                 LabelName.ForeColor = Color.Black
@@ -163,8 +160,6 @@
                 LabelName.ForeColor = Color.Blue
             End If
         End If
-
-        'Return EmpValidate
     End Sub
 
     Private Sub ValidateClear()
@@ -286,123 +281,119 @@
 
     Private Sub PopulateFields()
 
-        With Me
-            .OracleIDTextBox.Text = CType(_emp.OracleID, String)
-            .JobTitleTextBox.Text = _emp.Title
-            .PositionTextBox.Text = _emp.Position
-            .LastNameTextBox.Text = _emp.LastName
-            .FirstNameTextBox.Text = _emp.FirstName
-            .MiddleNameTextBox.Text = _emp.MiddleName
-            If _emp.Birthday.HasValue Then
-                .BirthDatePicker.Value = CType(_emp.Birthday, Date)
-                .ResetDatePicker(.BirthDatePicker)
+
+        OracleIDTextBox.Text = CType(_emp.OracleID, String)
+        JobTitleTextBox.Text = _emp.Title
+        PositionTextBox.Text = _emp.Position
+        LastNameTextBox.Text = _emp.LastName
+        FirstNameTextBox.Text = _emp.FirstName
+        MiddleNameTextBox.Text = _emp.MiddleName
+        If _emp.Birthday.HasValue Then
+            BirthDatePicker.Value = CType(_emp.Birthday, Date)
+            ResetDatePicker(BirthDatePicker)
+        Else
+            BirthDatePicker.MaxDate = DateTime.Now.AddYears(-18)
+            ClearDatePicker(BirthDatePicker)
+        End If
+        PersonalEmailTextBox.Text = _emp.PersonalEmail
+        If _emp.MobileNo > 0 Then
+            MobileNoTextBox.Text = CType(_emp.MobileNo, String)
+        Else
+            MobileNoTextBox.Text = String.Empty
+        End If
+        LandlineTextBox.Text = _emp.LandlineNo
+        HomeAdd1TextBox.Text = _emp.HomeAddress1
+        HomeAdd2TextBox.Text = _emp.HomeAddress2
+        If _emp.ZipCode > 0 Then
+            ZipCodeTextBox.Text = CType(_emp.ZipCode, String)
+        Else
+            ZipCodeTextBox.Text = String.Empty
+        End If
+        If _emp.PhoneExtension > 0 Then
+            PhoneExtensionTextBox.Text = CType(_emp.PhoneExtension, String)
+        Else
+            PhoneExtensionTextBox.Text = String.Empty
+        End If
+        OfficeEmailTextBox.Text = _emp.OfficeEmail
+        EntityTextBox.Text = _emp.Entity
+        DivisionTextBox.Text = _emp.Division
+        DepartmentTextBox.Text = _emp.Department
+        USManagerTextBox.Text = _emp.USManager
+        OnboardingTicketTextBox.Text = _emp.OnboardingTicket
+        RecruiterTextBox.Text = _emp.Recruiter
+        If _emp.StartDate.HasValue Then
+            StartDatePicker.Value = CType(_emp.StartDate, Date)
+            ResetDatePicker(StartDatePicker)
+        Else
+            ClearDatePicker(StartDatePicker)
+        End If
+
+        SFCComboBox.SelectedItem = _emp.SFC
+        SiteAdd1TextBox.Text = _emp.SiteAddress1
+        SiteAdd2TextBox.Text = _emp.SiteAddress2
+        SiteCityTextBox.Text = _emp.SiteCityName
+        SiteRegionTextBox.Text = _emp.SiteRegionName
+        SiteCountryTextBox.Text = _emp.SiteCountry
+
+        SeatNoTextBox.Text = _emp.SeatNumber
+        PCNameTextbox.Text = _emp.PCName
+        MercuryIDTextbox.Text = _emp.MercuryID
+        EISIDTextbox.Text = _emp.EISID
+        OraclePRDTextbox.Text = _emp.OraclePRDID
+        InsightIDTextbox.Text = _emp.InsightID
+        NCOGrpIDTextbox.Text = _emp.NCOGroup
+        EGSPREMIDTextbox.Text = _emp.EGSPremID
+        ElsevierIDTextbox.Text = _emp.ElsevierID
+        GithubIDTextbox.Text = _emp.GITHubID
+        GenderComboBox.Text = _emp.Gender
+        CountryComboBox.Text = _emp.Country
+        ShiftComboBox.Text = _emp.Shift
+
+        LocalManagerComboBox.Text = EmpEditService.SetListName(LocalManagerComboBox, _emp.LocalManagerID)
+
+        Dim _site As New Site()
+        _site = EmpEditService.SetSiteDetails(SiteComboBox, _emp.SiteID)
+        If _site IsNot Nothing Then
+            SiteComboBox.Text = _site.SiteName
+            SiteCityTextBox.Text = _site.SiteCityName
+            SiteCountryTextBox.Text = _site.SiteCountry
+            SiteRegionTextBox.Text = _site.SiteRegionName
+            SiteAdd1TextBox.Text = _site.SiteAddress1
+            SiteAdd2TextBox.Text = _site.SiteAddress2
+
+            If _site.SiteZipCode = 0 Then
+                SiteZipCodeTextBox.Text = ""
             Else
-                '.BirthDatePicker.MaxDate = DateTime.Today.AddYears(-18)
-                .BirthDatePicker.MaxDate = DateTime.Now.AddYears(-18)
-                '.BirthDatePicker.Format = DateTimePickerFormat.Short
-                '.BirthDatePicker.Value = CType("01/01/1753", Date)
-                .ClearDatePicker(.BirthDatePicker)
-            End If
-            .PersonalEmailTextBox.Text = _emp.PersonalEmail
-            If _emp.MobileNo > 0 Then
-                .MobileNoTextBox.Text = CType(_emp.MobileNo, String)
-            Else
-                .MobileNoTextBox.Text = String.Empty
-            End If
-            .LandlineTextBox.Text = _emp.LandlineNo
-            .HomeAdd1TextBox.Text = _emp.HomeAddress1
-            .HomeAdd2TextBox.Text = _emp.HomeAddress2
-            If _emp.ZipCode > 0 Then
-                .ZipCodeTextBox.Text = CType(_emp.ZipCode, String)
-            Else
-                .ZipCodeTextBox.Text = String.Empty
-            End If
-            If _emp.PhoneExtension > 0 Then
-                .PhoneExtensionTextBox.Text = CType(_emp.PhoneExtension, String)
-            Else
-                .PhoneExtensionTextBox.Text = String.Empty
-            End If
-            .OfficeEmailTextBox.Text = _emp.OfficeEmail
-            .EntityTextBox.Text = _emp.Entity
-            .DivisionTextBox.Text = _emp.Division
-            .DepartmentTextBox.Text = _emp.Department
-            .USManagerTextBox.Text = _emp.USManager
-            .OnboardingTicketTextBox.Text = _emp.OnboardingTicket
-            .RecruiterTextBox.Text = _emp.Recruiter
-            If _emp.StartDate.HasValue Then
-                .StartDatePicker.Value = CType(_emp.StartDate, Date)
-                .ResetDatePicker(.StartDatePicker)
-            Else
-                .ClearDatePicker(.StartDatePicker)
+                SiteZipCodeTextBox.Text = _site.SiteZipCode
             End If
 
-            .SFCComboBox.SelectedItem = _emp.SFC
-            .SiteAdd1TextBox.Text = _emp.SiteAddress1
-            .SiteAdd2TextBox.Text = _emp.SiteAddress2
-            .SiteCityTextBox.Text = _emp.SiteCityName
-            .SiteRegionTextBox.Text = _emp.SiteRegionName
-            .SiteCountryTextBox.Text = _emp.SiteCountry
+        End If
+        If Not _emp.Floor = String.Empty Then
+            FloorComboBox.Text = _emp.Floor.Trim()
+        End If
 
-            .SeatNoTextBox.Text = _emp.SeatNumber
-            .PCNameTextbox.Text = _emp.PCName
-            .MercuryIDTextbox.Text = _emp.MercuryID
-            .EISIDTextbox.Text = _emp.EISID
-            .OraclePRDTextbox.Text = _emp.OraclePRDID
-            .InsightIDTextbox.Text = _emp.InsightID
-            .NCOGrpIDTextbox.Text = _emp.NCOGroup
-            .EGSPREMIDTextbox.Text = _emp.EGSPremID
-            .ElsevierIDTextbox.Text = _emp.ElsevierID
-            .GithubIDTextbox.Text = _emp.GITHubID
-            .GenderComboBox.Text = _emp.Gender
-            .CountryComboBox.Text = _emp.Country
-            .ShiftComboBox.Text = _emp.Shift
+        TeamComboBox.Text = EmpEditService.SetListName(TeamComboBox, _emp.TeamID)
+        If _emp.RegionID > 0 Then
+            RegionComboBox.Text = EmpEditService.SetListName(RegionComboBox, _emp.RegionID)
+        End If
+        If _emp.CityID > 0 Then
+            CityComboBox.Text = EmpEditService.SetListName(CityComboBox, _emp.CityID)
+        End If
 
-            .LocalManagerComboBox.Text = SetListName(.LocalManagerComboBox, _emp.LocalManagerID)
+        If _emp.IDCreated = False Then
+            IDCreatedComboBox.SelectedItem = "No"
+        Else
+            IDCreatedComboBox.SelectedItem = "Yes"
+        End If
 
-            Dim _site As New Site()
-            _site = SetSiteDetails(.SiteComboBox, _emp.SiteID)
-            If _site IsNot Nothing Then
-                .SiteComboBox.Text = _site.SiteName
-                .SiteCityTextBox.Text = _site.SiteCityName
-                .SiteCountryTextBox.Text = _site.SiteCountry
-                .SiteRegionTextBox.Text = _site.SiteRegionName
-                .SiteAdd1TextBox.Text = _site.SiteAddress1
-                .SiteAdd2TextBox.Text = _site.SiteAddress2
-
-                If _site.SiteZipCode = 0 Then
-                    .SiteZipCodeTextBox.Text = ""
-                Else
-                    .SiteZipCodeTextBox.Text = _site.SiteZipCode
-                End If
-
-            End If
-            If Not _emp.Floor = String.Empty Then
-                .FloorComboBox.Text = _emp.Floor.Trim()
-            End If
-
-            .TeamComboBox.Text = SetListName(.TeamComboBox, _emp.TeamID)
-            If _emp.RegionID > 0 Then
-                .RegionComboBox.Text = SetListName(.RegionComboBox, _emp.RegionID)
-            End If
-            If _emp.CityID > 0 Then
-                .CityComboBox.Text = SetListName(.CityComboBox, _emp.CityID)
-            End If
-
-            If _emp.IDCreated = False Then
-                .IDCreatedComboBox.SelectedItem = "No"
-            Else
-                .IDCreatedComboBox.SelectedItem = "Yes"
-            End If
-
-            If _emp.SFC = False Then
-                .SFCComboBox.SelectedItem = "No"
-                .ClearDatePicker(.SFCDatePicker)
-            Else
-                .SFCComboBox.SelectedItem = "Yes"
-                .SFCDatePicker.Value = CType(_emp.SFCDate, Date)
-                .ResetDatePicker(.SFCDatePicker)
-            End If
-        End With
+        If _emp.SFC = False Then
+            SFCComboBox.SelectedItem = "No"
+            ClearDatePicker(SFCDatePicker)
+        Else
+            SFCComboBox.SelectedItem = "Yes"
+            SFCDatePicker.Value = CType(_emp.SFCDate, Date)
+            ResetDatePicker(SFCDatePicker)
+        End If
 
     End Sub
 
@@ -411,7 +402,7 @@
         If SFCComboBox.Text = "No" Then
             ClearDatePicker(SFCDatePicker)
             SFCDatePicker.Enabled = False
-            'SFCDateEmpty = 0
+
         ElseIf SFCComboBox.Text = "Yes" Then
             If Emp.SFC = False Then
                 SFCDatePicker.Value = DateTime.Now
@@ -479,13 +470,11 @@
     Public Sub ResetDatePicker(ByVal dtPicker As Object)
         With dtPicker
             .Format = DateTimePickerFormat.Short
-            '.Enabled = True
         End With
     End Sub
 
     Public Sub ClearDatePicker(ByVal dtPicker As Object)
         With dtPicker
-            '.Value = "1/1/1753"
             .Format = DateTimePickerFormat.Custom
             .CustomFormat = " "
         End With
@@ -519,7 +508,6 @@
                         ElseIf _item.GetType() = GetType(DateTimePicker) Then
                             CType(_item, DateTimePicker).Format = DateTimePickerFormat.Custom
                             CType(_item, DateTimePicker).CustomFormat = " "
-                            'CType(_item, DateTimePicker).Enabled = False
                         End If
                     Next
                 Next
@@ -527,7 +515,7 @@
 
         Next
 
-        OracleIDTextBox.Focus()
+        'OracleIDTextBox.Focus()
 
     End Sub
 
@@ -547,7 +535,7 @@
 
         OracleIDTextBox.Enabled = True
         RevertClearButton.Text = "Clear"
-        OracleIDTextBox.Focus()
+        'OracleIDTextBox.Focus()
     End Sub
 
 
@@ -562,31 +550,31 @@
         If EmpEditService.ValidateEmail(OfficeEmailTextBox.Text) Then
             OfficeEmailLabel.ForeColor = Color.Black
         Else
-            HasError = True
-            ErrorMessage = MessageEmailError
+            _hasError = True
+            _errorMessage = MessageEmailError
             OfficeEmailLabel.ForeColor = Color.Red
         End If
 
         If EmpEditService.ValidateEmail(PersonalEmailTextBox.Text) Then
             PersonalEmailLabel.ForeColor = Color.Black
         Else
-            HasError = True
-            ErrorMessage = MessageEmailError
+            _hasError = True
+            _errorMessage = MessageEmailError
             PersonalEmailLabel.ForeColor = Color.Red
         End If
 
         If String.IsNullOrWhiteSpace(OracleIDTextBox.Text) Then
             OracleIDLabel.ForeColor = Color.Red()
-            HasError = True
-            ErrorMessage = MessageRequiredFields
+            _hasError = True
+            _errorMessage = MessageRequiredFields
         Else
             If Not UserAccount.IsEdit Then 'This will insert Oracle ID'
                 Dim _EmpEditService = New EmpEditService()
                 Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(OracleIDTextBox.Text)
                 If Not _tempSelectedID Is Nothing Then
                     OracleIDLabel.ForeColor = Color.Red()
-                    HasError = True
-                    ErrorMessage = MessageDuplicateOracleID
+                    _hasError = True
+                    _errorMessage = MessageDuplicateOracleID
                 Else
                     OracleIDLabel.ForeColor = Color.Blue()
                 End If
@@ -615,23 +603,29 @@
 
 #End Region
 
+    Private Sub EmployeeInfo_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
+        SetFocus()
+    End Sub
+
     Private Sub EmployeeInfo_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If Not LogoutAction Then
+        If Not _logoutAction Then
             CloseEmployeeInfo()
         End If
     End Sub
 
 
     Public Sub EmployeeInfo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        LogoutAction = False
-        HasError = False
-        ErrorMessage = ""
+        _logoutAction = False
+        _hasError = False
+        _errorMessage = ""
         PopulateList(LocalManagerComboBox, "[uspGetAllManager]")
         PopulateList(RegionComboBox, "[uspGetAllRegion]")
         PopulateList(TeamComboBox, "[uspGetTeamList]")
         PopulateSiteList()
         PopulateShiftList()
         ClearFields()
+
+        'LastNameTextBox.Focus()
 
         Select Case UserAccount.UserType
             'Case 1
@@ -648,17 +642,19 @@
                 EmployeeUserForm()
         End Select
 
+        'SetFocus()
+
     End Sub
 
     Private Sub LogoutButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutButton.Click
-        LogoutAction = True
+        _logoutAction = True
         LogoutEmployeeInfo()
     End Sub
 
     Private Sub SaveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveButton.Click
         Dim retvalue As Integer
-        HasError = False
-        ErrorMessage = ""
+        _hasError = False
+        _errorMessage = ""
 
         Select Case UserAccount.UserType
             Case 1
@@ -672,8 +668,8 @@
 
         End Select
 
-        If HasError Then
-            MessageBox.Show(ErrorMessage, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If _hasError Then
+            MessageBox.Show(_errorMessage, "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             GetFieldTextValues()
             If UserAccount.IsEdit = True Then
@@ -690,8 +686,8 @@
                 retvalue = _empinfo.InsertData(_emp)        'fix to avoid error on duplicate Oracle ID's
                 If retvalue = 0 Then
                     ClearFields()
-                ElseIf retvalue = -1 Then
-                    CheckDupOracleID()
+                    'ElseIf retvalue = -1 Then
+                    '    CheckDupOracleID()
                 End If
 
                 ValidateClear()
@@ -706,12 +702,24 @@
             ValidateClear()
             ClearMgrValidate()
             PopulateFields()
-            OracleIDTextBox.Focus()
         Else
             ClearFields()
-            OracleIDTextBox.Focus()
             ValidateClear()
             ClearMgrValidate()
+        End If
+        SetFocus()
+    End Sub
+
+    Private Sub SetFocus()
+        If UserAccount.UserType = 2 Then
+            If UserAccount.IsEdit = True Then
+                JobTitleTextBox.Focus()
+                'LastNameTextBox.SelectAll()
+            Else
+                OracleIDTextBox.Focus()
+            End If
+        ElseIf UserAccount.UserType = 3 Then
+            LastNameTextBox.Focus()
         End If
     End Sub
 
@@ -827,4 +835,5 @@
             PhoneExtensionTextBox.Select(0, 0)
         End If
     End Sub
+
 End Class

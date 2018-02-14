@@ -3,11 +3,13 @@
     Private HasError As Boolean
     Private ErrorMessage As String
 
+#Region "CONSTRUCTOR"
     Public Sub New()
 
-        InitializeComponent()        
-        _loginService = New LogInService()        
+        InitializeComponent()
+        _loginService = New LogInService()
     End Sub
+#End Region
 
 #Region "SUB ROUTINES"
     Private Sub clearAndFocus()
@@ -45,28 +47,6 @@
         End If
     End Sub
 
-#End Region
-
-    Public Sub LogIn_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        clearAndFocus()
-    End Sub
-
-    Private Sub SignInButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SignInButton.Click
-        SignIn()
-    End Sub
-
-    '***** Will perform Submit Button when Enter is pressed *******
-    Private Sub LoginTextBoxes_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles UsernameTextBox.KeyPress, PasswordTextBox.KeyPress
-
-        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
-            SignIn()
-        End If
-    End Sub
-
-    Private Sub LogIn_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
-        Application.Exit()
-    End Sub
-
     Private Sub SignIn()
         validateLogin()
 
@@ -90,5 +70,27 @@
                     clearAndFocus()
             End Select
         End If
+    End Sub
+#End Region
+
+
+    Public Sub LogIn_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        clearAndFocus()
+    End Sub
+
+    Private Sub SignInButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SignInButton.Click
+        SignIn()
+    End Sub
+
+    '***** Will perform Submit Button when Enter is pressed *******
+    Private Sub LoginTextBoxes_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles UsernameTextBox.KeyPress, PasswordTextBox.KeyPress
+
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
+            SignIn()
+        End If
+    End Sub
+
+    Private Sub LogIn_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
     End Sub
 End Class

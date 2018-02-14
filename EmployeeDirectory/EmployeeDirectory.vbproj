@@ -95,19 +95,7 @@
     <Compile Include="Admin\Admin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employee\EmployeeInfoIncomplete.Designer.vb">
-      <DependentUpon>EmployeeInfoIncomplete.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\EmployeeInfoIncomplete.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="GlobalModule.vb" />
-    <Compile Include="List\incomplete.Designer.vb">
-      <DependentUpon>incomplete.vb</DependentUpon>
-    </Compile>
-    <Compile Include="List\incomplete.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Account\LogIn.Designer.vb">
       <DependentUpon>LogIn.vb</DependentUpon>
     </Compile>
@@ -147,13 +135,6 @@
       <DependentUpon>Admin.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee\EmployeeInfoIncomplete.resx">
-      <DependentUpon>EmployeeInfoIncomplete.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="List\incomplete.resx">
-      <DependentUpon>incomplete.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Account\LogIn.resx">
       <DependentUpon>LogIn.vb</DependentUpon>
     </EmbeddedResource>
@@ -162,9 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -180,29 +161,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\megamenu_company.png" />
+    <None Include="Resources\Images\megamenu_company.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\alorica_banner.png" />
+    <None Include="Resources\Images\alorica_banner.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\alorica_banner1.png" />
+    <None Include="Resources\Images\alorica_banner1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.png" />
+    <None Include="Resources\Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NOTFOUND.png" />
-    <None Include="Resources\ACCOUNTINFO.png" />
-    <Content Include="Resources\alorica.png" />
-    <None Include="Resources\PERSONALINFO.png" />
-    <None Include="Resources\EMPLOYEE_PHOTO.png" />
-    <None Include="Resources\alorica2.png" />
-    <None Include="Resources\alorica_login1.png" />
-    <None Include="Resources\alorica1.png" />
-    <Content Include="Resources\alorica_login.png" />
-    <Content Include="Resources\a_W7b_icon.ico" />
-    <None Include="Resources\a_W7b_icon1.ico" />
+    <None Include="Resources\Images\NOTFOUND.png" />
+    <None Include="Resources\Images\ACCOUNTINFO.png" />
+    <Content Include="Resources\Images\alorica.png" />
+    <None Include="Resources\Images\PERSONALINFO.png" />
+    <None Include="Resources\Images\EMPLOYEE_PHOTO.png" />
+    <None Include="Resources\Images\alorica2.png" />
+    <None Include="Resources\Images\alorica_login1.png" />
+    <None Include="Resources\Images\alorica1.png" />
+    <Content Include="Resources\Images\alorica_login.png" />
+    <Content Include="Resources\Images\a_W7b_icon.ico" />
+    <None Include="Resources\Images\a_W7b_icon1.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BASD.Helper\BASD.Helper.vbproj">

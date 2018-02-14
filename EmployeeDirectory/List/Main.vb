@@ -2,23 +2,25 @@
 
 Public Class Main
 
-
     Private _managerRepository As ManagerRepository
     Private _loginView As LoginView
     Private _managerGrid As ManagerGrid
     Private _dataTable As DataTable
 
 
+#Region "CONSTRUCTOR"
     Public Sub New()
         ' This call is required by the designer.
         InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
         _managerRepository = New ManagerRepository
         _loginView = New LoginView
         _managerGrid = New ManagerGrid
         _dataTable = New DataTable
-        ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+#End Region
 
 #Region "SUB ROUTINES"
     Public Sub ReloadDataGridWithSort()
@@ -87,7 +89,7 @@ Public Class Main
 
     Private Sub AddEmployeeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddEmployeeButton.Click
         UserAccount.IsEdit = False
-        Me.Hide()
+        'Me.Hide()
         EmployeeInfo.ShowDialog()
     End Sub
 

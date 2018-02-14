@@ -348,10 +348,11 @@ Partial Class EmployeeInfo
         Me.LogoutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LogoutButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogoutButton.ForeColor = System.Drawing.Color.White
-        Me.LogoutButton.Location = New System.Drawing.Point(1024, 12)
+        Me.LogoutButton.Location = New System.Drawing.Point(973, 12)
         Me.LogoutButton.Name = "LogoutButton"
         Me.LogoutButton.Size = New System.Drawing.Size(120, 38)
         Me.LogoutButton.TabIndex = 53
+        Me.LogoutButton.TabStop = False
         Me.LogoutButton.Text = "LOGOUT"
         Me.LogoutButton.UseVisualStyleBackColor = False
         '
@@ -1302,7 +1303,7 @@ Partial Class EmployeeInfo
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.alorica_banner1
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1173, 98)
+        Me.PictureBox1.Size = New System.Drawing.Size(1190, 98)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -1365,7 +1366,7 @@ Partial Class EmployeeInfo
         Me.EmployeeInfoPanel.Controls.Add(Me.FirstNameLabel)
         Me.EmployeeInfoPanel.Controls.Add(Me.CityLabel)
         Me.EmployeeInfoPanel.Controls.Add(Me.RegionComboBox)
-        Me.EmployeeInfoPanel.Location = New System.Drawing.Point(-3, 100)
+        Me.EmployeeInfoPanel.Location = New System.Drawing.Point(-27, 100)
         Me.EmployeeInfoPanel.Name = "EmployeeInfoPanel"
         Me.EmployeeInfoPanel.Size = New System.Drawing.Size(1160, 670)
         Me.EmployeeInfoPanel.TabIndex = 112
@@ -1375,7 +1376,7 @@ Partial Class EmployeeInfo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1190, 768)
+        Me.ClientSize = New System.Drawing.Size(1207, 768)
         Me.Controls.Add(Me.EmployeeInfoPanel)
         Me.Controls.Add(Me.LogoutButton)
         Me.Controls.Add(Me.PictureBox1)

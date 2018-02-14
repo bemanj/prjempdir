@@ -118,40 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ACCOUNTINFO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ACCOUNTINFO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PERSONALINFO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PERSONALINFO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="alorica1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alorica2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="megamenu_company" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\megamenu_company.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="alorica_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alorica_login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EMPLOYEE_PHOTO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\EMPLOYEE_PHOTO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alorica_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alorica_banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="alorica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alorica1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EMPLOYEE_PHOTO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EMPLOYEE_PHOTO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="a_W7b_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a_W7b_icon1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="alorica_banner1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alorica_banner1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Images\alorica_banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Images\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PERSONALINFO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\PERSONALINFO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alorica_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\alorica_login1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a_W7b_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\a_W7b_icon1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alorica1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\alorica2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alorica_banner11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\alorica_banner1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACCOUNTINFO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\ACCOUNTINFO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alorica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\alorica1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alorica_banner1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\alorica_banner1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NOTFOUND" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NOTFOUND.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Images\NOTFOUND.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="megamenu_company" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\megamenu_company.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EMPLOYEE_PHOTO1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\EMPLOYEE_PHOTO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
