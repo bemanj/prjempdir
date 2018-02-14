@@ -38,14 +38,8 @@ Public Class EmployeeRepository
         _tempParamList = MoveParamaters(entity)
 
         Dim x = MyBase.Update("[uspInsertEmployee]", _tempParamList.ToArray())
-
-        If CInt(x) > 0 Then
-            MessageBox.Show("Employee Added.")
-        Else
-            MessageBox.Show("Oracle ID already exists.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning) 'fix to avoid error on duplicate Oracle ID's
-            Return -1
-        End If
-        Return 0
+        Return CInt(x)
+        
     End Function
 
     Public Overrides Function UpdateData(ByVal entity As BASD.Helper.IEntity) As Object
@@ -55,9 +49,10 @@ Public Class EmployeeRepository
 
         Dim x = MyBase.Update("[uspUpdateEmployeeRec]", _tempParamList.ToArray())
 
-        If CInt(x) > 0 Then
-            MessageBox.Show("Employee Updated.")
-        End If
+        Return CInt(x)
+        'If CInt(x) > 0 Then
+        '    MessageBox.Show("Employee Updated.")
+        'End If
 
         Return 0
     End Function

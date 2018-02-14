@@ -20,6 +20,9 @@ Public Class EmpEditService
     End Function
 
     Public Function ValidateEmail(ByVal EmailAddress) As Boolean
+        If EmailAddress = String.Empty Then
+            Return True
+        End If
         Try
             Dim email As New Regex("([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})")
             If email.IsMatch(EmailAddress) Then

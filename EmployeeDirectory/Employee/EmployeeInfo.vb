@@ -108,32 +108,23 @@
     Public Sub ValidateEmployee()
 
         ValidateRequiredFields(OracleIDTextBox, OracleIDLabel, False)
-
         ValidateRequiredFields(LastNameTextBox, LastNameLabel, True)
-
         ValidateRequiredFields(FirstNameTextBox, FirstNameLabel, True)
-
         ValidateRequiredFields(MiddleNameTextBox, MiddleNameLabel, True)
-
         ValidateRequiredFields(GenderComboBox, GenderLabel, True)
-
         ValidateRequiredFields(BirthDatePicker, BirthDateLabel, True)
-
         ValidateRequiredFields(PersonalEmailTextBox, PersonalEmailLabel, True)
-
         ValidateRequiredFields(MobileNoTextBox, MobileNoLabel, False)
-
         ValidateRequiredFields(HomeAdd1TextBox, HomeAdd1Label, True)
-
         ValidateRequiredFields(HomeAdd2TextBox, HomeAdd2Label, True)
-
         ValidateRequiredFields(CityComboBox, CityLabel, True)
-
         ValidateRequiredFields(RegionComboBox, RegionLabel, True)
-
         ValidateRequiredFields(CountryComboBox, CountryLabel, True)
-
         ValidateRequiredFields(ZipCodeTextBox, ZipCodeLabel, False)
+
+        If _hasError Then
+            Return
+        End If
 
         If EmpEditService.ValidateEmail(PersonalEmailTextBox.Text) Then
             PersonalEmailLabel.ForeColor = Color.Black
@@ -281,13 +272,12 @@
 
     Private Sub PopulateFields()
 
-
         OracleIDTextBox.Text = CType(_emp.OracleID, String)
-        JobTitleTextBox.Text = _emp.Title
-        PositionTextBox.Text = _emp.Position
-        LastNameTextBox.Text = _emp.LastName
-        FirstNameTextBox.Text = _emp.FirstName
-        MiddleNameTextBox.Text = _emp.MiddleName
+        JobTitleTextBox.Text = _emp.Title.Trim
+        PositionTextBox.Text = _emp.Position.Trim
+        LastNameTextBox.Text = _emp.LastName.Trim
+        FirstNameTextBox.Text = _emp.FirstName.Trim
+        MiddleNameTextBox.Text = _emp.MiddleName.Trim
         If _emp.Birthday.HasValue Then
             BirthDatePicker.Value = CType(_emp.Birthday, Date)
             ResetDatePicker(BirthDatePicker)
@@ -301,9 +291,9 @@
         Else
             MobileNoTextBox.Text = String.Empty
         End If
-        LandlineTextBox.Text = _emp.LandlineNo
-        HomeAdd1TextBox.Text = _emp.HomeAddress1
-        HomeAdd2TextBox.Text = _emp.HomeAddress2
+        LandlineTextBox.Text = _emp.LandlineNo.Trim
+        HomeAdd1TextBox.Text = _emp.HomeAddress1.Trim
+        HomeAdd2TextBox.Text = _emp.HomeAddress2.Trim
         If _emp.ZipCode > 0 Then
             ZipCodeTextBox.Text = CType(_emp.ZipCode, String)
         Else
@@ -314,13 +304,13 @@
         Else
             PhoneExtensionTextBox.Text = String.Empty
         End If
-        OfficeEmailTextBox.Text = _emp.OfficeEmail
-        EntityTextBox.Text = _emp.Entity
-        DivisionTextBox.Text = _emp.Division
-        DepartmentTextBox.Text = _emp.Department
-        USManagerTextBox.Text = _emp.USManager
-        OnboardingTicketTextBox.Text = _emp.OnboardingTicket
-        RecruiterTextBox.Text = _emp.Recruiter
+        OfficeEmailTextBox.Text = _emp.OfficeEmail.Trim
+        EntityTextBox.Text = _emp.Entity.Trim
+        DivisionTextBox.Text = _emp.Division.Trim
+        DepartmentTextBox.Text = _emp.Department.Trim
+        USManagerTextBox.Text = _emp.USManager.Trim
+        OnboardingTicketTextBox.Text = _emp.OnboardingTicket.Trim
+        RecruiterTextBox.Text = _emp.Recruiter.Trim
         If _emp.StartDate.HasValue Then
             StartDatePicker.Value = CType(_emp.StartDate, Date)
             ResetDatePicker(StartDatePicker)
@@ -336,18 +326,18 @@
         SiteCountryTextBox.Text = _emp.SiteCountry
 
         SeatNoTextBox.Text = _emp.SeatNumber
-        PCNameTextbox.Text = _emp.PCName
-        MercuryIDTextbox.Text = _emp.MercuryID
-        EISIDTextbox.Text = _emp.EISID
-        OraclePRDTextbox.Text = _emp.OraclePRDID
-        InsightIDTextbox.Text = _emp.InsightID
-        NCOGrpIDTextbox.Text = _emp.NCOGroup
-        EGSPREMIDTextbox.Text = _emp.EGSPremID
-        ElsevierIDTextbox.Text = _emp.ElsevierID
-        GithubIDTextbox.Text = _emp.GITHubID
-        GenderComboBox.Text = _emp.Gender
-        CountryComboBox.Text = _emp.Country
-        ShiftComboBox.Text = _emp.Shift
+        PCNameTextbox.Text = _emp.PCName.Trim
+        MercuryIDTextbox.Text = _emp.MercuryID.Trim
+        EISIDTextbox.Text = _emp.EISID.Trim
+        OraclePRDTextbox.Text = _emp.OraclePRDID.Trim
+        InsightIDTextbox.Text = _emp.InsightID.Trim
+        NCOGrpIDTextbox.Text = _emp.NCOGroup.Trim
+        EGSPREMIDTextbox.Text = _emp.EGSPremID.Trim
+        ElsevierIDTextbox.Text = _emp.ElsevierID.Trim
+        GithubIDTextbox.Text = _emp.GITHubID.Trim
+        GenderComboBox.Text = _emp.Gender.Trim
+        CountryComboBox.Text = _emp.Country.Trim
+        ShiftComboBox.Text = _emp.Shift.Trim
 
         LocalManagerComboBox.Text = EmpEditService.SetListName(LocalManagerComboBox, _emp.LocalManagerID)
 
@@ -375,9 +365,13 @@
         TeamComboBox.Text = EmpEditService.SetListName(TeamComboBox, _emp.TeamID)
         If _emp.RegionID > 0 Then
             RegionComboBox.Text = EmpEditService.SetListName(RegionComboBox, _emp.RegionID)
+        Else
+            RegionComboBox.SelectedIndex = -1
         End If
         If _emp.CityID > 0 Then
             CityComboBox.Text = EmpEditService.SetListName(CityComboBox, _emp.CityID)
+        Else
+            CityComboBox.SelectedIndex = -1
         End If
 
         If _emp.IDCreated = False Then
@@ -540,12 +534,17 @@
 
 
     Private Sub ValidateManager()
+
         ValidateRequiredFields(FirstNameTextBox, FirstNameLabel, True)
         ValidateRequiredFields(LastNameTextBox, LastNameLabel, True)
         ValidateRequiredFields(MiddleNameTextBox, MiddleNameLabel, True)
         ValidateRequiredFields(GenderComboBox, GenderLabel, True)
         ValidateRequiredFields(LocalManagerComboBox, LocalManagerLabel, True)
         ValidateRequiredFields(OnboardingTicketTextBox, OnboardingTicketLabel, True)
+
+        If _hasError Then
+            Return
+        End If
 
         If EmpEditService.ValidateEmail(OfficeEmailTextBox.Text) Then
             OfficeEmailLabel.ForeColor = Color.Black
@@ -563,27 +562,57 @@
             PersonalEmailLabel.ForeColor = Color.Red
         End If
 
+        OracleIDLabel.ForeColor = Color.Blue()
+        If Not UserAccount.IsEdit Then
+            ValidateOracleID()
+        End If
+        'If String.IsNullOrWhiteSpace(OracleIDTextBox.Text) Then
+        '    OracleIDLabel.ForeColor = Color.Red()
+        '    _hasError = True
+        '    _errorMessage = MessageRequiredFields
+        'Else
+        '    If Not UserAccount.IsEdit Then 'This will insert Oracle ID'
+        '        Dim _EmpEditService = New EmpEditService()
+        '        Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(OracleIDTextBox.Text)
+        '        If Not _tempSelectedID Is Nothing Then
+        '            OracleIDLabel.ForeColor = Color.Red()
+        '            _hasError = True
+        '            _errorMessage = MessageDuplicateOracleID
+        '        Else
+        '            OracleIDLabel.ForeColor = Color.Blue()
+        '        End If
+        '    Else
+        '        OracleIDLabel.ForeColor = Color.Blue()
+        '    End If
+        'End If
+
+
+
+    End Sub
+
+    Private Sub ValidateOracleID()
+
         If String.IsNullOrWhiteSpace(OracleIDTextBox.Text) Then
             OracleIDLabel.ForeColor = Color.Red()
             _hasError = True
             _errorMessage = MessageRequiredFields
         Else
-            If Not UserAccount.IsEdit Then 'This will insert Oracle ID'
-                Dim _EmpEditService = New EmpEditService()
-                Dim _tempSelectedID = _EmpEditService.SelectEmpFromList(OracleIDTextBox.Text)
-                If Not _tempSelectedID Is Nothing Then
-                    OracleIDLabel.ForeColor = Color.Red()
-                    _hasError = True
-                    _errorMessage = MessageDuplicateOracleID
-                Else
-                    OracleIDLabel.ForeColor = Color.Blue()
-                End If
-            Else
-                OracleIDLabel.ForeColor = Color.Blue()
+            'If Not UserAccount.IsEdit Then 'This will insert Oracle ID'
+            _empEditService = New EmpEditService()
+            Dim _tempSelectedID = _empEditService.SelectEmpFromList(OracleIDTextBox.Text)
+            If Not _tempSelectedID Is Nothing Then
+                OracleIDLabel.ForeColor = Color.Red()
+                _hasError = True
+                _errorMessage = MessageDuplicateOracleID
+                'Else
+                '    OracleIDLabel.ForeColor = Color.Blue()
             End If
+            'Else
+            'OracleIDLabel.ForeColor = Color.Blue()
+            'End If
         End If
-    End Sub
 
+    End Sub
     Public Sub ClearMgrValidate()
         OracleIDLabel.ForeColor = Color.Blue
         LastNameLabel.ForeColor = Color.Black
@@ -673,21 +702,25 @@
         Else
             GetFieldTextValues()
             If UserAccount.IsEdit = True Then
-                _empinfo.UpdateData(_emp)
-                _empEditService.Employee = _emp
-                PopulateFields()
-                ValidateClear()
-                ClearMgrValidate()
-                Main.ReloadDataGridWithSort()
+                If _empinfo.UpdateData(_emp) > 0 Then
+                    MessageBox.Show("Employee Updated.")
+                    _empEditService.Employee = _emp
+                    PopulateFields()
+                    ValidateClear()
+                    ClearMgrValidate()
+                    Main.ReloadDataGridWithSort()
+                Else
+                    MessageBox.Show("Database Error!")
+                End If
             Else
                 _emp.UserType = 3
 
-
                 retvalue = _empinfo.InsertData(_emp)        'fix to avoid error on duplicate Oracle ID's
-                If retvalue = 0 Then
+                If retvalue > 0 Then
+                    MessageBox.Show("Employee Added.")
                     ClearFields()
-                    'ElseIf retvalue = -1 Then
-                    '    CheckDupOracleID()
+                Else
+                    MessageBox.Show("Database Error.")
                 End If
 
                 ValidateClear()
@@ -780,6 +813,7 @@
             PopulateCity(CityComboBox, _id)
         Else
             PopulateCity(CityComboBox, 1)
+            CityComboBox.SelectedIndex = -1
         End If
     End Sub
 
