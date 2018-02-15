@@ -348,7 +348,7 @@ Partial Class EmployeeInfo
         Me.LogoutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.LogoutButton.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogoutButton.ForeColor = System.Drawing.Color.White
-        Me.LogoutButton.Location = New System.Drawing.Point(1057, 12)
+        Me.LogoutButton.Location = New System.Drawing.Point(1023, 12)
         Me.LogoutButton.Name = "LogoutButton"
         Me.LogoutButton.Size = New System.Drawing.Size(120, 38)
         Me.LogoutButton.TabIndex = 53
@@ -473,6 +473,7 @@ Partial Class EmployeeInfo
         Me.FloorComboBox.Location = New System.Drawing.Point(836, 227)
         Me.FloorComboBox.Name = "FloorComboBox"
         Me.FloorComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.FloorComboBox.Sorted = True
         Me.FloorComboBox.TabIndex = 39
         Me.FloorComboBox.ValueMember = """ListID"""
         '
@@ -613,6 +614,7 @@ Partial Class EmployeeInfo
         Me.TeamComboBox.Location = New System.Drawing.Point(144, 167)
         Me.TeamComboBox.Name = "TeamComboBox"
         Me.TeamComboBox.Size = New System.Drawing.Size(171, 21)
+        Me.TeamComboBox.Sorted = True
         Me.TeamComboBox.TabIndex = 22
         Me.TeamComboBox.ValueMember = """ListID"""
         '
@@ -625,6 +627,7 @@ Partial Class EmployeeInfo
         Me.LocalManagerComboBox.Location = New System.Drawing.Point(144, 197)
         Me.LocalManagerComboBox.Name = "LocalManagerComboBox"
         Me.LocalManagerComboBox.Size = New System.Drawing.Size(171, 21)
+        Me.LocalManagerComboBox.Sorted = True
         Me.LocalManagerComboBox.TabIndex = 23
         '
         'SiteComboBox
@@ -636,6 +639,7 @@ Partial Class EmployeeInfo
         Me.SiteComboBox.Location = New System.Drawing.Point(836, 17)
         Me.SiteComboBox.Name = "SiteComboBox"
         Me.SiteComboBox.Size = New System.Drawing.Size(185, 21)
+        Me.SiteComboBox.Sorted = True
         Me.SiteComboBox.TabIndex = 32
         Me.SiteComboBox.ValueMember = """SiteID"""
         '
@@ -1204,6 +1208,7 @@ Partial Class EmployeeInfo
         Me.CityComboBox.Location = New System.Drawing.Point(156, 239)
         Me.CityComboBox.Name = "CityComboBox"
         Me.CityComboBox.Size = New System.Drawing.Size(131, 21)
+        Me.CityComboBox.Sorted = True
         Me.CityComboBox.TabIndex = 13
         Me.CityComboBox.ValueMember = """ListID"""
         '
@@ -1225,6 +1230,7 @@ Partial Class EmployeeInfo
         Me.RegionComboBox.Location = New System.Drawing.Point(396, 239)
         Me.RegionComboBox.Name = "RegionComboBox"
         Me.RegionComboBox.Size = New System.Drawing.Size(132, 21)
+        Me.RegionComboBox.Sorted = True
         Me.RegionComboBox.TabIndex = 14
         Me.RegionComboBox.ValueMember = """ListID"""
         '
@@ -1246,6 +1252,7 @@ Partial Class EmployeeInfo
         Me.CountryComboBox.Location = New System.Drawing.Point(591, 239)
         Me.CountryComboBox.Name = "CountryComboBox"
         Me.CountryComboBox.Size = New System.Drawing.Size(117, 21)
+        Me.CountryComboBox.Sorted = True
         Me.CountryComboBox.TabIndex = 15
         '
         'CountryLabel
@@ -1366,7 +1373,7 @@ Partial Class EmployeeInfo
         Me.EmployeeInfoPanel.Controls.Add(Me.FirstNameLabel)
         Me.EmployeeInfoPanel.Controls.Add(Me.CityLabel)
         Me.EmployeeInfoPanel.Controls.Add(Me.RegionComboBox)
-        Me.EmployeeInfoPanel.Location = New System.Drawing.Point(19, 100)
+        Me.EmployeeInfoPanel.Location = New System.Drawing.Point(3, 100)
         Me.EmployeeInfoPanel.Name = "EmployeeInfoPanel"
         Me.EmployeeInfoPanel.Size = New System.Drawing.Size(1163, 670)
         Me.EmployeeInfoPanel.TabIndex = 112

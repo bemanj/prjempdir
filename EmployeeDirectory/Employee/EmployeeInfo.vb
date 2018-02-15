@@ -557,6 +557,7 @@
         ValidateRequiredFields(GenderComboBox, GenderLabel, True)
         ValidateRequiredFields(LocalManagerComboBox, LocalManagerLabel, True)
         ValidateRequiredFields(OnboardingTicketTextBox, OnboardingTicketLabel, True)
+        ValidateRequiredFields(TeamComboBox, TeamLabel, True)
 
         If _hasError Then
             Return
