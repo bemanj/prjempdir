@@ -3,6 +3,7 @@
     Private _hasError As Boolean
     Private _errorMessage As String
     Private _logoutAction As Boolean
+    Private _oracleIDok As Boolean
 
 #Region "CONSTRUCTOR"
     Public Sub New()
@@ -100,8 +101,8 @@
         MercuryIDTextbox.Enabled = False
         EISIDTextbox.Enabled = False
         OraclePRDTextbox.Enabled = False
-        SaveButton.Location = New Point(910, 626)
-        RevertClearButton.Location = New Point(1036, 626)
+        SaveButton.Location = New Point(917, 626)
+        RevertClearButton.Location = New Point(1043, 626)
 
     End Sub
 
@@ -153,22 +154,22 @@
         End If
     End Sub
 
-    Private Sub ValidateClear()
-        OracleIDLabel.ForeColor = Color.Black
-        LastNameLabel.ForeColor = Color.Black
-        FirstNameLabel.ForeColor = Color.Black
-        MiddleNameLabel.ForeColor = Color.Black
-        GenderLabel.ForeColor = Color.Black
-        BirthDateLabel.ForeColor = Color.Black
-        PersonalEmailLabel.ForeColor = Color.Black
-        MobileNoLabel.ForeColor = Color.Blue
-        HomeAdd1Label.ForeColor = Color.Black
-        HomeAdd2Label.ForeColor = Color.Black
-        CityLabel.ForeColor = Color.Black
-        ZipCodeLabel.ForeColor = Color.Blue
-        RegionLabel.ForeColor = Color.Black
-        CountryLabel.ForeColor = Color.Black
-    End Sub
+    'Private Sub ValidateClear()
+    '    OracleIDLabel.ForeColor = Color.Black
+    '    LastNameLabel.ForeColor = Color.Black
+    '    FirstNameLabel.ForeColor = Color.Black
+    '    MiddleNameLabel.ForeColor = Color.Black
+    '    GenderLabel.ForeColor = Color.Black
+    '    BirthDateLabel.ForeColor = Color.Black
+    '    PersonalEmailLabel.ForeColor = Color.Black
+    '    MobileNoLabel.ForeColor = Color.Blue
+    '    HomeAdd1Label.ForeColor = Color.Black
+    '    HomeAdd2Label.ForeColor = Color.Black
+    '    CityLabel.ForeColor = Color.Black
+    '    ZipCodeLabel.ForeColor = Color.Blue
+    '    RegionLabel.ForeColor = Color.Black
+    '    CountryLabel.ForeColor = Color.Black
+    'End Sub
 
     Private Sub GetFieldTextValues()
 
@@ -551,16 +552,23 @@
 
     Private Sub ValidateManager()
 
-        ValidateRequiredFields(FirstNameTextBox, FirstNameLabel, True)
-        ValidateRequiredFields(LastNameTextBox, LastNameLabel, True)
-        ValidateRequiredFields(MiddleNameTextBox, MiddleNameLabel, True)
-        ValidateRequiredFields(GenderComboBox, GenderLabel, True)
-        ValidateRequiredFields(LocalManagerComboBox, LocalManagerLabel, True)
-        ValidateRequiredFields(OnboardingTicketTextBox, OnboardingTicketLabel, True)
-        ValidateRequiredFields(TeamComboBox, TeamLabel, True)
+        OracleIDLabel.ForeColor = Color.Blue()
+        If Not UserAccount.IsEdit Then
+            ValidateOracleID()
+        End If
+        If _oracleIDok Then
+            ValidateRequiredFields(FirstNameTextBox, FirstNameLabel, True)
+            ValidateRequiredFields(LastNameTextBox, LastNameLabel, True)
+            ValidateRequiredFields(MiddleNameTextBox, MiddleNameLabel, True)
+            ValidateRequiredFields(GenderComboBox, GenderLabel, True)
+            ValidateRequiredFields(LocalManagerComboBox, LocalManagerLabel, True)
+            ValidateRequiredFields(OnboardingTicketTextBox, OnboardingTicketLabel, True)
+            ValidateRequiredFields(TeamComboBox, TeamLabel, True)
 
-        If _hasError Then
-            Return
+
+            If _hasError Then
+                Return
+            End If
         End If
 
         If EmpEditService.ValidateEmail(OfficeEmailTextBox.Text) Then
@@ -569,6 +577,7 @@
             _hasError = True
             _errorMessage = MessageEmailError
             OfficeEmailLabel.ForeColor = Color.Red
+            'Return
         End If
 
         If EmpEditService.ValidateEmail(PersonalEmailTextBox.Text) Then
@@ -577,12 +586,10 @@
             _hasError = True
             _errorMessage = MessageEmailError
             PersonalEmailLabel.ForeColor = Color.Red
+            'Return
         End If
 
-        OracleIDLabel.ForeColor = Color.Blue()
-        If Not UserAccount.IsEdit Then
-            ValidateOracleID()
-        End If
+
         'If String.IsNullOrWhiteSpace(OracleIDTextBox.Text) Then
         '    OracleIDLabel.ForeColor = Color.Red()
         '    _hasError = True
@@ -613,6 +620,7 @@
             OracleIDLabel.ForeColor = Color.Red()
             _hasError = True
             _errorMessage = MessageRequiredFields
+            _oracleIDok = True
         Else
             'If Not UserAccount.IsEdit Then 'This will insert Oracle ID'
             _empEditService = New EmpEditService()
@@ -621,8 +629,12 @@
                 OracleIDLabel.ForeColor = Color.Red()
                 _hasError = True
                 _errorMessage = MessageDuplicateOracleID
-                'Else
+                _oracleIDok = False
+                Return
+            Else
+                _oracleIDok = True
                 '    OracleIDLabel.ForeColor = Color.Blue()
+
             End If
             'Else
             'OracleIDLabel.ForeColor = Color.Blue()
@@ -630,14 +642,22 @@
         End If
 
     End Sub
-    Public Sub ClearMgrValidate()
-        OracleIDLabel.ForeColor = Color.Blue
+    Public Sub ClearValidate()
+        OracleIDLabel.ForeColor = Color.Black
         LastNameLabel.ForeColor = Color.Black
         FirstNameLabel.ForeColor = Color.Black
         MiddleNameLabel.ForeColor = Color.Black
         GenderLabel.ForeColor = Color.Black
-        OfficeEmailLabel.ForeColor = Color.Black
+        BirthDateLabel.ForeColor = Color.Black
         PersonalEmailLabel.ForeColor = Color.Black
+        MobileNoLabel.ForeColor = Color.Blue
+        HomeAdd1Label.ForeColor = Color.Black
+        HomeAdd2Label.ForeColor = Color.Black
+        CityLabel.ForeColor = Color.Black
+        ZipCodeLabel.ForeColor = Color.Blue
+        RegionLabel.ForeColor = Color.Black
+        CountryLabel.ForeColor = Color.Black
+        OfficeEmailLabel.ForeColor = Color.Black
         TeamLabel.ForeColor = Color.Black
         LocalManagerLabel.ForeColor = Color.Black
         OnboardingTicketLabel.ForeColor = Color.Black
@@ -723,8 +743,8 @@
                     MessageBox.Show("Employee Updated.")
                     _empEditService.Employee = _emp
                     PopulateFields()
-                    ValidateClear()
-                    ClearMgrValidate()
+                    'ValidateClear()
+                    ClearValidate()
                     Main.ReloadDataGridWithSort()
                 Else
                     MessageBox.Show("Database Error!")
@@ -740,8 +760,8 @@
                     MessageBox.Show("Database Error.")
                 End If
 
-                ValidateClear()
-                ClearMgrValidate()
+                'ValidateClear()
+                ClearValidate()
                 Main.ReloadDataGridWithSort()
             End If
         End If
@@ -749,13 +769,13 @@
 
     Private Sub RevertClearButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RevertClearButton.Click
         If UserAccount.IsEdit = True Then
-            ValidateClear()
-            ClearMgrValidate()
+            'ValidateClear()
+            ClearValidate()
             PopulateFields()
         Else
             ClearFields()
-            ValidateClear()
-            ClearMgrValidate()
+            'ValidateClear()
+            ClearValidate()
         End If
         SetFocus()
     End Sub
@@ -840,6 +860,7 @@
             e.Handled = True
             e.SuppressKeyPress = True
         End If
+
     End Sub
 
     Private Sub MobileNoTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MobileNoTextBox.KeyDown
@@ -847,6 +868,7 @@
             e.Handled = True
             e.SuppressKeyPress = True
         End If
+        Trim(MobileNoTextBox.Text)
     End Sub
 
     Private Sub PhoneExtensionTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles PhoneExtensionTextBox.KeyDown
@@ -887,4 +909,19 @@
         End If
     End Sub
 
+    Private Sub MobileNoTextBox_KeyUp(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles MobileNoTextBox.KeyUp
+        MobileNoTextBox.Text = MobileNoTextBox.Text.Replace(" ", "")
+    End Sub
+
+    Private Sub OracleIDTextBox_KeyUp(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles OracleIDTextBox.KeyUp
+        OracleIDTextBox.Text = OracleIDTextBox.Text.Replace(" ", "")
+    End Sub
+
+    Private Sub ZipCodeTextBox_KeyUp(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles ZipCodeTextBox.KeyUp
+        ZipCodeTextBox.Text = ZipCodeTextBox.Text.Replace(" ", "")
+    End Sub
+
+    Private Sub PhoneExtensionTextBox_KeyUp(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles PhoneExtensionTextBox.KeyUp
+        PhoneExtensionTextBox.Text = PhoneExtensionTextBox.Text.Replace(" ", "")
+    End Sub
 End Class
