@@ -765,6 +765,7 @@
                 Main.ReloadDataGridWithSort()
             End If
         End If
+        SetFocus()
     End Sub
 
     Private Sub RevertClearButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RevertClearButton.Click
@@ -909,19 +910,19 @@
         End If
     End Sub
 
-    Private Sub MobileNoTextBox_KeyUp(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles MobileNoTextBox.KeyUp
+    Private Sub MobileNoTextBox_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MobileNoTextBox.KeyUp
         MobileNoTextBox.Text = MobileNoTextBox.Text.Replace(" ", "")
     End Sub
 
-    Private Sub OracleIDTextBox_KeyUp(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles OracleIDTextBox.KeyUp
+    Private Sub OracleIDTextBox_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles OracleIDTextBox.KeyUp
         OracleIDTextBox.Text = OracleIDTextBox.Text.Replace(" ", "")
     End Sub
 
-    Private Sub ZipCodeTextBox_KeyUp(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles ZipCodeTextBox.KeyUp
+    Private Sub ZipCodeTextBox_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ZipCodeTextBox.KeyUp
         ZipCodeTextBox.Text = ZipCodeTextBox.Text.Replace(" ", "")
     End Sub
 
-    Private Sub PhoneExtensionTextBox_KeyUp(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles PhoneExtensionTextBox.KeyUp
+    Private Sub PhoneExtensionTextBox_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles PhoneExtensionTextBox.KeyUp
         PhoneExtensionTextBox.Text = PhoneExtensionTextBox.Text.Replace(" ", "")
     End Sub
 End Class
