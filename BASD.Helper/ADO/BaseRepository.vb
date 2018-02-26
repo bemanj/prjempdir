@@ -15,6 +15,10 @@ Public MustInherit Class BaseRepository
         Throw New NotImplementedException()
     End Sub
 
+    Public Overridable Function GetDataTable(ByVal entity As IEntity) As DataTable Implements IRepository.GetDataTable
+        Throw New NotImplementedException()
+    End Function
+
     Public Overridable Function GetData(ByVal entity As IEntity) As IEntity Implements IRepository.GetData
 
         Throw New NotImplementedException()
@@ -51,6 +55,5 @@ Public MustInherit Class BaseRepository
         Throw New NotImplementedException()
 
     End Function
-
 
 End Class

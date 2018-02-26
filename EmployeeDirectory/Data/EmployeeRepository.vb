@@ -2,9 +2,11 @@
 
 Imports System.Configuration
 Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 
 Public Class EmployeeRepository
     Inherits BaseRepository
+
 
     Public Sub New()
         MyBase.New(ConfigurationManager.ConnectionStrings("EmployeeDirectoryConnectionString").ConnectionString.Decrypt)
@@ -29,29 +31,15 @@ Public Class EmployeeRepository
         Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", _tempParamList.ToArray())
         Return _tempEmployeeList.SingleMapToEntity(Of Employee)().ToList
     End Function
-    'Public Overrides Function GetListData(ByVal entity As IEntity) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
-    '    Dim _tempParamList = New List(Of SqlParameter)()
-    '    _tempParamList.Add(New SqlParameter("@ManagerID", entity.Id))
-
-    '    '    Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
-    '    '    Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
-    '    'End Function
-    '    Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
-    '    Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
-    'End Function
-    'sofie
+    
     Public Overrides Function InsertData(ByVal entity As BASD.Helper.IEntity) As Integer
         Dim _tempParamList = New List(Of SqlParameter)()
 
         _tempParamList = MoveParamaters(entity)
 
         Dim x = MyBase.Update("[uspInsertEmployee]", _tempParamList.ToArray())
-
-        If CInt(x) > 0 Then
-            MessageBox.Show("Employee Added.")
-        End If
-
-        Return 0
+        Return CInt(x)
+        
     End Function
 
     Public Overrides Function UpdateData(ByVal entity As BASD.Helper.IEntity) As Object
@@ -61,9 +49,10 @@ Public Class EmployeeRepository
 
         Dim x = MyBase.Update("[uspUpdateEmployeeRec]", _tempParamList.ToArray())
 
-        If CInt(x) > 0 Then
-            MessageBox.Show("Employee Updated.")
-        End If
+        Return CInt(x)
+        'If CInt(x) > 0 Then
+        '    MessageBox.Show("Employee Updated.")
+        'End If
 
         Return 0
     End Function
@@ -72,6 +61,7 @@ Public Class EmployeeRepository
         Dim _tempParamList = New List(Of SqlParameter)()
         With _tempParamList
             .Add(New SqlParameter("@OracleID", _emp.OracleID))
+            .Add(New SqlParameter("@Password", _emp.OracleID))
             .Add(New SqlParameter("@Title", _emp.Title))
             .Add(New SqlParameter("@Position", _emp.Position))
             .Add(New SqlParameter("@LastName", _emp.LastName))
@@ -79,9 +69,9 @@ Public Class EmployeeRepository
             .Add(New SqlParameter("@MiddleName", _emp.MiddleName))
             .Add(New SqlParameter("@HomeAddress1", _emp.HomeAddress1))
             .Add(New SqlParameter("@HomeAddress2", _emp.HomeAddress2))
-            .Add(New SqlParameter("@CityID", _emp.CityId))
+            .Add(New SqlParameter("@CityID", _emp.CityID))
             .Add(New SqlParameter("@ZipCode", _emp.ZipCode))
-            .Add(New SqlParameter("@RegionID", _emp.RegionId))
+            .Add(New SqlParameter("@RegionID", _emp.RegionID))
             .Add(New SqlParameter("@Country", _emp.Country))
             .Add(New SqlParameter("@Gender", _emp.Gender))
             .Add(New SqlParameter("@Birthday", _emp.Birthday))

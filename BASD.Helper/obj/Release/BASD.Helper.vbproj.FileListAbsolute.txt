@@ -1,0 +1,16 @@
+C:\Users\JL004313128\Desktop\EmployeeDir\BASD.Helper\bin\Release\BASD.Helper.dll
+C:\Users\JL004313128\Desktop\EmployeeDir\BASD.Helper\bin\Release\BASD.Helper.pdb
+C:\Users\JL004313128\Desktop\EmployeeDir\BASD.Helper\bin\Release\BASD.Helper.xml
+C:\Users\JL004313128\Desktop\EmployeeDir\BASD.Helper\obj\Release\BASD.Helper.Resources.resources
+C:\Users\JL004313128\Desktop\EmployeeDir\BASD.Helper\obj\Release\BASD.Helper.vbproj.GenerateResource.Cache
+C:\Users\JL004313128\Desktop\EmployeeDir\BASD.Helper\obj\Release\BASD.Helper.dll
+C:\Users\JL004313128\Desktop\EmployeeDir\BASD.Helper\obj\Release\BASD.Helper.xml
+C:\Users\JL004313128\Desktop\EmployeeDir\BASD.Helper\obj\Release\BASD.Helper.pdb
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\bin\Release\BASD.Helper.dll
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\bin\Release\BASD.Helper.pdb
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\bin\Release\BASD.Helper.xml
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\obj\Release\BASD.Helper.Resources.resources
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\obj\Release\BASD.Helper.vbproj.GenerateResource.Cache
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\obj\Release\BASD.Helper.dll
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\obj\Release\BASD.Helper.xml
+C:\Users\JA004340823\Documents\EmployeeDirectory\BASD.Helper\obj\Release\BASD.Helper.pdb

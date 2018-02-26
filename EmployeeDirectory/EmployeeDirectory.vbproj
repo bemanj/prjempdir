@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -72,41 +73,39 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
-    <Compile Include="EmployeeInfo.Designer.vb">
+    <Compile Include="Data\EmployeeRepository.vb" />
+    <Compile Include="Data\Entity\DropDownList.vb" />
+    <Compile Include="Data\Entity\LoginView.vb" />
+    <Compile Include="Data\Entity\Employee.vb" />
+    <Compile Include="Data\Entity\ManagerGrid.vb" />
+    <Compile Include="Data\Entity\Site.vb" />
+    <Compile Include="Data\Entity\UserAccount.vb" />
+    <Compile Include="Data\LibraryRespository.vb" />
+    <Compile Include="Data\LoginRepository.vb" />
+    <Compile Include="Data\ManagerRepository.vb" />
+    <Compile Include="Employee\EmployeeInfo.Designer.vb">
       <DependentUpon>EmployeeInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeInfo.vb">
+    <Compile Include="Employee\EmployeeInfo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin.Designer.vb">
-      <DependentUpon>admin.vb</DependentUpon>
+    <Compile Include="Admin\Admin.Designer.vb">
+      <DependentUpon>Admin.vb</DependentUpon>
     </Compile>
-    <Compile Include="admin.vb">
+    <Compile Include="Admin\Admin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeInfoIncomplete.Designer.vb">
-      <DependentUpon>EmployeeInfoIncomplete.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeInfoIncomplete.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="incomplete.Designer.vb">
-      <DependentUpon>incomplete.vb</DependentUpon>
-    </Compile>
-    <Compile Include="incomplete.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LogIn.Designer.vb">
+    <Compile Include="GlobalModule.vb" />
+    <Compile Include="Account\LogIn.Designer.vb">
       <DependentUpon>LogIn.vb</DependentUpon>
     </Compile>
-    <Compile Include="LogIn.vb">
+    <Compile Include="Account\LogIn.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.vb">
+    <Compile Include="List\Main.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.vb">
+    <Compile Include="List\Main.Designer.vb">
       <DependentUpon>Main.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -125,45 +124,32 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RecorNotFound.Designer.vb">
-      <DependentUpon>RecorNotFound.vb</DependentUpon>
-    </Compile>
-    <Compile Include="RecorNotFound.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Services\EmpEditService.vb" />
+    <Compile Include="Services\LogInService.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmployeeInfo.resx">
+    <EmbeddedResource Include="Employee\EmployeeInfo.resx">
       <DependentUpon>EmployeeInfo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin.resx">
-      <DependentUpon>admin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeInfoIncomplete.resx">
-      <DependentUpon>EmployeeInfoIncomplete.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="incomplete.resx">
-      <DependentUpon>incomplete.vb</DependentUpon>
+    <EmbeddedResource Include="Admin\Admin.resx">
+      <DependentUpon>Admin.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn.resx">
+    <EmbeddedResource Include="Account\LogIn.resx">
       <DependentUpon>LogIn.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
+    <EmbeddedResource Include="List\Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RecorNotFound.resx">
-      <DependentUpon>RecorNotFound.vb</DependentUpon>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -175,29 +161,38 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\megamenu_company.png" />
+    <None Include="Resources\Images\megamenu_company.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\alorica_banner.png" />
+    <None Include="Resources\Images\alorica_banner.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\alorica_banner1.png" />
+    <None Include="Resources\Images\alorica_banner1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.png" />
+    <None Include="Resources\Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NOTFOUND.png" />
-    <None Include="Resources\ACCOUNTINFO.png" />
-    <Content Include="Resources\alorica.png" />
-    <None Include="Resources\PERSONALINFO.png" />
-    <None Include="Resources\EMPLOYEE_PHOTO.png" />
-    <None Include="Resources\alorica2.png" />
-    <None Include="Resources\alorica_login1.png" />
-    <None Include="Resources\alorica1.png" />
-    <Content Include="Resources\alorica_login.png" />
-    <Content Include="Resources\a_W7b_icon.ico" />
-    <None Include="Resources\a_W7b_icon1.ico" />
+    <None Include="Resources\Images\NOTFOUND.png" />
+    <None Include="Resources\Images\ACCOUNTINFO.png" />
+    <Content Include="Resources\Images\alorica.png" />
+    <None Include="Resources\Images\PERSONALINFO.png" />
+    <None Include="Resources\Images\EMPLOYEE_PHOTO.png" />
+    <None Include="Resources\Images\alorica2.png" />
+    <None Include="Resources\Images\alorica_login1.png" />
+    <None Include="Resources\Images\alorica1.png" />
+    <Content Include="Resources\Images\alorica_login.png" />
+    <Content Include="Resources\Images\a_W7b_icon.ico" />
+    <None Include="Resources\Images\a_W7b_icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BASD.Helper\BASD.Helper.vbproj">
+      <Project>{CEC9EE9D-7976-4599-8765-F2B3A4553596}</Project>
+      <Name>BASD.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dialogs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

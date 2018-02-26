@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LogIn
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,17 +20,18 @@ Partial Class LogIn
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogIn))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Username = New System.Windows.Forms.TextBox()
         Me.UsernamePassword = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.SignIn_Btn = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -47,35 +48,37 @@ Partial Class LogIn
         '
         'Username
         '
-        Me.Username.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Username.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.Username.ForeColor = System.Drawing.SystemColors.Desktop
         Me.Username.Location = New System.Drawing.Point(203, 198)
+        Me.Username.MaxLength = 10
         Me.Username.Name = "Username"
-        Me.Username.Size = New System.Drawing.Size(227, 23)
+        Me.Username.Size = New System.Drawing.Size(227, 22)
         Me.Username.TabIndex = 3
         Me.Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'UsernamePassword
         '
-        Me.UsernamePassword.Font = New System.Drawing.Font("Corbel", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernamePassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.UsernamePassword.ForeColor = System.Drawing.SystemColors.ControlText
         Me.UsernamePassword.Location = New System.Drawing.Point(203, 244)
+        Me.UsernamePassword.MaxLength = 10
         Me.UsernamePassword.Name = "UsernamePassword"
-        Me.UsernamePassword.Size = New System.Drawing.Size(227, 23)
+        Me.UsernamePassword.Size = New System.Drawing.Size(227, 22)
         Me.UsernamePassword.TabIndex = 4
         Me.UsernamePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.UsernamePassword.UseSystemPasswordChar = True
         '
-        'Button1
+        'SignIn_Btn
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(203, 282)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(227, 37)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "SIGN IN"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.SignIn_Btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.SignIn_Btn.Font = New System.Drawing.Font("Corbel", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SignIn_Btn.Location = New System.Drawing.Point(203, 282)
+        Me.SignIn_Btn.Name = "SignIn_Btn"
+        Me.SignIn_Btn.Size = New System.Drawing.Size(227, 37)
+        Me.SignIn_Btn.TabIndex = 5
+        Me.SignIn_Btn.Text = "SIGN IN"
+        Me.SignIn_Btn.UseVisualStyleBackColor = False
         '
         'PictureBox2
         '
@@ -117,21 +120,34 @@ Partial Class LogIn
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "PASSWORD"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(502, 295)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(32, 13)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "V.2.5"
+        '
         'LogIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(654, 626)
+        Me.ClientSize = New System.Drawing.Size(653, 632)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.SignIn_Btn)
         Me.Controls.Add(Me.UsernamePassword)
         Me.Controls.Add(Me.Username)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "LogIn"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " IT APP DEV EMPLOYEE DIRECTORY - LOGIN"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -144,8 +160,9 @@ Partial Class LogIn
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Username As System.Windows.Forms.TextBox
     Friend WithEvents UsernamePassword As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents SignIn_Btn As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 
 End Class

@@ -1,4 +1,6 @@
-.vs/EmployeeDirectory/v15/Server/sqlite3/storage.ide-wal
-.vs/EmployeeDirectory/v15/Server/sqlite3/storage.ide-shm
-.vs/EmployeeDirectory/v15/Server/sqlite3/storage.ide
-.vs/EmployeeDirectory/v15/Server/sqlite3/db.lock
+EmployeeDirectory/bin/Debug/EmployeeDirectory.vshost.exe
+/.vs/EmployeeDirectory/v15/Server/sqlite3
+/EmployeeDirectory/bin/Debug
+/EmployeeDirectory/obj/x86/Debug/EmployeeDirectory.exe
+/EmployeeDirectory/obj/x86/Debug
+/BASD.Helper/obj/Debug
