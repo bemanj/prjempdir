@@ -200,8 +200,15 @@
     <None Include="Resources\Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Images\blackLogOff.jpg" />
+    <None Include="Resources\Images\blackhome.png" />
+    <None Include="Resources\Images\logoff door.png" />
+    <None Include="Resources\Images\homebtn-blue.png" />
+    <None Include="Resources\Images\logoff.png" />
+    <None Include="Resources\Images\home-button.png" />
     <None Include="Resources\Images\NOTFOUND.png" />
     <None Include="Resources\Images\ACCOUNTINFO.png" />
+    <None Include="Resources\home-button.png.png" />
     <Content Include="Resources\Images\alorica.png" />
     <None Include="Resources\Images\PERSONALINFO.png" />
     <None Include="Resources\Images\EMPLOYEE_PHOTO.png" />
@@ -220,6 +227,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dialogs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -56,7 +56,8 @@
         Else
             Select Case UserAccount.UserType
                 Case 1
-                    Admin.Show()
+                    'Admin.Show()
+                    AdminNew.Show()
                     Me.Dispose()
                 Case 2
                     Main.Show()
@@ -94,3 +95,9 @@
         Application.Exit()
     End Sub
 End Class
+
+#Region "COMMENTS"
+'jlavares 02/22/2018 [SP3-US2-T3]: 
+'       Change/Update GUI of Admin form
+'       Updated The window from Admin.vb to AdminNew.vb
+#End Region
