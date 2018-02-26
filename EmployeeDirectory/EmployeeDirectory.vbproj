@@ -73,6 +73,24 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminNew.Designer.vb">
+      <DependentUpon>AdminNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AloricaSite.Designer.vb">
+      <DependentUpon>AloricaSite.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AloricaSite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PasswordReset.Designer.vb">
+      <DependentUpon>PasswordReset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PasswordReset.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Data\EmployeeRepository.vb" />
     <Compile Include="Data\Entity\DropDownList.vb" />
     <Compile Include="Data\Entity\LoginView.vb" />
@@ -128,6 +146,15 @@
     <Compile Include="Services\LogInService.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Admin\AdminNew.resx">
+      <DependentUpon>AdminNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AloricaSite.resx">
+      <DependentUpon>AloricaSite.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PasswordReset.resx">
+      <DependentUpon>PasswordReset.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee\EmployeeInfo.resx">
       <DependentUpon>EmployeeInfo.vb</DependentUpon>
     </EmbeddedResource>
