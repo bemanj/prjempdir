@@ -11,23 +11,23 @@
         End Set
     End Property
 
-    Private _LastName As String
+    Private _FullName As String
     Public Property LastName() As String
         Get
-            Return _LastName
+            Return _FullName
         End Get
         Set(ByVal value As String)
-            _LastName = value
+            _FullName = value
         End Set
     End Property
 
-    Private _FirstName As String
+    Private _IncompleteFields As String
     Public Property FirstName() As String
         Get
-            Return _FirstName
+            Return _IncompleteFields
         End Get
         Set(ByVal value As String)
-            _FirstName = value
+            _IncompleteFields = value
         End Set
     End Property
 
