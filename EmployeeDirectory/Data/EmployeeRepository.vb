@@ -6,7 +6,6 @@ Imports System.Text.RegularExpressions
 
 Public Class EmployeeRepository
     Inherits BaseRepository
-    Public EmpValidate As Integer = 0
 
 
     Public Sub New()
@@ -32,31 +31,15 @@ Public Class EmployeeRepository
         Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", _tempParamList.ToArray())
         Return _tempEmployeeList.SingleMapToEntity(Of Employee)().ToList
     End Function
-    'Public Overrides Function GetListData(ByVal entity As IEntity) As System.Collections.Generic.IEnumerable(Of BASD.Helper.IEntity)
-    '    Dim _tempParamList = New List(Of SqlParameter)()
-    '    _tempParamList.Add(New SqlParameter("@ManagerID", entity.Id))
-
-    '    '    Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
-    '    '    Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
-    '    'End Function
-    '    Dim _tempEmployeeList = MyBase.List("[uspGetEmployeeList]", Nothing)
-    '    Return _tempEmployeeList.SingleMapToEntity(Of Employee)()
-    'End Function
-    'sofie
+    
     Public Overrides Function InsertData(ByVal entity As BASD.Helper.IEntity) As Integer
         Dim _tempParamList = New List(Of SqlParameter)()
 
         _tempParamList = MoveParamaters(entity)
 
         Dim x = MyBase.Update("[uspInsertEmployee]", _tempParamList.ToArray())
-
-        If CInt(x) > 0 Then
-            MessageBox.Show("Employee Added.")
-        Else
-            MessageBox.Show("Oracle ID already exists.", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning) 'fix to avoid error on duplicate Oracle ID's
-            Return -1
-        End If
-        Return 0
+        Return CInt(x)
+        
     End Function
 
     Public Overrides Function UpdateData(ByVal entity As BASD.Helper.IEntity) As Object
@@ -66,9 +49,10 @@ Public Class EmployeeRepository
 
         Dim x = MyBase.Update("[uspUpdateEmployeeRec]", _tempParamList.ToArray())
 
-        If CInt(x) > 0 Then
-            MessageBox.Show("Employee Updated.")
-        End If
+        Return CInt(x)
+        'If CInt(x) > 0 Then
+        '    MessageBox.Show("Employee Updated.")
+        'End If
 
         Return 0
     End Function
@@ -132,147 +116,4 @@ Public Class EmployeeRepository
 
     End Function
 
-    Public Sub Validate()
-        EmpValidate = 0
-        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_OracleID.Text) Then
-            EmployeeInfo.Lbl_OracleID.ForeColor = Color.Red()
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_OracleID.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_LastName.Text) Then
-            EmployeeInfo.Lbl_LastName.ForeColor = Color.Red()
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_LastName.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_FirstName.Text) Then
-            EmployeeInfo.Lbl_FirstName.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_FirstName.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_MiddleName.Text) Then
-            EmployeeInfo.Lbl_MiddleName.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_MiddleName.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.CB_Gender.Text) Then
-            EmployeeInfo.Lbl_Gender.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_Gender.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.DT_Birth.Text) Then
-            EmployeeInfo.Lbl_BirthDate.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_BirthDate.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_PersonalEmail.Text) Then
-            EmployeeInfo.Lbl_EAdd.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_MobileNo.Text) Then
-            EmployeeInfo.Lbl_MobileNo.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_MobileNo.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_HomeAddLine1.Text) Then
-            EmployeeInfo.Lbl_HomeAdd1.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_HomeAdd1.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.TB_HomeAddLine2.Text) Then
-            EmployeeInfo.Lbl_HomeAdd2.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_HomeAdd2.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.CB_City.Text) Then
-            EmployeeInfo.Lbl_City.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_City.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.CB_Region.Text) Then
-            EmployeeInfo.Lbl_Region.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_Region.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.CB_Country.Text) Then
-            EmployeeInfo.Lbl_Country.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_Country.ForeColor = Color.Black
-        End If
-
-        If String.IsNullOrWhiteSpace(EmployeeInfo.MB_Zipcode.Text) Then
-            EmployeeInfo.Lbl_Zip.ForeColor = Color.Red
-            EmpValidate = 1
-        Else
-            EmployeeInfo.Lbl_Zip.ForeColor = Color.Black
-        End If
-
-        If Not String.IsNullOrEmpty(EmployeeInfo.TB_PersonalEmail.Text) Then
-            If ValidateEmail(EmployeeInfo.TB_PersonalEmail.Text) = False Then
-                EmpValidate = 2
-                EmployeeInfo.Lbl_EAdd.ForeColor = Color.Red
-            Else
-                EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
-                'MessageBox.Show("Email is not valid, Please check your email address.", "EMAIL INVALID", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-        End If
-    End Sub
-
-    Public Sub ValidateClear()
-        EmployeeInfo.Lbl_OracleID.ForeColor = Color.Black
-        EmployeeInfo.Lbl_LastName.ForeColor = Color.Black
-        EmployeeInfo.Lbl_FirstName.ForeColor = Color.Black
-        EmployeeInfo.Lbl_MiddleName.ForeColor = Color.Black
-        EmployeeInfo.Lbl_Gender.ForeColor = Color.Black
-        EmployeeInfo.Lbl_BirthDate.ForeColor = Color.Black
-        EmployeeInfo.Lbl_EAdd.ForeColor = Color.Black
-        EmployeeInfo.Lbl_MobileNo.ForeColor = Color.Black
-        EmployeeInfo.Lbl_HomeAdd1.ForeColor = Color.Black
-        EmployeeInfo.Lbl_HomeAdd2.ForeColor = Color.Black
-        EmployeeInfo.Lbl_City.ForeColor = Color.Black
-        EmployeeInfo.Lbl_Zip.ForeColor = Color.Black
-        EmployeeInfo.Lbl_Region.ForeColor = Color.Black
-        EmployeeInfo.Lbl_Country.ForeColor = Color.Black
-    End Sub
-
-    Public Function ValidateEmail(EmailAddress) As Boolean
-        ' Dim email As New Regex("^(?<user>[^@]+)@(?<host>.+)$")
-        'Dim email As New Regex("([\w-+]+(?:\.[\w-+]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7})")
-        'If email.IsMatch(emailAddress) Then
-        '    Return True
-        'Else
-        '    Return False
-        'End If
-        Try
-            Dim vEmailAddress As New System.Net.Mail.MailAddress(EmailAddress)
-        Catch ex As Exception
-            Return False
-        End Try
-        Return True
-    End Function
 End Class
