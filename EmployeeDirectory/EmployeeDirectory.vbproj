@@ -75,11 +75,13 @@
   <ItemGroup>
     <Compile Include="Data\EmployeeRepository.vb" />
     <Compile Include="Data\Entity\DropDownList.vb" />
+    <Compile Include="Data\Entity\IncompleteEmployeesGrid.vb" />
     <Compile Include="Data\Entity\LoginView.vb" />
     <Compile Include="Data\Entity\Employee.vb" />
     <Compile Include="Data\Entity\ManagerGrid.vb" />
     <Compile Include="Data\Entity\Site.vb" />
     <Compile Include="Data\Entity\UserAccount.vb" />
+    <Compile Include="Data\IncompleteEmployeesRepository.vb" />
     <Compile Include="Data\LibraryRespository.vb" />
     <Compile Include="Data\LoginRepository.vb" />
     <Compile Include="Data\ManagerRepository.vb" />
@@ -100,6 +102,12 @@
       <DependentUpon>LogIn.vb</DependentUpon>
     </Compile>
     <Compile Include="Account\LogIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List\IncompleteEmployees.Designer.vb">
+      <DependentUpon>IncompleteEmployees.vb</DependentUpon>
+    </Compile>
+    <Compile Include="List\IncompleteEmployees.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="List\Main.vb">
@@ -137,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Account\LogIn.resx">
       <DependentUpon>LogIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List\IncompleteEmployees.resx">
+      <DependentUpon>IncompleteEmployees.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List\Main.resx">
       <DependentUpon>Main.vb</DependentUpon>

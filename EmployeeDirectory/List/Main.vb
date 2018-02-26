@@ -100,9 +100,10 @@ Public Class Main
     End Sub
 
     Private Sub EmployeeIncButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EmployeeIncButton.Click
-        Threading.Thread.Sleep(2000)
-        Dim webAddress As String = "http://mnl02s55581d1:3030/index.html"
-        Process.Start(webAddress)
+        'Threading.Thread.Sleep(2000)
+        'Dim webAddress As String = "http://mnl02s55581d1:3030/index.html"
+        'Process.Start(webAddress)
+        IncompleteEmployees.ShowDialog()
     End Sub
 
     Private Sub CloseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseButton.Click
