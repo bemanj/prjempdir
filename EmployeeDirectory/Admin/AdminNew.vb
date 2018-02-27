@@ -17,4 +17,6 @@
     Private Sub PasswordResetButton_Click(sender As System.Object, e As System.EventArgs) Handles PasswordResetButton.Click
         PasswordReset.Show()
     End Sub
+
+
 End Class
